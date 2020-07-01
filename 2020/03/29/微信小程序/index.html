@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="微信小程序," />
 
 
 
@@ -79,16 +79,24 @@
 
 
 
-<meta name="description" content="本地测试">
+<meta name="description" content="微信小程序中this指向​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2020/07/01/test/index.html">
+<meta property="og:title" content="微信小程序">
+<meta property="og:url" content="http://yoursite.com/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
 <meta property="og:site_name" content="mydal">
-<meta property="og:description" content="本地测试">
-<meta property="article:published_time" content="2020-07-01T09:00:12.000Z">
-<meta property="article:modified_time" content="2020-07-01T09:00:42.410Z">
+<meta property="og:description" content="微信小程序中this指向​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png">
+<meta property="og:image" content="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png">
+<meta property="article:published_time" content="2020-03-29T09:20:40.000Z">
+<meta property="article:modified_time" content="2020-04-06T02:39:05.198Z">
 <meta property="article:author" content="mydal">
+<meta property="article:tag" content="微信小程序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png">
 
 
 
@@ -118,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/01/test/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/29/微信小程序/"/>
 
 
 
 
 
-  <title>test | mydal</title>
+  <title>微信小程序 | mydal</title>
   
 
 
@@ -231,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mydal">
@@ -248,7 +256,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">微信小程序</h1>
         
 
         <div class="post-meta">
@@ -260,8 +268,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-01T17:00:12+08:00">
-                2020-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-29T17:20:40+08:00">
+                2020-03-29
               </time>
             
 
@@ -270,6 +278,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -298,7 +328,22 @@
       
 
       
-        <h1 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h1>
+        <h1 id="微信小程序中this指向"><a href="#微信小程序中this指向" class="headerlink" title="微信小程序中this指向"></a>微信小程序中this指向</h1><p>​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.</p>
+<p><img src="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png" alt="11.png"></p>
+<a id="more"></a>
+
+<p>图片中可以看到 页面加载函数中的this是page的全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png" alt="111.png"></p>
+<p>同样在我自定义的函数中,this也是全局this,这都没有什么问题. 问题出在闭包函数</p>
+<p><img src="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png" alt="111.png"></p>
+<p>可以看到当我使用<code>wx.request({})</code>来请求<code>api</code>接口时,success回调函数中的this是未定义的。这就有问题了,当我们想把接收到的接口数据返回给视图页面时,一般要用<code>this.setData({})</code>进行设置,要解决这个问题很简单,两种方法.</p>
+<h2 id="第一种解决方法"><a href="#第一种解决方法" class="headerlink" title="第一种解决方法"></a>第一种解决方法</h2><p>在请求的外部也就是全局this的作用域下声明一个变量 来接收全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png" alt="111.png"></p>
+<h2 id="第二种解决方法"><a href="#第二种解决方法" class="headerlink" title="第二种解决方法"></a>第二种解决方法</h2><p>使用<code>es6</code>的箭头函数</p>
+<p>小程序中箭头函数中的this是指的是父作用域的this. 箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
+<p><img src="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png" alt="1111.png"></p>
+<p><img src="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png" alt="111.png"></p>
+
       
     </div>
     
@@ -313,6 +358,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag"># 微信小程序</a>
+          
+        </div>
+      
 
       
       
@@ -322,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2020/03/18/tp5%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" rel="next" title="tp5图片上传">
+                <i class="fa fa-chevron-left"></i> tp5图片上传
               </a>
             
           </div>
@@ -331,6 +382,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" rel="prev" title="微信小程序登录">
+                微信小程序登录 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -462,7 +517,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本地测试"><span class="nav-number">1.</span> <span class="nav-text">本地测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序中this指向"><span class="nav-number">1.</span> <span class="nav-text">微信小程序中this指向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种解决方法"><span class="nav-number">1.1.</span> <span class="nav-text">第一种解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种解决方法"><span class="nav-number">1.2.</span> <span class="nav-text">第二种解决方法</span></a></li></ol></li></ol></div>
             
 
           </div>

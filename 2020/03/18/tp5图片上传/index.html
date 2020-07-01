@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="tp5实现异步图片上传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tp5图片上传">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/tp5%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/index.html">
+<meta property="og:site_name" content="mydal">
+<meta property="og:description" content="tp5实现异步图片上传">
+<meta property="og:image" content="https://i.loli.net/2020/03/18/nMBdVXLa6fYyelu.jpg">
+<meta property="article:published_time" content="2020-03-18T12:05:57.000Z">
+<meta property="article:modified_time" content="2020-03-30T01:40:13.118Z">
+<meta property="article:author" content="mydal">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/03/18/nMBdVXLa6fYyelu.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/18/tp5图片上传/"/>
+
+
+
+
+
+  <title>tp5图片上传 | mydal</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mydal</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">怕光阴流逝 让一切都作废</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/tp5%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mydal">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mydal">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">tp5图片上传</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T20:05:57+08:00">
+                2020-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" itemprop="url" rel="index">
+                    <span itemprop="name">php从入门到放弃</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="tp5实现异步图片上传"><a href="#tp5实现异步图片上传" class="headerlink" title="tp5实现异步图片上传"></a>tp5实现异步图片上传</h1><p><img src="https://i.loli.net/2020/03/18/nMBdVXLa6fYyelu.jpg" alt="111.jpg"></p>
+<a id="more"></a>
+
+<h2 id="使用插件"><a href="#使用插件" class="headerlink" title="使用插件"></a>使用插件</h2><p><strong>bootstrp的一个fileinput插件来通过ajax的方式实现图片的上传</strong></p>
+<p><a href="https://segmentfault.com/a/1190000018477200" target="_blank" rel="noopener">https://segmentfault.com/a/1190000018477200</a></p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><p>下载之后  解压放到tp5项目public目录 </p>
+<h3 id="引入依赖文件"><a href="#引入依赖文件" class="headerlink" title="引入依赖文件"></a>引入依赖文件</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=<span class="string">"http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt; </span><br><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"__STATIC__/bootstrap-fileinput-master/css/fileinput.css"</span>&gt; </span><br><span class="line">&lt;script src=<span class="string">"__STATIC__/bootstrap-fileinput-master/js/fileinput.js"</span>&gt;&lt;/script&gt; </span><br><span class="line">&lt;script src=<span class="string">"__STATIC__/bootstrap-fileinput-master/js/locales/zh.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="页面加入控件"><a href="#页面加入控件" class="headerlink" title="页面加入控件"></a>页面加入控件</h3><p>隐藏域用来保存上传成功后的图片地址和缩略图地址  注意给form添加文件上传的属性</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="Operate_cont clearfix"&gt;</span><br><span class="line">    &lt;label class="form-label"&gt;上传图片：&lt;/label&gt;</span><br><span class="line">    &lt;div class="formControls "&gt;</span><br><span class="line">        &lt;input type="file" id="imgUpload" class="file-loading"&gt;//不需要添加name属性  插件自动生成</span><br><span class="line">        &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"image"</span> value=<span class="string">""</span> id=<span class="string">"image"</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"image_thumb"</span> value=<span class="string">""</span> id=<span class="string">"image_thumb"</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="js代码进行配置"><a href="#js代码进行配置" class="headerlink" title="js代码进行配置"></a>js代码进行配置</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#imgUpload"</span>).fileinput(&#123;</span><br><span class="line">    language: <span class="string">'zh'</span>,</span><br><span class="line">    uploadUrl:<span class="string">"&#123;:url('product/uploadImg')&#125;"</span>,</span><br><span class="line">    autoReplace:<span class="keyword">true</span>,</span><br><span class="line">    maxFileCount:<span class="number">1</span>,</span><br><span class="line">    allowedFileExtensions: [<span class="string">'jpg'</span>,<span class="string">'png'</span>,<span class="string">"gif"</span>],<span class="comment">//接收的文件后缀</span></span><br><span class="line">    browseClass: <span class="string">"btn btn-primary"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="监听后台返回的信息"><a href="#监听后台返回的信息" class="headerlink" title="监听后台返回的信息"></a>监听后台返回的信息</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#imgUpload"</span>).on(<span class="string">'fileuploaded'</span>, <span class="function"><span class="keyword">function</span><span class="params">(event,data)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> path=data.response.path;<span class="comment">//获取上传成功以后的图片地址</span></span><br><span class="line">    <span class="keyword">var</span> thumb_path=data.response.thumb;<span class="comment">//获取缩略图的地址</span></span><br><span class="line">    $(<span class="string">"#image"</span>).val(path);<span class="comment">//把图片地址保存到隐藏域中</span></span><br><span class="line">    $(<span class="string">"#image_thumb"</span>).val(thumb_path);<span class="comment">//把缩略图地址保存到隐藏域中</span></span><br><span class="line">    console.log(path);</span><br><span class="line">    console.log(thumb_path);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//    图片上传</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">uploadImg</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $file =<span class="keyword">$this</span>-&gt;request-&gt;file(<span class="string">'file_data'</span>);<span class="comment">//获取上传的图片资源</span></span><br><span class="line"><span class="comment">//  保存原图路径</span></span><br><span class="line">        $path=ROOT_PATH . <span class="string">'public'</span> . DS . <span class="string">'uploads'</span>.DS.<span class="string">'product'</span>;</span><br><span class="line"><span class="comment">//  缩略图保存路径</span></span><br><span class="line">        $thumb_path=ROOT_PATH . <span class="string">'public'</span> . DS . <span class="string">'uploads'</span>.DS.<span class="string">'product'</span>.DS.<span class="string">'thumb'</span>.DS.<span class="string">'thumb_'</span>.$info-&gt;getFilename();</span><br><span class="line">        $info = $file-&gt;move($path);  <span class="comment">//移动图片</span></span><br><span class="line">        <span class="keyword">if</span>($info)&#123;</span><br><span class="line">            $path=ROOT_PATH . <span class="string">'public'</span> . DS . <span class="string">'uploads'</span>.DS.<span class="string">'product'</span>.DS.$info-&gt;getSaveName();<span class="comment">//拿到移动后的图片</span></span><br><span class="line">            $image=Image::open($path); </span><br><span class="line">            $image-&gt;thumb(<span class="number">150</span>,<span class="number">150</span>,Image::THUMB_SCALING)-&gt;save($thumb_path);<span class="comment">//生成缩略图</span></span><br><span class="line">            <span class="comment">//tp5文档的写法是直接拿到$file中的临时路径进行裁剪生成缩略图的,我使用时一直出现问题,所以最好还是拼接一个移动后的图片,进行缩略图的裁剪</span></span><br><span class="line"><span class="comment">//            halt($info-&gt;getSaveName());</span></span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">1</span>,</span><br><span class="line">                <span class="string">'path'</span>=&gt;$info-&gt;getSaveName(),</span><br><span class="line">                <span class="string">'thumb'</span>=&gt;<span class="string">'thumb'</span>.DS.<span class="string">'thumb_'</span>.$info-&gt;getFilename()</span><br><span class="line">            ]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// 上传失败获取错误信息</span></span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">0</span>,</span><br><span class="line">                <span class="string">'error'</span>=&gt;$file-&gt;getError()</span><br><span class="line">            ]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/07/tp5%E5%85%A8%E9%80%89%E5%88%A0%E9%99%A4/" rel="next" title="tp5全选删除">
+                <i class="fa fa-chevron-left"></i> tp5全选删除
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="prev" title="微信小程序">
+                微信小程序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mydal</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tp5实现异步图片上传"><span class="nav-number">1.</span> <span class="nav-text">tp5实现异步图片上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用插件"><span class="nav-number">1.1.</span> <span class="nav-text">使用插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">1.2.</span> <span class="nav-text">使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入依赖文件"><span class="nav-number">1.2.1.</span> <span class="nav-text">引入依赖文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面加入控件"><span class="nav-number">1.2.2.</span> <span class="nav-text">页面加入控件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js代码进行配置"><span class="nav-number">1.2.3.</span> <span class="nav-text">js代码进行配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听后台返回的信息"><span class="nav-number">1.2.4.</span> <span class="nav-text">监听后台返回的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端代码"><span class="nav-number">1.2.5.</span> <span class="nav-text">后端代码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mydal</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

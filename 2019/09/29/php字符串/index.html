@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="php," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="php字符串函数的总结php字符串函数还是很难记忆的,为了之后使用方便，记录一下。 explode(字符串分割)使用一个字符串分割另一个字符串  结果为数组 12345$str &#x3D; &#39;a,b,c,d&#39;; $res &#x3D; explode(&#39;,&#39;,$str); echo &quot;&lt;pre&gt;&quot;;var_dump($res);echo &quot;&lt;&#x2F;pre&gt;&quot;;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php字符串">
+<meta property="og:url" content="http://yoursite.com/2019/09/29/php%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:site_name" content="mydal">
+<meta property="og:description" content="php字符串函数的总结php字符串函数还是很难记忆的,为了之后使用方便，记录一下。 explode(字符串分割)使用一个字符串分割另一个字符串  结果为数组 12345$str &#x3D; &#39;a,b,c,d&#39;; $res &#x3D; explode(&#39;,&#39;,$str); echo &quot;&lt;pre&gt;&quot;;var_dump($res);echo &quot;&lt;&#x2F;pre&gt;&quot;;">
+<meta property="og:image" content="https://i.loli.net/2019/09/29/uzmTx4i6J7UBHoM.png">
+<meta property="article:published_time" content="2019-09-29T07:04:00.000Z">
+<meta property="article:modified_time" content="2019-10-08T01:22:46.543Z">
+<meta property="article:author" content="mydal">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/29/uzmTx4i6J7UBHoM.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/29/php字符串/"/>
+
+
+
+
+
+  <title>php字符串 | mydal</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mydal</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">怕光阴流逝 让一切都作废</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/php%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mydal">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mydal">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">php字符串</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-29T15:04:00+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" itemprop="url" rel="index">
+                    <span itemprop="name">php从入门到放弃</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="php字符串函数的总结"><a href="#php字符串函数的总结" class="headerlink" title="php字符串函数的总结"></a>php字符串函数的总结</h1><p><strong>php字符串函数还是很难记忆的,为了之后使用方便，记录一下。</strong></p>
+<h2 id="explode-字符串分割"><a href="#explode-字符串分割" class="headerlink" title="explode(字符串分割)"></a>explode(字符串分割)</h2><p><strong>使用一个字符串分割另一个字符串  结果为数组</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$str</span> = <span class="string">'a,b,c,d'</span>; </span><br><span class="line"><span class="variable">$res</span> = explode(<span class="string">','</span>,<span class="variable">$str</span>); </span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;pre&gt;"</span>;</span><br><span class="line">var_dump(<span class="variable">$res</span>);</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;/pre&gt;"</span>;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="implode（join）"><a href="#implode（join）" class="headerlink" title="implode（join）"></a>implode（join）</h2><p><strong>将一个一维数组的值转化为字符串</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr = [<span class="string">'a'</span>=&gt;<span class="number">1</span>,<span class="string">'b'</span>=&gt;<span class="number">2</span>]; </span><br><span class="line">$res = implode(<span class="string">' '</span>,$arr); </span><br><span class="line"><span class="keyword">echo</span> $res;</span><br></pre></td></tr></table></figure>
+
+<h2 id="htmlentities"><a href="#htmlentities" class="headerlink" title="htmlentities"></a>htmlentities</h2><p><strong>将字符转换为HTML转义字符</strong></p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$str</span> = <span class="string">"A 'quote' is &lt;b&gt;bold&lt;/b&gt;"</span>;</span><br><span class="line">//html输出: A <span class="string">'quote'</span> <span class="literal">is</span> &amp;<span class="literal">lt</span>;b&amp;<span class="literal">gt</span>;bold&amp;<span class="literal">lt</span>;/b&amp;<span class="literal">gt</span>; </span><br><span class="line">echo htmlentities(<span class="variable">$str</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="htmlspecialchars-decode"><a href="#htmlspecialchars-decode" class="headerlink" title="htmlspecialchars_decode"></a>htmlspecialchars_decode</h2><p><strong>将特殊的HTML实体转换回普通字符</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$str = "<span class="tag">&lt;<span class="name">p</span>&gt;</span>this -<span class="symbol">&amp;gt;</span> <span class="symbol">&amp;quot;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span>\n"; </span><br><span class="line">echo htmlspecialchars_decode($str); </span><br><span class="line">*//<span class="tag">&lt;<span class="name">p</span>&gt;</span>this -&gt; "<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="htmlspecialchars"><a href="#htmlspecialchars" class="headerlink" title="htmlspecialchars"></a>htmlspecialchars</h2><p><strong>将特殊字符转换为HTML实体</strong></p>
+<h2 id="lcfirst"><a href="#lcfirst" class="headerlink" title="lcfirst"></a>lcfirst</h2><p><strong>使第一个字符串的第一个字符小写</strong></p>
+<h2 id="ucfirst"><a href="#ucfirst" class="headerlink" title="ucfirst"></a>ucfirst</h2><p><strong>使字符串的第一个字符大写</strong></p>
+<h2 id="strtolower"><a href="#strtolower" class="headerlink" title="strtolower"></a>strtolower</h2><p><strong>将字符串转化为小写</strong></p>
+<h2 id="strtoupper"><a href="#strtoupper" class="headerlink" title="strtoupper"></a>strtoupper</h2><p><strong>将字符串转化为大写</strong></p>
+<h2 id="ucwords"><a href="#ucwords" class="headerlink" title="ucwords"></a>ucwords</h2><p><strong>将字符串中的每个单词的首字母转换为大写</strong></p>
+<h2 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h2><p><strong>trim() 函数移除字符串两侧的空白字符或其他预定义字符。</strong></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//移除字符</span></span><br><span class="line">$<span class="built_in">str</span> = <span class="string">"Hello World!"</span>;</span><br><span class="line"><span class="built_in">echo</span> $<span class="built_in">str</span>.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="built_in">echo</span> trim($<span class="built_in">str</span>,<span class="string">"Hed!"</span>);</span><br><span class="line"><span class="comment">//移除空白</span></span><br><span class="line">$<span class="built_in">str</span> = <span class="string">" Hello World! "</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"不使用 trim: "</span>.$<span class="built_in">str</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"使用 trim: "</span>.trim($<span class="built_in">str</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>ltrim() 移除字符串左侧的空白字符或其他预定义字符</strong></p>
+<p><strong>rtrim() 移除字符串右侧侧的空白字符或其他预定义字符</strong></p>
+<h2 id="parse-str"><a href="#parse-str" class="headerlink" title="parse_str"></a>parse_str</h2><p><strong>将字符串解析成多个变量</strong></p>
+<p><code>parse_str(string,array);</code></p>
+<p>有两个参数 string是必须要有的 规定要解析的字符串  </p>
+<p>array可写可不写。规定存储变量的数组的名称。该参数指示变量将被存储到数组中。</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parse<span class="constructor">_str(<span class="string">"name-Bill&amp;age-60"</span>,$<span class="params">myArray</span>)</span>;</span><br><span class="line">print<span class="constructor">_r($<span class="params">myArray</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果:</p>
+<p><img src="https://i.loli.net/2019/09/29/uzmTx4i6J7UBHoM.png" alt="1.png"></p>
+<h2 id="str-replace"><a href="#str-replace" class="headerlink" title="str_replace"></a>str_replace</h2><p><strong>字符串替换(区分大小写)</strong></p>
+<p><strong>str_ireplace()不区分大小写 其他与str_replace一致</strong></p>
+<p><strong>注意：</strong></p>
+<p>如果搜索的字符串是数组，那么它将返回数组。</p>
+<p>如果搜索的字符串是数组，那么它将对数组中的每个元素进行查找和替换。</p>
+<p>如果同时需要对数组进行查找和替换，并且需要执行替换的元素少于查找到的元素的数量，那么多余元素将用空字符串进行替换</p>
+<p>如果查找的是数组，而替换的是字符串，那么替代字符串将对所有查找到的值起作用。</p>
+<p><strong>语法：</strong></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str<span class="constructor">_replace(<span class="params">find</span>,<span class="params">replace</span>,<span class="params">string</span>,<span class="params">count</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>find:必需.规定要查找的值；</strong></p>
+<p><strong>replace:必需。规定替换 <em>find</em> 中的值的值。</strong></p>
+<p><strong>string:必需。规定被搜索的字符串。</strong></p>
+<p><strong>count:可选。对替换数进行计数的变量。</strong></p>
+<p><strong>实例：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$arr</span> = array(<span class="string">"blue"</span>,<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"yellow"</span>);</span><br><span class="line">print_r(str_replace(<span class="string">"red"</span>,<span class="string">"pink"</span>,<span class="variable">$arr</span>,<span class="variable">$i</span>));</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"替换数：<span class="variable">$i</span>"</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="str-shuffle"><a href="#str-shuffle" class="headerlink" title="str_shuffle"></a>str_shuffle</h2><p><strong>随机打乱字符串</strong></p>
+<h2 id="str-split"><a href="#str-split" class="headerlink" title="str_split"></a>str_split</h2><p><strong>将字符串转化为数组</strong></p>
+<p><strong>语法：</strong></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str<span class="constructor">_split(<span class="params">string</span>,<span class="params">length</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>string:必需.规定要分割的字符串</strong></p>
+<p><strong>length:可选。规定每个数组元素的长度。默认是1.</strong></p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print_r(<span class="name">str_split</span>(<span class="string">"Shanghai"</span>,<span class="number">3</span>))<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="strstr"><a href="#strstr" class="headerlink" title="strstr"></a>strstr</h2><p><strong>查询字符串首次出现</strong></p>
+<p><strong>stristr</strong>  <strong>不区分大小写查找字符串首次出现</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">strstr</span><span class="params">(string,search,before_search)</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>string:被搜索的字符串</strong></p>
+<p><strong>search:规定要搜索的字符串</strong></p>
+<p><strong><em>before_search</em>:可选 默认为false 如果设置为true 返回 <em>search</em> 参数第一次出现之前的字符串部分。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">echo <span class="title">strstr</span><span class="params">(<span class="string">"Hello world!"</span>,<span class="string">"world"</span>,<span class="literal">true</span>)</span></span>; <span class="comment">//输出Hello</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="strip-tags"><a href="#strip-tags" class="headerlink" title="strip_tags"></a>strip_tags</h2><p><strong>从字符串中去除 HTML 和 PHP 标记</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strip<span class="constructor">_tags(<span class="params">string</span>,<span class="params">allow</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>string: 必需.规定要检查的字符串</strong></p>
+<p><strong>allow:可选.规定允许的标签 可以保留</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo strip_tags("Hello <span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">i</span>&gt;</span>world!<span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span>","<span class="tag">&lt;<span class="name">b</span>&gt;</span>");</span><br></pre></td></tr></table></figure>
+
+<h2 id="strops"><a href="#strops" class="headerlink" title="strops"></a>strops</h2><p><strong>查询字符串首次出现的位置</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">strpos</span><span class="params">(string,find,start)</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>string:要搜索的字符串</strong></p>
+<p><strong>find:规定要查找的字符串</strong></p>
+<p><strong>start:可选,规定在何处开始搜索</strong>。<strong>(字符串位置从0开始)</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">echo <span class="title">strpos</span><span class="params">(<span class="string">"You love php, I love php too!"</span>,<span class="string">"php"</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>扩展：</strong></p>
+<ol>
+<li>stripos:查找字符串在另一字符串中第一次出现的位置（不区分大小写）</li>
+<li>strripos:查找字符串在另一字符串中最后一次出现的位置（不区分大小写）</li>
+<li>strrpos: 查找字符串在另一字符串中最后一次出现的位置（区分大小写）</li>
+</ol>
+<h2 id="str-pad"><a href="#str-pad" class="headerlink" title="str_pad"></a>str_pad</h2><p><strong>字符串填充</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str<span class="constructor">_pad(<span class="params">string</span>,<span class="params">length</span>,<span class="params">pad_string</span>,<span class="params">pad_type</span>)</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><em>string</em></th>
+<th align="center">必需。规定要填充的字符串。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>length</em></td>
+<td align="center">必需。规定新的字符串长度。如果该值小于字符串的原始长度，则不进行任何操作。</td>
+</tr>
+<tr>
+<td><em>pad_string</em></td>
+<td align="center">可选。规定供填充使用的字符串。默认是空白。</td>
+</tr>
+<tr>
+<td><em>pad_type</em></td>
+<td align="center">可选。规定填充字符串的哪边。可能的值：STR_PAD_BOTH - 填充字符串的两侧。如果不是偶数，则右侧获得额外的填充。STR_PAD_LEFT - 填充字符串的左侧。STR_PAD_RIGHT - 填充字符串的右侧。默认</td>
+</tr>
+</tbody></table>
+<p><strong>实例:</strong></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$<span class="built_in">str</span> = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="built_in">echo</span> str_pad($<span class="built_in">str</span>,<span class="number">30</span>,<span class="string">"."</span>,STR_PAD_LEFT);<span class="comment">//左侧</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$<span class="built_in">str</span> = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="built_in">echo</span> str_pad($<span class="built_in">str</span>,<span class="number">30</span>,<span class="string">".:"</span>,STR_PAD_BOTH);<span class="comment">//右侧</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="str-repeat"><a href="#str-repeat" class="headerlink" title="str_repeat"></a>str_repeat</h2><p><strong>重复一个字符串</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">echo <span class="title">str_repeat</span><span class="params">(<span class="string">"Shanghai"</span>,<span class="number">5</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="strlen"><a href="#strlen" class="headerlink" title="strlen"></a>strlen</h2><p><strong>获取字符串长度</strong> </p>
+<h2 id="strpbrk"><a href="#strpbrk" class="headerlink" title="strpbrk"></a>strpbrk</h2><p><strong>在字符串中查找一组字符的任何一个字符，查到后返回后面的字符</strong></p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$<span class="literal">text</span> = <span class="symbol">'This</span> <span class="keyword">is</span> a Simple <span class="literal">text</span>.';</span><br><span class="line">// 输出 <span class="string">"is is a Simple text."</span>，因为 <span class="symbol">'i</span>' 先被匹配 </span><br><span class="line">echo strpbrk($<span class="literal">text</span>, <span class="symbol">'mi</span>');</span><br></pre></td></tr></table></figure>
+
+<h2 id="strrev"><a href="#strrev" class="headerlink" title="strrev"></a>strrev</h2><p><strong>反转字符串</strong></p>
+<h2 id="substr-count"><a href="#substr-count" class="headerlink" title="substr_count()"></a>substr_count()</h2><p><strong>计算字符串出现的次数</strong></p>
+<p><code>$text = &#39;This is a test&#39;;</code> </p>
+<p><code>echo substr_count($text, &#39;is&#39;); // 2</code></p>
+<h2 id="wordwrap"><a href="#wordwrap" class="headerlink" title="wordwrap"></a>wordwrap</h2><p><strong>按照指定长度对字符串进行折行处理</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wordwrap(<span class="built_in">string</span>,<span class="built_in">width</span>,<span class="keyword">break</span>,cut)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><em>string</em></th>
+<th align="center">必需。规定要进行折行的字符串。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>width</em></td>
+<td align="center">可选。规定最大行宽度。默认是 75。</td>
+</tr>
+<tr>
+<td><em>break</em></td>
+<td align="center">可选。规定作为分隔符使用的字符（字串断开字符）。默认是 “\n”。</td>
+</tr>
+<tr>
+<td><em>cut</em></td>
+<td align="center">可选。规定是否对大于指定宽度的单词进行折行：FALSE - 默认。No-wrapTRUE - 折行</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$str</span> = <span class="string">'wo ca lie , zhe shi shen me gui'</span>;</span><br><span class="line"><span class="variable">$nstr</span> = wordwrap(<span class="variable">$str</span>,5,<span class="string">'&lt;br/&gt;'</span>);</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$nstr</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h2><p><strong>substr() 函数返回字符串的一部分。</strong></p>
+<p><strong>语法:</strong></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">substr(<span class="keyword">string</span>,<span class="built_in">start</span>,<span class="built_in">length</span>)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><em>string</em></th>
+<th align="center">必需。规定要返回其中一部分的字符串。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>start</em></td>
+<td align="center">必需。规定在字符串的何处开始。正数 - 在字符串的指定位置开始负数 - 在从字符串结尾开始的指定位置开始0 - 在字符串中的第一个字符处开始</td>
+</tr>
+<tr>
+<td><em>length</em></td>
+<td align="center">可选。规定被返回字符串的长度。默认是直到字符串的结尾。正数 - 从 <em>start</em> 参数所在的位置返回的长度负数 - 从字符串末端返回的长度</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$str</span>=<span class="string">'hello world hhh'</span>;</span><br><span class="line"><span class="variable">$srt</span>=substr(<span class="variable">$str</span>,0,6);</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$srt</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h2><p><strong>加密函数</strong></p>
+<p><strong>以 32 字符十六进制数字形式返回散列值。</strong> </p>
+<h2 id="sha1"><a href="#sha1" class="headerlink" title="sha1"></a>sha1</h2><p><strong>计算字符串的 sha1 散列值，默认40 字符长度的十六进制数字</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/24/php%E5%BE%AA%E7%8E%AF/" rel="next" title="php循环">
+                <i class="fa fa-chevron-left"></i> php循环
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/" rel="prev" title="laravel模型关联">
+                laravel模型关联 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">mydal</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#php字符串函数的总结"><span class="nav-number">1.</span> <span class="nav-text">php字符串函数的总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#explode-字符串分割"><span class="nav-number">1.1.</span> <span class="nav-text">explode(字符串分割)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implode（join）"><span class="nav-number">1.2.</span> <span class="nav-text">implode（join）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htmlentities"><span class="nav-number">1.3.</span> <span class="nav-text">htmlentities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htmlspecialchars-decode"><span class="nav-number">1.4.</span> <span class="nav-text">htmlspecialchars_decode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#htmlspecialchars"><span class="nav-number">1.5.</span> <span class="nav-text">htmlspecialchars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lcfirst"><span class="nav-number">1.6.</span> <span class="nav-text">lcfirst</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ucfirst"><span class="nav-number">1.7.</span> <span class="nav-text">ucfirst</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strtolower"><span class="nav-number">1.8.</span> <span class="nav-text">strtolower</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strtoupper"><span class="nav-number">1.9.</span> <span class="nav-text">strtoupper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ucwords"><span class="nav-number">1.10.</span> <span class="nav-text">ucwords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim"><span class="nav-number">1.11.</span> <span class="nav-text">trim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parse-str"><span class="nav-number">1.12.</span> <span class="nav-text">parse_str</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-replace"><span class="nav-number">1.13.</span> <span class="nav-text">str_replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-shuffle"><span class="nav-number">1.14.</span> <span class="nav-text">str_shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-split"><span class="nav-number">1.15.</span> <span class="nav-text">str_split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strstr"><span class="nav-number">1.16.</span> <span class="nav-text">strstr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strip-tags"><span class="nav-number">1.17.</span> <span class="nav-text">strip_tags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strops"><span class="nav-number">1.18.</span> <span class="nav-text">strops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-pad"><span class="nav-number">1.19.</span> <span class="nav-text">str_pad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#str-repeat"><span class="nav-number">1.20.</span> <span class="nav-text">str_repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strlen"><span class="nav-number">1.21.</span> <span class="nav-text">strlen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strpbrk"><span class="nav-number">1.22.</span> <span class="nav-text">strpbrk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strrev"><span class="nav-number">1.23.</span> <span class="nav-text">strrev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substr-count"><span class="nav-number">1.24.</span> <span class="nav-text">substr_count()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordwrap"><span class="nav-number">1.25.</span> <span class="nav-text">wordwrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#substr"><span class="nav-number">1.26.</span> <span class="nav-text">substr()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md5"><span class="nav-number">1.27.</span> <span class="nav-text">md5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sha1"><span class="nav-number">1.28.</span> <span class="nav-text">sha1</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mydal</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

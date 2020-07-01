@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="php," />
 
 
 
@@ -79,16 +79,27 @@
 
 
 
-<meta name="description" content="本地测试">
+<meta name="description" content="​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个……. PDO连接数据库(增删改查)查询多条数据fethcAll()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2020/07/01/test/index.html">
+<meta property="og:title" content="pdo">
+<meta property="og:url" content="http://yoursite.com/2019/12/22/pdo/index.html">
 <meta property="og:site_name" content="mydal">
-<meta property="og:description" content="本地测试">
-<meta property="article:published_time" content="2020-07-01T09:00:12.000Z">
-<meta property="article:modified_time" content="2020-07-01T09:00:42.410Z">
+<meta property="og:description" content="​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个……. PDO连接数据库(增删改查)查询多条数据fethcAll()">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png">
+<meta property="article:published_time" content="2019-12-22T09:21:12.000Z">
+<meta property="article:modified_time" content="2020-03-31T13:24:54.832Z">
 <meta property="article:author" content="mydal">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png">
 
 
 
@@ -118,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/07/01/test/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/22/pdo/"/>
 
 
 
 
 
-  <title>test | mydal</title>
+  <title>pdo | mydal</title>
   
 
 
@@ -231,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/test/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/22/pdo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mydal">
@@ -248,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">test</h1>
+          <h1 class="post-title" itemprop="name headline">pdo</h1>
         
 
         <div class="post-meta">
@@ -260,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-01T17:00:12+08:00">
-                2020-07-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-22T17:21:12+08:00">
+                2019-12-22
               </time>
             
 
@@ -270,6 +281,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" itemprop="url" rel="index">
+                    <span itemprop="name">php从入门到放弃</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -298,7 +331,61 @@
       
 
       
-        <h1 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h1>
+        <p>​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个…….</p>
+<h1 id="PDO连接数据库-增删改查"><a href="#PDO连接数据库-增删改查" class="headerlink" title="PDO连接数据库(增删改查)"></a>PDO连接数据库(增删改查)</h1><h2 id="查询多条数据"><a href="#查询多条数据" class="headerlink" title="查询多条数据"></a>查询多条数据</h2><p><code>fethcAll()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png" alt="1.png"></p>
+<a id="more"></a>
+
+<p><strong>注意:执行查询操作使用<code>query()</code></strong>    </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fetchAll</span><span class="params">(PDO::FETCH_ASSOC)</span></span>    将查询到的结果集转换为关联数组</span><br></pre></td></tr></table></figure>
+
+<p><code>fetchAll()</code> 可以有不同的参数 比如常用的:</p>
+<p><code>FETCH_ASSOC</code>:代表转为关联数组</p>
+<p><code>FETCH_NUM</code>:代表转为索引数组</p>
+<p><code>FETCH_BOTH:</code>代表关联和索引这两者形式都有</p>
+<p><code>FETCH_OBJ</code>:对象的形式</p>
+<h2 id="查询单条数据"><a href="#查询单条数据" class="headerlink" title="查询单条数据"></a>查询单条数据</h2><p><code>fetch()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png" alt="1.png"></p>
+<p><strong>查询数据本质上都是一样的, 查询多条只需要注意sql语句的书写 以及结果集转换数据的写法即可</strong></p>
+<h2 id="查询指定字段"><a href="#查询指定字段" class="headerlink" title="查询指定字段"></a>查询指定字段</h2><p><code>fetchColumn()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png" alt="1.png"></p>
+<p>注意:查询指定条数的指定字段 返回的是一个字符串 使用<code>fetchColumn()</code></p>
+<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p><strong>增删改只需要改变sql语句的内容即可</strong>   <strong>与查询不同的是:增删改要调用exec()方法对sql语句进行处理</strong></p>
+<h3 id="增加一条数据"><a href="#增加一条数据" class="headerlink" title="增加一条数据"></a>增加一条数据</h3><p><img src="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png" alt="1.png"></p>
+<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><p><img src="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png" alt="1.png"></p>
+<h3 id="删除一条数据"><a href="#删除一条数据" class="headerlink" title="删除一条数据"></a>删除一条数据</h3><p><img src="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png" alt="1.png"></p>
+<h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>开启事务: <code>beginTransaction()</code>  </p>
+<p>事务提交: <code>commit()</code></p>
+<p>事务回滚: <code>rollBack()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png" alt="1.png"></p>
+<p><strong>事务处理的情况下 sql语句要么都执行 要么都不执行</strong></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>单例模式：</strong>singleton  是一种类的设计只会最多产生一个对象的设计思想</p>
+<ul>
+<li><p>单例模式的类只能在一次运行中产生一个对象</p>
+</li>
+<li><p>单例模式为了解决如何只产生一个对象,需要使用以下解决方案，简称三私一公</p>
+<p><strong>私有化构造方法:不让在外部产生多个对象</strong></p>
+<p><strong>私有化克隆方法：不允许对象被克隆产生新对象</strong></p>
+<p><strong>私有化静态属性:保存已经产生的对象</strong></p>
+<p><strong>公有化静态方法:运行进入类内部产生对象</strong></p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png" alt="1.png"></p>
+<p><strong>指向了同一个对象 单例模式构造成功</strong></p>
+<p><img src="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png" alt="1.png"></p>
+<p><code>instanceof</code>是类型运算符 判断某个变量是否是某个类的对象实例</p>
+<p><strong>总结:</strong></p>
+<p>单例模式设计的类最多只能得到一个对象</p>
+<p>单例模式只是解决当前类对象的唯一性，要实现其他功能需求，可以在类中增加相应的其他类成员</p>
+<p>单例模式的目的是为了保护资源的唯一性</p>
+<p>单例模式的设计规范就是’三私一公’</p>
+<ul>
+<li>私有化构造方法：禁止在类外部无限实例化对象</li>
+<li>私有化克隆方法：禁止对象无限克隆对象</li>
+<li>私有化静态属性：保存类内部实例化得到的对象</li>
+<li>公有化静态方法：允许外部通过调用类内部方法获取对象</li>
+</ul>
+
       
     </div>
     
@@ -313,6 +400,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+        </div>
+      
 
       
       
@@ -322,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="next" title="js字符串方法">
+                <i class="fa fa-chevron-left"></i> js字符串方法
               </a>
             
           </div>
@@ -331,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/23/git/" rel="prev" title="git学习笔记">
+                git学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -462,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本地测试"><span class="nav-number">1.</span> <span class="nav-text">本地测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PDO连接数据库-增删改查"><span class="nav-number">1.</span> <span class="nav-text">PDO连接数据库(增删改查)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询多条数据"><span class="nav-number">1.1.</span> <span class="nav-text">查询多条数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询单条数据"><span class="nav-number">1.2.</span> <span class="nav-text">查询单条数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询指定字段"><span class="nav-number">1.3.</span> <span class="nav-text">查询指定字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改"><span class="nav-number">1.4.</span> <span class="nav-text">增删改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加一条数据"><span class="nav-number">1.4.1.</span> <span class="nav-text">增加一条数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新一条数据"><span class="nav-number">1.4.2.</span> <span class="nav-text">更新一条数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除一条数据"><span class="nav-number">1.4.3.</span> <span class="nav-text">删除一条数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务处理"><span class="nav-number">1.5.</span> <span class="nav-text">事务处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">1.6.</span> <span class="nav-text">单例模式</span></a></li></ol></li></ol></div>
             
 
           </div>
