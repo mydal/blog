@@ -1583,7 +1583,9 @@
   <entry>
     <title>tp5使用PhpSpreadsheet扩展导出数据到excel</title>
     <url>/2020/05/09/tp5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%88%B0excel/</url>
-    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/mydal/Figure-bed/master/imgperson-using-macbook-laptop-3584969.jpg" alt=""><a id="more"></a></p>
+    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701192916.jpg" alt=""></p>
+<a id="more"></a>
+
 <p>​    <strong>PhpSpreadsheet是一个纯PHP类库，它提供了一组类，允许您从不同的电子表格文件格式（如Excel和LibreOffice Calc）读取和写入。</strong></p>
 <p>​    <strong>刚上班没几天,遇到一个需求,后台导出数据到excel表中,这个操作之前听过,没有用过,在网上找了半天,找了个轮子,拿过来用,有时间研究一下文档.</strong></p>
 <h2 id="composer安装PhpSpreadsheet组件"><a href="#composer安装PhpSpreadsheet组件" class="headerlink" title="composer安装PhpSpreadsheet组件"></a>composer安装PhpSpreadsheet组件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">λ composer require phpoffice/phpspreadsheet</span><br></pre></td></tr></table></figure>
