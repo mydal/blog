@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="html," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="mydal" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="前端基础复习笔记(一)HTML部分HTML之块标签块级元素:块级大多为结构性标记 有&lt;h1&gt;到&lt;h6&gt;标题标签，&lt;div&gt;标签 ,&lt;p&gt;标签，列表标签&lt;ul&gt;,&lt;ol&gt;,&lt;hr&gt;水平线标签，&lt;table&gt;表格标签，&lt;form&gt;表单标签 特点:块标签内展示的内容总是独占一行，表现为另起一行开始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/html/index.html">
+<meta property="og:site_name" content="mydal">
+<meta property="og:description" content="前端基础复习笔记(一)HTML部分HTML之块标签块级元素:块级大多为结构性标记 有&lt;h1&gt;到&lt;h6&gt;标题标签，&lt;div&gt;标签 ,&lt;p&gt;标签，列表标签&lt;ul&gt;,&lt;ol&gt;,&lt;hr&gt;水平线标签，&lt;table&gt;表格标签，&lt;form&gt;表单标签 特点:块标签内展示的内容总是独占一行，表现为另起一行开始">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf87e7c09c3a24631.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf87ea5c783497121.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf87ffd4416091085.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf62416049eb31659.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf624955e18026169.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf625278eb9b13456.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf66b72b963910255.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf6268244c6d22341.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf6270996bfa25297.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf627e30a0fb51662.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf6287dc760090365.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf629269989224008.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf629feb377c99309.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf62b1478a2256136.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/04/5cf62b8fc294f25630.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88219066ef69531.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8826b4078a14655.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8826b4078a14655.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf883136a3c398866.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8832e0d40666442.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf884bf0630446096.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf884efe82db92278.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8853917b9f49907.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf885ba372dc76339.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88674c33c623248.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf886cb9770d97825.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8876a4fa2822569.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf887e86840e21877.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8895b1f35617302.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88984e637636699.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf889de6112437116.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88acfe92df22451.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88b40aac5062250.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88b6668cba55194.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88b958266a29928.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88de2644e880754.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88e4db102b58943.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf88f8e916ee54457.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8ab241bd7b23024.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8ab4e2117d31738.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8abab8b8eb36377.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/15/5d049b4ebcf1822264.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/15/5d049c3624ec882372.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/15/5d049cc14f9ff76215.png">
+<meta property="article:published_time" content="2019-09-19T06:47:19.000Z">
+<meta property="article:modified_time" content="2019-12-18T01:12:32.000Z">
+<meta property="article:author" content="mydal">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/06/5cf87e7c09c3a24631.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/19/html/"/>
+
+
+
+
+
+  <title>前端基础知识 | mydal</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mydal</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">怕光阴流逝 让一切都作废</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+	<a href="https://github.com/mydal" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+	<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+</a>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mydal">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mydal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mydal">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-19T14:47:19+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前端基础复习笔记-一"><a href="#前端基础复习笔记-一" class="headerlink" title="前端基础复习笔记(一)"></a>前端基础复习笔记(一)</h1><h2 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h2><h3 id="HTML之块标签"><a href="#HTML之块标签" class="headerlink" title="HTML之块标签"></a>HTML之块标签</h3><p><strong><em>块级元素:块级大多为结构性标记</em></strong></p>
+<p><code>有&lt;h1&gt;到&lt;h6&gt;标题标签，&lt;div&gt;标签 ,&lt;p&gt;标签，列表标签&lt;ul&gt;,&lt;ol&gt;,&lt;hr&gt;水平线标签，&lt;table&gt;表格标签，&lt;form&gt;表单标签</code></p>
+<p><strong>特点</strong>:块标签内展示的内容总是独占一行，表现为另起一行开始，而且其后的元素也必须另起一行显示.</p>
+<a id="more"></a>
+
+<h3 id="HTML之内联标签"><a href="#HTML之内联标签" class="headerlink" title="HTML之内联标签"></a>HTML之内联标签</h3><h4 id="内联标签"><a href="#内联标签" class="headerlink" title="内联标签"></a>内联标签</h4><p><strong>特点</strong>:在html中内联标签，和块标签相对应，它以“文本模式”显示，即一个挨着一个，都在同一行按从左至右的顺序显示，不单独占一行。</p>
+<p>内联标签有<code>&lt;span&gt;标签，超链接&lt;a&gt;标签，加粗标签&lt;b&gt;标签,规定字体属性的标签&lt;font&gt;.&lt;font&gt;标签常用属性</code>有:color（文本颜色）、size（文本大小）、famliy(文本字体),等。还有换行标签:<code>&lt;br&gt;</code>换行标签可插入一个简单的换行符。 一般写在想要换行的那一行最后 .</p>
+<p><code>&lt;img&gt;</code>图片标签，可以插入图片,写法:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img <span class="attribute">src</span>=<span class="string">""</span> <span class="attribute">alt</span>=<span class="string">""</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  <code>&lt;i&gt;斜体标签，&lt;del&gt;删除线,&lt;u&gt;下划线,&lt;input&gt;文本框,&lt;textarea&gt;多行文本,&lt;select&gt;下拉列表。</code></p>
+<h3 id="HTML之表格标签"><a href="#HTML之表格标签" class="headerlink" title="HTML之表格标签"></a>HTML之表格标签</h3><h4 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h4><p><strong>创建表格</strong>:<code>&lt;table&gt; 标签定义 HTML 表格 一个 HTML 表格包括 &lt;table&gt; 元素，一个或多个 &lt;tr&gt;、&lt;th&gt; 以及&lt;td&gt; 元素。 &lt;tr&gt; 元素定义表格行，&lt;th&gt; 元素定义表头，&lt;td&gt; 元素定义表格单元。</code></p>
+<p><strong>定义一行一列表格:</strong></p>
+<p><img src="https://i.loli.net/2019/06/06/5cf87e7c09c3a24631.png" alt="QQ截图20190606104603.png"></p>
+<p><strong>定义二行三列表格:</strong></p>
+<p><img src="https://i.loli.net/2019/06/06/5cf87ea5c783497121.png" alt="QQ截图20190606104654.png"></p>
+<p><strong>标签属性</strong>:<code>&lt;table&gt;标签的属性有：border设定表格边框的宽度。cellpadding规定单元边沿与其内容之间的空白。cellspacing规定单元格之间的空白。width规定表格的宽度。</code></p>
+<p><strong>合并单元格</strong>:在完成表格的创建后可以通过<code>colspan</code>和<code>rowspan</code>进行单元格合并。</p>
+<p>colspan是横向合并 colspan属性用在td标签中，用来指定单元格横向跨越的列数</p>
+<p>rowspan是纵向合并 rowspan属性用在td标签中,用来指定单元格纵向跨越的行数</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf87ffd4416091085.png" alt="QQ截图20190606105238.png"></p>
+<h3 id="HTML之网页表单"><a href="#HTML之网页表单" class="headerlink" title="HTML之网页表单"></a>HTML之网页表单</h3><p><strong>如何创建表单</strong></p>
+<p>表单的控件：</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf62416049eb31659.png" alt="QQ截图20190604142011.png"></p>
+<p>表单按钮:</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf624955e18026169.png" alt="QQ截图20190604143701.png"></p>
+<p>form标签来创建表单</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf625278eb9b13456.png" alt="QQ截图20190604155506.png"></p>
+<p><strong>文本框</strong></p>
+<p>这里使用的是input标签，当type属性值为“text”时可以显示文本内容，通常用户用户名等信息的填写</p>
+<p>文本框显示提示字符，输入时消失:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="attribute">type</span>=<span class="string">"text"</span> <span class="attribute">name</span>=<span class="string">''</span> <span class="attribute">placeholder</span>=<span class="string">"手机/邮箱/用户名"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/04/5cf66b72b963910255.png" alt="QQ截图20190604210011.png"></p>
+<p><strong>密码框</strong></p>
+<p>当用户输入的是密码时就要设置input标签的type属性值为“password”时就是实现密码框的功能</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf6268244c6d22341.png" alt="QQ截图20190604160617.png"></p>
+<p><strong>单选按钮</strong></p>
+<p>input标签的type属性值为“radio“</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf6270996bfa25297.png" alt="QQ截图20190604160834.png"></p>
+<p>图中的name为分类 因为不写name的情况下，两个都可以选。而checked可以设置默认选项</p>
+<p><strong>多选框</strong></p>
+<p>有的时候我们会给用户选项来供用户选择，比如省市区的选择，那么这时就要设置input标签的type属性值为“checkbox”来实现多选功能，和单选一个，我们也需要设置name属性，如果有一个需要默认选中的话也要使用checked属性</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf627e30a0fb51662.png" alt="QQ截图20190604161208.png"></p>
+<p><strong>下拉框</strong></p>
+<p>如果有的时候不方便用户输入内容，比如省市区，用户写错了字会很麻烦，那么这时就要在select标签中使用option标签来实现下拉框的功能了，这样直接给用户选项让用户选择，就不必担心用户写的字会错，而且可以根据不同的省份自动显示不同的市，也方便了用户的操作</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf6287dc760090365.png" alt="QQ截图20190604161426.png"></p>
+<p>可以使用selected=””来设置默认选项</p>
+<p><strong>文本域</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;textarea&gt;</span><span class="section">&lt;/textarea&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们的内容过长，例如想写一篇文章保存到数据库，明显普通的文本输入框就无法使用了，或者体验不好，这时我们用到了一个新的标签:textarea 来完成长文本的操作</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf629269989224008.png" alt="QQ截图20190604161732.png"></p>
+<p>文本域中的colspan作用是控制文本域的行数，也就是他的宽度。rowspan的作用是控制文本域的列数，也就是他的高度</p>
+<p><strong>提交按钮</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">input</span> <span class="keyword">type</span>="submit" <span class="keyword">value</span>="注册"&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当我们的表单内容都填写完成，如何告诉后台我所提交的数据都有什么呢？这时就需要添加一个提交按钮，而用到的同样是input标签，只不过type属性改为了“submit”</p>
+<p><img src="https://i.loli.net/2019/06/04/5cf629feb377c99309.png" alt="QQ截图20190604162103.png"></p>
+<p>value可以设置按钮的名字</p>
+<p><strong>重置按钮</strong></p>
+<p>当我们写了很多东西后发现写的不对，我想全部信息都重新写，这时应当使用表单中的重置按钮，也就是input标签的type属性设置为reset，这样当我们点击重置按钮的时候会自动清空当前表单的所有内容</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">input</span>  <span class="keyword">type</span>="reset" <span class="keyword">value</span>="重置"&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/04/5cf62b1478a2256136.png" alt="QQ截图20190604162548.png"></p>
+<p><strong>普通按钮</strong></p>
+<p>当然，实际开发的时候不止提交按钮和重置按钮，有时候我们需要一个按钮来完成特殊功能，比如删除某一行内容，比如改变某区域颜色等等，这时候就用到了普通按钮，也就是设置input标签的type属性为button，具体实现什么样的效果只要通过js来设置就ok啦</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">input</span> <span class="keyword">type</span>="button" <span class="keyword">value</span>="普通按钮"&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/04/5cf62b8fc294f25630.png" alt="QQ截图20190604162752.png"></p>
+<h2 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h2><h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><p>css的样式主要分为行内样式、内部样式和外部样式，它们的作用是一样的，只不过书写位置不一样而已。</p>
+<p><strong>内部样式的书写位置</strong>:<code>写在&lt;style&gt;里</code></p>
+<p><img src="https://i.loli.net/2019/06/06/5cf88219066ef69531.png" alt="QQ截图20190606110138.png"></p>
+<p><strong>行内样式的书写位置</strong>:写在标签里面</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf8826b4078a14655.png" alt="QQ截图20190606110259.png"></p>
+<p><strong>外部样式的书写位置</strong>:<code>&lt;link&gt;</code>引入</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf8826b4078a14655.png" alt="QQ截图20190606110259.png"></p>
+<p><strong>绝对路径和相对路径的引入</strong>:</p>
+<p>绝对路径:</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf883136a3c398866.png" alt="QQ截图20190606110545.png"></p>
+<p>相对路径:</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf8832e0d40666442.png" alt="QQ截图20190606110614.png"></p>
+<p><strong>就近原则</strong>:多种样式综合使用，谁离着目标标签近，谁就先起作用.css样式的优先级是行内&gt;内部&gt;外部。不过当外部比内部离目标标签近时，外部高于内部。因为就近原则,htmlcss的代码解析时从上往下解析，外部引用会覆盖内部引用，从而优先级大于内部。</p>
+<h3 id="css基本选择器和优先级"><a href="#css基本选择器和优先级" class="headerlink" title="css基本选择器和优先级"></a>css基本选择器和优先级</h3><p><strong>css选择器:</strong>css选择器可以为拥有指定属性的 HTML 元素设置样式，主要包含标签选择器器、类选择器、id选择器以及群组选择器等等.</p>
+<p> <strong>标签选择器</strong>:</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf884bf0630446096.png" alt="QQ截图20190606111256.png"></p>
+<p><strong>类选择器</strong>:<img src="https://i.loli.net/2019/06/06/5cf884efe82db92278.png" alt="QQ截图20190606111343.png"></p>
+<p><strong>id选择器：<img src="https://i.loli.net/2019/06/06/5cf8853917b9f49907.png" alt="QQ截图20190606111457.png"></strong></p>
+<p> <strong>群组选择器</strong>：<img src="https://i.loli.net/2019/06/06/5cf885ba372dc76339.png" alt="QQ截图20190606111646.png"></p>
+<p><strong>css选择器的优先级</strong></p>
+<p>css选择器的优先级从高到底排列是id选择器&gt;类选择器&gt;标签选择器</p>
+<h3 id="css选择器的权重"><a href="#css选择器的权重" class="headerlink" title="css选择器的权重"></a>css选择器的权重</h3><p><strong>后代选择器:<img src="https://i.loli.net/2019/06/06/5cf88674c33c623248.png" alt="QQ截图20190606112013.png"></strong></p>
+<p><strong>css选择器的权重计算:</strong>多种选择器同时作用于同一标签，权重该如何计算？id选择器的权重为100，类选择器的权重是10，标签选择器的权重是1。</p>
+<p><strong>权重计算案例</strong>:<img src="https://i.loli.net/2019/06/06/5cf886cb9770d97825.png" alt="QQ截图20190606112138.png"></p>
+<h3 id="css盒子大小和边框"><a href="#css盒子大小和边框" class="headerlink" title="css盒子大小和边框"></a>css盒子大小和边框</h3><p><strong>网页盒子页面显示:</strong><img src="https://i.loli.net/2019/06/06/5cf8876a4fa2822569.png" alt="QQ截图20190606112418.png"> <u>网页盒子默认没有大小</u></p>
+<p><strong>网页盒子高度宽度和边框:<img src="https://i.loli.net/2019/06/06/5cf887e86840e21877.png" alt="QQ截图20190606112625.png"></strong></p>
+<p><strong>边框属性设置</strong>:综合写法</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br></pre></td></tr></table></figure>
+
+<p>分开写法:</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-top</span>:<span class="number">1px</span>  solid blue;  <span class="attribute">border-bottom</span>:<span class="number">2px</span> dashed red; </span><br><span class="line"><span class="attribute">border-right</span>:<span class="number">3px</span> dotted red; <span class="attribute">border-left</span>:<span class="number">4px</span> solid blue;</span><br></pre></td></tr></table></figure>
+
+<h3 id="css盒子位置调整"><a href="#css盒子位置调整" class="headerlink" title="css盒子位置调整"></a>css盒子位置调整</h3><p><strong>初识margin</strong>:margin也叫边距，是盒子与盒子之间的间距，有margin-top(上边距) margin-bottom(下边距) margin-left(左边距) margin-right(右边距)</p>
+<p><strong>盒子上下外边距的调整</strong>:<img src="https://i.loli.net/2019/06/06/5cf8895b1f35617302.png" alt="QQ截图20190606113231.png"></p>
+<p> <strong>盒子向下移动位置的调整</strong>:<img src="https://i.loli.net/2019/06/06/5cf88984e637636699.png" alt="QQ截图20190606113318.png"></p>
+<p><strong>margin使用的问题:</strong>页面不显示的情况</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf889de6112437116.png" alt="QQ截图20190606113444.png"></p>
+<p><strong>margin的写法</strong>:</p>
+<ol>
+<li>margin:10px; 上下左右外边距都是10px</li>
+<li>margin:10px 20px; 上下边距10px，左右边距20px</li>
+<li>margin:10px 20px 30px;上边距:10px 左右边距:20px 下边距:30px</li>
+<li>margin:10px 10px 10px 10px; 上:10px 右:10px 下:10px 左:10px</li>
+</ol>
+<h3 id="盒子内容调整"><a href="#盒子内容调整" class="headerlink" title="盒子内容调整"></a>盒子内容调整</h3><p><strong>padding</strong>:padding叫做内间距，它可以调整盒子与内容之间的间距，它也有上下左右四个方向，所以有padding-top(上内间距) padding-bottom(下内间距) padding-left(左内间距) padding-right(右内间距)</p>
+<p> <strong>padding-top的设置</strong>:<img src="https://i.loli.net/2019/06/06/5cf88acfe92df22451.png" alt="QQ截图20190606113846.png"></p>
+<p><strong>padding-left的设置</strong>:<img src="https://i.loli.net/2019/06/06/5cf88b40aac5062250.png" alt="QQ截图20190606113927.png"></p>
+<p> <strong>padding-right的设置</strong>:<img src="https://i.loli.net/2019/06/06/5cf88b6668cba55194.png" alt="QQ截图20190606113944.png"></p>
+<p><strong>padding-bottom的设置</strong>:<img src="https://i.loli.net/2019/06/06/5cf88b958266a29928.png" alt="QQ截图20190606113957.png"></p>
+<p><strong>padding写法</strong>:</p>
+<p>padding:30px;上下左右间距是都是30px;</p>
+<p>padding:30px 20px; 上下间距是30px ，左右间距是20px；</p>
+<p>padding:30px 20px 50px ;上间距是30px，左右是20px，下间距是30px；</p>
+<p>padding：30px 20px 20px 50px;顺序是上，右，下，左。</p>
+<h3 id="css字体调整"><a href="#css字体调整" class="headerlink" title="css字体调整"></a>css字体调整</h3><p><strong>字体样式</strong>:用于在html中设置字体样式，包括大小、颜色、类型、粗细等</p>
+<p><strong>字体大小</strong>:浏览器默认字体大小为16px；</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-size:<span class="number">20</span>px 修改字体大小</span><br></pre></td></tr></table></figure>
+
+<p><strong>字体颜色:</strong></p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">color</span>:<span class="built_in">red</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>字体类型</strong>:</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font-family</span>:<span class="string">'宋体'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>:我们想使用的字体类型需要我们的系统中有这个字体</p>
+<p><strong>文本加粗</strong>:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-<span class="string">weight:</span>bold/font-<span class="string">weight:</span><span class="number">700</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/06/5cf88de2644e880754.png" alt="QQ截图20190606115152.png"></p>
+<p><strong>文本修饰</strong>:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">text</span>-decoration:line-<span class="keyword">through</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/06/5cf88e4db102b58943.png" alt="QQ截图20190606115342.png"></p>
+<p><strong>a标签下划线去除</strong>:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">text</span>-decoration:<span class="keyword">none</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>文本在盒子中的位置</strong>:文本在盒子中默认的位置是左上角</p>
+<p><strong>设置文本居中:</strong></p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">text</span>-<span class="keyword">align</span>:center;</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置文本上下居中</strong>:<img src="https://i.loli.net/2019/06/06/5cf88f8e916ee54457.png" alt="QQ截图20190606115903.png"></p>
+<h3 id="css背景颜色"><a href="#css背景颜色" class="headerlink" title="css背景颜色"></a>css背景颜色</h3><p><strong>背景颜色</strong>:通过16进制色值或者RGB值和颜色单词等来设置div或者网页的背景</p>
+<p><strong>使用颜色单词:</strong></p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>:<span class="built_in">blue</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用16进制色值</strong>:</p>
+<p>通过三组十六进制的数值来设置颜色：</p>
+<p>可以理解为红色、绿色和蓝色三个灯泡，都最低，代表三个灯都关闭，就会变黑。都最高，就会变成白茫茫一片，即为白色</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf8ab241bd7b23024.png" alt="QQ截图20190606135635.png"></p>
+<p>当每组值相同，可以省略其中一个值，简写成:<img src="https://i.loli.net/2019/06/06/5cf8ab4e2117d31738.png" alt="QQ截图20190606135728.png"></p>
+<p><strong>使用RGB色值</strong>:RGB值也是我们常用的设置色值的方式，通过三组（分别为红，绿，蓝）设置一个0-255的值来代表一个对应颜色的亮度，通过组合，生成不同的颜色：</p>
+<p><img src="https://i.loli.net/2019/06/06/5cf8abab8b8eb36377.png" alt="QQ截图20190606135900.png"></p>
+<h3 id="css背景图片"><a href="#css背景图片" class="headerlink" title="css背景图片"></a>css背景图片</h3><p><strong>默认设置背景图片</strong></p>
+<p>默认情况下，设置的图片会在水平方向和垂直方向铺满整个盒子大小，不足的位置会重复背景图来铺满：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>:url(<span class="string">'1.jpg'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>让图片横向铺满该如何做</strong>:</p>
+<p>通过给background-repeat属性设置repeat-x值来设置横向重复</p>
+<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-<span class="keyword">repeat</span>:<span class="keyword">repeat</span>-<span class="symbol">x</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>让图片纵向铺满又该如何做:</strong></p>
+<p>通过给background-repeat属性设置repeat-y值来设置纵向重复</p>
+<figure class="highlight gml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-<span class="keyword">repeat</span>:<span class="keyword">repeat</span>-<span class="symbol">y</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>只想要我原本的图片，不想让图片重复，这时候该怎么办:</strong></p>
+<p>通过给background-repeat属性设置no-repeat值来设置不重复</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-<span class="keyword">repeat</span>:<span class="keyword">no</span>-<span class="keyword">repeat</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置背景图片位置</strong></p>
+<p>用到了background-position属性</p>
+<p>Background-position的值有两个，第一个代表图片在x轴上的位置 第二个代表图片在Y轴上的位置。如果两个值都为0，和图片默认位置是一样的，不会有什么变化</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position:<span class="number">0</span>px <span class="number">0</span>px;</span><br></pre></td></tr></table></figure>
+
+<p>X轴上可以向左移动也可以向右移动，Y轴上可以向上移动也可以向下移动。</p>
+<p>规律：图片向右移动为正值，向下移动为正值； 图片向左移动为负值，向上移动为负值。</p>
+<p><strong>我们图片想隐藏一部分内容，或者中只想显示图片的某一部分该如何做:</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position:<span class="number">-100</span>px <span class="number">0</span>px;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-position:<span class="number">0</span>px <span class="number">-100</span>px;</span><br></pre></td></tr></table></figure>
+
+<p><strong>我们有需求想要让图片左右居中，上下也居中该怎么办:</strong></p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">background</span>-<span class="built_in">position</span>:<span class="built_in">center</span> <span class="built_in">center</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>快捷设置某个位置的方法：</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-position</span><span class="selector-pseudo">:right</span> <span class="attribute">top</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="css相对定位"><a href="#css相对定位" class="headerlink" title="css相对定位"></a>css相对定位</h3><p><strong><em>设置为相对定位的元素框会偏移某个距离。元素仍然保持其未定位前的形状，它原本所占的空间仍保留。</em></strong></p>
+<p><strong>对象不可层叠、不脱离文档流，参考自身静态位置通过top,bottom,left,right定位，并且可以通过z-index进行层次分级。</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>-relative</span><br></pre></td></tr></table></figure>
+
+<h3 id="css绝对定位"><a href="#css绝对定位" class="headerlink" title="css绝对定位"></a>css绝对定位</h3><p><strong>absolute绝对定位：脱离文档流 通过top,bottom,left,right定位。选取其最近一个具有定位设置的父级对象进行绝对定位，如果对象的父级没有设置定位属性，absolute元素将以body坐标原点进行定位，可以通过z-index进行层次分级。</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>-absolute</span><br></pre></td></tr></table></figure>
+
+<h3 id="css浮动"><a href="#css浮动" class="headerlink" title="css浮动"></a>css浮动</h3><p><strong>浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止*</strong>。<strong>浮动会脱离标准文档流</strong></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">float</span><span class="selector-pseudo">:left</span>; <span class="attribute">float</span><span class="selector-pseudo">:right</span>;<span class="attribute">float</span>:none; <span class="attribute">float</span>:inherit;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/06/15/5d049b4ebcf1822264.png" alt="QQ截图20190615151513.png"></p>
+<p><strong>浮动案例: 无序列表制作导航</strong></p>
+<p>默认无需列表样式是纵向排列：</p>
+<p><img src="https://i.loli.net/2019/06/15/5d049c3624ec882372.png" alt="QQ截图20190615151958.png"></p>
+<p>去除无序列表和超链接下划线：</p>
+<p><img src="https://i.loli.net/2019/06/15/5d049cc14f9ff76215.png" alt="QQ截图20190615152211.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/18/php%E6%AD%A3%E5%88%99/" rel="next" title="php正则表达式">
+                <i class="fa fa-chevron-left"></i> php正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/24/php%E5%BE%AA%E7%8E%AF/" rel="prev" title="php循环">
+                php循环 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/mydal.jpg"
+                alt="mydal" />
+            
+              <p class="site-author-name" itemprop="name">mydal</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/mydal" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://scholar10.github.io/" title="scholar" target="_blank">scholar</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/yxhblogs/" title="Yxh" target="_blank">Yxh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_43541326" title="阳" target="_blank">阳</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端基础复习笔记-一"><span class="nav-number">1.</span> <span class="nav-text">前端基础复习笔记(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML部分"><span class="nav-number">1.1.</span> <span class="nav-text">HTML部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML之块标签"><span class="nav-number">1.1.1.</span> <span class="nav-text">HTML之块标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML之内联标签"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTML之内联标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内联标签"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">内联标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML之表格标签"><span class="nav-number">1.1.3.</span> <span class="nav-text">HTML之表格标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#表格标签"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">表格标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML之网页表单"><span class="nav-number">1.1.4.</span> <span class="nav-text">HTML之网页表单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css部分"><span class="nav-number">1.2.</span> <span class="nav-text">css部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css样式"><span class="nav-number">1.2.1.</span> <span class="nav-text">css样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css基本选择器和优先级"><span class="nav-number">1.2.2.</span> <span class="nav-text">css基本选择器和优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css选择器的权重"><span class="nav-number">1.2.3.</span> <span class="nav-text">css选择器的权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css盒子大小和边框"><span class="nav-number">1.2.4.</span> <span class="nav-text">css盒子大小和边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css盒子位置调整"><span class="nav-number">1.2.5.</span> <span class="nav-text">css盒子位置调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子内容调整"><span class="nav-number">1.2.6.</span> <span class="nav-text">盒子内容调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css字体调整"><span class="nav-number">1.2.7.</span> <span class="nav-text">css字体调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css背景颜色"><span class="nav-number">1.2.8.</span> <span class="nav-text">css背景颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css背景图片"><span class="nav-number">1.2.9.</span> <span class="nav-text">css背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css相对定位"><span class="nav-number">1.2.10.</span> <span class="nav-text">css相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css绝对定位"><span class="nav-number">1.2.11.</span> <span class="nav-text">css绝对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css浮动"><span class="nav-number">1.2.12.</span> <span class="nav-text">css浮动</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mydal</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>

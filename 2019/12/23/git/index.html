@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="mydal" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="​        之前或多或少接触过git,但用了就忘,还经常出错,这篇就作为一篇git学习笔记,内容很水,主要是为了加深理解和记忆。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/12/23/git/index.html">
+<meta property="og:site_name" content="mydal">
+<meta property="og:description" content="​        之前或多或少接触过git,但用了就忘,还经常出错,这篇就作为一篇git学习笔记,内容很水,主要是为了加深理解和记忆。">
+<meta property="og:image" content="https://i.loli.net/2019/12/24/sktlUj2hJPKAa8O.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/qwGSLa9O2RX1Ag4.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/D3tOP7Bk18mxIQK.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/fHKd27oNJ5p9IzQ.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/23/fYGsnHAVIeT76z1.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/y1sGkfLYAdwEOQb.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/5Rui8P2GB63SFWZ.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/N5WsLH3rXQuwnpS.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/25/kliVyJAW1gKpo9s.png">
+<meta property="article:published_time" content="2019-12-22T23:54:02.000Z">
+<meta property="article:modified_time" content="2019-12-26T02:53:30.000Z">
+<meta property="article:author" content="mydal">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/24/sktlUj2hJPKAa8O.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/23/git/"/>
+
+
+
+
+
+  <title>git学习笔记 | mydal</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">mydal</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">怕光阴流逝 让一切都作废</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+	<a href="https://github.com/mydal" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+	<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+</a>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/23/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mydal">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/mydal.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mydal">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T07:54:02+08:00">
+                2019-12-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>​        之前或多或少接触过git,但用了就忘,还经常出错,这篇就作为一篇git学习笔记,内容很水,主要是为了加深理解和记忆。</p>
+<p><img src="https://i.loli.net/2019/12/24/sktlUj2hJPKAa8O.jpg" alt="11.jpg"></p>
+<a id="more"></a>
+
+<h1 id="git学习"><a href="#git学习" class="headerlink" title="git学习"></a>git学习</h1><p><strong>git是目前世界上最先进的分布式版本控制系统</strong></p>
+<h2 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h2><h3 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h3><p>​        版本库可以理解为一个目录,这个目录里面的所有文件都会被git管理,每个文件的修改,删除 <code>git</code>都可以跟踪,便于查询历史,或在需要的时候进行历史还原.</p>
+<p><strong>执行:</strong>创建空目录,通过<code>git init</code>将目录变为git仓库 </p>
+<p><img src="https://i.loli.net/2019/12/23/qwGSLa9O2RX1Ag4.png" alt="1.png"></p>
+<p>执行成功 git仓库建好了 在当前目录下会生成一个<code>.git</code>的目录，这个目录是用来跟踪管理版本库的,一般情况下不要修改里面的文件,改乱了,<code>git</code>仓库就垮掉了。 如果你没有看到<code>.git</code>目录，那是因为这个目录默认是隐藏的，用<code>ls -ah</code>命令就可以看见。</p>
+<h3 id="把文件添加到版本库"><a href="#把文件添加到版本库" class="headerlink" title="把文件添加到版本库"></a>把文件添加到版本库</h3><p>​        所有的版本控制系统其实只能跟踪文本的改动,像TXT文件,程序代码等。版本控制系统可以清楚的告诉你每次的改动,修改内容,删除,添加等。    但是像图片,视频这些二进制文件,版本控制系统虽然也能管理,但是没法跟踪文件的变化,只能把二进制文件的每次改动串起来,每次只能知道像图片只是从100kb改成了120kb,具体改了什么,版本控制系统不知道。</p>
+<p>​        Microsoft的Word格式是二进制格式，因此，版本控制系统是没法跟踪Word文件的改动的。</p>
+<h4 id="文件编写"><a href="#文件编写" class="headerlink" title="文件编写"></a>文件编写</h4><p>编写一个readme.txt文件 内容随意  文件必须在<code>learngit</code>这个目录或者其子目录下,只有放在git仓库下,git才能进行控制</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"git"</span></span><br><span class="line"><span class="keyword">vi</span> readme.txt</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://i.loli.net/2019/12/23/D3tOP7Bk18mxIQK.png" alt="1.png"></p>
+<p><strong>编写完成之后,按esc键,然后:wq退出并保存</strong></p>
+<p>将一个文件添加到<code>git</code>仓库只需要两步</p>
+<p><strong>第一步</strong></p>
+<p>使用命令</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> readme.txt</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>执行成功,没有任何显示,没有消息就是最好的消息,说明添加成功了</strong></p>
+<p><strong>第二步</strong></p>
+<p>使用命令</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">commit</span> -m <span class="string">"wrote a readme file"</span>                                           </span><br><span class="line">[<span class="keyword">master</span> (root-<span class="keyword">commit</span>) <span class="number">251</span>dffd] wrote a readme <span class="keyword">file</span>                              </span><br><span class="line"><span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">2</span> insertions(+)                                                </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">mode</span> <span class="number">100644</span> readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>命令说明: <code>-m</code> 后面输入的是本次提交的说明 要输入有意义的说明,方便查找和阅读</p>
+<p><code>git commit</code> 命令执行成功 ,会有反馈, <code>1 file changed</code> 表示 1个文件被改动，<code>2 insertions(+)</code>  插入了两行内容</p>
+<p>注意:<code>commit</code>可以一次提交很多文件,所以我们可以多次<code>add</code></p>
+<p>不同的文件 如:</p>
+<p><img src="https://i.loli.net/2019/12/23/fHKd27oNJ5p9IzQ.png" alt="1.png"></p>
+<h3 id="时光机穿梭"><a href="#时光机穿梭" class="headerlink" title="时光机穿梭"></a>时光机穿梭</h3><p>再次修改<code>readme.txt</code>文件 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vi</span> <span class="selector-tag">readme</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/12/23/fYGsnHAVIeT76z1.png" alt="1.png"></p>
+<p><code>git status</code> 查看结果</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git status                                                                    </span><br><span class="line">On branch master                                                                </span><br><span class="line">Changes not staged for <span class="keyword">commit</span>:                                                  </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git add ..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)                    </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git checkout -- ..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working <span class="keyword">directory</span>)     </span><br><span class="line">modified:   readme.txt                                                  </span><br><span class="line"><span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>git status</code> 命令可以让我们时刻掌握仓库当前的状态, 上面命令的输出信息告诉我们，<code>readme.txt</code>被修改了,但是还没有提交修改</p>
+<p><code>git diff</code> 查看修改的内容</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git diff readme.txt                                                           </span><br><span class="line">diff <span class="comment">--git a/readme.txt b/readme.txt                                            </span></span><br><span class="line"><span class="keyword">index</span> b0354bd.<span class="number">.5367626</span> <span class="number">100644</span>                                                   </span><br><span class="line"><span class="comment">--- a/readme.txt                                                                </span></span><br><span class="line">+++ b/readme.txt                                                                </span><br><span class="line">@@ <span class="number">-1</span>,<span class="number">2</span> +<span class="number">1</span>,<span class="number">2</span> @@                                                                 </span><br><span class="line">-Git <span class="keyword">is</span> a <span class="keyword">version</span> control <span class="keyword">system</span>.                                               </span><br><span class="line">+Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                   </span><br><span class="line">Git <span class="keyword">is</span> a free software.</span><br></pre></td></tr></table></figure>
+
+<p>修改完成之后,再次进行提交</p>
+<p>第一步：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> readme.txt</span></span><br></pre></td></tr></table></figure>
+
+<p>第二步:</p>
+<p>在执行<code>git commit</code> 之前 我们可以执行<code>git status</code>查看当前仓库的状态</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status                                                                    </span><br><span class="line"><span class="keyword">On</span> branch master                                                                </span><br><span class="line">Changes <span class="keyword">to</span> be committed:                                                        </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git reset HEAD ..."</span> <span class="keyword">to</span> unstage)                                   </span><br><span class="line">modified:   readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>可以看到 <code>git status</code>命令告诉我们,将要被提交的修改包括 readme.txt</p>
+<p>第三步:<code>git commit</code> </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">commit</span> -m <span class="string">"add distributed"</span>                                               </span><br><span class="line">[<span class="keyword">master</span> db2285b] <span class="keyword">add</span> <span class="keyword">distributed</span>                                                </span><br><span class="line"><span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">1</span> insertion(+), <span class="number">1</span> deletion(-)</span><br></pre></td></tr></table></figure>
+
+<p>再次 <code>git status</code> 查看仓库的当前状态</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status                                                                    </span><br><span class="line"><span class="keyword">On</span> branch master                                                                </span><br><span class="line"><span class="keyword">nothing</span> <span class="keyword">to</span> <span class="keyword">commit</span>, working tree clean</span><br></pre></td></tr></table></figure>
+
+<p>git告诉我们当前没有需要提交的修改，而且，工作目录是干净</p>
+<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><p>再次修改readme.txt文件</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vi</span> <span class="selector-tag">readme</span><span class="selector-class">.txt</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Git is <span class="keyword">a</span> distributed <span class="built_in">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git is <span class="keyword">a</span> free software distributed under <span class="keyword">the</span> GPL.</span><br></pre></td></tr></table></figure>
+
+<p>再次提交</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt                                                                                        </span><br><span class="line">$ git commit -m <span class="string">"append GPL"</span>                                                    </span><br><span class="line">[master cd03a82] append GPL                                                     </span><br><span class="line"><span class="number">1</span> file <span class="section">changed</span>, <span class="number">1</span> insertion(+), <span class="number">1</span> deletion(-)</span><br></pre></td></tr></table></figure>
+
+<p>这样对文件不停修改，然后不断的提交到版本库里,可以形成多个版本，以便我们查找和更新。</p>
+<p><code>git log</code></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ git log                                                                       </span><br><span class="line">commit cd03a8211f969905634826a1337b992b16d87235 (HEAD -&gt; master)                </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">09</span>:<span class="number">49</span>:<span class="number">15</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">append GPL                                                                  </span><br><span class="line">commit db2285b3da237cb3ee8fab85050abfc19f3af654                                 </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">09</span>:<span class="number">15</span>:<span class="number">28</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">add distributed                                                             </span><br><span class="line">commit <span class="number">36e9</span>e51137dfb5d5186739373cf806a42205f969                                 </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">08</span>:<span class="number">47</span>:<span class="number">12</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">add <span class="number">2</span> files.                                                                </span><br><span class="line">commit <span class="number">251</span>dffd1ad6d376f715c6994edc7a79308328269                                 </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">08</span>:<span class="number">39</span>:<span class="number">23</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">wrote a readme file</span><br></pre></td></tr></table></figure>
+
+<p><code>git log</code>命令显示从最近到最远的提交日志。</p>
+<p>可以加上参数 <code>--pretty=oneline</code>  简洁输出信息</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">--pretty=oneline                                                      </span></span><br><span class="line">cd03a8211f969905634826a1337b992b16d87235 (HEAD -&gt; master) append GPL            </span><br><span class="line">db2285b3da237cb3ee8fab85050abfc19f3af654 <span class="built_in">add</span> distributed                        </span><br><span class="line"><span class="number">36e9</span>e51137dfb5d5186739373cf806a42205f969 <span class="built_in">add</span> <span class="number">2</span> <span class="built_in">files</span>.                           </span><br><span class="line"><span class="number">251</span>dffd1ad6d376f715c6994edc7a79308328269 wrote <span class="keyword">a</span> readme <span class="built_in">file</span></span><br></pre></td></tr></table></figure>
+
+<p><code>cd03a821....</code> 这种一大串的是<code>commit id</code> (版本号)  版本号不会重复</p>
+<p><strong>回退</strong></p>
+<p><code>HEAD</code> 表示当前版本  <code>HEAD^</code> 表示上一个版本  <code>HEAD^^</code>表示上上个版本。</p>
+<p>不过 如果往上几十上百个版本的情况 写100个<code>^</code>  有点太蠢了 ,可以写成 <code>HEAD~100</code></p>
+<p><code>git reset</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard HEAD^                                                        </span></span><br><span class="line"><span class="keyword">HEAD</span> <span class="keyword">is</span> <span class="keyword">now</span> <span class="keyword">at</span> db2285b <span class="keyword">add</span> <span class="keyword">distributed</span></span><br></pre></td></tr></table></figure>
+
+<p>版本回退成功,查看一下文件内容</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">cat</span> readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> distributed <span class="keyword">version</span> control <span class="built_in">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> free software.</span><br></pre></td></tr></table></figure>
+
+<p>内容被还原</p>
+<p><code>git log</code> 查看一下版本库的状态</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git log                                                                       </span><br><span class="line">commit db2285b3da237cb3ee8fab85050abfc19f3af654 (HEAD -&gt; master)                </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">09</span>:<span class="number">15</span>:<span class="number">28</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">add distributed                                                             </span><br><span class="line">commit <span class="number">36e9</span>e51137dfb5d5186739373cf806a42205f969                                 </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">08</span>:<span class="number">47</span>:<span class="number">12</span> <span class="number">2019</span> +<span class="number">0800</span>                                          </span><br><span class="line">add <span class="number">2</span> files.                                                                </span><br><span class="line">commit <span class="number">251</span>dffd1ad6d376f715c6994edc7a79308328269                                 </span><br><span class="line">Author: mydal &lt;<span class="symbol">2049837924@</span>qq.com&gt;                                               </span><br><span class="line">Date:   Mon Dec <span class="number">23</span> <span class="number">08</span>:<span class="number">39</span>:<span class="number">23</span> <span class="number">2019</span> +<span class="number">0800</span></span><br></pre></td></tr></table></figure>
+
+<p>最新版本 <code>append GPL</code>已经看不到了 </p>
+<p>我们想要找回这个版本 只需要找到<code>append GPL</code> 的<code>commit id</code>   顺着命令行往上找…</p>
+<p>指定回到这个版本 版本号写前几位即可,也不能只写一两位,这样<code>git</code>可能会找到多个,从而无法确定是哪一个</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard cd03a8                                                       </span></span><br><span class="line"><span class="keyword">HEAD</span> <span class="keyword">is</span> <span class="keyword">now</span> <span class="keyword">at</span> cd03a82 append GPL</span><br></pre></td></tr></table></figure>
+
+<p>再次查看<code>readme.txt</code>文件的内容             </p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cat readme.txt                                                                </span><br><span class="line">Git is <span class="keyword">a</span> distributed <span class="built_in">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git is <span class="keyword">a</span> free software distributed under <span class="keyword">the</span> GPL.</span><br></pre></td></tr></table></figure>
+
+<p>又回到了最新版本                     `</p>
+<p>特殊情况:比如，我们现在回到到了某个版本,关掉了电脑,第二天像恢复到最新版本,但是找不到新版本的<code>commit id</code>  咋办呢？</p>
+<p>git提供了一个命令<code>git reflog</code> 用来记录我们的每一次命令</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">ref</span>log                                                                    </span><br><span class="line">cd03a82 (HEAD -&gt; master) <span class="symbol">HEAD@</span>&#123;<span class="number">0</span>&#125;: reset: moving to cd03a8                      </span><br><span class="line">db2285b <span class="symbol">HEAD@</span>&#123;<span class="number">1</span>&#125;: reset: moving to HEAD^                                        </span><br><span class="line">cd03a82 (HEAD -&gt; master) <span class="symbol">HEAD@</span>&#123;<span class="number">2</span>&#125;: commit: append GPL                           </span><br><span class="line">db2285b <span class="symbol">HEAD@</span>&#123;<span class="number">3</span>&#125;: commit: add distributed                                       </span><br><span class="line"><span class="number">36e9</span>e51 <span class="symbol">HEAD@</span>&#123;<span class="number">4</span>&#125;: commit: add <span class="number">2</span> files.                                          </span><br><span class="line"><span class="number">251</span>dffd <span class="symbol">HEAD@</span>&#123;<span class="number">5</span>&#125;: commit (initial): wrote a readme file</span><br></pre></td></tr></table></figure>
+
+<p>可以看到<code>commit id</code>了                   </p>
+<h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h4><p><strong>工作区</strong>:我们能在电脑里看到的目录,比如当前使用的 <code>learngit</code>的文件夹 就是一个git工作区</p>
+<p><strong>版本库</strong>: 工作区中有一个隐藏目录<code>.git</code> 是<code>Git</code>的版本库</p>
+<p><code>Git</code>版本库中存了很多东西,其中最为重要的是 称为<code>stage(index)</code>的暂存区,</p>
+<p>还有<code>Git</code>为我们自动创建的第一个分支 <code>master</code>,以及指向<code>master</code>的指针 <code>HEAD</code></p>
+<p><img src="https://i.loli.net/2019/12/25/y1sGkfLYAdwEOQb.png" alt="11.png"></p>
+<p><strong>文件添加到版本库 两步执行</strong></p>
+<p><code>git add</code> 把文件从工作区添加到暂存区</p>
+<p><code>git commit</code> 提交更改, 把暂存区的内容提交到当前分支</p>
+<p><strong>需要提交的文件修改先添加到暂存区,然后一次性提交到分支中</strong></p>
+<p><strong>例子</strong></p>
+<p>对<code>readme.txt</code>进行修改,添加一条内容</p>
+<p><img src="https://i.loli.net/2019/12/25/5Rui8P2GB63SFWZ.png" alt="111.png"></p>
+<p>新增一个<code>LICENSE</code>文本文件 </p>
+<p>先用<code>git status</code>查看一下状态</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">`$ git status                                                                    </span><br><span class="line">On branch master                                                                </span><br><span class="line">Changes not staged for <span class="keyword">commit</span>:                                                  </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git add/rm ..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)                 </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git checkout -- ..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working <span class="keyword">directory</span>)     </span><br><span class="line">deleted:    LICENSE.txt                                                 </span><br><span class="line">modified:   readme.txt                                                  </span><br><span class="line">Untracked files:                                                                </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git add ..."</span> <span class="keyword">to</span> <span class="keyword">include</span> <span class="keyword">in</span> what will be committed)                </span><br><span class="line">LICENSE                                                                 </span><br><span class="line"><span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)               <span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<p>Git清楚的表明了,<code>readme.txt</code>被修改了,而<code>LICENSE</code>还从来没有被添加过,状态为<code>Untracked</code></p>
+<p>使用两次<code>git add</code>,把<code>readme.txt</code>和<code>LICENSE</code>添加  ,然后,<code>git status</code>查看一下</p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"><span class="keyword">On</span> branch master</span><br><span class="line">Changes <span class="keyword">to</span> be committed:</span><br><span class="line">  (<span class="keyword">use</span> <span class="string">"git reset HEAD &lt;file&gt;..."</span> <span class="keyword">to</span> unstage)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">new</span> <span class="keyword">file</span>:   LICENSE</span><br><span class="line">	modified:   readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>两个文件都被添加到了暂存区</p>
+<p><img src="https://i.loli.net/2019/12/25/N5WsLH3rXQuwnpS.png" alt="111.png"></p>
+<p>执行 <code>git commit</code> 就可以一次性把暂存区的所有修改提交到分支</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">`$ git <span class="keyword">commit</span> -m <span class="string">'git new '</span>                                                      </span><br><span class="line">[<span class="keyword">master</span> <span class="number">0694</span>ef3] git <span class="keyword">new</span>                                                        </span><br><span class="line"><span class="number">3</span> files <span class="keyword">changed</span>, <span class="number">3</span> insertions(+), <span class="number">1</span> deletion(-)                                </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">mode</span> <span class="number">100644</span> LICENSE</span><br></pre></td></tr></table></figure>
+
+<p> 提交之后,不对工作区做任何修改, 工作区就是干净的</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"><span class="keyword">On</span> branch master</span><br><span class="line"><span class="keyword">nothing</span> <span class="keyword">to</span> <span class="keyword">commit</span>, working tree clean</span><br></pre></td></tr></table></figure>
+
+<p>版本库再次发生变化   </p>
+<p><img src="https://i.loli.net/2019/12/25/kliVyJAW1gKpo9s.png" alt="111.png"></p>
+<h4 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h4><p><code>git</code>跟踪并管理的是修改,而非文件</p>
+<p>实践出真知:</p>
+<p>首先,对<code>readme.txt</code>做一个修改 加一行内容</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">`$ <span class="keyword">cat</span> readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> distributed <span class="keyword">version</span> control <span class="built_in">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> free software distributed under the GPL.                               </span><br><span class="line">Git <span class="built_in">has</span> <span class="keyword">a</span> mutable <span class="built_in">index</span> called stage.                                           </span><br><span class="line">Git <span class="built_in">has</span> <span class="keyword">a</span> nbnb nbn <span class="keyword">nb</span>.                                                          </span><br><span class="line">Git <span class="keyword">new</span> connect.    //新加的内容</span><br></pre></td></tr></table></figure>
+
+<p><code>git add</code> 添加                                              `</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="builtin-name">add</span> readme.txt                                                                       </span><br><span class="line">$ git status                                                                    </span><br><span class="line">On branch master                                                                </span><br><span class="line">Changes <span class="keyword">to</span> be committed:                                                        </span><br><span class="line">(use <span class="string">"git reset HEAD ..."</span> <span class="keyword">to</span> unstage)                                   </span><br><span class="line">modified:   readme.txt</span><br></pre></td></tr></table></figure>
+
+<p>再次修改<code>readme.txt</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">cat</span> readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> distributed <span class="keyword">version</span> control <span class="built_in">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> <span class="keyword">a</span> free software distributed under the GPL.                               </span><br><span class="line">Git <span class="built_in">has</span> <span class="keyword">a</span> mutable <span class="built_in">index</span> called stage.                                           </span><br><span class="line">Git <span class="built_in">has</span> <span class="keyword">a</span> nbnb nbn <span class="keyword">nb</span>.                                                          </span><br><span class="line">Git <span class="keyword">new</span> connect.                                                                </span><br><span class="line">Git <span class="keyword">new</span> <span class="keyword">new</span> connect        //再次添加</span><br></pre></td></tr></table></figure>
+
+<p>  直接提交 <code>git commit</code>                                                   <code></code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">`$ git <span class="keyword">commit</span> -m <span class="string">"git new new connect"</span>                                           </span><br><span class="line">[<span class="keyword">master</span> cf3406c] git <span class="keyword">new</span> <span class="keyword">new</span> <span class="keyword">connect</span>                                            </span><br><span class="line"><span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">2</span> insertions(+), <span class="number">1</span> deletion(-)</span><br></pre></td></tr></table></figure>
+
+<p>查看状态 <code>git status</code>                                `</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git status                                                                    </span><br><span class="line">On branch master                                                                </span><br><span class="line">Changes not staged for <span class="keyword">commit</span>:                                                  </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git add/rm ..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)                 </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git checkout -- ..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working <span class="keyword">directory</span>)     </span><br><span class="line">deleted:    LICENSE                                                     </span><br><span class="line">modified:   readme.txt                                                  </span><br><span class="line"><span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)               <span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到 第二次修改没有被提交</p>
+<p>因为:第一次修改-&gt;<code>git add</code> -&gt;第二次修改 -&gt; <code>git commit</code></p>
+<p>第一次的修改放入到了暂存区,第二次的修改没有放入到暂存区,所以,使用</p>
+<p><code>git commit</code> 只提交了暂存区的修改,因此,第一次修改被提交,第二次的修改不会被提交</p>
+<p>使用 <code>git diff HEAD -- readme.txt</code> 查看工作区和版本库里面的区别</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">`$ git diff HEAD <span class="comment">-- readme.txt                                                   </span></span><br><span class="line">diff <span class="comment">--git a/readme.txt b/readme.txt                                            </span></span><br><span class="line"><span class="keyword">index</span> e1b5b50.<span class="number">.6558</span>bb3 <span class="number">100644</span>                                                   </span><br><span class="line"><span class="comment">--- a/readme.txt                                                                </span></span><br><span class="line">+++ b/readme.txt                                                                </span><br><span class="line">@@ <span class="number">-3</span>,<span class="number">3</span> +<span class="number">3</span>,<span class="number">4</span> @@ Git <span class="keyword">is</span> a free software distributed under the GPL.               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                          </span><br><span class="line">Git has a nbnb nbn nb.                                                         </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                               </span><br><span class="line">+Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span></span><br></pre></td></tr></table></figure>
+
+<p>  想要提交第二次修改,可以继续<code>git add</code> 然后 <code>git commit</code>     也可以不急着提交修改,确定之后,执行<code>git add</code> 再 <code>git commit</code>                                       </p>
+<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt                                                            `</span><br><span class="line"></span><br><span class="line">$ git commit -m <span class="symbol">'git</span> <span class="keyword">new</span> <span class="keyword">new</span> <span class="keyword">new</span> connect'                                       </span><br><span class="line">[master e125243] git <span class="keyword">new</span> <span class="keyword">new</span> <span class="keyword">new</span> connect                                        </span><br><span class="line"><span class="number">1</span> <span class="keyword">file</span> changed, <span class="number">1</span> insertion(+)                                                 `</span><br><span class="line"></span><br><span class="line">$ git status                                                                    </span><br><span class="line"><span class="keyword">On</span> branch master                                                                </span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> commit:                                                  </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git add/rm ..."</span> <span class="keyword">to</span> update what will be committed)                 </span><br><span class="line">(<span class="keyword">use</span> <span class="string">"git checkout -- ..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working directory)     </span><br><span class="line">deleted:    LICENSE                                                     </span><br><span class="line">no changes added <span class="keyword">to</span> commit (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>现在 两次修改都提交到了版本库的当前分支中</p>
+<h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><p><code>git checkout -- file</code></p>
+<p><strong>两种情况:</strong></p>
+<p>文件修改后还没有执行 <code>git add</code> 没有添加到暂存区, 执行这条命令,就会回到和版本库一模一样的状态。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cat readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> a free software distributed under the GPL.                               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                           </span><br><span class="line">Git has a nbnb nbn nb.                                                          </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                                </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                            </span><br><span class="line">Git nen <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                        </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                    </span><br><span class="line">Git nbn nbn nbn            //添加数据</span><br></pre></td></tr></table></figure>
+
+<p>不执行<code>git add</code>     的情况：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout readme.txt                                                                                         </span><br><span class="line">$ cat readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> a free software distributed under the GPL.                               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                           </span><br><span class="line">Git has a nbnb nbn nb.                                                          </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                                </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                            </span><br><span class="line">Git nen <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                        </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.         //新数据已被撤回</span><br></pre></td></tr></table></figure>
+
+<p>文件执行了git add 添加到了暂存区, 然后执行修改,现在撤销修改就回到添加到暂存区后的状态。可以让这个文件回到最后一次<code>git commit</code> 或 <code>git add</code> 时的状态</p>
+<p><strong>文件提交后</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt                                                            `                                                                                     </span><br><span class="line">$ git <span class="keyword">commit</span> -m <span class="string">'new nbn'</span>                                                       </span><br><span class="line"><span class="keyword">On</span> branch <span class="keyword">master</span>                                                                </span><br><span class="line">Changes <span class="keyword">not</span> staged <span class="keyword">for</span> <span class="keyword">commit</span>:                                                  </span><br><span class="line">deleted:    LICENSE                                                     </span><br><span class="line">Untracked files:                                                                </span><br><span class="line">readme,txt</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行修改:</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cat readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> a free software distributed under the GPL.                               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                           </span><br><span class="line">Git has a nbnb nbn nb.                                                          </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                                </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                            </span><br><span class="line">Git nen <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                        </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                    </span><br><span class="line">Git nbn.        //新增数据</span><br></pre></td></tr></table></figure>
+
+<p><strong>撤回</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="comment">-- readme.txt                                                    </span></span><br><span class="line">                                 </span><br><span class="line">$ cat readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> a free software distributed under the GPL.                               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                           </span><br><span class="line">Git has a nbnb nbn nb.                                                          </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                                </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                            </span><br><span class="line">Git nen <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                        </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.</span><br></pre></td></tr></table></figure>
+
+<p>注意: <code>git checkout -- file</code> 命令中的 <code>--</code> 非常重要,没有 <code>-- ,</code>就变成了切换到另一个分支的命令</p>
+<p><code>git  reset  HEAD  &lt;file&gt;</code></p>
+<p><strong>撤销掉暂存区的修改,重新放回工作区</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">`$ cat readme.txt                                                                </span><br><span class="line">Git <span class="keyword">is</span> a distributed <span class="keyword">version</span> control <span class="keyword">system</span>.                                    </span><br><span class="line">Git <span class="keyword">is</span> a free software distributed under the GPL.                               </span><br><span class="line">Git has a mutable <span class="keyword">index</span> <span class="keyword">called</span> stage.                                           </span><br><span class="line">Git has a nbnb nbn nb.                                                          </span><br><span class="line">Git <span class="built_in">new</span> <span class="keyword">connect</span>.                                                                </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                            </span><br><span class="line">Git nen <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                        </span><br><span class="line">Git <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="built_in">new</span> <span class="keyword">connect</span>.                                                    </span><br><span class="line">git my nbme          //新增数据</span><br><span class="line"></span><br><span class="line">git <span class="keyword">add</span> readme.txt  //添加到暂存区</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">`$ git <span class="keyword">reset</span> <span class="keyword">HEAD</span> readme.txt                                                     </span><br><span class="line">Unstaged changes <span class="keyword">after</span> <span class="keyword">reset</span>:                                                   </span><br><span class="line">D       LICENSE                                                                 </span><br><span class="line">M       readme.txt                                                              <span class="string">`                                              `</span></span><br></pre></td></tr></table></figure>
+
+<p><code>git reset</code> 命令既可以回退版本,也可以把暂存区的修改回退到工作区。当我们使用 <code>HEAD</code> 时,表示最新的版本</p>
+<p><code>git status</code> 查看一下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status                                                                                                                                                                     On branch master                                                                                                                                                             Changes not staged for <span class="keyword">commit</span>:                                                                                                                                                    (<span class="keyword">use</span> <span class="string">"git add ..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)                                                                                                                               (<span class="keyword">use</span> <span class="string">"git checkout -- ..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working <span class="keyword">directory</span>)                                                                                                                 modified:   readme.txt                                                                                                                                                            <span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)                                                                                                                                                 <span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<p>现在暂存区干净了,工作区有修改</p>
+<p>丢弃工作区的修改</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout <span class="comment">-- readme.txt     </span></span><br><span class="line"></span><br><span class="line">$ git status                                                                    </span><br><span class="line"><span class="keyword">On</span> branch master                                                                </span><br><span class="line"><span class="keyword">nothing</span> <span class="keyword">to</span> <span class="keyword">commit</span>, working tree clean</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><p>先创建一个 <code>test.txt</code></p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">λ cat test.txt`</span><br><span class="line">`git <span class="keyword">new</span> test`</span><br></pre></td></tr></table></figure>
+
+<p>提交到版本库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">λ git add test.txt</span><br><span class="line"></span><br><span class="line">λ git <span class="keyword">commit</span> -m <span class="string">"add test.txt"</span></span><br><span class="line">[<span class="keyword">master</span> <span class="number">9090e84</span>] <span class="keyword">add</span> test.txt</span><br><span class="line"> <span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">1</span> insertion(+)</span><br><span class="line"> <span class="keyword">create</span> <span class="keyword">mode</span> <span class="number">100644</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>删除</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">λ <span class="keyword">rm</span> <span class="keyword">test</span>.txt</span><br></pre></td></tr></table></figure>
+
+<p>此时,删除文件之后,工作区和版本库就不一致了</p>
+<p><code>git status</code> 查看一下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">λ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged for <span class="keyword">commit</span>:</span><br><span class="line">  (<span class="keyword">use</span> <span class="string">"git add/rm &lt;file&gt;..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)</span><br><span class="line">  (<span class="keyword">use</span> <span class="string">"git checkout -- &lt;file&gt;..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working <span class="keyword">directory</span>)</span><br><span class="line">                                                                                           deleted:    test.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>两种情况</strong></p>
+<p>第一:直接删除</p>
+<p><code>git rm</code> 删掉  <code>git commit</code> 提交</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">λ git <span class="keyword">rm</span> <span class="keyword">test</span>.txt</span><br><span class="line"><span class="keyword">rm</span> '<span class="keyword">test</span>.txt'</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">λ git <span class="keyword">commit</span> -m <span class="string">"remove test.txt"</span></span><br><span class="line">[<span class="keyword">master</span> e732cb5] remove test.txt</span><br><span class="line"> <span class="number">1</span> <span class="keyword">file</span> <span class="keyword">changed</span>, <span class="number">1</span> deletion(-)</span><br><span class="line"> <span class="keyword">delete</span> <span class="keyword">mode</span> <span class="number">100644</span> test.txt</span><br></pre></td></tr></table></figure>
+
+<p>文件就从版本库中删除了</p>
+<p>第二:误删的情况 因为版本库中还存在,然后执行恢复文件操作</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">λ git checkout <span class="comment">-- test.txt</span></span><br></pre></td></tr></table></figure>
+
+<p><code>git checkout</code> 用版本库的版本替换工作区的版本,无论工作区是修改还是删除,然后可以一键还原</p>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><h4 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/22/pdo/" rel="next" title="pdo">
+                <i class="fa fa-chevron-left"></i> pdo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/25/ECharts/" rel="prev" title="ECharts">
+                ECharts <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/mydal.jpg"
+                alt="mydal" />
+            
+              <p class="site-author-name" itemprop="name">mydal</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/mydal" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://scholar10.github.io/" title="scholar" target="_blank">scholar</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/yxhblogs/" title="Yxh" target="_blank">Yxh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_43541326" title="阳" target="_blank">阳</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git学习"><span class="nav-number">1.</span> <span class="nav-text">git学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git命令"><span class="nav-number">1.1.</span> <span class="nav-text">git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建版本库"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建版本库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把文件添加到版本库"><span class="nav-number">1.1.2.</span> <span class="nav-text">把文件添加到版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件编写"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">文件编写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时光机穿梭"><span class="nav-number">1.1.3.</span> <span class="nav-text">时光机穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理修改"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">删除文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支管理"><span class="nav-number">1.1.4.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建与合并分支"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">创建与合并分支</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">mydal</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
