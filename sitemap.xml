@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/html/</loc>
-    <lastmod>2021-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/js/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -305,7 +298,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/linux/</loc>
+    <loc>http://yoursite.com/tags/html/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -319,7 +312,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/vue/</loc>
+    <loc>http://yoursite.com/tags/linux/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -327,6 +320,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+    <lastmod>2021-12-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/vue/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -363,13 +363,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2021-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/js/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -377,7 +370,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/linux/</loc>
+    <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -385,6 +378,13 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2021-12-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/linux/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
