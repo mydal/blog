@@ -270,7 +270,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/html/</loc>
+    <loc>http://yoursite.com/tags/ECharts/</loc>
+    <lastmod>2021-12-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -284,7 +291,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/ECharts/</loc>
+    <loc>http://yoursite.com/tags/html/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -299,13 +306,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/linux/</loc>
-    <lastmod>2021-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -342,7 +342,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>http://yoursite.com/categories/ECharts/</loc>
+    <lastmod>2021-12-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/git/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -356,7 +363,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/ECharts/</loc>
+    <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -371,13 +378,6 @@
   
   <url>
     <loc>http://yoursite.com/categories/linux/</loc>
-    <lastmod>2021-12-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/git/</loc>
     <lastmod>2021-12-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
