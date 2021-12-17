@@ -1,131 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Typora+GitHub+PicGo自建免费图床</title>
-    <url>/2020/05/10/Typora-GiHub-PicGo%E8%87%AA%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145123.jpg" alt=""></p>
-<a id="more"></a>
-
-<p>​    <strong>我个人呢,一直有写笔记和博客的习惯,虽然没什么技术含量,但也是记录了自己的成长,写博客最烦的就是上传图片,之前一直用的sm.ms,但现在这个图床有了上传限制,上传的也比较慢,就想着自己搭建一个图床,然后在掘金上看到了一个老哥的文章,帮助我成功搭建,特此记录一下.</strong></p>
-<h2 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h2><p>PicGo下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo下载</a></p>
-<p>Windows系统下载<code>exe</code>文件，macOS系统下载<code>dmg</code>文件，Linux下载<code>AppImage</code>文件。</p>
-<p><strong>我这里使用的是2.2.2版本</strong></p>
-<h2 id="github上创建仓库和密钥"><a href="#github上创建仓库和密钥" class="headerlink" title="github上创建仓库和密钥"></a>github上创建仓库和密钥</h2><p><strong>仓库自己创建即可,这里就不做演示了</strong></p>
-<p>然后,我们在github个人设置页面,创建一个访问令牌,在PicGo配置中会用到.</p>
-<p>访问 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a>  点击<code>Generate new token</code>按照下图进行配置.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145426.png" alt=""></p>
-<p>配置完成,点击创建,就会生成一个密钥令牌,将其保存.</p>
-<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145509.jpg" alt=""></p>
-<ul>
-<li>第一个是github的用户名/仓库名.</li>
-<li>第二个是分支名,默认设置为master,主分支.</li>
-<li>第三个是Token,就是刚才生成的令牌.</li>
-<li>后面这两个可以不填,然后点击确定,点击设置为默认图床.</li>
-</ul>
-<p>到了这里,其实已经可以了,我们只需要点击PicGo的上传区直接上传图片即可,上传成功后,直接ctrl+v就可以在文档中使用,同时,可以在github仓库中看到我们上传的图片.看到这里,有的小伙伴就会说了,博主你骗人,你这里也没用到typora啊,别着急,下面只需几个简单的配置,你的typora会变得巨香无比.</p>
-<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p>这里推荐大家使用最新版本,<a href="https://typora.io/" target="_blank" rel="noopener">https://typora.io/</a></p>
-<p>然后打开PicGo设置-&gt;设置Server, 看一下是否开启. 默认应该是开启的,监听的端口不能改变.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145538.jpg" alt=""></p>
-<h3 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h3><p> <strong>版本要求</strong>：<code>Typora 0.9.84及以上</code></p>
-<p>​    不过我使用的时候, <code>Typora 0.9.85</code>没有好使,就更新到了最新版本,还是推荐大家使用最新版本.</p>
-<p>​    打开文件-&gt;偏好设置-&gt;图像  如下图 进行配置.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145604.jpg" alt=""></p>
-<p><strong>设置完成之后,点击验证图片上传的功能. 返回true,即验证成功.</strong></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>三个使用方式.</strong></p>
-<ul>
-<li><p><strong>拖拽</strong>，在文件夹内拖拽图片到Typora编辑界面。</p>
-</li>
-<li><p><strong>插入</strong>，快捷键<code>Ctrl+Shift+I</code>，调出插入图片的功能。</p>
-</li>
-<li><p><strong>复制</strong>，使用截图功能后，直接粘贴到Typora编辑界面内。</p>
-<p><strong>拖拽</strong>和<strong>插入</strong>都是自动将图片上传至图床。但是<strong>复制</strong>需要手动点击<code>上传</code></p>
-</li>
-</ul>
-<p>   <strong>到此,一个香香的typora就配置好了,妈妈再也不用担心我找不到顺手的图床了.</strong></p>
-]]></content>
-      <categories>
-        <category>图床工具</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ECharts</title>
-    <url>/2019/12/25/ECharts/</url>
-    <content><![CDATA[<p>​        一个随笔,写一个学校布置的作业,用到了ECharts,第一次接触,实现了项目中的异步数据加载,按照文档,自己没能实现,换一种小思路成功实现,当时,拿到了值,可是没能渲染成功,解决了之后,还是很有必要记录一下,毕竟太菜了…</p>
-<p><img src="https://i.loli.net/2019/12/25/cFBkdltYKDzx1QT.png" alt="1111.png"></p>
-<a id="more"></a>
-
-<h1 id="ECharts"><a href="#ECharts" class="headerlink" title="ECharts"></a>ECharts</h1><h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><p>通过接收从php后台返回的json数据,使用ajax异步请求,实现echarts的异步数据加载</p>
-<p>代码一看,什么都明白了….</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>后台数据返回</strong></p>
-<p><img src="https://i.loli.net/2019/12/25/1s2G479pmjPnOXi.png" alt="1111.png"></p>
-<p><strong>页面接收</strong></p>
-<p><img src="https://i.loli.net/2019/12/25/a2wW5GdXsb8co6R.png" alt="2222.png"></p>
-<p>通过ajax请求拿到json数据 生明两个空数组,拿到值丢到数组中,注意  success成功之后 拿到通过遍历出来的两个数组,填充到data:中,完成数据展示</p>
-<p>其实是很简单的问题,多总结,多练习,多读文档是真的重要！！！</p>
-]]></content>
-      <categories>
-        <category>ECharts</category>
-      </categories>
-      <tags>
-        <tag>ECharts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>laravel模型关联</title>
-    <url>/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
-    <content><![CDATA[<h1 id="关联模型"><a href="#关联模型" class="headerlink" title="关联模型"></a>关联模型</h1><h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><h3 id="关联模型的关联方法"><a href="#关联模型的关联方法" class="headerlink" title="关联模型的关联方法"></a>关联模型的关联方法</h3><p>在写关联模型时 要分析出是谁关联谁 谁做主模型,谁做次模型.</p>
-<p><strong>案例:(文章关联作者)</strong></p>
-<p>文章是主模型 关联代码写在主模型中</p>
-<a id="more"></a>
-
-<p><strong>语法：</strong></p>
-<p>public function <strong>被关联的模型名小写</strong>(){</p>
-<p>​        return $this -&gt; hasOne(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
-<p>} </p>
-<p><img src="https://i.loli.net/2019/11/13/ZRrEJo9FVPLazv2.png" alt="a.png"></p>
-<p><strong>创建控制器方法:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/WZdLPQikxKn8z6u.png" alt="a.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/lkyYs7gEMVf8nP3.png" alt="aa.png"></p>
-<h2 id="一对多关系"><a href="#一对多关系" class="headerlink" title="一对多关系"></a>一对多关系</h2><p><strong>如:一个文章有多个评论</strong></p>
-<h3 id="关联模型的关联方法-1"><a href="#关联模型的关联方法-1" class="headerlink" title="关联模型的关联方法"></a><strong>关联模型的关联方法</strong></h3><p><strong>语法：</strong></p>
-<p>public function <strong>被关联的模型名小写</strong>(){</p>
-<p>​        return $this -&gt; hasMany(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
-<p>} </p>
-<p><strong>与hasOne方法相比，其只是把方法名称做了变化，其他与之前一致。</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/OKt8uZngzxR4dq5.png" alt="b.png"></p>
-<p><strong>创建控制器方法:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/YyTGLtCifeZXWbU.png" alt="bb1.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/oM95QwRidtXLUS8.png" alt="b1.png"></p>
-<h2 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h2><p><strong>例如：一个文章可能有多个关键词，一个关键词可能被多个文章使用。</strong></p>
-<p><strong>多对多的关系经过拆分之后其实就是两个一对多的关系</strong>。</p>
-<p>由于是双向一对多的关系，因此光靠2张表是无法建立的关系的，需要依靠第三张表建立关系（xx与xx的关系表）。</p>
-<p><strong>三张表</strong>:</p>
-<p><img src="https://i.loli.net/2019/11/13/hB92KJaoELIF6yq.png" alt="wz.png"></p>
-<p><img src="https://i.loli.net/2019/11/13/63NkymzMcqX9j72.png" alt="gjz.png"></p>
-<p><img src="https://i.loli.net/2019/11/13/hzXqUyLOp6xa7MA.png" alt="gxb.png"></p>
-<p><strong>创建模型只需要给文章表和关键字表创建 关系表不需要创建</strong></p>
-<p><strong>案例:查询出每个文章下面的全部关键词</strong></p>
-<p><strong>语法：</strong></p>
-<p><strong>return $this -&gt; belongsToMany(被关联模型的元素空间路径,多对多模型的关系表名,当前模型中的关系键,被关联模型的关系键);</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/4f65qus3rPYFeO2.png" alt="c.png"></p>
-<p><strong>创建控制器方法</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/irDXjGusO4Rh3M7.png" alt="c1.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/Q9xfyRFgt7Z68JE.png" alt="c3.png"></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>前端基础知识</title>
     <url>/2019/09/19/html/</url>
     <content><![CDATA[<h1 id="前端基础复习笔记-一"><a href="#前端基础复习笔记-一" class="headerlink" title="前端基础复习笔记(一)"></a>前端基础复习笔记(一)</h1><h2 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h2><h3 id="HTML之块标签"><a href="#HTML之块标签" class="headerlink" title="HTML之块标签"></a>HTML之块标签</h3><p><strong><em>块级元素:块级大多为结构性标记</em></strong></p>
@@ -578,41 +453,6 @@
       </tags>
   </entry>
   <entry>
-    <title>laravel生成二维码</title>
-    <url>/2019/12/11/laravel%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</url>
-    <content><![CDATA[<h1 id="laravel生成二维码"><a href="#laravel生成二维码" class="headerlink" title="laravel生成二维码"></a>laravel生成二维码</h1><p>前段时间 涉及了laravel 以及接口 有个需求就是实现二维码的引入  网上方法很多 这里记录一下我感觉最方便 最好用的</p>
-<p><img src="https://i.loli.net/2019/12/11/iIaJg3locQnpxMO.png" alt="1.png"></p>
-<a id="more"></a>
-
-<h2 id="下载qrCode类库"><a href="#下载qrCode类库" class="headerlink" title="下载qrCode类库"></a>下载qrCode类库</h2><p>在官网<a href="http://phpqrcode.sourceforge.net/中Download（下载）qrcode包，解压后里面有个phpqrcode.php复制出来放到laravel中" target="_blank" rel="noopener">http://phpqrcode.sourceforge.net/中Download（下载）qrcode包，解压后里面有个phpqrcode.php复制出来放到laravel中</a></p>
-<h3 id="laravel引入第三方类库"><a href="#laravel引入第三方类库" class="headerlink" title="laravel引入第三方类库"></a>laravel引入第三方类库</h3><p><strong>把phpqrcode.php文件复制到laravel项目的app目录下的类库目录，我这里是（Lib文件夹）</strong></p>
-<p><strong>然后 找到laravel项目根目录下的 composer.json文件 进行修改</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/fRMwxuXE5tQgWNZ.png" alt="1.png"></p>
-<p><strong>在项目根目录下执行命令</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/AMjcueOC2V9Kk4J.png" alt="2.png"></p>
-<p><strong>命令执行成功之后 在控制器引入</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/rfRA69iUVh8m5YO.png" alt="1.png"></p>
-<p><strong>到这里你就引入成功了 已经可以使用二维码库了</strong></p>
-<h2 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h2><p><strong>我这里写了一个接口 来测试二维码的生成是否成功</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/7jefT6vpSQwP1MG.png" alt="1.png"></p>
-<h3 id="使用postman测试接口"><a href="#使用postman测试接口" class="headerlink" title="使用postman测试接口"></a><strong>使用postman测试接口</strong></h3><p><strong>传入的参数</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/hufAYs4ErGnPQoa.png" alt="1.png"></p>
-<p><strong>返回结果：</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/YdRDr9lEvO5bn1g.png" alt="2.png"></p>
-<p><strong>点击生成的路径可以看到二维码</strong>:</p>
-<p><img src="https://i.loli.net/2019/12/11/b1UEOFVfSlHqXAG.png" alt="2.png"></p>
-<p><strong>在文件夹下也同样生成了:</strong></p>
-<p><img src="https://i.loli.net/2019/12/11/LyX3Ojf9P8FHoJp.png" alt="1.png"></p>
-<p><strong>现在 就可以拿出手机扫描二维码了 大功告成 ！ ！！</strong></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>js字符串方法</title>
     <url>/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="JavaScript-字符串方法"><a href="#JavaScript-字符串方法" class="headerlink" title="JavaScript 字符串方法"></a>JavaScript 字符串方法</h1><p>​        最近在准备考1+x证书,刷了一些题,很多题中考到了js字符串的方法,特此总结一下。</p>
@@ -712,24 +552,72 @@
       </tags>
   </entry>
   <entry>
-    <title>tp5.1结合layui实现多图上传</title>
-    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
+    <title>ECharts</title>
+    <url>/2019/12/25/ECharts/</url>
+    <content><![CDATA[<p>​        一个随笔,写一个学校布置的作业,用到了ECharts,第一次接触,实现了项目中的异步数据加载,按照文档,自己没能实现,换一种小思路成功实现,当时,拿到了值,可是没能渲染成功,解决了之后,还是很有必要记录一下,毕竟太菜了…</p>
+<p><img src="https://i.loli.net/2019/12/25/cFBkdltYKDzx1QT.png" alt="1111.png"></p>
 <a id="more"></a>
 
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="ECharts"><a href="#ECharts" class="headerlink" title="ECharts"></a>ECharts</h1><h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><p>通过接收从php后台返回的json数据,使用ajax异步请求,实现echarts的异步数据加载</p>
+<p>代码一看,什么都明白了….</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>后台数据返回</strong></p>
+<p><img src="https://i.loli.net/2019/12/25/1s2G479pmjPnOXi.png" alt="1111.png"></p>
+<p><strong>页面接收</strong></p>
+<p><img src="https://i.loli.net/2019/12/25/a2wW5GdXsb8co6R.png" alt="2222.png"></p>
+<p>通过ajax请求拿到json数据 生明两个空数组,拿到值丢到数组中,注意  success成功之后 拿到通过遍历出来的两个数组,填充到data:中,完成数据展示</p>
+<p>其实是很简单的问题,多总结,多练习,多读文档是真的重要！！！</p>
+]]></content>
+      <categories>
+        <category>ECharts</category>
+      </categories>
+      <tags>
+        <tag>ECharts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>laravel模型关联</title>
+    <url>/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
+    <content><![CDATA[<h1 id="关联模型"><a href="#关联模型" class="headerlink" title="关联模型"></a>关联模型</h1><h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><h3 id="关联模型的关联方法"><a href="#关联模型的关联方法" class="headerlink" title="关联模型的关联方法"></a>关联模型的关联方法</h3><p>在写关联模型时 要分析出是谁关联谁 谁做主模型,谁做次模型.</p>
+<p><strong>案例:(文章关联作者)</strong></p>
+<p>文章是主模型 关联代码写在主模型中</p>
+<a id="more"></a>
 
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
-
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
-<p><strong>放大效果</strong></p>
-<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
+<p><strong>语法：</strong></p>
+<p>public function <strong>被关联的模型名小写</strong>(){</p>
+<p>​        return $this -&gt; hasOne(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
+<p>} </p>
+<p><img src="https://i.loli.net/2019/11/13/ZRrEJo9FVPLazv2.png" alt="a.png"></p>
+<p><strong>创建控制器方法:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/WZdLPQikxKn8z6u.png" alt="a.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/lkyYs7gEMVf8nP3.png" alt="aa.png"></p>
+<h2 id="一对多关系"><a href="#一对多关系" class="headerlink" title="一对多关系"></a>一对多关系</h2><p><strong>如:一个文章有多个评论</strong></p>
+<h3 id="关联模型的关联方法-1"><a href="#关联模型的关联方法-1" class="headerlink" title="关联模型的关联方法"></a><strong>关联模型的关联方法</strong></h3><p><strong>语法：</strong></p>
+<p>public function <strong>被关联的模型名小写</strong>(){</p>
+<p>​        return $this -&gt; hasMany(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
+<p>} </p>
+<p><strong>与hasOne方法相比，其只是把方法名称做了变化，其他与之前一致。</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/OKt8uZngzxR4dq5.png" alt="b.png"></p>
+<p><strong>创建控制器方法:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/YyTGLtCifeZXWbU.png" alt="bb1.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/oM95QwRidtXLUS8.png" alt="b1.png"></p>
+<h2 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h2><p><strong>例如：一个文章可能有多个关键词，一个关键词可能被多个文章使用。</strong></p>
+<p><strong>多对多的关系经过拆分之后其实就是两个一对多的关系</strong>。</p>
+<p>由于是双向一对多的关系，因此光靠2张表是无法建立的关系的，需要依靠第三张表建立关系（xx与xx的关系表）。</p>
+<p><strong>三张表</strong>:</p>
+<p><img src="https://i.loli.net/2019/11/13/hB92KJaoELIF6yq.png" alt="wz.png"></p>
+<p><img src="https://i.loli.net/2019/11/13/63NkymzMcqX9j72.png" alt="gjz.png"></p>
+<p><img src="https://i.loli.net/2019/11/13/hzXqUyLOp6xa7MA.png" alt="gxb.png"></p>
+<p><strong>创建模型只需要给文章表和关键字表创建 关系表不需要创建</strong></p>
+<p><strong>案例:查询出每个文章下面的全部关键词</strong></p>
+<p><strong>语法：</strong></p>
+<p><strong>return $this -&gt; belongsToMany(被关联模型的元素空间路径,多对多模型的关系表名,当前模型中的关系键,被关联模型的关系键);</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/4f65qus3rPYFeO2.png" alt="c.png"></p>
+<p><strong>创建控制器方法</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/irDXjGusO4Rh3M7.png" alt="c1.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/Q9xfyRFgt7Z68JE.png" alt="c3.png"></p>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -739,98 +627,88 @@
       </tags>
   </entry>
   <entry>
-    <title>mysql数据表基本操作</title>
-    <url>/2019/05/14/mysql/</url>
-    <content><![CDATA[<h1 id="mysql表的连接与查询"><a href="#mysql表的连接与查询" class="headerlink" title="mysql表的连接与查询"></a>mysql表的连接与查询</h1><p><img src="https://i.loli.net/2019/05/14/5cdaba299ea2a20142.jpg" alt="timg (2).jpg"></p>
-<p>mysql表的连接有笛卡尔积连接，内连接，外连接，子连接查询几种。</p>
+    <title>Typora+GitHub+PicGo自建免费图床</title>
+    <url>/2020/05/10/Typora-GiHub-PicGo%E8%87%AA%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145123.jpg" alt=""></p>
 <a id="more"></a>
 
-<h2 id="笛卡尔积连接"><a href="#笛卡尔积连接" class="headerlink" title="笛卡尔积连接"></a>笛卡尔积连接</h2><p>笛卡尔积连接又称为交叉连接。将两张表的记录进行一个相乘的操作查询出来的结果就是笛卡尔积查询,如果左表有n条记录,右表有m条记录,笛卡尔积查询出有n*m条记录,其中往往包含了很多错误的数据,所以这种查询方式并不常用。</p>
-<p>语法：</p>
-<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名一，表名二 <span class="keyword">where</span> 条件</span><br></pre></td></tr></table></figure>
-
-<h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><p>介绍：（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。包括相等联接和自然联接。<br>内联接使用比较运算符根据每个表共有的列的值匹配两个表中的行。例如，检索 students和courses表中学生标识号相同的所有行。 </p>
-<p>关键字：inner join on</p>
-<p>语法：</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a_table a <span class="keyword">inner</span> <span class="keyword">join</span> b_table  b <span class="keyword">on</span> a.a_id=b.b_id;</span><br></pre></td></tr></table></figure>
-
-<p>说明：组合两个表中的记录，返回关联字段相符的记录，也就是返回两个表的交集（阴影）部分。</p>
-<p><img src="https://i.loli.net/2019/05/09/5cd38f7866a0f.png" alt="QQ截图20190509102440.png"></p>
-<h3 id="非等值连接"><a href="#非等值连接" class="headerlink" title="非等值连接"></a>非等值连接</h3><p>说明：值大于于不等于之时 可以使用between语句来限制条件</p>
-<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">where</span> 列名 BETWEEN <span class="params">...</span> <span class="literal">AND</span> <span class="params">...</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p>说明：自连接就是说，在同一个表中，看做是两个表，可以看成一张表的两个副本之间的连接。在自连接中，必须为表指定两个别名，使之在逻辑上成为两个表。</p>
-<p>例子：</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb64ee2012a27117.png" alt="QQ截图20190515090117.png"></p>
-<h3 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h3><p>关键字：left join on</p>
-<p>语法：</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  * <span class="keyword">FROM</span> a_table a <span class="keyword">left</span> <span class="keyword">join</span> b_table b <span class="keyword">ON</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
-
-<p>说明： left join 是left outer join的简写，它的全称是左外连接，是外连接中的一种。 左(外)连接，左表(a_table)的记录将会全部表示出来，而右表(b_table)只会显示符合搜索条件的记录。右表记录不足的地方均为NULL。</p>
-<p>例子：<img src="https://i.loli.net/2019/05/15/5cdb6b14a101235149.png" alt="QQ截图20190515092736.png"></p>
-<h3 id="右连接"><a href="#右连接" class="headerlink" title="右连接"></a>右连接</h3><p>关键字：right join on</p>
-<p>语法：</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  * <span class="keyword">FROM</span> a_table a <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> b_table b <span class="keyword">on</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
-
-<p>说明：right join是right outer join的简写，它的全称是右外连接，是外连接中的一种。与左(外)连接相反，右(外)连接，左表(a_table)只会显示符合搜索条件的记录，而右表(b_table)的记录将会全部表示出来。左表记录不足的地方均为NULL。</p>
-<p>例子：<img src="https://i.loli.net/2019/05/15/5cdb6b8139e7453598.png" alt="QQ截图20190515092930.png"></p>
-<h2 id="子连接查询"><a href="#子连接查询" class="headerlink" title="子连接查询"></a>子连接查询</h2><h3 id="嵌套子查询"><a href="#嵌套子查询" class="headerlink" title="嵌套子查询"></a>嵌套子查询</h3><p>定义：一个内层查询语句(select-from-where)块可以嵌套在另外一个外层查询块的where子句中，其中外层查询也称为父查询，主查询。内层查询也称子查询，从查询。子查询一般不使用order by子句，只能对最终查询结果进行排序。在一个SELECT 语句的WHERE 子句或HAVING 子句中嵌套另一个SELECT 语句的查询称为嵌套查询，又称子查询。</p>
-<p>工作方式：嵌套查询的工作方式是：先处理内查询，由内向外处理，外层查询利用内层查询的结果嵌套查询不仅仅可以用于父查询select语句使用。还可以用于insert、update、delete语句或其他子查询中。</p>
-<p>分类：</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb6d92ceee223613.png" alt="QQ截图20190513204348.png"></p>
-<h3 id="标量子查询"><a href="#标量子查询" class="headerlink" title="标量子查询"></a>标量子查询</h3><p>说明：子查询得到的结果是一行一列 是指子查询返回的是单一值的标量，如一个数字或一个字符串，也是子查询中最简单的返回形式。 可以使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些操作符对子查询的标量结果进行比较，通常子查询的位置在比较式的右侧 </p>
-<p>例子： 标题号为1的</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb9d011218a61517.png" alt="QQ截图20190515130020.png"></p>
-<h3 id="列子查询-多行子查询"><a href="#列子查询-多行子查询" class="headerlink" title="列子查询(多行子查询)"></a>列子查询(多行子查询)</h3><p>说明:指子查询返回的结果集是 N 行一列，该结果通常来自对表的某个字段查询返回。 可以使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些操作符对子查询的标量结果进行比较，通常子查询的位置在比较式的右侧 可以使用 IN、ANY、SOME 和 ALL 操作符，不能直接使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些比较标量结果的操作符。 </p>
-<p>多行操作符：</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb99744bd9973377.png" alt="QQ截图20190513212436.png"></p>
-<p>注意：any操作符可以替换为聚集函数min()   all操作符可以替换为聚集函数max()</p>
-<p>例子：语文数学都及格的</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb9d05b626690348.png" alt="QQ截图20190515130038.png"></p>
-<p>例子：使用聚集函数</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdb9f6792fcb11591.png" alt="QQ截图20190515131042.png"></p>
-<p>这个是等同于any操作符的 </p>
-<p> <img src="https://i.loli.net/2019/05/15/5cdb9f9b7f5ba55528.png" alt="QQ截图20190515131013.png"></p>
-<h3 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h3><p>说明：子查询得到的结果是多列一行(多行多列)  用的较少 需要满足在where后面括号里的删选条件要等同于子查询语句才能使用。</p>
-<p>例子：</p>
-<p><img src="https://i.loli.net/2019/05/15/5cdba12b2251f41060.png" alt="QQ截图20190515131816.png"></p>
-<h3 id="Exists子查询"><a href="#Exists子查询" class="headerlink" title="Exists子查询"></a>Exists子查询</h3><p>Exists和not exists子查询：</p>
-<p>exists语法：</p>
-<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名 <span class="keyword">where</span> <span class="keyword">exists</span> (子查询)</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
+<p>​    <strong>我个人呢,一直有写笔记和博客的习惯,虽然没什么技术含量,但也是记录了自己的成长,写博客最烦的就是上传图片,之前一直用的sm.ms,但现在这个图床有了上传限制,上传的也比较慢,就想着自己搭建一个图床,然后在掘金上看到了一个老哥的文章,帮助我成功搭建,特此记录一下.</strong></p>
+<h2 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h2><p>PicGo下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo下载</a></p>
+<p>Windows系统下载<code>exe</code>文件，macOS系统下载<code>dmg</code>文件，Linux下载<code>AppImage</code>文件。</p>
+<p><strong>我这里使用的是2.2.2版本</strong></p>
+<h2 id="github上创建仓库和密钥"><a href="#github上创建仓库和密钥" class="headerlink" title="github上创建仓库和密钥"></a>github上创建仓库和密钥</h2><p><strong>仓库自己创建即可,这里就不做演示了</strong></p>
+<p>然后,我们在github个人设置页面,创建一个访问令牌,在PicGo配置中会用到.</p>
+<p>访问 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a>  点击<code>Generate new token</code>按照下图进行配置.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145426.png" alt=""></p>
+<p>配置完成,点击创建,就会生成一个密钥令牌,将其保存.</p>
+<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145509.jpg" alt=""></p>
 <ul>
-<li>Exists用来检测数据库对象是否存在</li>
-<li>Exists关键字后面的参数是任意的子查询</li>
-<li>子查询有返回结果： EXISTS子查询结果为TRUE</li>
-<li>子查询无返回结果： EXISTS子查询结果为FALSE, 外层查询不执行</li>
+<li>第一个是github的用户名/仓库名.</li>
+<li>第二个是分支名,默认设置为master,主分支.</li>
+<li>第三个是Token,就是刚才生成的令牌.</li>
+<li>后面这两个可以不填,然后点击确定,点击设置为默认图床.</li>
 </ul>
-<p>not exists：</p>
-<p>和exists实现相反操作</p>
-<p>例子：查询所有选修了c01号课程的学生信息：</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://i.loli.net/2019/05/15/5cdba273ec0f594757.png" alt="QQ截图20190515132354.png"></h3><h3 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h3><p>说明：因为select的查询结果是元组的集合，所以可以对select的结果进行集合操作</p>
-<p>操作符：union</p>
-<p>注意事项：</p>
-<ol>
-<li><p>通过union连接的SQL它们分别单独取出的列数必须相同；</p>
+<p>到了这里,其实已经可以了,我们只需要点击PicGo的上传区直接上传图片即可,上传成功后,直接ctrl+v就可以在文档中使用,同时,可以在github仓库中看到我们上传的图片.看到这里,有的小伙伴就会说了,博主你骗人,你这里也没用到typora啊,别着急,下面只需几个简单的配置,你的typora会变得巨香无比.</p>
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p>这里推荐大家使用最新版本,<a href="https://typora.io/" target="_blank" rel="noopener">https://typora.io/</a></p>
+<p>然后打开PicGo设置-&gt;设置Server, 看一下是否开启. 默认应该是开启的,监听的端口不能改变.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145538.jpg" alt=""></p>
+<h3 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h3><p> <strong>版本要求</strong>：<code>Typora 0.9.84及以上</code></p>
+<p>​    不过我使用的时候, <code>Typora 0.9.85</code>没有好使,就更新到了最新版本,还是推荐大家使用最新版本.</p>
+<p>​    打开文件-&gt;偏好设置-&gt;图像  如下图 进行配置.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145604.jpg" alt=""></p>
+<p><strong>设置完成之后,点击验证图片上传的功能. 返回true,即验证成功.</strong></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>三个使用方式.</strong></p>
+<ul>
+<li><p><strong>拖拽</strong>，在文件夹内拖拽图片到Typora编辑界面。</p>
 </li>
-<li><p>不要求合并的表列名称相同时，以第一个sql 表列名为准；</p>
+<li><p><strong>插入</strong>，快捷键<code>Ctrl+Shift+I</code>，调出插入图片的功能。</p>
 </li>
-<li><p>被union 连接的sql 子句，单个子句中不用写order by ，因为不会有排序的效果。但可以对最终的结果集进行排序； </p>
+<li><p><strong>复制</strong>，使用截图功能后，直接粘贴到Typora编辑界面内。</p>
+<p><strong>拖拽</strong>和<strong>插入</strong>都是自动将图片上传至图床。但是<strong>复制</strong>需要手动点击<code>上传</code></p>
 </li>
-<li><p>(select id,name from A order by id) union all (select id,name from B order by id); //没有排序效果</p>
-</li>
-<li><p>每个查询表达式应具有相同的数据类型，或者可以自动将他们转化为相同的数据类型</p>
-<p>例子：<img src="https://i.loli.net/2019/05/15/5cdba697e952d33305.png" alt="QQ截图20190515134132.png"></p>
-</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="https://i.loli.net/2019/05/15/5cdbaa5ab33c167889.png" alt="QQ截图20190515135734.png"></p>
+</ul>
+<p>   <strong>到此,一个香香的typora就配置好了,妈妈再也不用担心我找不到顺手的图床了.</strong></p>
 ]]></content>
       <categories>
-        <category>数据库</category>
+        <category>图床工具</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>laravel生成二维码</title>
+    <url>/2019/12/11/laravel%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="laravel生成二维码"><a href="#laravel生成二维码" class="headerlink" title="laravel生成二维码"></a>laravel生成二维码</h1><p>前段时间 涉及了laravel 以及接口 有个需求就是实现二维码的引入  网上方法很多 这里记录一下我感觉最方便 最好用的</p>
+<p><img src="https://i.loli.net/2019/12/11/iIaJg3locQnpxMO.png" alt="1.png"></p>
+<a id="more"></a>
+
+<h2 id="下载qrCode类库"><a href="#下载qrCode类库" class="headerlink" title="下载qrCode类库"></a>下载qrCode类库</h2><p>在官网<a href="http://phpqrcode.sourceforge.net/中Download（下载）qrcode包，解压后里面有个phpqrcode.php复制出来放到laravel中" target="_blank" rel="noopener">http://phpqrcode.sourceforge.net/中Download（下载）qrcode包，解压后里面有个phpqrcode.php复制出来放到laravel中</a></p>
+<h3 id="laravel引入第三方类库"><a href="#laravel引入第三方类库" class="headerlink" title="laravel引入第三方类库"></a>laravel引入第三方类库</h3><p><strong>把phpqrcode.php文件复制到laravel项目的app目录下的类库目录，我这里是（Lib文件夹）</strong></p>
+<p><strong>然后 找到laravel项目根目录下的 composer.json文件 进行修改</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/fRMwxuXE5tQgWNZ.png" alt="1.png"></p>
+<p><strong>在项目根目录下执行命令</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/AMjcueOC2V9Kk4J.png" alt="2.png"></p>
+<p><strong>命令执行成功之后 在控制器引入</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/rfRA69iUVh8m5YO.png" alt="1.png"></p>
+<p><strong>到这里你就引入成功了 已经可以使用二维码库了</strong></p>
+<h2 id="接口测试"><a href="#接口测试" class="headerlink" title="接口测试"></a>接口测试</h2><p><strong>我这里写了一个接口 来测试二维码的生成是否成功</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/7jefT6vpSQwP1MG.png" alt="1.png"></p>
+<h3 id="使用postman测试接口"><a href="#使用postman测试接口" class="headerlink" title="使用postman测试接口"></a><strong>使用postman测试接口</strong></h3><p><strong>传入的参数</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/hufAYs4ErGnPQoa.png" alt="1.png"></p>
+<p><strong>返回结果：</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/YdRDr9lEvO5bn1g.png" alt="2.png"></p>
+<p><strong>点击生成的路径可以看到二维码</strong>:</p>
+<p><img src="https://i.loli.net/2019/12/11/b1UEOFVfSlHqXAG.png" alt="2.png"></p>
+<p><strong>在文件夹下也同样生成了:</strong></p>
+<p><img src="https://i.loli.net/2019/12/11/LyX3Ojf9P8FHoJp.png" alt="1.png"></p>
+<p><strong>现在 就可以拿出手机扫描二维码了 大功告成 ！ ！！</strong></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
       </tags>
   </entry>
   <entry>
@@ -1137,6 +1015,128 @@
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tp5.1结合layui实现多图上传</title>
+    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
+<a id="more"></a>
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
+<p><strong>放大效果</strong></p>
+<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql数据表基本操作</title>
+    <url>/2019/05/14/mysql/</url>
+    <content><![CDATA[<h1 id="mysql表的连接与查询"><a href="#mysql表的连接与查询" class="headerlink" title="mysql表的连接与查询"></a>mysql表的连接与查询</h1><p><img src="https://i.loli.net/2019/05/14/5cdaba299ea2a20142.jpg" alt="timg (2).jpg"></p>
+<p>mysql表的连接有笛卡尔积连接，内连接，外连接，子连接查询几种。</p>
+<a id="more"></a>
+
+<h2 id="笛卡尔积连接"><a href="#笛卡尔积连接" class="headerlink" title="笛卡尔积连接"></a>笛卡尔积连接</h2><p>笛卡尔积连接又称为交叉连接。将两张表的记录进行一个相乘的操作查询出来的结果就是笛卡尔积查询,如果左表有n条记录,右表有m条记录,笛卡尔积查询出有n*m条记录,其中往往包含了很多错误的数据,所以这种查询方式并不常用。</p>
+<p>语法：</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名一，表名二 <span class="keyword">where</span> 条件</span><br></pre></td></tr></table></figure>
+
+<h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><p>介绍：（典型的联接运算，使用像 = 或 &lt;&gt; 之类的比较运算符）。包括相等联接和自然联接。<br>内联接使用比较运算符根据每个表共有的列的值匹配两个表中的行。例如，检索 students和courses表中学生标识号相同的所有行。 </p>
+<p>关键字：inner join on</p>
+<p>语法：</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> a_table a <span class="keyword">inner</span> <span class="keyword">join</span> b_table  b <span class="keyword">on</span> a.a_id=b.b_id;</span><br></pre></td></tr></table></figure>
+
+<p>说明：组合两个表中的记录，返回关联字段相符的记录，也就是返回两个表的交集（阴影）部分。</p>
+<p><img src="https://i.loli.net/2019/05/09/5cd38f7866a0f.png" alt="QQ截图20190509102440.png"></p>
+<h3 id="非等值连接"><a href="#非等值连接" class="headerlink" title="非等值连接"></a>非等值连接</h3><p>说明：值大于于不等于之时 可以使用between语句来限制条件</p>
+<figure class="highlight lasso"><table><tr><td class="code"><pre><span class="line"><span class="keyword">where</span> 列名 BETWEEN <span class="params">...</span> <span class="literal">AND</span> <span class="params">...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p>说明：自连接就是说，在同一个表中，看做是两个表，可以看成一张表的两个副本之间的连接。在自连接中，必须为表指定两个别名，使之在逻辑上成为两个表。</p>
+<p>例子：</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb64ee2012a27117.png" alt="QQ截图20190515090117.png"></p>
+<h3 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h3><p>关键字：left join on</p>
+<p>语法：</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  * <span class="keyword">FROM</span> a_table a <span class="keyword">left</span> <span class="keyword">join</span> b_table b <span class="keyword">ON</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
+
+<p>说明： left join 是left outer join的简写，它的全称是左外连接，是外连接中的一种。 左(外)连接，左表(a_table)的记录将会全部表示出来，而右表(b_table)只会显示符合搜索条件的记录。右表记录不足的地方均为NULL。</p>
+<p>例子：<img src="https://i.loli.net/2019/05/15/5cdb6b14a101235149.png" alt="QQ截图20190515092736.png"></p>
+<h3 id="右连接"><a href="#右连接" class="headerlink" title="右连接"></a>右连接</h3><p>关键字：right join on</p>
+<p>语法：</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  * <span class="keyword">FROM</span> a_table a <span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span> b_table b <span class="keyword">on</span> a.a_id = b.b_id;</span><br></pre></td></tr></table></figure>
+
+<p>说明：right join是right outer join的简写，它的全称是右外连接，是外连接中的一种。与左(外)连接相反，右(外)连接，左表(a_table)只会显示符合搜索条件的记录，而右表(b_table)的记录将会全部表示出来。左表记录不足的地方均为NULL。</p>
+<p>例子：<img src="https://i.loli.net/2019/05/15/5cdb6b8139e7453598.png" alt="QQ截图20190515092930.png"></p>
+<h2 id="子连接查询"><a href="#子连接查询" class="headerlink" title="子连接查询"></a>子连接查询</h2><h3 id="嵌套子查询"><a href="#嵌套子查询" class="headerlink" title="嵌套子查询"></a>嵌套子查询</h3><p>定义：一个内层查询语句(select-from-where)块可以嵌套在另外一个外层查询块的where子句中，其中外层查询也称为父查询，主查询。内层查询也称子查询，从查询。子查询一般不使用order by子句，只能对最终查询结果进行排序。在一个SELECT 语句的WHERE 子句或HAVING 子句中嵌套另一个SELECT 语句的查询称为嵌套查询，又称子查询。</p>
+<p>工作方式：嵌套查询的工作方式是：先处理内查询，由内向外处理，外层查询利用内层查询的结果嵌套查询不仅仅可以用于父查询select语句使用。还可以用于insert、update、delete语句或其他子查询中。</p>
+<p>分类：</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb6d92ceee223613.png" alt="QQ截图20190513204348.png"></p>
+<h3 id="标量子查询"><a href="#标量子查询" class="headerlink" title="标量子查询"></a>标量子查询</h3><p>说明：子查询得到的结果是一行一列 是指子查询返回的是单一值的标量，如一个数字或一个字符串，也是子查询中最简单的返回形式。 可以使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些操作符对子查询的标量结果进行比较，通常子查询的位置在比较式的右侧 </p>
+<p>例子： 标题号为1的</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb9d011218a61517.png" alt="QQ截图20190515130020.png"></p>
+<h3 id="列子查询-多行子查询"><a href="#列子查询-多行子查询" class="headerlink" title="列子查询(多行子查询)"></a>列子查询(多行子查询)</h3><p>说明:指子查询返回的结果集是 N 行一列，该结果通常来自对表的某个字段查询返回。 可以使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些操作符对子查询的标量结果进行比较，通常子查询的位置在比较式的右侧 可以使用 IN、ANY、SOME 和 ALL 操作符，不能直接使用 = &gt; &lt; &gt;= &lt;= &lt;&gt; 这些比较标量结果的操作符。 </p>
+<p>多行操作符：</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb99744bd9973377.png" alt="QQ截图20190513212436.png"></p>
+<p>注意：any操作符可以替换为聚集函数min()   all操作符可以替换为聚集函数max()</p>
+<p>例子：语文数学都及格的</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb9d05b626690348.png" alt="QQ截图20190515130038.png"></p>
+<p>例子：使用聚集函数</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdb9f6792fcb11591.png" alt="QQ截图20190515131042.png"></p>
+<p>这个是等同于any操作符的 </p>
+<p> <img src="https://i.loli.net/2019/05/15/5cdb9f9b7f5ba55528.png" alt="QQ截图20190515131013.png"></p>
+<h3 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h3><p>说明：子查询得到的结果是多列一行(多行多列)  用的较少 需要满足在where后面括号里的删选条件要等同于子查询语句才能使用。</p>
+<p>例子：</p>
+<p><img src="https://i.loli.net/2019/05/15/5cdba12b2251f41060.png" alt="QQ截图20190515131816.png"></p>
+<h3 id="Exists子查询"><a href="#Exists子查询" class="headerlink" title="Exists子查询"></a>Exists子查询</h3><p>Exists和not exists子查询：</p>
+<p>exists语法：</p>
+<figure class="highlight n1ql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> 表名 <span class="keyword">where</span> <span class="keyword">exists</span> (子查询)</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ul>
+<li>Exists用来检测数据库对象是否存在</li>
+<li>Exists关键字后面的参数是任意的子查询</li>
+<li>子查询有返回结果： EXISTS子查询结果为TRUE</li>
+<li>子查询无返回结果： EXISTS子查询结果为FALSE, 外层查询不执行</li>
+</ul>
+<p>not exists：</p>
+<p>和exists实现相反操作</p>
+<p>例子：查询所有选修了c01号课程的学生信息：</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://i.loli.net/2019/05/15/5cdba273ec0f594757.png" alt="QQ截图20190515132354.png"></h3><h3 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h3><p>说明：因为select的查询结果是元组的集合，所以可以对select的结果进行集合操作</p>
+<p>操作符：union</p>
+<p>注意事项：</p>
+<ol>
+<li><p>通过union连接的SQL它们分别单独取出的列数必须相同；</p>
+</li>
+<li><p>不要求合并的表列名称相同时，以第一个sql 表列名为准；</p>
+</li>
+<li><p>被union 连接的sql 子句，单个子句中不用写order by ，因为不会有排序的效果。但可以对最终的结果集进行排序； </p>
+</li>
+<li><p>(select id,name from A order by id) union all (select id,name from B order by id); //没有排序效果</p>
+</li>
+<li><p>每个查询表达式应具有相同的数据类型，或者可以自动将他们转化为相同的数据类型</p>
+<p>例子：<img src="https://i.loli.net/2019/05/15/5cdba697e952d33305.png" alt="QQ截图20190515134132.png"></p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="https://i.loli.net/2019/05/15/5cdbaa5ab33c167889.png" alt="QQ截图20190515135734.png"></p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -1577,36 +1577,6 @@
       </tags>
   </entry>
   <entry>
-    <title>tp5使用PhpSpreadsheet扩展导出数据到excel</title>
-    <url>/2020/05/09/tp5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%88%B0excel/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701192916.jpg" alt=""></p>
-<a id="more"></a>
-
-<p>​    <strong>PhpSpreadsheet是一个纯PHP类库，它提供了一组类，允许您从不同的电子表格文件格式（如Excel和LibreOffice Calc）读取和写入。</strong></p>
-<p>​    <strong>刚上班没几天,遇到一个需求,后台导出数据到excel表中,这个操作之前听过,没有用过,在网上找了半天,找了个轮子,拿过来用,有时间研究一下文档.</strong></p>
-<h2 id="composer安装PhpSpreadsheet组件"><a href="#composer安装PhpSpreadsheet组件" class="headerlink" title="composer安装PhpSpreadsheet组件"></a>composer安装PhpSpreadsheet组件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">λ composer require phpoffice/phpspreadsheet</span><br></pre></td></tr></table></figure>
-
-<p>安装完成之后,vendor文件夹下生成一个phpoffice文件</p>
-<p><img src="https://i.loli.net/2020/05/10/c7Kkea8JFOnH3gu.png" alt="12.png"></p>
-<h2 id="tp5导出"><a href="#tp5导出" class="headerlink" title="tp5导出"></a>tp5导出</h2><p><strong>首先在控制器中引入类库</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Spreadsheet</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Writer</span>\<span class="title">Xlsx</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Reader</span>\<span class="title">Xls</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">IOFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Cell</span>\<span class="title">Coordinate</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Worksheet</span>\<span class="title">PageSetup</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Cell</span>\<span class="title">DataType</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Fill</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Color</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Alignment</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Border</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">NumberFormat</span>;</span><br><span class="line"><span class="comment">//实际项目中根据情况引入相应的类库</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>在视图中定义</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;:url('admin/daochu')&#125;"</span> <span class="attr">class</span>=<span class="string">"layui-btn layui-btn-normal layui-btn-x"</span>&gt;</span>导出数据<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>在控制器中,定义导出数据的方法</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 导出数据到excel</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">daochu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $spreadsheet = <span class="keyword">new</span> Spreadsheet(); </span><br><span class="line">    $worksheet = $spreadsheet-&gt;getActiveSheet();</span><br><span class="line">    <span class="comment">//设置工作表标题名称</span></span><br><span class="line">    $worksheet-&gt;setTitle(<span class="string">'总分数表'</span>);</span><br><span class="line">    <span class="comment">//表头</span></span><br><span class="line">    <span class="comment">//设置单元格内容</span></span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'测试'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'序号'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">2</span>, <span class="number">2</span>, <span class="string">'姓名'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">3</span>, <span class="number">2</span>, <span class="string">'年级'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">4</span>, <span class="number">2</span>, <span class="string">'总分数'</span>);</span><br><span class="line">    <span class="comment">//合并单元格</span></span><br><span class="line">    $worksheet-&gt;mergeCells(<span class="string">'A1:E1'</span>);</span><br><span class="line">    </span><br><span class="line">    $styleArray = [</span><br><span class="line">        <span class="string">'font'</span> =&gt; [</span><br><span class="line">            <span class="string">'bold'</span> =&gt; <span class="keyword">true</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'alignment'</span> =&gt; [</span><br><span class="line">            <span class="string">'horizontal'</span> =&gt; Alignment::HORIZONTAL_CENTER,</span><br><span class="line">        ],</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">//设置单元格样式</span></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A1'</span>)-&gt;applyFromArray($styleArray)-&gt;getFont()-&gt;setSize(<span class="number">28</span>);</span><br><span class="line"></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A2:E2'</span>)-&gt;applyFromArray($styleArray)-&gt;getFont()-&gt;setSize(<span class="number">14</span>);</span><br><span class="line">    ;</span><br><span class="line">    <span class="comment">//查询数据</span></span><br><span class="line">    $jzInfo=Db::query(<span class="string">"select a.id,sum(score) sumscore,b.name,b.class from score  a inner join student b on a.stu_id=b.id group by stu_id order by sumscore asc"</span>);</span><br><span class="line"></span><br><span class="line">    $len = count($jzInfo);</span><br><span class="line">    $j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> ($i=<span class="number">0</span>; $i &lt; $len; $i++) &#123;</span><br><span class="line">        $j = $i + <span class="number">3</span>; <span class="comment">//从表格第3行开始</span></span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, $j, $jzInfo[$i][<span class="string">'id'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">2</span>, $j, $jzInfo[$i][<span class="string">'name'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">3</span>, $j, $jzInfo[$i][<span class="string">'class'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">4</span>, $j, $jzInfo[$i][<span class="string">'sumscore'</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $styleArrayBody = [</span><br><span class="line">        <span class="string">'borders'</span> =&gt; [</span><br><span class="line">            <span class="string">'allBorders'</span> =&gt; [</span><br><span class="line">                <span class="string">'borderStyle'</span> =&gt; Border::BORDER_THIN,</span><br><span class="line">                <span class="string">'color'</span> =&gt; [<span class="string">'argb'</span> =&gt; <span class="string">'666666'</span>],</span><br><span class="line">            ],</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'alignment'</span> =&gt; [</span><br><span class="line">            <span class="string">'horizontal'</span> =&gt; Alignment::HORIZONTAL_CENTER,</span><br><span class="line">        ],</span><br><span class="line">    ];</span><br><span class="line">    $total_jzInfo = $len + <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//添加所有边框/居中</span></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A1:C'</span>.$total_jzInfo)-&gt;applyFromArray($styleArrayBody);</span><br><span class="line">    $filename = <span class="string">'测试表.xlsx'</span>;</span><br><span class="line">    header(<span class="string">'Content-Type: application/vnd.ms-excel'</span>);</span><br><span class="line">    header(<span class="string">'Content-Disposition: attachment;filename="'</span>.$filename.<span class="string">'"'</span>);</span><br><span class="line">    header(<span class="string">'Cache-Control: max-age=0'</span>);<span class="comment">//禁止缓存</span></span><br><span class="line">    $writer = IOFactory::createWriter($spreadsheet, <span class="string">'Xlsx'</span>);</span><br><span class="line">    $writer-&gt;save(<span class="string">'php://output'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="导出数据成功"><a href="#导出数据成功" class="headerlink" title="导出数据成功"></a>导出数据成功</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701193421.jpg" alt=""></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>tp5全选删除</title>
     <url>/2020/03/07/tp5%E5%85%A8%E9%80%89%E5%88%A0%E9%99%A4/</url>
     <content><![CDATA[<h1 id="tp5实现后台模块全选删除"><a href="#tp5实现后台模块全选删除" class="headerlink" title="tp5实现后台模块全选删除"></a>tp5实现后台模块全选删除</h1><p>技术栈:ajax layer.js tp5 </p>
@@ -1629,6 +1599,36 @@
 
 
 
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tp5使用PhpSpreadsheet扩展导出数据到excel</title>
+    <url>/2020/05/09/tp5%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE%E5%88%B0excel/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701192916.jpg" alt=""></p>
+<a id="more"></a>
+
+<p>​    <strong>PhpSpreadsheet是一个纯PHP类库，它提供了一组类，允许您从不同的电子表格文件格式（如Excel和LibreOffice Calc）读取和写入。</strong></p>
+<p>​    <strong>刚上班没几天,遇到一个需求,后台导出数据到excel表中,这个操作之前听过,没有用过,在网上找了半天,找了个轮子,拿过来用,有时间研究一下文档.</strong></p>
+<h2 id="composer安装PhpSpreadsheet组件"><a href="#composer安装PhpSpreadsheet组件" class="headerlink" title="composer安装PhpSpreadsheet组件"></a>composer安装PhpSpreadsheet组件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">λ composer require phpoffice/phpspreadsheet</span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后,vendor文件夹下生成一个phpoffice文件</p>
+<p><img src="https://i.loli.net/2020/05/10/c7Kkea8JFOnH3gu.png" alt="12.png"></p>
+<h2 id="tp5导出"><a href="#tp5导出" class="headerlink" title="tp5导出"></a>tp5导出</h2><p><strong>首先在控制器中引入类库</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Spreadsheet</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Writer</span>\<span class="title">Xlsx</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Reader</span>\<span class="title">Xls</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">IOFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Cell</span>\<span class="title">Coordinate</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Worksheet</span>\<span class="title">PageSetup</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Cell</span>\<span class="title">DataType</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Fill</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Color</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Alignment</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">Border</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">PhpOffice</span>\<span class="title">PhpSpreadsheet</span>\<span class="title">Style</span>\<span class="title">NumberFormat</span>;</span><br><span class="line"><span class="comment">//实际项目中根据情况引入相应的类库</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在视图中定义</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;:url('admin/daochu')&#125;"</span> <span class="attr">class</span>=<span class="string">"layui-btn layui-btn-normal layui-btn-x"</span>&gt;</span>导出数据<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在控制器中,定义导出数据的方法</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 导出数据到excel</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">daochu</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $spreadsheet = <span class="keyword">new</span> Spreadsheet(); </span><br><span class="line">    $worksheet = $spreadsheet-&gt;getActiveSheet();</span><br><span class="line">    <span class="comment">//设置工作表标题名称</span></span><br><span class="line">    $worksheet-&gt;setTitle(<span class="string">'总分数表'</span>);</span><br><span class="line">    <span class="comment">//表头</span></span><br><span class="line">    <span class="comment">//设置单元格内容</span></span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'测试'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'序号'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">2</span>, <span class="number">2</span>, <span class="string">'姓名'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">3</span>, <span class="number">2</span>, <span class="string">'年级'</span>);</span><br><span class="line">    $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">4</span>, <span class="number">2</span>, <span class="string">'总分数'</span>);</span><br><span class="line">    <span class="comment">//合并单元格</span></span><br><span class="line">    $worksheet-&gt;mergeCells(<span class="string">'A1:E1'</span>);</span><br><span class="line">    </span><br><span class="line">    $styleArray = [</span><br><span class="line">        <span class="string">'font'</span> =&gt; [</span><br><span class="line">            <span class="string">'bold'</span> =&gt; <span class="keyword">true</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'alignment'</span> =&gt; [</span><br><span class="line">            <span class="string">'horizontal'</span> =&gt; Alignment::HORIZONTAL_CENTER,</span><br><span class="line">        ],</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">//设置单元格样式</span></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A1'</span>)-&gt;applyFromArray($styleArray)-&gt;getFont()-&gt;setSize(<span class="number">28</span>);</span><br><span class="line"></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A2:E2'</span>)-&gt;applyFromArray($styleArray)-&gt;getFont()-&gt;setSize(<span class="number">14</span>);</span><br><span class="line">    ;</span><br><span class="line">    <span class="comment">//查询数据</span></span><br><span class="line">    $jzInfo=Db::query(<span class="string">"select a.id,sum(score) sumscore,b.name,b.class from score  a inner join student b on a.stu_id=b.id group by stu_id order by sumscore asc"</span>);</span><br><span class="line"></span><br><span class="line">    $len = count($jzInfo);</span><br><span class="line">    $j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> ($i=<span class="number">0</span>; $i &lt; $len; $i++) &#123;</span><br><span class="line">        $j = $i + <span class="number">3</span>; <span class="comment">//从表格第3行开始</span></span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">1</span>, $j, $jzInfo[$i][<span class="string">'id'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">2</span>, $j, $jzInfo[$i][<span class="string">'name'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">3</span>, $j, $jzInfo[$i][<span class="string">'class'</span>]);</span><br><span class="line">        $worksheet-&gt;setCellValueByColumnAndRow(<span class="number">4</span>, $j, $jzInfo[$i][<span class="string">'sumscore'</span>]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $styleArrayBody = [</span><br><span class="line">        <span class="string">'borders'</span> =&gt; [</span><br><span class="line">            <span class="string">'allBorders'</span> =&gt; [</span><br><span class="line">                <span class="string">'borderStyle'</span> =&gt; Border::BORDER_THIN,</span><br><span class="line">                <span class="string">'color'</span> =&gt; [<span class="string">'argb'</span> =&gt; <span class="string">'666666'</span>],</span><br><span class="line">            ],</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'alignment'</span> =&gt; [</span><br><span class="line">            <span class="string">'horizontal'</span> =&gt; Alignment::HORIZONTAL_CENTER,</span><br><span class="line">        ],</span><br><span class="line">    ];</span><br><span class="line">    $total_jzInfo = $len + <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//添加所有边框/居中</span></span><br><span class="line">    $worksheet-&gt;getStyle(<span class="string">'A1:C'</span>.$total_jzInfo)-&gt;applyFromArray($styleArrayBody);</span><br><span class="line">    $filename = <span class="string">'测试表.xlsx'</span>;</span><br><span class="line">    header(<span class="string">'Content-Type: application/vnd.ms-excel'</span>);</span><br><span class="line">    header(<span class="string">'Content-Disposition: attachment;filename="'</span>.$filename.<span class="string">'"'</span>);</span><br><span class="line">    header(<span class="string">'Cache-Control: max-age=0'</span>);<span class="comment">//禁止缓存</span></span><br><span class="line">    $writer = IOFactory::createWriter($spreadsheet, <span class="string">'Xlsx'</span>);</span><br><span class="line">    $writer-&gt;save(<span class="string">'php://output'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导出数据成功"><a href="#导出数据成功" class="headerlink" title="导出数据成功"></a>导出数据成功</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701193421.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
