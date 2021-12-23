@@ -311,6 +311,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/js/</loc>
+    <lastmod>2021-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/html/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -325,7 +332,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/js/</loc>
+    <loc>http://yoursite.com/tags/linux/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -333,13 +340,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/mysql/</loc>
-    <lastmod>2021-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/linux/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -390,6 +390,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/categories/js/</loc>
+    <lastmod>2021-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -404,7 +411,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/js/</loc>
+    <loc>http://yoursite.com/categories/linux/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -412,13 +419,6 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2021-12-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/linux/</loc>
     <lastmod>2021-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
