@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2021/12/24/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E8%B0%83%E7%A0%94/</loc>
+    
+    <lastmod>2021-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/12/23/%E8%AE%B0%E4%B8%80%E6%AC%A1h5%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2021-12-24</lastmod>
@@ -297,14 +306,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/git/</loc>
+    <loc>http://yoursite.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>http://yoursite.com/tags/git/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -346,6 +355,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/vue/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -353,7 +369,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/vue/</loc>
+    <loc>http://yoursite.com/tags/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -383,6 +399,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/categories/git/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -391,13 +414,6 @@
   
   <url>
     <loc>http://yoursite.com/categories/js/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/git/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -419,6 +435,13 @@
   
   <url>
     <loc>http://yoursite.com/categories/linux/</loc>
+    <lastmod>2021-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2021-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
