@@ -373,6 +373,157 @@
       </tags>
   </entry>
   <entry>
+    <title>js字符串方法</title>
+    <url>/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="JavaScript-字符串方法"><a href="#JavaScript-字符串方法" class="headerlink" title="JavaScript 字符串方法"></a>JavaScript 字符串方法</h1><p>​        最近在准备考1+x证书,刷了一些题,很多题中考到了js字符串的方法,特此总结一下。</p>
+<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p><code>length</code> 属性返回字符串的长度</p>
+<p><img src="https://i.loli.net/2019/12/15/FqIoiwrZCszB2Sg.png" alt="1.png"></p>
+<a id="more"></a>
+
+<h2 id="查找字符串中的字符串"><a href="#查找字符串中的字符串" class="headerlink" title="查找字符串中的字符串"></a>查找字符串中的字符串</h2><p><code>indexOf()</code> 方法返回字符串中指定文本首次出现的索引(位置)</p>
+<p><img src="https://i.loli.net/2019/12/15/uDc9gLrANz7TOBi.png" alt="1.png"></p>
+<p><code>lastIndexOf()</code> 方法返回指定文本在字符串中最后一次出现的索引</p>
+<p><img src="https://i.loli.net/2019/12/15/pzfi7jXbVFuxsKN.png" alt="1.png"></p>
+<p><strong>如果未找到文本,indexOf()和lastIndexOf()都返回-1</strong></p>
+<p><strong>两种方法都可以传入第二个参数,用来指定检索的起始位置</strong></p>
+<p><img src="https://i.loli.net/2019/12/15/M1iecPY6jFNzn8q.png" alt="1.png"></p>
+<p><img src="https://i.loli.net/2019/12/15/O856aqNmjlVKBrL.png" alt="1.png"></p>
+<p><strong>注意: <code>lastIndexOf()</code> 限制了检索位置为10 因此检索不到 返回-1</strong></p>
+<p><strong>像下面这种情况 会从第30个字符开始检索 返回的仍然是从字符起点开始检索的位置  第二个参数只是会限制字符检索的长度 不会从后往前检索</strong></p>
+<p><img src="https://i.loli.net/2019/12/15/2RxjcFp8vNb3tL6.png" alt="1.png"></p>
+<h2 id="检索字符串中的字符串"><a href="#检索字符串中的字符串" class="headerlink" title="检索字符串中的字符串"></a>检索字符串中的字符串</h2><p>search()方法检索特定值的字符串,并返回匹配的位置。听上去和<code>indexOf()</code>方法是相等的,实际上,区别很大</p>
+<p>区别在于:<code>search()</code> 方法无法设置第二个开始位置的参数。</p>
+<p>​                <code>indexOf()</code> 方法无法设置更强大的搜索值（正则表达式）。</p>
+<p><img src="https://i.loli.net/2019/12/15/tnYlapVNQshKW6q.png" alt="1.png"></p>
+<p><strong>如图:指定参数无效 还是从头开始检索</strong></p>
+<h2 id="提取部分字符串"><a href="#提取部分字符串" class="headerlink" title="提取部分字符串"></a>提取部分字符串</h2><p><strong>提取部分字符串有三种方法:</strong></p>
+<ul>
+<li>slice(start,end);</li>
+<li>substring(start,end);</li>
+<li>substr(start,length);</li>
+</ul>
+<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice()方法"></a>slice()方法</h3><p><code>slice()</code>提取字符串的某个部分 并且在新字符串中返回被提取的部分。</p>
+<p>俩个参数:起始索引,终止索引;</p>
+<p><img src="https://i.loli.net/2019/12/15/TPiOglmw8UqoxyM.png" alt="1.png"></p>
+<p><strong>从2开始包括2  到5结束 不包括5</strong></p>
+<p><strong>参数为负数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/jvN5mPYi2Za18FO.png" alt="1.png"></p>
+<p><strong>省略第二个参数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/PaWOjCt2iwlU9gq.png" alt="1.png"></p>
+<p><strong>省略第二个参数 则会拿到剩余的字符</strong></p>
+<p><strong>从结尾计数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/MHVU6iDIxhaE74f.png" alt="1.png"></p>
+<p>注意:参数为负数 不适用于<strong>ie8</strong>及其更早版本</p>
+<h3 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring()方法"></a>substring()方法</h3><p><code>substring()</code>类似于<code>slice()</code></p>
+<p><strong>区别:</strong><code>substring()</code> 不能接受负的索引</p>
+<p><strong>传入负数索引是无效的 会从起点0开始截取</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/JXjt6iTpgGEVLM5.png" alt="1.png"></p>
+<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
+<h3 id="substr-方法"><a href="#substr-方法" class="headerlink" title="substr()方法"></a>substr()方法</h3><p><code>substr()</code> 也类似于s<code>lice()</code></p>
+<p><strong>区别:</strong>第二个参数 规定被提取部分的长度,第二个参数不能传入负数,因为长度不能为负数</p>
+<p>参数为负,没有打印结果 打印失败</p>
+<p><img src="https://i.loli.net/2019/12/16/3bm1yri84NO6wWQ.png" alt="1.png"></p>
+<p>参数为正 正常截取</p>
+<p><img src="https://i.loli.net/2019/12/16/fXedCJqPYnVItgO.png" alt="1.png"></p>
+<p>首个参数为负 第二个参数长度指定无效  负几 截取到几个字符 这里是负2 因此 截取到2个字符</p>
+<p><img src="https://i.loli.net/2019/12/16/pZ4eFQBVz3lCS1u.png" alt="1.png"></p>
+<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
+<h2 id="替换字符串内容"><a href="#替换字符串内容" class="headerlink" title="替换字符串内容"></a>替换字符串内容</h2><p><code>replace()</code>方法用另一个值替换在字符串中指定的值</p>
+<p><strong>参数1 为原字符串中的值   参数2为替换的值</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/KgDBEoNQWP2nayV.png" alt="1.png"></p>
+<p><strong>返回的是一个新字符串 不会改变原有字符串</strong>   <strong>默认只替换首个匹配到的字符</strong></p>
+<p><strong>默认情况下</strong> <code>replace()</code>对大小写敏感</p>
+<p><img src="https://i.loli.net/2019/12/16/qhvmAzbojye1wdg.png" alt="1.png"></p>
+<p><strong>使用正则表达式<code>/i</code>(大小写不敏感)  **   **注意:正则表达式不带引号</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/bIykXZmiGdHcLjC.png" alt="1.png"></p>
+<p><strong>替换所有匹配</strong></p>
+<p>使用正则表达式的<code>g</code>(用于全局搜索)</p>
+<p><img src="https://i.loli.net/2019/12/16/wbYmTljq6PWaI5v.png" alt="1.png"></p>
+<h2 id="转为大写和小写"><a href="#转为大写和小写" class="headerlink" title="转为大写和小写"></a>转为大写和小写</h2><p><code>toUpperCase()</code>把字符串转换为大写</p>
+<p><img src="https://i.loli.net/2019/12/16/pTGg5rmSIiydfMu.png" alt="1.png"></p>
+<p><code>toLowerCase()</code>把字符串转换为小写</p>
+<p><img src="https://i.loli.net/2019/12/16/9vJKCjlLfrN6gpq.png" alt="1.png"></p>
+<h2 id="连接两个或多个字符串"><a href="#连接两个或多个字符串" class="headerlink" title="连接两个或多个字符串"></a>连接两个或多个字符串</h2><p><code>concat()</code>可用于代替加运算符</p>
+<p><img src="https://i.loli.net/2019/12/16/ReAq8Vmz5YdZlg3.png" alt="1.png"></p>
+<p><strong>所有的字符串方法都会返回新字符串 不会修改原始字符串.</strong></p>
+<p><strong>字符串是不可变的:字符串不能更改,只能替换</strong></p>
+<h2 id="删除字符串两端的空白符"><a href="#删除字符串两端的空白符" class="headerlink" title="删除字符串两端的空白符"></a>删除字符串两端的空白符</h2><p><code>trim()</code>方法删除字符串两端的空白符</p>
+<p><img src="https://i.loli.net/2019/12/16/IUALYqdPmCaV5lf.png" alt="1.png"></p>
+<p>注意:ie8或更低版本不支持<code>trim()</code>方法 。</p>
+<p><strong>如需支持ie8或更低版本 可以使用<code>replace()</code>  需搭配正则</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/2bSoaMQmPrNGE3t.png" alt="1.png"></p>
+<h2 id="提取字符串字符"><a href="#提取字符串字符" class="headerlink" title="提取字符串字符"></a>提取字符串字符</h2><h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p><code>charAt()</code>方法返回字符串中指定下标(位置)的字符串</p>
+<p><img src="https://i.loli.net/2019/12/16/T5tuoEPLiJnpX8c.png" alt="1.png"></p>
+<h3 id="charCodeAt-方法"><a href="#charCodeAt-方法" class="headerlink" title="charCodeAt()方法"></a>charCodeAt()方法</h3><p><code>charCodeAt()</code>方法返回字符串中指定索引的 <code>unicode</code> 编码</p>
+<p><img src="https://i.loli.net/2019/12/16/LSFfhq1oTZPIOnN.png" alt="1.png"></p>
+<h2 id="字符串转换为数组"><a href="#字符串转换为数组" class="headerlink" title="字符串转换为数组"></a>字符串转换为数组</h2><p><code>split()</code>将字符串转换为数组</p>
+<p><img src="https://i.loli.net/2019/12/16/mhp7xLJjGRItX6w.png" alt="1.png"></p>
+<p>省略分隔符  被返回的数组将包含index[0]中的整个字符串</p>
+<p>如分隔符是””,被返回的数组将是间隔单个字符的数组</p>
+<p><img src="https://i.loli.net/2019/12/16/sum2DXzwy6KpHe3.png" alt="1.png"></p>
+<p>​        </p>
+<p>​        <strong>总结:</strong>革命尚未成功 同志仍需努力  细节决定成败</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>laravel模型关联</title>
+    <url>/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
+    <content><![CDATA[<h1 id="关联模型"><a href="#关联模型" class="headerlink" title="关联模型"></a>关联模型</h1><h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><h3 id="关联模型的关联方法"><a href="#关联模型的关联方法" class="headerlink" title="关联模型的关联方法"></a>关联模型的关联方法</h3><p>在写关联模型时 要分析出是谁关联谁 谁做主模型,谁做次模型.</p>
+<p><strong>案例:(文章关联作者)</strong></p>
+<p>文章是主模型 关联代码写在主模型中</p>
+<a id="more"></a>
+
+<p><strong>语法：</strong></p>
+<p>public function <strong>被关联的模型名小写</strong>(){</p>
+<p>​        return $this -&gt; hasOne(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
+<p>} </p>
+<p><img src="https://i.loli.net/2019/11/13/ZRrEJo9FVPLazv2.png" alt="a.png"></p>
+<p><strong>创建控制器方法:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/WZdLPQikxKn8z6u.png" alt="a.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/lkyYs7gEMVf8nP3.png" alt="aa.png"></p>
+<h2 id="一对多关系"><a href="#一对多关系" class="headerlink" title="一对多关系"></a>一对多关系</h2><p><strong>如:一个文章有多个评论</strong></p>
+<h3 id="关联模型的关联方法-1"><a href="#关联模型的关联方法-1" class="headerlink" title="关联模型的关联方法"></a><strong>关联模型的关联方法</strong></h3><p><strong>语法：</strong></p>
+<p>public function <strong>被关联的模型名小写</strong>(){</p>
+<p>​        return $this -&gt; hasMany(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
+<p>} </p>
+<p><strong>与hasOne方法相比，其只是把方法名称做了变化，其他与之前一致。</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/OKt8uZngzxR4dq5.png" alt="b.png"></p>
+<p><strong>创建控制器方法:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/YyTGLtCifeZXWbU.png" alt="bb1.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/oM95QwRidtXLUS8.png" alt="b1.png"></p>
+<h2 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h2><p><strong>例如：一个文章可能有多个关键词，一个关键词可能被多个文章使用。</strong></p>
+<p><strong>多对多的关系经过拆分之后其实就是两个一对多的关系</strong>。</p>
+<p>由于是双向一对多的关系，因此光靠2张表是无法建立的关系的，需要依靠第三张表建立关系（xx与xx的关系表）。</p>
+<p><strong>三张表</strong>:</p>
+<p><img src="https://i.loli.net/2019/11/13/hB92KJaoELIF6yq.png" alt="wz.png"></p>
+<p><img src="https://i.loli.net/2019/11/13/63NkymzMcqX9j72.png" alt="gjz.png"></p>
+<p><img src="https://i.loli.net/2019/11/13/hzXqUyLOp6xa7MA.png" alt="gxb.png"></p>
+<p><strong>创建模型只需要给文章表和关键字表创建 关系表不需要创建</strong></p>
+<p><strong>案例:查询出每个文章下面的全部关键词</strong></p>
+<p><strong>语法：</strong></p>
+<p><strong>return $this -&gt; belongsToMany(被关联模型的元素空间路径,多对多模型的关系表名,当前模型中的关系键,被关联模型的关系键);</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/4f65qus3rPYFeO2.png" alt="c.png"></p>
+<p><strong>创建控制器方法</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/irDXjGusO4Rh3M7.png" alt="c1.png"></p>
+<p><strong>显示效果:</strong></p>
+<p><img src="https://i.loli.net/2019/11/13/Q9xfyRFgt7Z68JE.png" alt="c3.png"></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端基础知识</title>
     <url>/2019/09/19/html/</url>
     <content><![CDATA[<h1 id="前端基础复习笔记-一"><a href="#前端基础复习笔记-一" class="headerlink" title="前端基础复习笔记(一)"></a>前端基础复习笔记(一)</h1><h2 id="HTML部分"><a href="#HTML部分" class="headerlink" title="HTML部分"></a>HTML部分</h2><h3 id="HTML之块标签"><a href="#HTML之块标签" class="headerlink" title="HTML之块标签"></a>HTML之块标签</h3><p><strong><em>块级元素:块级大多为结构性标记</em></strong></p>
@@ -593,184 +744,6 @@
       </categories>
       <tags>
         <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>js字符串方法</title>
-    <url>/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-    <content><![CDATA[<h1 id="JavaScript-字符串方法"><a href="#JavaScript-字符串方法" class="headerlink" title="JavaScript 字符串方法"></a>JavaScript 字符串方法</h1><p>​        最近在准备考1+x证书,刷了一些题,很多题中考到了js字符串的方法,特此总结一下。</p>
-<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p><code>length</code> 属性返回字符串的长度</p>
-<p><img src="https://i.loli.net/2019/12/15/FqIoiwrZCszB2Sg.png" alt="1.png"></p>
-<a id="more"></a>
-
-<h2 id="查找字符串中的字符串"><a href="#查找字符串中的字符串" class="headerlink" title="查找字符串中的字符串"></a>查找字符串中的字符串</h2><p><code>indexOf()</code> 方法返回字符串中指定文本首次出现的索引(位置)</p>
-<p><img src="https://i.loli.net/2019/12/15/uDc9gLrANz7TOBi.png" alt="1.png"></p>
-<p><code>lastIndexOf()</code> 方法返回指定文本在字符串中最后一次出现的索引</p>
-<p><img src="https://i.loli.net/2019/12/15/pzfi7jXbVFuxsKN.png" alt="1.png"></p>
-<p><strong>如果未找到文本,indexOf()和lastIndexOf()都返回-1</strong></p>
-<p><strong>两种方法都可以传入第二个参数,用来指定检索的起始位置</strong></p>
-<p><img src="https://i.loli.net/2019/12/15/M1iecPY6jFNzn8q.png" alt="1.png"></p>
-<p><img src="https://i.loli.net/2019/12/15/O856aqNmjlVKBrL.png" alt="1.png"></p>
-<p><strong>注意: <code>lastIndexOf()</code> 限制了检索位置为10 因此检索不到 返回-1</strong></p>
-<p><strong>像下面这种情况 会从第30个字符开始检索 返回的仍然是从字符起点开始检索的位置  第二个参数只是会限制字符检索的长度 不会从后往前检索</strong></p>
-<p><img src="https://i.loli.net/2019/12/15/2RxjcFp8vNb3tL6.png" alt="1.png"></p>
-<h2 id="检索字符串中的字符串"><a href="#检索字符串中的字符串" class="headerlink" title="检索字符串中的字符串"></a>检索字符串中的字符串</h2><p>search()方法检索特定值的字符串,并返回匹配的位置。听上去和<code>indexOf()</code>方法是相等的,实际上,区别很大</p>
-<p>区别在于:<code>search()</code> 方法无法设置第二个开始位置的参数。</p>
-<p>​                <code>indexOf()</code> 方法无法设置更强大的搜索值（正则表达式）。</p>
-<p><img src="https://i.loli.net/2019/12/15/tnYlapVNQshKW6q.png" alt="1.png"></p>
-<p><strong>如图:指定参数无效 还是从头开始检索</strong></p>
-<h2 id="提取部分字符串"><a href="#提取部分字符串" class="headerlink" title="提取部分字符串"></a>提取部分字符串</h2><p><strong>提取部分字符串有三种方法:</strong></p>
-<ul>
-<li>slice(start,end);</li>
-<li>substring(start,end);</li>
-<li>substr(start,length);</li>
-</ul>
-<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice()方法"></a>slice()方法</h3><p><code>slice()</code>提取字符串的某个部分 并且在新字符串中返回被提取的部分。</p>
-<p>俩个参数:起始索引,终止索引;</p>
-<p><img src="https://i.loli.net/2019/12/15/TPiOglmw8UqoxyM.png" alt="1.png"></p>
-<p><strong>从2开始包括2  到5结束 不包括5</strong></p>
-<p><strong>参数为负数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/jvN5mPYi2Za18FO.png" alt="1.png"></p>
-<p><strong>省略第二个参数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/PaWOjCt2iwlU9gq.png" alt="1.png"></p>
-<p><strong>省略第二个参数 则会拿到剩余的字符</strong></p>
-<p><strong>从结尾计数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/MHVU6iDIxhaE74f.png" alt="1.png"></p>
-<p>注意:参数为负数 不适用于<strong>ie8</strong>及其更早版本</p>
-<h3 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring()方法"></a>substring()方法</h3><p><code>substring()</code>类似于<code>slice()</code></p>
-<p><strong>区别:</strong><code>substring()</code> 不能接受负的索引</p>
-<p><strong>传入负数索引是无效的 会从起点0开始截取</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/JXjt6iTpgGEVLM5.png" alt="1.png"></p>
-<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
-<h3 id="substr-方法"><a href="#substr-方法" class="headerlink" title="substr()方法"></a>substr()方法</h3><p><code>substr()</code> 也类似于s<code>lice()</code></p>
-<p><strong>区别:</strong>第二个参数 规定被提取部分的长度,第二个参数不能传入负数,因为长度不能为负数</p>
-<p>参数为负,没有打印结果 打印失败</p>
-<p><img src="https://i.loli.net/2019/12/16/3bm1yri84NO6wWQ.png" alt="1.png"></p>
-<p>参数为正 正常截取</p>
-<p><img src="https://i.loli.net/2019/12/16/fXedCJqPYnVItgO.png" alt="1.png"></p>
-<p>首个参数为负 第二个参数长度指定无效  负几 截取到几个字符 这里是负2 因此 截取到2个字符</p>
-<p><img src="https://i.loli.net/2019/12/16/pZ4eFQBVz3lCS1u.png" alt="1.png"></p>
-<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
-<h2 id="替换字符串内容"><a href="#替换字符串内容" class="headerlink" title="替换字符串内容"></a>替换字符串内容</h2><p><code>replace()</code>方法用另一个值替换在字符串中指定的值</p>
-<p><strong>参数1 为原字符串中的值   参数2为替换的值</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/KgDBEoNQWP2nayV.png" alt="1.png"></p>
-<p><strong>返回的是一个新字符串 不会改变原有字符串</strong>   <strong>默认只替换首个匹配到的字符</strong></p>
-<p><strong>默认情况下</strong> <code>replace()</code>对大小写敏感</p>
-<p><img src="https://i.loli.net/2019/12/16/qhvmAzbojye1wdg.png" alt="1.png"></p>
-<p><strong>使用正则表达式<code>/i</code>(大小写不敏感)  **   **注意:正则表达式不带引号</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/bIykXZmiGdHcLjC.png" alt="1.png"></p>
-<p><strong>替换所有匹配</strong></p>
-<p>使用正则表达式的<code>g</code>(用于全局搜索)</p>
-<p><img src="https://i.loli.net/2019/12/16/wbYmTljq6PWaI5v.png" alt="1.png"></p>
-<h2 id="转为大写和小写"><a href="#转为大写和小写" class="headerlink" title="转为大写和小写"></a>转为大写和小写</h2><p><code>toUpperCase()</code>把字符串转换为大写</p>
-<p><img src="https://i.loli.net/2019/12/16/pTGg5rmSIiydfMu.png" alt="1.png"></p>
-<p><code>toLowerCase()</code>把字符串转换为小写</p>
-<p><img src="https://i.loli.net/2019/12/16/9vJKCjlLfrN6gpq.png" alt="1.png"></p>
-<h2 id="连接两个或多个字符串"><a href="#连接两个或多个字符串" class="headerlink" title="连接两个或多个字符串"></a>连接两个或多个字符串</h2><p><code>concat()</code>可用于代替加运算符</p>
-<p><img src="https://i.loli.net/2019/12/16/ReAq8Vmz5YdZlg3.png" alt="1.png"></p>
-<p><strong>所有的字符串方法都会返回新字符串 不会修改原始字符串.</strong></p>
-<p><strong>字符串是不可变的:字符串不能更改,只能替换</strong></p>
-<h2 id="删除字符串两端的空白符"><a href="#删除字符串两端的空白符" class="headerlink" title="删除字符串两端的空白符"></a>删除字符串两端的空白符</h2><p><code>trim()</code>方法删除字符串两端的空白符</p>
-<p><img src="https://i.loli.net/2019/12/16/IUALYqdPmCaV5lf.png" alt="1.png"></p>
-<p>注意:ie8或更低版本不支持<code>trim()</code>方法 。</p>
-<p><strong>如需支持ie8或更低版本 可以使用<code>replace()</code>  需搭配正则</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/2bSoaMQmPrNGE3t.png" alt="1.png"></p>
-<h2 id="提取字符串字符"><a href="#提取字符串字符" class="headerlink" title="提取字符串字符"></a>提取字符串字符</h2><h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p><code>charAt()</code>方法返回字符串中指定下标(位置)的字符串</p>
-<p><img src="https://i.loli.net/2019/12/16/T5tuoEPLiJnpX8c.png" alt="1.png"></p>
-<h3 id="charCodeAt-方法"><a href="#charCodeAt-方法" class="headerlink" title="charCodeAt()方法"></a>charCodeAt()方法</h3><p><code>charCodeAt()</code>方法返回字符串中指定索引的 <code>unicode</code> 编码</p>
-<p><img src="https://i.loli.net/2019/12/16/LSFfhq1oTZPIOnN.png" alt="1.png"></p>
-<h2 id="字符串转换为数组"><a href="#字符串转换为数组" class="headerlink" title="字符串转换为数组"></a>字符串转换为数组</h2><p><code>split()</code>将字符串转换为数组</p>
-<p><img src="https://i.loli.net/2019/12/16/mhp7xLJjGRItX6w.png" alt="1.png"></p>
-<p>省略分隔符  被返回的数组将包含index[0]中的整个字符串</p>
-<p>如分隔符是””,被返回的数组将是间隔单个字符的数组</p>
-<p><img src="https://i.loli.net/2019/12/16/sum2DXzwy6KpHe3.png" alt="1.png"></p>
-<p>​        </p>
-<p>​        <strong>总结:</strong>革命尚未成功 同志仍需努力  细节决定成败</p>
-]]></content>
-      <categories>
-        <category>js</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>laravel模型关联</title>
-    <url>/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
-    <content><![CDATA[<h1 id="关联模型"><a href="#关联模型" class="headerlink" title="关联模型"></a>关联模型</h1><h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><h3 id="关联模型的关联方法"><a href="#关联模型的关联方法" class="headerlink" title="关联模型的关联方法"></a>关联模型的关联方法</h3><p>在写关联模型时 要分析出是谁关联谁 谁做主模型,谁做次模型.</p>
-<p><strong>案例:(文章关联作者)</strong></p>
-<p>文章是主模型 关联代码写在主模型中</p>
-<a id="more"></a>
-
-<p><strong>语法：</strong></p>
-<p>public function <strong>被关联的模型名小写</strong>(){</p>
-<p>​        return $this -&gt; hasOne(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
-<p>} </p>
-<p><img src="https://i.loli.net/2019/11/13/ZRrEJo9FVPLazv2.png" alt="a.png"></p>
-<p><strong>创建控制器方法:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/WZdLPQikxKn8z6u.png" alt="a.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/lkyYs7gEMVf8nP3.png" alt="aa.png"></p>
-<h2 id="一对多关系"><a href="#一对多关系" class="headerlink" title="一对多关系"></a>一对多关系</h2><p><strong>如:一个文章有多个评论</strong></p>
-<h3 id="关联模型的关联方法-1"><a href="#关联模型的关联方法-1" class="headerlink" title="关联模型的关联方法"></a><strong>关联模型的关联方法</strong></h3><p><strong>语法：</strong></p>
-<p>public function <strong>被关联的模型名小写</strong>(){</p>
-<p>​        return $this -&gt; hasMany(‘需要关联模型的命名空间,’被关联模型的关系字段,’本模型中的关系字段’);</p>
-<p>} </p>
-<p><strong>与hasOne方法相比，其只是把方法名称做了变化，其他与之前一致。</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/OKt8uZngzxR4dq5.png" alt="b.png"></p>
-<p><strong>创建控制器方法:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/YyTGLtCifeZXWbU.png" alt="bb1.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/oM95QwRidtXLUS8.png" alt="b1.png"></p>
-<h2 id="多对多关系"><a href="#多对多关系" class="headerlink" title="多对多关系"></a>多对多关系</h2><p><strong>例如：一个文章可能有多个关键词，一个关键词可能被多个文章使用。</strong></p>
-<p><strong>多对多的关系经过拆分之后其实就是两个一对多的关系</strong>。</p>
-<p>由于是双向一对多的关系，因此光靠2张表是无法建立的关系的，需要依靠第三张表建立关系（xx与xx的关系表）。</p>
-<p><strong>三张表</strong>:</p>
-<p><img src="https://i.loli.net/2019/11/13/hB92KJaoELIF6yq.png" alt="wz.png"></p>
-<p><img src="https://i.loli.net/2019/11/13/63NkymzMcqX9j72.png" alt="gjz.png"></p>
-<p><img src="https://i.loli.net/2019/11/13/hzXqUyLOp6xa7MA.png" alt="gxb.png"></p>
-<p><strong>创建模型只需要给文章表和关键字表创建 关系表不需要创建</strong></p>
-<p><strong>案例:查询出每个文章下面的全部关键词</strong></p>
-<p><strong>语法：</strong></p>
-<p><strong>return $this -&gt; belongsToMany(被关联模型的元素空间路径,多对多模型的关系表名,当前模型中的关系键,被关联模型的关系键);</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/4f65qus3rPYFeO2.png" alt="c.png"></p>
-<p><strong>创建控制器方法</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/irDXjGusO4Rh3M7.png" alt="c1.png"></p>
-<p><strong>显示效果:</strong></p>
-<p><img src="https://i.loli.net/2019/11/13/Q9xfyRFgt7Z68JE.png" alt="c3.png"></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tp5.1结合layui实现多图上传</title>
-    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
-<a id="more"></a>
-
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
-
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
-<p><strong>放大效果</strong></p>
-<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
       </tags>
   </entry>
   <entry>
@@ -1210,71 +1183,6 @@
       </tags>
   </entry>
   <entry>
-    <title>pdo</title>
-    <url>/2019/12/22/pdo/</url>
-    <content><![CDATA[<p>​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个…….</p>
-<h1 id="PDO连接数据库-增删改查"><a href="#PDO连接数据库-增删改查" class="headerlink" title="PDO连接数据库(增删改查)"></a>PDO连接数据库(增删改查)</h1><h2 id="查询多条数据"><a href="#查询多条数据" class="headerlink" title="查询多条数据"></a>查询多条数据</h2><p><code>fethcAll()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png" alt="1.png"></p>
-<a id="more"></a>
-
-<p><strong>注意:执行查询操作使用<code>query()</code></strong>    </p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">fetchAll</span><span class="params">(PDO::FETCH_ASSOC)</span></span>    将查询到的结果集转换为关联数组</span><br></pre></td></tr></table></figure>
-
-<p><code>fetchAll()</code> 可以有不同的参数 比如常用的:</p>
-<p><code>FETCH_ASSOC</code>:代表转为关联数组</p>
-<p><code>FETCH_NUM</code>:代表转为索引数组</p>
-<p><code>FETCH_BOTH:</code>代表关联和索引这两者形式都有</p>
-<p><code>FETCH_OBJ</code>:对象的形式</p>
-<h2 id="查询单条数据"><a href="#查询单条数据" class="headerlink" title="查询单条数据"></a>查询单条数据</h2><p><code>fetch()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png" alt="1.png"></p>
-<p><strong>查询数据本质上都是一样的, 查询多条只需要注意sql语句的书写 以及结果集转换数据的写法即可</strong></p>
-<h2 id="查询指定字段"><a href="#查询指定字段" class="headerlink" title="查询指定字段"></a>查询指定字段</h2><p><code>fetchColumn()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png" alt="1.png"></p>
-<p>注意:查询指定条数的指定字段 返回的是一个字符串 使用<code>fetchColumn()</code></p>
-<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p><strong>增删改只需要改变sql语句的内容即可</strong>   <strong>与查询不同的是:增删改要调用exec()方法对sql语句进行处理</strong></p>
-<h3 id="增加一条数据"><a href="#增加一条数据" class="headerlink" title="增加一条数据"></a>增加一条数据</h3><p><img src="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png" alt="1.png"></p>
-<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><p><img src="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png" alt="1.png"></p>
-<h3 id="删除一条数据"><a href="#删除一条数据" class="headerlink" title="删除一条数据"></a>删除一条数据</h3><p><img src="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png" alt="1.png"></p>
-<h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>开启事务: <code>beginTransaction()</code>  </p>
-<p>事务提交: <code>commit()</code></p>
-<p>事务回滚: <code>rollBack()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png" alt="1.png"></p>
-<p><strong>事务处理的情况下 sql语句要么都执行 要么都不执行</strong></p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>单例模式：</strong>singleton  是一种类的设计只会最多产生一个对象的设计思想</p>
-<ul>
-<li><p>单例模式的类只能在一次运行中产生一个对象</p>
-</li>
-<li><p>单例模式为了解决如何只产生一个对象,需要使用以下解决方案，简称三私一公</p>
-<p><strong>私有化构造方法:不让在外部产生多个对象</strong></p>
-<p><strong>私有化克隆方法：不允许对象被克隆产生新对象</strong></p>
-<p><strong>私有化静态属性:保存已经产生的对象</strong></p>
-<p><strong>公有化静态方法:运行进入类内部产生对象</strong></p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png" alt="1.png"></p>
-<p><strong>指向了同一个对象 单例模式构造成功</strong></p>
-<p><img src="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png" alt="1.png"></p>
-<p><code>instanceof</code>是类型运算符 判断某个变量是否是某个类的对象实例</p>
-<p><strong>总结:</strong></p>
-<p>单例模式设计的类最多只能得到一个对象</p>
-<p>单例模式只是解决当前类对象的唯一性，要实现其他功能需求，可以在类中增加相应的其他类成员</p>
-<p>单例模式的目的是为了保护资源的唯一性</p>
-<p>单例模式的设计规范就是’三私一公’</p>
-<ul>
-<li>私有化构造方法：禁止在类外部无限实例化对象</li>
-<li>私有化克隆方法：禁止对象无限克隆对象</li>
-<li>私有化静态属性：保存类内部实例化得到的对象</li>
-<li>公有化静态方法：允许外部通过调用类内部方法获取对象</li>
-</ul>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>php字符串</title>
     <url>/2019/09/29/php%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="php字符串函数的总结"><a href="#php字符串函数的总结" class="headerlink" title="php字符串函数的总结"></a>php字符串函数的总结</h1><p><strong>php字符串函数还是很难记忆的,为了之后使用方便，记录一下。</strong></p>
@@ -1470,40 +1378,62 @@
       </tags>
   </entry>
   <entry>
-    <title>php循环</title>
-    <url>/2019/09/24/php%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<h1 id="php循环经典练习题"><a href="#php循环经典练习题" class="headerlink" title="php循环经典练习题"></a>php循环经典练习题</h1><p><strong>循环在每个语言里都必不可少,之前学习python,js都接触过,现在学习php又重新接触,为了加深理解,写一篇博客水一下.</strong></p>
-<h2 id="php循环打印图形"><a href="#php循环打印图形" class="headerlink" title="php循环打印图形"></a>php循环打印图形</h2><h3 id="直角三角形"><a href="#直角三角形" class="headerlink" title="直角三角形"></a>直角三角形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//直角三角形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">5</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        内层循环打印</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <title>pdo</title>
+    <url>/2019/12/22/pdo/</url>
+    <content><![CDATA[<p>​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个…….</p>
+<h1 id="PDO连接数据库-增删改查"><a href="#PDO连接数据库-增删改查" class="headerlink" title="PDO连接数据库(增删改查)"></a>PDO连接数据库(增删改查)</h1><h2 id="查询多条数据"><a href="#查询多条数据" class="headerlink" title="查询多条数据"></a>查询多条数据</h2><p><code>fethcAll()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png" alt="1.png"></p>
 <a id="more"></a>
 
-<p><img src="https://i.loli.net/2020/03/30/ML1SkrWNyO4xPmG.png" alt="11.png"></p>
-<h3 id="金字塔"><a href="#金字塔" class="headerlink" title="金字塔"></a>金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        输出空格</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意:执行查询操作使用<code>query()</code></strong>    </p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">fetchAll</span><span class="params">(PDO::FETCH_ASSOC)</span></span>    将查询到的结果集转换为关联数组</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://i.loli.net/2020/03/30/9nqZSzCTpfh4emN.png" alt="11.png"></p>
-<h3 id="倒金字塔"><a href="#倒金字塔" class="headerlink" title="倒金字塔"></a>倒金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/VlYfHrUs8wZ9EtK.png" alt="11.png"></p>
-<h3 id="菱形"><a href="#菱形" class="headerlink" title="菱形"></a>菱形</h3><p>正金字塔和倒金字塔连起来就是菱形 </p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//菱形</span></span><br><span class="line"><span class="comment">//正金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/8q75ktajQhUb63P.png" alt="11.png"></p>
-<h3 id="空心菱形"><a href="#空心菱形" class="headerlink" title="空心菱形"></a>空心菱形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//空心菱形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($k==<span class="number">1</span> || $k==<span class="number">2</span>*$i<span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($k==<span class="number">2</span>*$i<span class="number">-1</span> || $k==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/F8lIvMT9USQ3RiZ.png" alt="11.png"></p>
-<h2 id="php循环练习"><a href="#php循环练习" class="headerlink" title="php循环练习"></a>php循环练习</h2><h3 id="求1000以内的水仙花数"><a href="#求1000以内的水仙花数" class="headerlink" title="求1000以内的水仙花数"></a>求1000以内的水仙花数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//求水仙花数</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">100</span>;$i&lt;<span class="number">1000</span>;$i++)&#123;</span><br><span class="line">    $ge=$i%<span class="number">10</span>;</span><br><span class="line">    $shi=floor($i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">    $bai=floor($i/<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">if</span>($ge*$ge*$ge+$shi*$shi*$shi+$bai*$bai*$bai==$i)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&#123;$i&#125;是水仙花数"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/UFHAvLghWbZJiI5.png" alt="11.png"></p>
-<h3 id="求一到一百之间不含数字4的自然数-并且计算有多少个"><a href="#求一到一百之间不含数字4的自然数-并且计算有多少个" class="headerlink" title="求一到一百之间不含数字4的自然数  并且计算有多少个"></a>求一到一百之间不含数字4的自然数  并且计算有多少个</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    $ge = $i % <span class="number">10</span>;</span><br><span class="line">    $shi = $i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> ($ge == <span class="number">4</span> || $shi == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $sum++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&#123;$sum&#125;个"</span>; <span class="comment">//162</span></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">$num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (strpos($i, <span class="string">'4'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line">        $num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $num; <span class="comment">//162</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="输出一到一百之间所有的质数"><a href="#输出一到一百之间所有的质数" class="headerlink" title="输出一到一百之间所有的质数"></a>输出一到一百之间所有的质数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">2</span>;$i&lt;=<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">2</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i%$j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>($i==$j)&#123;</span><br><span class="line">        <span class="keyword">echo</span> $i.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">9</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"$j*$i="</span>.$i*$j.<span class="string">"&amp;nbsp"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="百鸡问题"><a href="#百鸡问题" class="headerlink" title="百鸡问题"></a>百鸡问题</h3><p><strong>100块钱买一百只鸡 公鸡5块钱一只 母鸡3块钱一只 小鸡一块钱三只  100块钱必须花完  问：公鸡 母鸡 小鸡各多少只</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">100</span>;$j++)&#123;</span><br><span class="line">        $k=<span class="number">100</span>-$i-$j;</span><br><span class="line">        <span class="keyword">if</span>($i*<span class="number">5</span>+$j*<span class="number">3</span>+$k/<span class="number">3</span>==<span class="number">100</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"公鸡"</span>.$i;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"母鸡"</span>.$j;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"小鸡"</span>.$k;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>学习循环还是很锻炼思维的 尤其是我这种菜比 加油吧 路还长！！！！！！</strong></p>
+<p><code>fetchAll()</code> 可以有不同的参数 比如常用的:</p>
+<p><code>FETCH_ASSOC</code>:代表转为关联数组</p>
+<p><code>FETCH_NUM</code>:代表转为索引数组</p>
+<p><code>FETCH_BOTH:</code>代表关联和索引这两者形式都有</p>
+<p><code>FETCH_OBJ</code>:对象的形式</p>
+<h2 id="查询单条数据"><a href="#查询单条数据" class="headerlink" title="查询单条数据"></a>查询单条数据</h2><p><code>fetch()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png" alt="1.png"></p>
+<p><strong>查询数据本质上都是一样的, 查询多条只需要注意sql语句的书写 以及结果集转换数据的写法即可</strong></p>
+<h2 id="查询指定字段"><a href="#查询指定字段" class="headerlink" title="查询指定字段"></a>查询指定字段</h2><p><code>fetchColumn()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png" alt="1.png"></p>
+<p>注意:查询指定条数的指定字段 返回的是一个字符串 使用<code>fetchColumn()</code></p>
+<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p><strong>增删改只需要改变sql语句的内容即可</strong>   <strong>与查询不同的是:增删改要调用exec()方法对sql语句进行处理</strong></p>
+<h3 id="增加一条数据"><a href="#增加一条数据" class="headerlink" title="增加一条数据"></a>增加一条数据</h3><p><img src="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png" alt="1.png"></p>
+<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><p><img src="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png" alt="1.png"></p>
+<h3 id="删除一条数据"><a href="#删除一条数据" class="headerlink" title="删除一条数据"></a>删除一条数据</h3><p><img src="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png" alt="1.png"></p>
+<h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>开启事务: <code>beginTransaction()</code>  </p>
+<p>事务提交: <code>commit()</code></p>
+<p>事务回滚: <code>rollBack()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png" alt="1.png"></p>
+<p><strong>事务处理的情况下 sql语句要么都执行 要么都不执行</strong></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>单例模式：</strong>singleton  是一种类的设计只会最多产生一个对象的设计思想</p>
+<ul>
+<li><p>单例模式的类只能在一次运行中产生一个对象</p>
+</li>
+<li><p>单例模式为了解决如何只产生一个对象,需要使用以下解决方案，简称三私一公</p>
+<p><strong>私有化构造方法:不让在外部产生多个对象</strong></p>
+<p><strong>私有化克隆方法：不允许对象被克隆产生新对象</strong></p>
+<p><strong>私有化静态属性:保存已经产生的对象</strong></p>
+<p><strong>公有化静态方法:运行进入类内部产生对象</strong></p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png" alt="1.png"></p>
+<p><strong>指向了同一个对象 单例模式构造成功</strong></p>
+<p><img src="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png" alt="1.png"></p>
+<p><code>instanceof</code>是类型运算符 判断某个变量是否是某个类的对象实例</p>
+<p><strong>总结:</strong></p>
+<p>单例模式设计的类最多只能得到一个对象</p>
+<p>单例模式只是解决当前类对象的唯一性，要实现其他功能需求，可以在类中增加相应的其他类成员</p>
+<p>单例模式的目的是为了保护资源的唯一性</p>
+<p>单例模式的设计规范就是’三私一公’</p>
+<ul>
+<li>私有化构造方法：禁止在类外部无限实例化对象</li>
+<li>私有化克隆方法：禁止对象无限克隆对象</li>
+<li>私有化静态属性：保存类内部实例化得到的对象</li>
+<li>公有化静态方法：允许外部通过调用类内部方法获取对象</li>
+</ul>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1586,6 +1516,49 @@
       </tags>
   </entry>
   <entry>
+    <title>php循环</title>
+    <url>/2019/09/24/php%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h1 id="php循环经典练习题"><a href="#php循环经典练习题" class="headerlink" title="php循环经典练习题"></a>php循环经典练习题</h1><p><strong>循环在每个语言里都必不可少,之前学习python,js都接触过,现在学习php又重新接触,为了加深理解,写一篇博客水一下.</strong></p>
+<h2 id="php循环打印图形"><a href="#php循环打印图形" class="headerlink" title="php循环打印图形"></a>php循环打印图形</h2><h3 id="直角三角形"><a href="#直角三角形" class="headerlink" title="直角三角形"></a>直角三角形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//直角三角形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">5</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        内层循环打印</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><img src="https://i.loli.net/2020/03/30/ML1SkrWNyO4xPmG.png" alt="11.png"></p>
+<h3 id="金字塔"><a href="#金字塔" class="headerlink" title="金字塔"></a>金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        输出空格</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/9nqZSzCTpfh4emN.png" alt="11.png"></p>
+<h3 id="倒金字塔"><a href="#倒金字塔" class="headerlink" title="倒金字塔"></a>倒金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/VlYfHrUs8wZ9EtK.png" alt="11.png"></p>
+<h3 id="菱形"><a href="#菱形" class="headerlink" title="菱形"></a>菱形</h3><p>正金字塔和倒金字塔连起来就是菱形 </p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//菱形</span></span><br><span class="line"><span class="comment">//正金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/8q75ktajQhUb63P.png" alt="11.png"></p>
+<h3 id="空心菱形"><a href="#空心菱形" class="headerlink" title="空心菱形"></a>空心菱形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//空心菱形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($k==<span class="number">1</span> || $k==<span class="number">2</span>*$i<span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($k==<span class="number">2</span>*$i<span class="number">-1</span> || $k==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/F8lIvMT9USQ3RiZ.png" alt="11.png"></p>
+<h2 id="php循环练习"><a href="#php循环练习" class="headerlink" title="php循环练习"></a>php循环练习</h2><h3 id="求1000以内的水仙花数"><a href="#求1000以内的水仙花数" class="headerlink" title="求1000以内的水仙花数"></a>求1000以内的水仙花数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//求水仙花数</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">100</span>;$i&lt;<span class="number">1000</span>;$i++)&#123;</span><br><span class="line">    $ge=$i%<span class="number">10</span>;</span><br><span class="line">    $shi=floor($i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">    $bai=floor($i/<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">if</span>($ge*$ge*$ge+$shi*$shi*$shi+$bai*$bai*$bai==$i)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&#123;$i&#125;是水仙花数"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/UFHAvLghWbZJiI5.png" alt="11.png"></p>
+<h3 id="求一到一百之间不含数字4的自然数-并且计算有多少个"><a href="#求一到一百之间不含数字4的自然数-并且计算有多少个" class="headerlink" title="求一到一百之间不含数字4的自然数  并且计算有多少个"></a>求一到一百之间不含数字4的自然数  并且计算有多少个</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    $ge = $i % <span class="number">10</span>;</span><br><span class="line">    $shi = $i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> ($ge == <span class="number">4</span> || $shi == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $sum++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&#123;$sum&#125;个"</span>; <span class="comment">//162</span></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">$num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (strpos($i, <span class="string">'4'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line">        $num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $num; <span class="comment">//162</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出一到一百之间所有的质数"><a href="#输出一到一百之间所有的质数" class="headerlink" title="输出一到一百之间所有的质数"></a>输出一到一百之间所有的质数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">2</span>;$i&lt;=<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">2</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i%$j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>($i==$j)&#123;</span><br><span class="line">        <span class="keyword">echo</span> $i.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">9</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"$j*$i="</span>.$i*$j.<span class="string">"&amp;nbsp"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="百鸡问题"><a href="#百鸡问题" class="headerlink" title="百鸡问题"></a>百鸡问题</h3><p><strong>100块钱买一百只鸡 公鸡5块钱一只 母鸡3块钱一只 小鸡一块钱三只  100块钱必须花完  问：公鸡 母鸡 小鸡各多少只</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">100</span>;$j++)&#123;</span><br><span class="line">        $k=<span class="number">100</span>-$i-$j;</span><br><span class="line">        <span class="keyword">if</span>($i*<span class="number">5</span>+$j*<span class="number">3</span>+$k/<span class="number">3</span>==<span class="number">100</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"公鸡"</span>.$i;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"母鸡"</span>.$j;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"小鸡"</span>.$k;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>学习循环还是很锻炼思维的 尤其是我这种菜比 加油吧 路还长！！！！！！</strong></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>tp5.1的依赖注入和容器</title>
     <url>/2020/06/25/tp5.1%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E5%92%8C%E5%AE%B9%E5%99%A8/</url>
     <content><![CDATA[<p>​        <strong>最近在使用tp5.1做公司的业务,增删改查部分和tp5.0的区别不大,在阅读文档时,看到了依赖注入和容器,这两个词听上去很高大上,之前也没有涉及过,于是,学习了一波。首先,我们要明确依赖注入和容器没有必然的关系。</strong> <strong>所谓的依赖注入,就是将对象类型的数据 以参数的方式传到方法的参数列表 解决了向类中的方法传递对象的问题。而容器就是一个类,容器类,他是用来对类进行管理,可以理解为数组,一个key对应一个value,tp5.1中,这个key叫做标识,通过一个key对应一个类名/闭包函数/类实例/接口,我们可以把一个类绑定到容器中,然后进行使用,从而调用类的方法.</strong></p>
@@ -1612,6 +1585,37 @@
 <h3 id="容器的绑定和使用"><a href="#容器的绑定和使用" class="headerlink" title="容器的绑定和使用"></a>容器的绑定和使用</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//绑定一个类到容器</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">bindClass</span><span class="params">()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="comment">//把一个类放到容器中 相当于注册到容器中</span></span><br><span class="line">           Container::set(<span class="string">'temp'</span>,<span class="string">'\app\common\Temp'</span>);</span><br><span class="line">           <span class="comment">//助手函数的使用 helper.php</span></span><br><span class="line"><span class="comment">//            bind('temp','\app\common\Temp');</span></span><br><span class="line"><span class="comment">//            $temp=app('temp',['name'=&gt;'cxk_gigo']);</span></span><br><span class="line">    </span><br><span class="line">            $temp=Container::get(<span class="string">'temp'</span>,[<span class="string">'name'</span>=&gt;<span class="string">'gigo_gigo'</span>]);</span><br><span class="line">            <span class="keyword">return</span> $temp-&gt;getName();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//绑定一个闭包到函数</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">bindClosure</span><span class="params">()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="comment">//把一个闭包放到容器中</span></span><br><span class="line">            Container::set(<span class="string">'demo'</span>,<span class="function"><span class="keyword">function</span><span class="params">($domain)</span></span>&#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="string">'mydal博客的域名是'</span>.$domain;</span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> Container::get(<span class="string">'demo'</span>,[<span class="string">'domain'</span>=&gt;<span class="string">'mydal.cn'</span>]);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <p>​            <strong>自己对于依赖注入和容器的理解还是很浅显,以后工作中在更多场景使用之后,应该可以加强理解,本篇博客只是一个记录。</strong></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tp5全选删除</title>
+    <url>/2020/03/07/tp5%E5%85%A8%E9%80%89%E5%88%A0%E9%99%A4/</url>
+    <content><![CDATA[<h1 id="tp5实现后台模块全选删除"><a href="#tp5实现后台模块全选删除" class="headerlink" title="tp5实现后台模块全选删除"></a>tp5实现后台模块全选删除</h1><p>技术栈:ajax layer.js tp5 </p>
+<p><img src="https://i.loli.net/2020/03/07/rvZGAK5p6OtzUxg.jpg" alt="1575019926362.png"></p>
+<p>一个让你想到即可做到的web弹窗/层  解决方案      <a href="http://layer.layui.com/" target="_blank" rel="noopener">http://layer.layui.com/</a></p>
+<a id="more"></a>
+
+<h2 id="实现复选框全选"><a href="#实现复选框全选" class="headerlink" title="实现复选框全选"></a>实现复选框全选</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"all"</span>  <span class="attr">style</span>=<span class="string">"!important; opacity: 1.2;position: static;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form class&#x3D;&quot;piliangshanchan&quot;&gt;  &#x2F;&#x2F;为了实现ajax 序列化表单的值</span><br><span class="line">&lt;td class&#x3D;&quot;text-center&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&#123;$value.id&#125;&quot;</span><br><span class="line">                               name&#x3D;&quot;id[]&quot; id&#x3D;&quot;checkbox&quot;</span><br><span class="line">                               class&#x3D;&quot;cheidbox&quot;</span><br><span class="line">                               style&#x3D;&quot;!important; opacity: 1.2;position: static;&quot;&gt;</span><br><span class="line">&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button type&#x3D;&quot;submit&quot; tooltip&#x3D;&quot;删除管理员&quot; class&#x3D;&quot;btn btn-danger btn-sm shi&quot;</span><br><span class="line">        onclick&#x3D;&quot;delAll()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-trash-o&quot;&gt;&lt;&#x2F;i&gt; 批量删除</span><br><span class="line">&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全选</span></span><br><span class="line">$(<span class="string">'#all'</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="keyword">this</span>).is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">        $(<span class="string">':checkbox'</span>).prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">':checkbox'</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//反选</span></span><br><span class="line">$(<span class="string">".cheidbox"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len=$(<span class="string">".cheidbox"</span>).length;  <span class="comment">//获取所有小复选框的个数</span></span><br><span class="line">    <span class="keyword">var</span> len2=$(<span class="string">"input.cheidbox:checked"</span>).length;  <span class="comment">//获取选中的小复选框个数</span></span><br><span class="line">    <span class="keyword">if</span>(len==len2)&#123;</span><br><span class="line">        $(<span class="string">'#all'</span>).prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">'#all'</span>).prop(<span class="string">"checked"</span>,<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="发送ajax请求"><a href="#发送ajax请求" class="headerlink" title="发送ajax请求"></a>发送ajax请求</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//批量删除提交</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    layer.confirm(<span class="string">'确认要删除吗？'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="string">'.cheidbox'</span>).is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"&#123;:url('admin/delAll')&#125;"</span>,</span><br><span class="line">                data: $(<span class="string">'.piliangshanchan'</span>).serialize(), <span class="comment">//给后台发送序列化表单值得结果</span></span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                type: <span class="string">'post'</span>,</span><br><span class="line">                <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                    <span class="comment">// console.log(res);</span></span><br><span class="line">                    <span class="keyword">if</span> (res.status == <span class="number">1</span>) &#123;</span><br><span class="line">                        layer.alert(res.message + <span class="string">"，共删除"</span> + res.num + <span class="string">"数据"</span>, &#123;<span class="attr">icon</span>: <span class="number">6</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                            <span class="built_in">window</span>.location.reload();  <span class="comment">//页面刷新</span></span><br><span class="line">                            <span class="comment">// layer.close(index) - 关闭特定层</span></span><br><span class="line">                            <span class="comment">// 获得iframe索引</span></span><br><span class="line">                            <span class="keyword">var</span> index = parent.layer.getFrameIndex(<span class="built_in">window</span>.name);</span><br><span class="line">                            <span class="comment">//关闭当前frame</span></span><br><span class="line">                            parent.layer.close(index);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        layer.alert(res.message, &#123;<span class="attr">icon</span>:<span class="number">1</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                            <span class="built_in">window</span>.location.reload();</span><br><span class="line">                            <span class="comment">// 获得frame索引</span></span><br><span class="line">                            <span class="keyword">var</span> index = parent.layer.getFrameIndex(<span class="built_in">window</span>.name);</span><br><span class="line">                            <span class="comment">//关闭当前frame</span></span><br><span class="line">                            parent.layer.close(index);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            layer.msg(<span class="string">'请选择~~'</span>, &#123;<span class="attr">icon</span>: <span class="number">2</span>&#125;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="后台控制器"><a href="#后台控制器" class="headerlink" title="后台控制器"></a>后台控制器</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//批量删除用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delAll</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $data = <span class="keyword">$this</span>-&gt;request-&gt;param();  <span class="comment">//获取当前请求参数的值  拿到ajax发送的值</span></span><br><span class="line">    $allid = $data[<span class="string">'id'</span>];</span><br><span class="line">    $res=AdminModel::destroy($allid);</span><br><span class="line">    $num=count($allid)</span><br><span class="line">    <span class="keyword">if</span>($res)&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'status'</span>=&gt;<span class="number">1</span>,<span class="string">'message'</span>=&gt;<span class="string">'删除成功'</span>,<span class="string">'num'</span>=&gt;$num];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'status'</span>=&gt;<span class="number">0</span>,<span class="string">'message'</span>=&gt;<span class="string">'删除失败'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1677,28 +1681,24 @@
       </tags>
   </entry>
   <entry>
-    <title>tp5全选删除</title>
-    <url>/2020/03/07/tp5%E5%85%A8%E9%80%89%E5%88%A0%E9%99%A4/</url>
-    <content><![CDATA[<h1 id="tp5实现后台模块全选删除"><a href="#tp5实现后台模块全选删除" class="headerlink" title="tp5实现后台模块全选删除"></a>tp5实现后台模块全选删除</h1><p>技术栈:ajax layer.js tp5 </p>
-<p><img src="https://i.loli.net/2020/03/07/rvZGAK5p6OtzUxg.jpg" alt="1575019926362.png"></p>
-<p>一个让你想到即可做到的web弹窗/层  解决方案      <a href="http://layer.layui.com/" target="_blank" rel="noopener">http://layer.layui.com/</a></p>
+    <title>tp5.1结合layui实现多图上传</title>
+    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
 <a id="more"></a>
 
-<h2 id="实现复选框全选"><a href="#实现复选框全选" class="headerlink" title="实现复选框全选"></a>实现复选框全选</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">"text-center"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"all"</span>  <span class="attr">style</span>=<span class="string">"!important; opacity: 1.2;position: static;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form class&#x3D;&quot;piliangshanchan&quot;&gt;  &#x2F;&#x2F;为了实现ajax 序列化表单的值</span><br><span class="line">&lt;td class&#x3D;&quot;text-center&quot;&gt;&lt;input type&#x3D;&quot;checkbox&quot; value&#x3D;&quot;&#123;$value.id&#125;&quot;</span><br><span class="line">                               name&#x3D;&quot;id[]&quot; id&#x3D;&quot;checkbox&quot;</span><br><span class="line">                               class&#x3D;&quot;cheidbox&quot;</span><br><span class="line">                               style&#x3D;&quot;!important; opacity: 1.2;position: static;&quot;&gt;</span><br><span class="line">&lt;&#x2F;td&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button type&#x3D;&quot;submit&quot; tooltip&#x3D;&quot;删除管理员&quot; class&#x3D;&quot;btn btn-danger btn-sm shi&quot;</span><br><span class="line">        onclick&#x3D;&quot;delAll()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-trash-o&quot;&gt;&lt;&#x2F;i&gt; 批量删除</span><br><span class="line">&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全选</span></span><br><span class="line">$(<span class="string">'#all'</span>).change(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="keyword">this</span>).is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">        $(<span class="string">':checkbox'</span>).prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $(<span class="string">':checkbox'</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//反选</span></span><br><span class="line">$(<span class="string">".cheidbox"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len=$(<span class="string">".cheidbox"</span>).length;  <span class="comment">//获取所有小复选框的个数</span></span><br><span class="line">    <span class="keyword">var</span> len2=$(<span class="string">"input.cheidbox:checked"</span>).length;  <span class="comment">//获取选中的小复选框个数</span></span><br><span class="line">    <span class="keyword">if</span>(len==len2)&#123;</span><br><span class="line">        $(<span class="string">'#all'</span>).prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">'#all'</span>).prop(<span class="string">"checked"</span>,<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="发送ajax请求"><a href="#发送ajax请求" class="headerlink" title="发送ajax请求"></a>发送ajax请求</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//批量删除提交</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delAll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    layer.confirm(<span class="string">'确认要删除吗？'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">index</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="string">'.cheidbox'</span>).is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"&#123;:url('admin/delAll')&#125;"</span>,</span><br><span class="line">                data: $(<span class="string">'.piliangshanchan'</span>).serialize(), <span class="comment">//给后台发送序列化表单值得结果</span></span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                type: <span class="string">'post'</span>,</span><br><span class="line">                <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                    <span class="comment">// console.log(res);</span></span><br><span class="line">                    <span class="keyword">if</span> (res.status == <span class="number">1</span>) &#123;</span><br><span class="line">                        layer.alert(res.message + <span class="string">"，共删除"</span> + res.num + <span class="string">"数据"</span>, &#123;<span class="attr">icon</span>: <span class="number">6</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                            <span class="built_in">window</span>.location.reload();  <span class="comment">//页面刷新</span></span><br><span class="line">                            <span class="comment">// layer.close(index) - 关闭特定层</span></span><br><span class="line">                            <span class="comment">// 获得iframe索引</span></span><br><span class="line">                            <span class="keyword">var</span> index = parent.layer.getFrameIndex(<span class="built_in">window</span>.name);</span><br><span class="line">                            <span class="comment">//关闭当前frame</span></span><br><span class="line">                            parent.layer.close(index);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        layer.alert(res.message, &#123;<span class="attr">icon</span>:<span class="number">1</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                            <span class="built_in">window</span>.location.reload();</span><br><span class="line">                            <span class="comment">// 获得frame索引</span></span><br><span class="line">                            <span class="keyword">var</span> index = parent.layer.getFrameIndex(<span class="built_in">window</span>.name);</span><br><span class="line">                            <span class="comment">//关闭当前frame</span></span><br><span class="line">                            parent.layer.close(index);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            layer.msg(<span class="string">'请选择~~'</span>, &#123;<span class="attr">icon</span>: <span class="number">2</span>&#125;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
 
-<h2 id="后台控制器"><a href="#后台控制器" class="headerlink" title="后台控制器"></a>后台控制器</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//批量删除用户</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">delAll</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $data = <span class="keyword">$this</span>-&gt;request-&gt;param();  <span class="comment">//获取当前请求参数的值  拿到ajax发送的值</span></span><br><span class="line">    $allid = $data[<span class="string">'id'</span>];</span><br><span class="line">    $res=AdminModel::destroy($allid);</span><br><span class="line">    $num=count($allid)</span><br><span class="line">    <span class="keyword">if</span>($res)&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'status'</span>=&gt;<span class="number">1</span>,<span class="string">'message'</span>=&gt;<span class="string">'删除成功'</span>,<span class="string">'num'</span>=&gt;$num];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'status'</span>=&gt;<span class="number">0</span>,<span class="string">'message'</span>=&gt;<span class="string">'删除失败'</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
+<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
+<p><strong>放大效果</strong></p>
+<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1747,130 +1747,6 @@
       </categories>
       <tags>
         <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序登录</title>
-    <url>/2020/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<p><img src="https://i.loli.net/2020/04/06/Wa3jVBRl4gIe7PJ.png" alt="11.png"></p>
-<a id="more"></a>
-
-<h1 id="微信小程序登录流程"><a href="#微信小程序登录流程" class="headerlink" title="微信小程序登录流程"></a>微信小程序登录流程</h1><p>一张图了解微信小程序登录流程</p>
-<p><img src="https://i.loli.net/2020/04/06/1HjJsdD9V6lmoSA.png" alt="11.png"></p>
-<h2 id="微信小程序发送请求-wx-login"><a href="#微信小程序发送请求-wx-login" class="headerlink" title="微信小程序发送请求(wx.login())"></a>微信小程序发送请求(wx.login())</h2><p>通过wx.login()获取临时凭证code 并传回到后台</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">//获取用户对象信息</span></span><br><span class="line">  <span class="keyword">var</span> userInfo = res.detail.userInfo;</span><br><span class="line">  wx.setStorageSync(<span class="string">"userInfo"</span>, userInfo);  <span class="comment">//设置缓存</span></span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    userInfo: userInfo,</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.login(&#123;</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: config.baseUrl + <span class="string">"/token"</span>,  <span class="comment">//发送到后台</span></span><br><span class="line">          data: &#123;</span><br><span class="line">            code: res.code, <span class="comment">//临时凭证code</span></span><br><span class="line">            nickName: userInfo.nickName,  <span class="comment">//用户对象昵称</span></span><br><span class="line">            avatarUrl: userInfo.avatarUrl <span class="comment">//用户对象头像</span></span><br><span class="line">          &#125;,</span><br><span class="line">          method: <span class="string">'POST'</span>,</span><br><span class="line">          dataType: <span class="string">'json'</span>,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> token = res.data.token;</span><br><span class="line">            wx.setStorageSync(<span class="string">'token'</span>, token); <span class="comment">//设置缓存</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<h2 id="tp5后台处理"><a href="#tp5后台处理" class="headerlink" title="tp5后台处理"></a>tp5后台处理</h2><ul>
-<li>接收到code  通过curl调用小程序接口 发送请求 将code appid secret 发送过去 请求成功 拿到 session_key 和openid</li>
-<li>将openid和用户的名称头像存到数据表中</li>
-<li>生成令牌做为自定义登录态 返回给前台 前台存到缓存中  自定义登录态与openid关联</li>
-<li>微信小程序发起业务请求时从缓存中拿到token令牌 验证是否登录</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">token</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $code=input(<span class="string">'post.code'</span>); <span class="comment">//接收微信小程序发送过来的code</span></span><br><span class="line">        <span class="comment">//初始化curl  通过curl向微信小程序接口服务 发送请求</span></span><br><span class="line">        $ch=curl_init();</span><br><span class="line">        <span class="comment">//设置选项</span></span><br><span class="line">        $appid=<span class="string">"wxad72f080afae7980"</span>;  </span><br><span class="line">        $secret=<span class="string">"ebf7abfded334145e4de09d7ec2c3969"</span>;</span><br><span class="line">        <span class="comment">//登录凭证校验</span></span><br><span class="line">        $url=<span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid=$appid&amp;secret=$secret&amp;js_code=$code&amp;grant_type=authorization_code"</span>; <span class="comment">//需要发送appid secret code</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * curl_init() 和 curl_close() 分别是初始化CURL连接和关闭CURL连接，</span></span><br><span class="line"><span class="comment">         * curl_exec() 执行CURL请求，如果没有错误发生，该函数的返回是对应URL返回的数据,json字符串的格式；如果发生错误，该函数返回 FALSE。需要注意的是，判断输出是否为FALSE用的是全等号，这是为了区分返回空串和出错的情况。</span></span><br><span class="line"><span class="comment">         * CURL函数库里最重要的函数是curl_setopt(),它可以通过设定CURL函数库定义的选项来定制HTTP请求。上述代码片段中使用了三个重要的选项：</span></span><br><span class="line"><span class="comment">         * CURLOPT_URL 指定请求的URL；</span></span><br><span class="line"><span class="comment">         * CURLOPT_RETURNTRANSFER 设置为1表示稍后执行的curl_exec函数的返回是URL的返回字符串，而不是把返回字符串定向到标准输出并返回TRUE；</span></span><br><span class="line"><span class="comment">         * CURLLOPT_HEADER设置为0表示不返回HTTP头部信息。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        curl_setopt($ch,CURLOPT_URL,$url);</span><br><span class="line">        curl_setopt($ch,CURLOPT_RETURNTRANSFER,<span class="number">1</span>);</span><br><span class="line">        curl_setopt($ch,CURLOPT_HEADER,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//设置为不是https也可以访问</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * CURLOPT_SSL_VERIFYHOST</span></span><br><span class="line"><span class="comment">         * 设置为 1 是检查服务器SSL证书中是否存在一个公用名(common name)。译者注：公用名(Common Name)</span></span><br><span class="line"><span class="comment">         * 一般来讲就是填写你将要申请SSL证书的域名 (domain)或子域名(sub domain)。</span></span><br><span class="line"><span class="comment">         * 设置成 2，会检查公用名是否存在，并且是否与提供的主机名匹配。</span></span><br><span class="line"><span class="comment">         * 0 为不检查名称。 在生产环境中，这个值应该是 2（默认值）。</span></span><br><span class="line"><span class="comment">         * 值 1 的支持在 cURL 7.28.1 中被删除了。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行curl获取HTML文档内容</span></span><br><span class="line">        $output=curl_exec($ch);</span><br><span class="line">        <span class="keyword">if</span>($output===<span class="keyword">false</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"CURL Error:"</span>.curl_error($ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//释放curl句柄</span></span><br><span class="line">        curl_close($ch);</span><br><span class="line"><span class="comment">//        return $output;</span></span><br><span class="line">    </span><br><span class="line">        <span class="comment">//将json解码转换为数组</span></span><br><span class="line">        $curl_result=json_decode($output,<span class="keyword">true</span>); <span class="comment">//assoc 值为TRUE时返回数组，FALSE时返回对象；</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断错误信息</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>($curl_result[<span class="string">'errcode'</span>]))&#123;</span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">0</span>,</span><br><span class="line">                <span class="string">'msg'</span>=&gt;<span class="string">' Invalid parameter'</span> <span class="comment">//无效的参数</span></span><br><span class="line">            ],<span class="number">400</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        $model=User::get([<span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>]]); <span class="comment">//请求成功之后拿到openid 进行比对</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>($model)&#123;</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $data=<span class="keyword">array</span>(  <span class="comment">//插入到数据表中</span></span><br><span class="line">                <span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>],</span><br><span class="line">                <span class="string">'nickName'</span>=&gt;input(<span class="string">'post.nickName'</span>),</span><br><span class="line">                <span class="string">'avatarUrl'</span>=&gt;input(<span class="string">'post.avatarUrl'</span>)</span><br><span class="line">            );</span><br><span class="line">            $model=User::create($data);</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//生成令牌</span></span><br><span class="line">        $token=<span class="keyword">$this</span>-&gt;generalToken(<span class="number">32</span>);</span><br><span class="line">        User::where(<span class="string">'id'</span>,$userid)-&gt;update([<span class="string">'token'</span>=&gt;$token]);</span><br><span class="line">        <span class="keyword">return</span>[</span><br><span class="line">            <span class="string">'token'</span>=&gt;$token</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//生成令牌  做为自定义登录态 返回到微信小程序前台  前台存到缓存中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">generalToken</span><span class="params">($length)</span></span>&#123;  </span><br><span class="line">        <span class="comment">//令牌就是生成一系列的随机字符串</span></span><br><span class="line">        $str=<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">        $result=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$length;$i++)&#123;</span><br><span class="line">            $result.=$str[rand(<span class="number">0</span>,<span class="number">61</span>)]; <span class="comment">//rand() 函数返回随机整数。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取当前时间戳</span></span><br><span class="line">        $time=$_SERVER[<span class="string">'REQUEST_TIME'</span>];</span><br><span class="line">        <span class="keyword">return</span> md5($result.$time);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="微信小程序验证是否登录"><a href="#微信小程序验证是否登录" class="headerlink" title="微信小程序验证是否登录"></a>微信小程序验证是否登录</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="comment">//验证用户登录</span></span><br><span class="line">​    <span class="keyword">var</span> token = wx.getStorageSync(<span class="string">'token'</span>);</span><br><span class="line">​    <span class="keyword">if</span> (!token) &#123;</span><br><span class="line">​      wx.showToast(&#123;</span><br><span class="line">​        title: <span class="string">'请先登录'</span>,</span><br><span class="line">​        icon: <span class="string">'none'</span></span><br><span class="line">​      &#125;)</span><br><span class="line">​      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">​    &#125; <span class="comment">//登录成功发送业务请求</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序</title>
-    <url>/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="微信小程序中this指向"><a href="#微信小程序中this指向" class="headerlink" title="微信小程序中this指向"></a>微信小程序中this指向</h1><p>​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.</p>
-<p><img src="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png" alt="11.png"></p>
-<a id="more"></a>
-
-<p>图片中可以看到 页面加载函数中的this是page的全局this</p>
-<p><img src="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png" alt="111.png"></p>
-<p>同样在我自定义的函数中,this也是全局this,这都没有什么问题. 问题出在闭包函数</p>
-<p><img src="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png" alt="111.png"></p>
-<p>可以看到当我使用<code>wx.request({})</code>来请求<code>api</code>接口时,success回调函数中的this是未定义的。这就有问题了,当我们想把接收到的接口数据返回给视图页面时,一般要用<code>this.setData({})</code>进行设置,要解决这个问题很简单,两种方法.</p>
-<h2 id="第一种解决方法"><a href="#第一种解决方法" class="headerlink" title="第一种解决方法"></a>第一种解决方法</h2><p>在请求的外部也就是全局this的作用域下声明一个变量 来接收全局this</p>
-<p><img src="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png" alt="111.png"></p>
-<h2 id="第二种解决方法"><a href="#第二种解决方法" class="headerlink" title="第二种解决方法"></a>第二种解决方法</h2><p>使用<code>es6</code>的箭头函数</p>
-<p>小程序中箭头函数中的this是指的是父作用域的this. 箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
-<p><img src="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png" alt="1111.png"></p>
-<p><img src="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png" alt="111.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记一次h5样式兼容问题</title>
-    <url>/2021/12/23/%E8%AE%B0%E4%B8%80%E6%AC%A1h5%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>​    这个h5项目是公司一个大佬写的,react+ts的框架,然后放到了app里面,其他手机一切正常,在一个安卓8.1的vivo手机上样式不正常.并且vivo手机的浏览器直接打开h5也是正常的,所以比较奇怪,特此记录一下.</p>
-<a id="more"></a>
-
-<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>​    在vivo手机上样式效果</p>
-<p><img src="https://s2.loli.net/2021/12/23/bxdyVhgnCzHTqmk.png" alt=""></p>
-<p>很明显的看到,表头的内容有一部分没出来.</p>
-<p>我们再来看一下正常的效果.</p>
-<p><img src="https://s2.loli.net/2021/12/23/YhSWJGfpsj4CavI.png" alt=""></p>
-<p>我们表格的效果是固定左侧一列，然后可以滚动表格(scroll),既然在vivo手机上没出来,那我们只好在电脑上调试一下,看是哪个样式出了问题.</p>
-<h2 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>​    本次调试环境基于安卓和win</p>
-<p> <strong>怎么做</strong></p>
-<ul>
-<li>安卓机+数据线+chrome</li>
-<li>使用数据线连接手机和电脑</li>
-<li>打开手机开发者模式:设置=&gt;关于手机=&gt;版本号=&gt;连续点击</li>
-<li>找到手机的开发者选项=&gt;打开USB调试</li>
-<li>将手机内app里的H5打开</li>
-<li>在电脑上的chrome地址栏内输入  <code>chrome://inspect/#devices</code></li>
-<li>等待几秒,正常情况下就会出来我们的h5链接</li>
-<li>如果按照上述步骤出不来,检查一下数据线是否可用,一般情况都是数据线的问题.</li>
-</ul>
-<p>上面的工作做完,我们就成功的在电脑上看到了如下页面:</p>
-<p><img src="https://s2.loli.net/2021/12/23/bdO9SzTxQonk2LV.png" alt=""></p>
-<p>这样我们就可以愉快的调试了.</p>
-<h2 id="分析解决"><a href="#分析解决" class="headerlink" title="分析解决"></a>分析解决</h2><p>起初,我去看表头的样式,发现了如下问题:</p>
-<p><img src="https://s2.loli.net/2021/12/23/CvptQqSe2gsx57j.png" alt=""></p>
-<p>colgroup是0px，但是修改col的样式也的确有响应.</p>
-<p>我们来看一下正常情况下:</p>
-<p><img src="https://s2.loli.net/2021/12/23/pkhGxRsCZH9L5ja.png" alt=""></p>
-<p>​    然后,我就想是不是这个样式在这个vivo上不起效果,经过查阅了资料,和自己一番调试后发现没效果. 然后公司大佬一出手,瞬间定位了问题,是浮动的问题.</p>
-<p>原本我们的overflow是这样的:</p>
-<p><img src="https://s2.loli.net/2021/12/23/bszCvyqHl5dPkwY.png" alt=""></p>
-<p>设置了overflow:hidden 正常情况下一切正常,拖动表格也可以正常显示,在我们的vivo手机上面还是上面的样子,不起效果.然后我们把vivo手机上的overflow属性删除之后,发现正常了,但是在其他手机和浏览器就不正常了.那我们就得从overflow的几个属性下手了.看一下overflow的几个属性:</p>
-<table>
-<thead>
-<tr>
-<th>visible</th>
-<th>默认值。内容不会被修剪，会呈现在元素框之外。</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>hidden</td>
-<td>内容会被修剪，并且其余内容是不可见的。</td>
-</tr>
-<tr>
-<td>scroll</td>
-<td>内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 (始终显示滚动条)</td>
-</tr>
-<tr>
-<td>auto</td>
-<td>如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。(必要时显示滚动条)</td>
-</tr>
-<tr>
-<td>inherit</td>
-<td>规定应该从父元素继承 overflow 属性的值。</td>
-</tr>
-</tbody></table>
-<p>​    因为我们的表格是一个可滚动的表格,表格下方是有一个滚动条的,所以我们可以考虑一下scroll,auto两个属性。经过测试发现,将overflow设置为overflow:auto scroll 后在各个机型样式都正常了。这样,我们的表头和表格内容都可以滚动,在我们滑动表格时就会一起滚动. overflow设置两个值的情况下,一个代表overflow-x的值,一个代表overflow-y的值. 我所理解的我们只需要设置overflow:auto,必要时显示滚动条是可以解决这个问题的,因为我们用不上基于y轴的情况。但是这样设置在这台vivo手机也是不行的,所以尝试写两个值的方式,我们给overflow设置两个值得情况下,在这个vivo手机上面也是不兼容的,会自动删除掉,从而达到了我们的目的.</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>react</tag>
       </tags>
   </entry>
   <entry>
@@ -1986,9 +1862,133 @@
       </tags>
   </entry>
   <entry>
+    <title>微信小程序</title>
+    <url>/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="微信小程序中this指向"><a href="#微信小程序中this指向" class="headerlink" title="微信小程序中this指向"></a>微信小程序中this指向</h1><p>​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.</p>
+<p><img src="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png" alt="11.png"></p>
+<a id="more"></a>
+
+<p>图片中可以看到 页面加载函数中的this是page的全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png" alt="111.png"></p>
+<p>同样在我自定义的函数中,this也是全局this,这都没有什么问题. 问题出在闭包函数</p>
+<p><img src="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png" alt="111.png"></p>
+<p>可以看到当我使用<code>wx.request({})</code>来请求<code>api</code>接口时,success回调函数中的this是未定义的。这就有问题了,当我们想把接收到的接口数据返回给视图页面时,一般要用<code>this.setData({})</code>进行设置,要解决这个问题很简单,两种方法.</p>
+<h2 id="第一种解决方法"><a href="#第一种解决方法" class="headerlink" title="第一种解决方法"></a>第一种解决方法</h2><p>在请求的外部也就是全局this的作用域下声明一个变量 来接收全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png" alt="111.png"></p>
+<h2 id="第二种解决方法"><a href="#第二种解决方法" class="headerlink" title="第二种解决方法"></a>第二种解决方法</h2><p>使用<code>es6</code>的箭头函数</p>
+<p>小程序中箭头函数中的this是指的是父作用域的this. 箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
+<p><img src="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png" alt="1111.png"></p>
+<p><img src="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png" alt="111.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序登录</title>
+    <url>/2020/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<p><img src="https://i.loli.net/2020/04/06/Wa3jVBRl4gIe7PJ.png" alt="11.png"></p>
+<a id="more"></a>
+
+<h1 id="微信小程序登录流程"><a href="#微信小程序登录流程" class="headerlink" title="微信小程序登录流程"></a>微信小程序登录流程</h1><p>一张图了解微信小程序登录流程</p>
+<p><img src="https://i.loli.net/2020/04/06/1HjJsdD9V6lmoSA.png" alt="11.png"></p>
+<h2 id="微信小程序发送请求-wx-login"><a href="#微信小程序发送请求-wx-login" class="headerlink" title="微信小程序发送请求(wx.login())"></a>微信小程序发送请求(wx.login())</h2><p>通过wx.login()获取临时凭证code 并传回到后台</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">//获取用户对象信息</span></span><br><span class="line">  <span class="keyword">var</span> userInfo = res.detail.userInfo;</span><br><span class="line">  wx.setStorageSync(<span class="string">"userInfo"</span>, userInfo);  <span class="comment">//设置缓存</span></span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    userInfo: userInfo,</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.login(&#123;</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: config.baseUrl + <span class="string">"/token"</span>,  <span class="comment">//发送到后台</span></span><br><span class="line">          data: &#123;</span><br><span class="line">            code: res.code, <span class="comment">//临时凭证code</span></span><br><span class="line">            nickName: userInfo.nickName,  <span class="comment">//用户对象昵称</span></span><br><span class="line">            avatarUrl: userInfo.avatarUrl <span class="comment">//用户对象头像</span></span><br><span class="line">          &#125;,</span><br><span class="line">          method: <span class="string">'POST'</span>,</span><br><span class="line">          dataType: <span class="string">'json'</span>,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> token = res.data.token;</span><br><span class="line">            wx.setStorageSync(<span class="string">'token'</span>, token); <span class="comment">//设置缓存</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="tp5后台处理"><a href="#tp5后台处理" class="headerlink" title="tp5后台处理"></a>tp5后台处理</h2><ul>
+<li>接收到code  通过curl调用小程序接口 发送请求 将code appid secret 发送过去 请求成功 拿到 session_key 和openid</li>
+<li>将openid和用户的名称头像存到数据表中</li>
+<li>生成令牌做为自定义登录态 返回给前台 前台存到缓存中  自定义登录态与openid关联</li>
+<li>微信小程序发起业务请求时从缓存中拿到token令牌 验证是否登录</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">token</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $code=input(<span class="string">'post.code'</span>); <span class="comment">//接收微信小程序发送过来的code</span></span><br><span class="line">        <span class="comment">//初始化curl  通过curl向微信小程序接口服务 发送请求</span></span><br><span class="line">        $ch=curl_init();</span><br><span class="line">        <span class="comment">//设置选项</span></span><br><span class="line">        $appid=<span class="string">"wxad72f080afae7980"</span>;  </span><br><span class="line">        $secret=<span class="string">"ebf7abfded334145e4de09d7ec2c3969"</span>;</span><br><span class="line">        <span class="comment">//登录凭证校验</span></span><br><span class="line">        $url=<span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid=$appid&amp;secret=$secret&amp;js_code=$code&amp;grant_type=authorization_code"</span>; <span class="comment">//需要发送appid secret code</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * curl_init() 和 curl_close() 分别是初始化CURL连接和关闭CURL连接，</span></span><br><span class="line"><span class="comment">         * curl_exec() 执行CURL请求，如果没有错误发生，该函数的返回是对应URL返回的数据,json字符串的格式；如果发生错误，该函数返回 FALSE。需要注意的是，判断输出是否为FALSE用的是全等号，这是为了区分返回空串和出错的情况。</span></span><br><span class="line"><span class="comment">         * CURL函数库里最重要的函数是curl_setopt(),它可以通过设定CURL函数库定义的选项来定制HTTP请求。上述代码片段中使用了三个重要的选项：</span></span><br><span class="line"><span class="comment">         * CURLOPT_URL 指定请求的URL；</span></span><br><span class="line"><span class="comment">         * CURLOPT_RETURNTRANSFER 设置为1表示稍后执行的curl_exec函数的返回是URL的返回字符串，而不是把返回字符串定向到标准输出并返回TRUE；</span></span><br><span class="line"><span class="comment">         * CURLLOPT_HEADER设置为0表示不返回HTTP头部信息。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        curl_setopt($ch,CURLOPT_URL,$url);</span><br><span class="line">        curl_setopt($ch,CURLOPT_RETURNTRANSFER,<span class="number">1</span>);</span><br><span class="line">        curl_setopt($ch,CURLOPT_HEADER,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//设置为不是https也可以访问</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * CURLOPT_SSL_VERIFYHOST</span></span><br><span class="line"><span class="comment">         * 设置为 1 是检查服务器SSL证书中是否存在一个公用名(common name)。译者注：公用名(Common Name)</span></span><br><span class="line"><span class="comment">         * 一般来讲就是填写你将要申请SSL证书的域名 (domain)或子域名(sub domain)。</span></span><br><span class="line"><span class="comment">         * 设置成 2，会检查公用名是否存在，并且是否与提供的主机名匹配。</span></span><br><span class="line"><span class="comment">         * 0 为不检查名称。 在生产环境中，这个值应该是 2（默认值）。</span></span><br><span class="line"><span class="comment">         * 值 1 的支持在 cURL 7.28.1 中被删除了。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行curl获取HTML文档内容</span></span><br><span class="line">        $output=curl_exec($ch);</span><br><span class="line">        <span class="keyword">if</span>($output===<span class="keyword">false</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"CURL Error:"</span>.curl_error($ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//释放curl句柄</span></span><br><span class="line">        curl_close($ch);</span><br><span class="line"><span class="comment">//        return $output;</span></span><br><span class="line">    </span><br><span class="line">        <span class="comment">//将json解码转换为数组</span></span><br><span class="line">        $curl_result=json_decode($output,<span class="keyword">true</span>); <span class="comment">//assoc 值为TRUE时返回数组，FALSE时返回对象；</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断错误信息</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>($curl_result[<span class="string">'errcode'</span>]))&#123;</span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">0</span>,</span><br><span class="line">                <span class="string">'msg'</span>=&gt;<span class="string">' Invalid parameter'</span> <span class="comment">//无效的参数</span></span><br><span class="line">            ],<span class="number">400</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        $model=User::get([<span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>]]); <span class="comment">//请求成功之后拿到openid 进行比对</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>($model)&#123;</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $data=<span class="keyword">array</span>(  <span class="comment">//插入到数据表中</span></span><br><span class="line">                <span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>],</span><br><span class="line">                <span class="string">'nickName'</span>=&gt;input(<span class="string">'post.nickName'</span>),</span><br><span class="line">                <span class="string">'avatarUrl'</span>=&gt;input(<span class="string">'post.avatarUrl'</span>)</span><br><span class="line">            );</span><br><span class="line">            $model=User::create($data);</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//生成令牌</span></span><br><span class="line">        $token=<span class="keyword">$this</span>-&gt;generalToken(<span class="number">32</span>);</span><br><span class="line">        User::where(<span class="string">'id'</span>,$userid)-&gt;update([<span class="string">'token'</span>=&gt;$token]);</span><br><span class="line">        <span class="keyword">return</span>[</span><br><span class="line">            <span class="string">'token'</span>=&gt;$token</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//生成令牌  做为自定义登录态 返回到微信小程序前台  前台存到缓存中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">generalToken</span><span class="params">($length)</span></span>&#123;  </span><br><span class="line">        <span class="comment">//令牌就是生成一系列的随机字符串</span></span><br><span class="line">        $str=<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">        $result=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$length;$i++)&#123;</span><br><span class="line">            $result.=$str[rand(<span class="number">0</span>,<span class="number">61</span>)]; <span class="comment">//rand() 函数返回随机整数。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取当前时间戳</span></span><br><span class="line">        $time=$_SERVER[<span class="string">'REQUEST_TIME'</span>];</span><br><span class="line">        <span class="keyword">return</span> md5($result.$time);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序验证是否登录"><a href="#微信小程序验证是否登录" class="headerlink" title="微信小程序验证是否登录"></a>微信小程序验证是否登录</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="comment">//验证用户登录</span></span><br><span class="line">​    <span class="keyword">var</span> token = wx.getStorageSync(<span class="string">'token'</span>);</span><br><span class="line">​    <span class="keyword">if</span> (!token) &#123;</span><br><span class="line">​      wx.showToast(&#123;</span><br><span class="line">​        title: <span class="string">'请先登录'</span>,</span><br><span class="line">​        icon: <span class="string">'none'</span></span><br><span class="line">​      &#125;)</span><br><span class="line">​      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">​    &#125; <span class="comment">//登录成功发送业务请求</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试hexo-admin</title>
     <url>/2021/12/24/%E6%B5%8B%E8%AF%95hexo-admin/</url>
     <content><![CDATA[<p>test</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>记一次h5样式兼容问题</title>
+    <url>/2021/12/23/%E8%AE%B0%E4%B8%80%E6%AC%A1h5%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>​    这个h5项目是公司一个大佬写的,react+ts的框架,然后放到了app里面,其他手机一切正常,在一个安卓8.1的vivo手机上样式不正常.并且vivo手机的浏览器直接打开h5也是正常的,所以比较奇怪,特此记录一下.</p>
+<a id="more"></a>
+
+<h2 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h2><p>​    在vivo手机上样式效果</p>
+<p><img src="https://s2.loli.net/2021/12/23/bxdyVhgnCzHTqmk.png" alt=""></p>
+<p>很明显的看到,表头的内容有一部分没出来.</p>
+<p>我们再来看一下正常的效果.</p>
+<p><img src="https://s2.loli.net/2021/12/23/YhSWJGfpsj4CavI.png" alt=""></p>
+<p>我们表格的效果是固定左侧一列，然后可以滚动表格(scroll),既然在vivo手机上没出来,那我们只好在电脑上调试一下,看是哪个样式出了问题.</p>
+<h2 id="调试方法"><a href="#调试方法" class="headerlink" title="调试方法"></a>调试方法</h2><h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><p>​    本次调试环境基于安卓和win</p>
+<p> <strong>怎么做</strong></p>
+<ul>
+<li>安卓机+数据线+chrome</li>
+<li>使用数据线连接手机和电脑</li>
+<li>打开手机开发者模式:设置=&gt;关于手机=&gt;版本号=&gt;连续点击</li>
+<li>找到手机的开发者选项=&gt;打开USB调试</li>
+<li>将手机内app里的H5打开</li>
+<li>在电脑上的chrome地址栏内输入  <code>chrome://inspect/#devices</code></li>
+<li>等待几秒,正常情况下就会出来我们的h5链接</li>
+<li>如果按照上述步骤出不来,检查一下数据线是否可用,一般情况都是数据线的问题.</li>
+</ul>
+<p>上面的工作做完,我们就成功的在电脑上看到了如下页面:</p>
+<p><img src="https://s2.loli.net/2021/12/23/bdO9SzTxQonk2LV.png" alt=""></p>
+<p>这样我们就可以愉快的调试了.</p>
+<h2 id="分析解决"><a href="#分析解决" class="headerlink" title="分析解决"></a>分析解决</h2><p>起初,我去看表头的样式,发现了如下问题:</p>
+<p><img src="https://s2.loli.net/2021/12/23/CvptQqSe2gsx57j.png" alt=""></p>
+<p>colgroup是0px，但是修改col的样式也的确有响应.</p>
+<p>我们来看一下正常情况下:</p>
+<p><img src="https://s2.loli.net/2021/12/23/pkhGxRsCZH9L5ja.png" alt=""></p>
+<p>​    然后,我就想是不是这个样式在这个vivo上不起效果,经过查阅了资料,和自己一番调试后发现没效果. 然后公司大佬一出手,瞬间定位了问题,是浮动的问题.</p>
+<p>原本我们的overflow是这样的:</p>
+<p><img src="https://s2.loli.net/2021/12/23/bszCvyqHl5dPkwY.png" alt=""></p>
+<p>设置了overflow:hidden 正常情况下一切正常,拖动表格也可以正常显示,在我们的vivo手机上面还是上面的样子,不起效果.然后我们把vivo手机上的overflow属性删除之后,发现正常了,但是在其他手机和浏览器就不正常了.那我们就得从overflow的几个属性下手了.看一下overflow的几个属性:</p>
+<table>
+<thead>
+<tr>
+<th>visible</th>
+<th>默认值。内容不会被修剪，会呈现在元素框之外。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hidden</td>
+<td>内容会被修剪，并且其余内容是不可见的。</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。 (始终显示滚动条)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。(必要时显示滚动条)</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>规定应该从父元素继承 overflow 属性的值。</td>
+</tr>
+</tbody></table>
+<p>​    因为我们的表格是一个可滚动的表格,表格下方是有一个滚动条的,所以我们可以考虑一下scroll,auto两个属性。经过测试发现,将overflow设置为overflow:auto scroll 后在各个机型样式都正常了。这样,我们的表头和表格内容都可以滚动,在我们滑动表格时就会一起滚动. overflow设置两个值的情况下,一个代表overflow-x的值,一个代表overflow-y的值. 我所理解的我们只需要设置overflow:auto,必要时显示滚动条是可以解决这个问题的,因为我们用不上基于y轴的情况。但是这样设置在这台vivo手机也是不行的,所以尝试写两个值的方式,我们给overflow设置两个值得情况下,在这个vivo手机上面也是不兼容的,会自动删除掉,从而达到了我们的目的.</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
   </entry>
 </search>
