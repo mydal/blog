@@ -1,149 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ECharts</title>
-    <url>/2019/12/25/ECharts/</url>
-    <content><![CDATA[<p>​        一个随笔,写一个学校布置的作业,用到了ECharts,第一次接触,实现了项目中的异步数据加载,按照文档,自己没能实现,换一种小思路成功实现,当时,拿到了值,可是没能渲染成功,解决了之后,还是很有必要记录一下,毕竟太菜了…</p>
-<p><img src="https://i.loli.net/2019/12/25/cFBkdltYKDzx1QT.png" alt="1111.png"></p>
-<a id="more"></a>
-
-<h1 id="ECharts"><a href="#ECharts" class="headerlink" title="ECharts"></a>ECharts</h1><h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><p>通过接收从php后台返回的json数据,使用ajax异步请求,实现echarts的异步数据加载</p>
-<p>代码一看,什么都明白了….</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>后台数据返回</strong></p>
-<p><img src="https://i.loli.net/2019/12/25/1s2G479pmjPnOXi.png" alt="1111.png"></p>
-<p><strong>页面接收</strong></p>
-<p><img src="https://i.loli.net/2019/12/25/a2wW5GdXsb8co6R.png" alt="2222.png"></p>
-<p>通过ajax请求拿到json数据 生明两个空数组,拿到值丢到数组中,注意  success成功之后 拿到通过遍历出来的两个数组,填充到data:中,完成数据展示</p>
-<p>其实是很简单的问题,多总结,多练习,多读文档是真的重要！！！</p>
-]]></content>
-      <categories>
-        <category>ECharts</category>
-      </categories>
-      <tags>
-        <tag>ECharts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora+GitHub+PicGo自建免费图床</title>
-    <url>/2020/05/10/Typora-GiHub-PicGo%E8%87%AA%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145123.jpg" alt=""></p>
-<a id="more"></a>
-
-<p>​    <strong>我个人呢,一直有写笔记和博客的习惯,虽然没什么技术含量,但也是记录了自己的成长,写博客最烦的就是上传图片,之前一直用的sm.ms,但现在这个图床有了上传限制,上传的也比较慢,就想着自己搭建一个图床,然后在掘金上看到了一个老哥的文章,帮助我成功搭建,特此记录一下.</strong></p>
-<h2 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h2><p>PicGo下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo下载</a></p>
-<p>Windows系统下载<code>exe</code>文件，macOS系统下载<code>dmg</code>文件，Linux下载<code>AppImage</code>文件。</p>
-<p><strong>我这里使用的是2.2.2版本</strong></p>
-<h2 id="github上创建仓库和密钥"><a href="#github上创建仓库和密钥" class="headerlink" title="github上创建仓库和密钥"></a>github上创建仓库和密钥</h2><p><strong>仓库自己创建即可,这里就不做演示了</strong></p>
-<p>然后,我们在github个人设置页面,创建一个访问令牌,在PicGo配置中会用到.</p>
-<p>访问 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a>  点击<code>Generate new token</code>按照下图进行配置.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145426.png" alt=""></p>
-<p>配置完成,点击创建,就会生成一个密钥令牌,将其保存.</p>
-<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145509.jpg" alt=""></p>
-<ul>
-<li>第一个是github的用户名/仓库名.</li>
-<li>第二个是分支名,默认设置为master,主分支.</li>
-<li>第三个是Token,就是刚才生成的令牌.</li>
-<li>后面这两个可以不填,然后点击确定,点击设置为默认图床.</li>
-</ul>
-<p>到了这里,其实已经可以了,我们只需要点击PicGo的上传区直接上传图片即可,上传成功后,直接ctrl+v就可以在文档中使用,同时,可以在github仓库中看到我们上传的图片.看到这里,有的小伙伴就会说了,博主你骗人,你这里也没用到typora啊,别着急,下面只需几个简单的配置,你的typora会变得巨香无比.</p>
-<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p>这里推荐大家使用最新版本,<a href="https://typora.io/" target="_blank" rel="noopener">https://typora.io/</a></p>
-<p>然后打开PicGo设置-&gt;设置Server, 看一下是否开启. 默认应该是开启的,监听的端口不能改变.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145538.jpg" alt=""></p>
-<h3 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h3><p> <strong>版本要求</strong>：<code>Typora 0.9.84及以上</code></p>
-<p>​    不过我使用的时候, <code>Typora 0.9.85</code>没有好使,就更新到了最新版本,还是推荐大家使用最新版本.</p>
-<p>​    打开文件-&gt;偏好设置-&gt;图像  如下图 进行配置.</p>
-<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145604.jpg" alt=""></p>
-<p><strong>设置完成之后,点击验证图片上传的功能. 返回true,即验证成功.</strong></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>三个使用方式.</strong></p>
-<ul>
-<li><p><strong>拖拽</strong>，在文件夹内拖拽图片到Typora编辑界面。</p>
-</li>
-<li><p><strong>插入</strong>，快捷键<code>Ctrl+Shift+I</code>，调出插入图片的功能。</p>
-</li>
-<li><p><strong>复制</strong>，使用截图功能后，直接粘贴到Typora编辑界面内。</p>
-<p><strong>拖拽</strong>和<strong>插入</strong>都是自动将图片上传至图床。但是<strong>复制</strong>需要手动点击<code>上传</code></p>
-</li>
-</ul>
-<p>   <strong>到此,一个香香的typora就配置好了,妈妈再也不用担心我找不到顺手的图床了.</strong></p>
-]]></content>
-      <categories>
-        <category>图床工具</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git那些事</title>
-    <url>/2021/12/17/git%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
-    <content><![CDATA[<p>​    在日常开发中,git是我们不可或缺的工具,作为一个优秀的版本控制工具,值得学习的地方还是很多的.趁这次学习git flow的机会,也重新学习一下git基本命令，好记性不如烂笔头,多写多练,才能在实际开发中游刃有余的使用git.</p>
-<a id="more"></a>
-
-<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><h3 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个 Git 代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为 Git 代码库</span></span><br><span class="line">git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
-
-<h3 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">git mv [file-original] [file-renamed]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">代码提交</span><br><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次 commit 之后的变化，直接到仓库区</span></span><br><span class="line">git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有 diff 信息</span></span><br><span class="line">git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的 commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次 commit 的提交信息</span></span><br><span class="line">git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次 commit，并包括指定文件的新变化</span></span><br><span class="line">git commit --amend   ...</span><br></pre></td></tr></table></figure>
-
-<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向指定 commit</span></span><br><span class="line">git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">git branch --<span class="built_in">set</span>-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个 commit，合并进当前分支</span></span><br><span class="line">git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push origin --delete </span><br><span class="line">git branch -dr</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline  <span class="comment"># 使用不同于默认格式的方式展示提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --online  <span class="comment"># 简洁展示历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --all  <span class="comment"># 分支所有呈现</span></span><br><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>  <span class="comment"># 显示 commit 历史，以及每次 commit 发生变更的文件交</span></span><br><span class="line">git <span class="built_in">log</span> -p [file]  <span class="comment"># 显示指定文件相关的每一次 diff</span></span><br><span class="line">git <span class="built_in">log</span> -p -2      <span class="comment"># 展示最近的两次提交</span></span><br><span class="line">git <span class="built_in">log</span> -n4 --online  <span class="comment"># 看最近的历史消息</span></span><br><span class="line">git branch -v  <span class="comment"># 看本地有多少分支</span></span><br><span class="line">git checkout -b dashu 223343232  <span class="comment"># 分支 , 修改分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和上一个 commit 的差异</span></span><br><span class="line">git diff --cached []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新 commit 之间的差异</span></span><br><span class="line">git diff HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示两次提交之间的差异/两个分支的比较</span></span><br><span class="line">git diff [first-branch]...[second-branch]</span><br><span class="line">git diff <span class="built_in">test</span> master <span class="comment"># 本地和本地</span></span><br><span class="line">git diff <span class="built_in">test</span> origin/<span class="built_in">test</span> <span class="comment"># 本地和远程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">git show [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">git reflog</span><br></pre></td></tr></table></figure>
-
-<h3 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">git fetch [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">git push [remote] --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">git push [remote] --all</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-flow的工作流程"><a href="#git-flow的工作流程" class="headerlink" title="git-flow的工作流程"></a>git-flow的工作流程</h2><h3 id="什么是git-flow"><a href="#什么是git-flow" class="headerlink" title="什么是git-flow?"></a>什么是git-flow?</h3><p>git-flow是一个git工作流,这里借鉴网上的一些说明:</p>
-<p>​    Giflow 是另一种 Git 分支模型，它涉及使用功能分支和多个主分支。它由<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">文森特·德里森</a>( <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">Vincent Driessen) 在 nvie</a>首次出版并广受欢迎。与基于主干的开发相比，Giflow 拥有众多、寿命更长的分支和更大的提交。在这个模型下，开发者创建一个功能分支，并延迟合并到主干分支，直到功能完成。这些长期存在的特性分支需要更多的协作来合并，并且有更高的偏离主干分支的风险。它们还可以引入冲突的更新。</p>
-<p>​    Gitflow可用于有计划的发布周期项目和为<a href="https://www.atlassian.com/devops/what-is-devops/devops-best-practices" target="_blank" rel="noopener">DevOps的最佳实践</a>的 <a href="https://www.atlassian.com/continuous-delivery" target="_blank" rel="noopener">持续交付</a>。除了<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow" target="_blank" rel="noopener">Feature Branch Workflow</a>所需的内容之外，此工作流不会添加任何新概念或命令 。相反，它为不同的分支分配非常具体的角色，并定义它们应该如何以及何时交互。除了<code>feature</code>分支之外，它还使用单独的分支来准备、维护和记录发布。当然，您还可以利用 Feature Branch Workflow 的所有优势：拉取请求、独立实验和更高效的协作。</p>
-<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>​    Git-flow 是 Git 的包装器。该<code>git flow init</code>命令是默认<code>git init</code> 命令的扩展，除了为创建分支外，不会更改存储库中的任何内容。</p>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="https://s2.loli.net/2021/12/17/2ayIcekRsSFNihP.png" alt=""></p>
-<p>​    当在项目的根目录执行”<code>git flow init</code>“命令时 当前项目是否已经包括了一个Git仓库并不重要。因为git flow只是一个工作流，不会添加任何新概念和命令。所以,在一个项目中,可以先执行<code>git init</code>，再执行<code>git flow init</code>,当然，这是很没有必要的.</p>
-<h3 id="分支的模式"><a href="#分支的模式" class="headerlink" title="分支的模式"></a>分支的模式</h3><p>git-flow 模式会预设两个主分支在仓库中：</p>
-<p><strong>master</strong> 只能用来包括产品代码. 不能直接在这个分支上工作. 而是在其他指定的，独立的特性分支中进行工作. 不直接提交到master分支上是很多工作流程的一个共同的规则。</p>
-<p><strong>develop</strong> 是你进行任何新的开发的基础分支。当你开始一个新的功能分支时，它将是开发的基础。另外，该分支也应该汇集所有已经完成的功能，并等待被整合到 master分支中。</p>
-<p><img src="https://www.git-tower.com/learn/media/pages/git/ebook/cn/command-line/advanced-topics/git-flow/1637630691-1639653849/01-master-develop.png" alt=""></p>
-<p>​    这两个分支被称为<strong>长期分支</strong>。它们会存活在项目的整个生命周期中。而其他的分支,如针对功能的分支,针对发行的分支,只是临时存在。它们是根据你的需求来创建的,完成任务之后就删除掉.</p>
-<p><img src="https://www.git-tower.com/learn/media/pages/git/ebook/cn/command-line/advanced-topics/git-flow/2144379591-1639653849/02-features-hotfix.png" alt=""></p>
-<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="功能开发"><a href="#功能开发" class="headerlink" title="功能开发"></a>功能开发</h4><p>​    对于一个开发人员来说，最平常的工作就是项目功能的开发。所以我们可以使用git-flow这个工作流，它定义了很多对于功能开发的工作流程</p>
-<h5 id="开始新功能"><a href="#开始新功能" class="headerlink" title="开始新功能"></a>开始新功能</h5><p>现在我们开始开发项目的一个新功能<code>&quot;oss-upload&quot;</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow feature start oss-upload</span><br><span class="line">Switched to a new branch <span class="string">'feature/oss-upload'</span></span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- A new branch <span class="string">'feature/oss-upload'</span> was created, based on <span class="string">'develop'</span></span><br><span class="line">- You are now on branch <span class="string">'feature/oss-upload'</span></span><br></pre></td></tr></table></figure>
-
-<p>​    这时，git-flow会创建一个名为”feature/oss-upload”的新分支，并自动切换到该分支,我们直接就可以开始工作了.</p>
-<h5 id="完成一个功能"><a href="#完成一个功能" class="headerlink" title="完成一个功能"></a>完成一个功能</h5><p>经过艰苦的工作,我们的新功能终于开发完成了:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow feature finish oss-upload</span><br><span class="line">Switched to branch <span class="string">'develop'</span></span><br><span class="line">Already up to date.</span><br><span class="line">Deleted branch feature/oss-upload (was 996bb46).</span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- The feature branch <span class="string">'feature/oss-upload'</span> was merged into <span class="string">'develop'</span></span><br><span class="line">- Feature branch <span class="string">'feature/oss-upload'</span> has been locally deleted</span><br><span class="line">- You are now on branch <span class="string">'develop'</span></span><br></pre></td></tr></table></figure>
-
-<p>​    ‘flow feature finish’会把我们添加或修改的新功能合并到’develop’分支中去.并且会删除这个当前已经完成工作的分支’feature/oss-upload’,并自动切换到’develop分支’</p>
-<h4 id="管理releases"><a href="#管理releases" class="headerlink" title="管理releases"></a>管理releases</h4><p>​    Release 管理是版本控制处理中的另外一个非常重要的话题。让我们来看看如何利用 git-flow 创建和发布 release。</p>
-<h5 id="创建release"><a href="#创建release" class="headerlink" title="创建release"></a>创建release</h5><p>​    当我们的 “develop” 分支的代码已经是一个成熟的 release 版本时，这意味着：第一，它包括所有新的功能和必要的修复；第二，它已经被彻底的测试过了。如果上述两点都满足，那就是时候开始生成一个新的 release 了：    </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow release start 0.0.1</span><br><span class="line">Switched to a new branch <span class="string">'release/0.0.1'</span></span><br></pre></td></tr></table></figure>
-
-<p>​    执行完这条命令之后,我们发现release 分支是使用版本号命名的。这个命名方案还有一个很好的附带功能，那就是当我们完成了release 后，git-flow 会适当地自动去标记那些 release 提交。</p>
-<h5 id="完成release"><a href="#完成release" class="headerlink" title="完成release"></a>完成release</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow release finish 0.0.1</span><br><span class="line">Deleted branch release/0.0.1 (was 996bb46).</span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- Release branch <span class="string">'release/0.0.1'</span> has been merged into <span class="string">'master'</span></span><br><span class="line">- The release was tagged <span class="string">'0.0.1'</span></span><br><span class="line">- Release branch <span class="string">'release/0.0.1'</span> has been locally deleted</span><br><span class="line">- You are now on branch <span class="string">'develop'</span></span><br></pre></td></tr></table></figure>
-
-<p>这个命令会完成如下一系列的操作：</p>
-<ol>
-<li>首先，git-flow 会拉取远程仓库，以确保目前是最新的版本。</li>
-<li>然后，release 的内容会被合并到 “master” 和 “develop” 两个分支中去，这样不仅产品代码为最新的版本，而且新的功能分支也将基于最新代码。</li>
-<li>为便于识别和做历史参考，release 提交会被标记上这个 release 的名字</li>
-<li>清理操作，版本分支会被删除，并且回到 “develop”。</li>
-</ol>
-<h4 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h4><p>​    很多时候，仅仅在几个小时或几天之后，当对 release 版本作做全面测试时，可能就会发现一些bug。<br>在这种情况下，git-flow 提供一个特定的 “hotfix” 工作流程（因为在这里不管使用 “功能” 分支流程，还是 “release” 分支流程都是不恰当的）。</p>
-<h5 id="创建Hotfixes"><a href="#创建Hotfixes" class="headerlink" title="创建Hotfixes"></a>创建Hotfixes</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow hotfix start missing-link</span><br></pre></td></tr></table></figure>
-
-<p>​    这个命令会创建一个名为 “hotfix/missing-link” 的分支。因为这是对产品代码进行修复，所以这个 hotfix 分支是基于 “master” 分支。<br>这也是和 release 分支最明显的区别，release 分支都是基于 “develop” 分支的。因为你不应该在一个还不完全稳定的开发分支上对产品代码进行地修复。</p>
-<p>就像 release 一样，修复这个错误当然也会直接影响到项目的版本号！</p>
-<h5 id="完成Hotfixes"><a href="#完成Hotfixes" class="headerlink" title="完成Hotfixes"></a>完成Hotfixes</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow hotfix finish missing-link</span><br></pre></td></tr></table></figure>
-
-<p>这个过程非常类似于发布一个 release 版本：</p>
-<ul>
-<li>完成的改动会被合并到 “master” 中，同样也会合并到 “develop” 分支中，这样就可以确保这个错误不会再次出现在下一个 release 中。</li>
-<li>这个 hotfix 程序将被标记起来以便于参考。</li>
-<li>这个 hotfix 分支将被删除，然后切换到 “develop” 分支上去。</li>
-</ul>
-<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><p>​    首先，git-flow不会为git扩展新的功能，只是用来完成一些特定的工作流程。其次,定义一个固定的工作流程会使团队合作更加简单容易.最后,我们可以使用feature来开发功能,release来发布版本,最后可以通过hotfix来修改产品代码的bug.感觉理解的不太对,但又有点说不上来,等实际开发中用到应该就可以加深一点理解.</p>
-]]></content>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git学习笔记</title>
     <url>/2019/12/23/git/</url>
     <content><![CDATA[<p>​        之前或多或少接触过git,但用了就忘,还经常出错,这篇就作为一篇git学习笔记,内容很水,主要是为了加深理解和记忆。</p>
@@ -373,102 +230,26 @@
       </tags>
   </entry>
   <entry>
-    <title>js字符串方法</title>
-    <url>/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-    <content><![CDATA[<h1 id="JavaScript-字符串方法"><a href="#JavaScript-字符串方法" class="headerlink" title="JavaScript 字符串方法"></a>JavaScript 字符串方法</h1><p>​        最近在准备考1+x证书,刷了一些题,很多题中考到了js字符串的方法,特此总结一下。</p>
-<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p><code>length</code> 属性返回字符串的长度</p>
-<p><img src="https://i.loli.net/2019/12/15/FqIoiwrZCszB2Sg.png" alt="1.png"></p>
+    <title>ECharts</title>
+    <url>/2019/12/25/ECharts/</url>
+    <content><![CDATA[<p>​        一个随笔,写一个学校布置的作业,用到了ECharts,第一次接触,实现了项目中的异步数据加载,按照文档,自己没能实现,换一种小思路成功实现,当时,拿到了值,可是没能渲染成功,解决了之后,还是很有必要记录一下,毕竟太菜了…</p>
+<p><img src="https://i.loli.net/2019/12/25/cFBkdltYKDzx1QT.png" alt="1111.png"></p>
 <a id="more"></a>
 
-<h2 id="查找字符串中的字符串"><a href="#查找字符串中的字符串" class="headerlink" title="查找字符串中的字符串"></a>查找字符串中的字符串</h2><p><code>indexOf()</code> 方法返回字符串中指定文本首次出现的索引(位置)</p>
-<p><img src="https://i.loli.net/2019/12/15/uDc9gLrANz7TOBi.png" alt="1.png"></p>
-<p><code>lastIndexOf()</code> 方法返回指定文本在字符串中最后一次出现的索引</p>
-<p><img src="https://i.loli.net/2019/12/15/pzfi7jXbVFuxsKN.png" alt="1.png"></p>
-<p><strong>如果未找到文本,indexOf()和lastIndexOf()都返回-1</strong></p>
-<p><strong>两种方法都可以传入第二个参数,用来指定检索的起始位置</strong></p>
-<p><img src="https://i.loli.net/2019/12/15/M1iecPY6jFNzn8q.png" alt="1.png"></p>
-<p><img src="https://i.loli.net/2019/12/15/O856aqNmjlVKBrL.png" alt="1.png"></p>
-<p><strong>注意: <code>lastIndexOf()</code> 限制了检索位置为10 因此检索不到 返回-1</strong></p>
-<p><strong>像下面这种情况 会从第30个字符开始检索 返回的仍然是从字符起点开始检索的位置  第二个参数只是会限制字符检索的长度 不会从后往前检索</strong></p>
-<p><img src="https://i.loli.net/2019/12/15/2RxjcFp8vNb3tL6.png" alt="1.png"></p>
-<h2 id="检索字符串中的字符串"><a href="#检索字符串中的字符串" class="headerlink" title="检索字符串中的字符串"></a>检索字符串中的字符串</h2><p>search()方法检索特定值的字符串,并返回匹配的位置。听上去和<code>indexOf()</code>方法是相等的,实际上,区别很大</p>
-<p>区别在于:<code>search()</code> 方法无法设置第二个开始位置的参数。</p>
-<p>​                <code>indexOf()</code> 方法无法设置更强大的搜索值（正则表达式）。</p>
-<p><img src="https://i.loli.net/2019/12/15/tnYlapVNQshKW6q.png" alt="1.png"></p>
-<p><strong>如图:指定参数无效 还是从头开始检索</strong></p>
-<h2 id="提取部分字符串"><a href="#提取部分字符串" class="headerlink" title="提取部分字符串"></a>提取部分字符串</h2><p><strong>提取部分字符串有三种方法:</strong></p>
-<ul>
-<li>slice(start,end);</li>
-<li>substring(start,end);</li>
-<li>substr(start,length);</li>
-</ul>
-<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice()方法"></a>slice()方法</h3><p><code>slice()</code>提取字符串的某个部分 并且在新字符串中返回被提取的部分。</p>
-<p>俩个参数:起始索引,终止索引;</p>
-<p><img src="https://i.loli.net/2019/12/15/TPiOglmw8UqoxyM.png" alt="1.png"></p>
-<p><strong>从2开始包括2  到5结束 不包括5</strong></p>
-<p><strong>参数为负数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/jvN5mPYi2Za18FO.png" alt="1.png"></p>
-<p><strong>省略第二个参数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/PaWOjCt2iwlU9gq.png" alt="1.png"></p>
-<p><strong>省略第二个参数 则会拿到剩余的字符</strong></p>
-<p><strong>从结尾计数</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/MHVU6iDIxhaE74f.png" alt="1.png"></p>
-<p>注意:参数为负数 不适用于<strong>ie8</strong>及其更早版本</p>
-<h3 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring()方法"></a>substring()方法</h3><p><code>substring()</code>类似于<code>slice()</code></p>
-<p><strong>区别:</strong><code>substring()</code> 不能接受负的索引</p>
-<p><strong>传入负数索引是无效的 会从起点0开始截取</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/JXjt6iTpgGEVLM5.png" alt="1.png"></p>
-<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
-<h3 id="substr-方法"><a href="#substr-方法" class="headerlink" title="substr()方法"></a>substr()方法</h3><p><code>substr()</code> 也类似于s<code>lice()</code></p>
-<p><strong>区别:</strong>第二个参数 规定被提取部分的长度,第二个参数不能传入负数,因为长度不能为负数</p>
-<p>参数为负,没有打印结果 打印失败</p>
-<p><img src="https://i.loli.net/2019/12/16/3bm1yri84NO6wWQ.png" alt="1.png"></p>
-<p>参数为正 正常截取</p>
-<p><img src="https://i.loli.net/2019/12/16/fXedCJqPYnVItgO.png" alt="1.png"></p>
-<p>首个参数为负 第二个参数长度指定无效  负几 截取到几个字符 这里是负2 因此 截取到2个字符</p>
-<p><img src="https://i.loli.net/2019/12/16/pZ4eFQBVz3lCS1u.png" alt="1.png"></p>
-<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
-<h2 id="替换字符串内容"><a href="#替换字符串内容" class="headerlink" title="替换字符串内容"></a>替换字符串内容</h2><p><code>replace()</code>方法用另一个值替换在字符串中指定的值</p>
-<p><strong>参数1 为原字符串中的值   参数2为替换的值</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/KgDBEoNQWP2nayV.png" alt="1.png"></p>
-<p><strong>返回的是一个新字符串 不会改变原有字符串</strong>   <strong>默认只替换首个匹配到的字符</strong></p>
-<p><strong>默认情况下</strong> <code>replace()</code>对大小写敏感</p>
-<p><img src="https://i.loli.net/2019/12/16/qhvmAzbojye1wdg.png" alt="1.png"></p>
-<p><strong>使用正则表达式<code>/i</code>(大小写不敏感)  **   **注意:正则表达式不带引号</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/bIykXZmiGdHcLjC.png" alt="1.png"></p>
-<p><strong>替换所有匹配</strong></p>
-<p>使用正则表达式的<code>g</code>(用于全局搜索)</p>
-<p><img src="https://i.loli.net/2019/12/16/wbYmTljq6PWaI5v.png" alt="1.png"></p>
-<h2 id="转为大写和小写"><a href="#转为大写和小写" class="headerlink" title="转为大写和小写"></a>转为大写和小写</h2><p><code>toUpperCase()</code>把字符串转换为大写</p>
-<p><img src="https://i.loli.net/2019/12/16/pTGg5rmSIiydfMu.png" alt="1.png"></p>
-<p><code>toLowerCase()</code>把字符串转换为小写</p>
-<p><img src="https://i.loli.net/2019/12/16/9vJKCjlLfrN6gpq.png" alt="1.png"></p>
-<h2 id="连接两个或多个字符串"><a href="#连接两个或多个字符串" class="headerlink" title="连接两个或多个字符串"></a>连接两个或多个字符串</h2><p><code>concat()</code>可用于代替加运算符</p>
-<p><img src="https://i.loli.net/2019/12/16/ReAq8Vmz5YdZlg3.png" alt="1.png"></p>
-<p><strong>所有的字符串方法都会返回新字符串 不会修改原始字符串.</strong></p>
-<p><strong>字符串是不可变的:字符串不能更改,只能替换</strong></p>
-<h2 id="删除字符串两端的空白符"><a href="#删除字符串两端的空白符" class="headerlink" title="删除字符串两端的空白符"></a>删除字符串两端的空白符</h2><p><code>trim()</code>方法删除字符串两端的空白符</p>
-<p><img src="https://i.loli.net/2019/12/16/IUALYqdPmCaV5lf.png" alt="1.png"></p>
-<p>注意:ie8或更低版本不支持<code>trim()</code>方法 。</p>
-<p><strong>如需支持ie8或更低版本 可以使用<code>replace()</code>  需搭配正则</strong></p>
-<p><img src="https://i.loli.net/2019/12/16/2bSoaMQmPrNGE3t.png" alt="1.png"></p>
-<h2 id="提取字符串字符"><a href="#提取字符串字符" class="headerlink" title="提取字符串字符"></a>提取字符串字符</h2><h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p><code>charAt()</code>方法返回字符串中指定下标(位置)的字符串</p>
-<p><img src="https://i.loli.net/2019/12/16/T5tuoEPLiJnpX8c.png" alt="1.png"></p>
-<h3 id="charCodeAt-方法"><a href="#charCodeAt-方法" class="headerlink" title="charCodeAt()方法"></a>charCodeAt()方法</h3><p><code>charCodeAt()</code>方法返回字符串中指定索引的 <code>unicode</code> 编码</p>
-<p><img src="https://i.loli.net/2019/12/16/LSFfhq1oTZPIOnN.png" alt="1.png"></p>
-<h2 id="字符串转换为数组"><a href="#字符串转换为数组" class="headerlink" title="字符串转换为数组"></a>字符串转换为数组</h2><p><code>split()</code>将字符串转换为数组</p>
-<p><img src="https://i.loli.net/2019/12/16/mhp7xLJjGRItX6w.png" alt="1.png"></p>
-<p>省略分隔符  被返回的数组将包含index[0]中的整个字符串</p>
-<p>如分隔符是””,被返回的数组将是间隔单个字符的数组</p>
-<p><img src="https://i.loli.net/2019/12/16/sum2DXzwy6KpHe3.png" alt="1.png"></p>
-<p>​        </p>
-<p>​        <strong>总结:</strong>革命尚未成功 同志仍需努力  细节决定成败</p>
+<h1 id="ECharts"><a href="#ECharts" class="headerlink" title="ECharts"></a>ECharts</h1><h2 id="项目需求"><a href="#项目需求" class="headerlink" title="项目需求"></a>项目需求</h2><p>通过接收从php后台返回的json数据,使用ajax异步请求,实现echarts的异步数据加载</p>
+<p>代码一看,什么都明白了….</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><strong>后台数据返回</strong></p>
+<p><img src="https://i.loli.net/2019/12/25/1s2G479pmjPnOXi.png" alt="1111.png"></p>
+<p><strong>页面接收</strong></p>
+<p><img src="https://i.loli.net/2019/12/25/a2wW5GdXsb8co6R.png" alt="2222.png"></p>
+<p>通过ajax请求拿到json数据 生明两个空数组,拿到值丢到数组中,注意  success成功之后 拿到通过遍历出来的两个数组,填充到data:中,完成数据展示</p>
+<p>其实是很简单的问题,多总结,多练习,多读文档是真的重要！！！</p>
 ]]></content>
       <categories>
-        <category>js</category>
+        <category>ECharts</category>
       </categories>
       <tags>
-        <tag>js</tag>
+        <tag>ECharts</tag>
       </tags>
   </entry>
   <entry>
@@ -695,6 +476,126 @@
       </tags>
   </entry>
   <entry>
+    <title>Typora+GitHub+PicGo自建免费图床</title>
+    <url>/2020/05/10/Typora-GiHub-PicGo%E8%87%AA%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145123.jpg" alt=""></p>
+<a id="more"></a>
+
+<p>​    <strong>我个人呢,一直有写笔记和博客的习惯,虽然没什么技术含量,但也是记录了自己的成长,写博客最烦的就是上传图片,之前一直用的sm.ms,但现在这个图床有了上传限制,上传的也比较慢,就想着自己搭建一个图床,然后在掘金上看到了一个老哥的文章,帮助我成功搭建,特此记录一下.</strong></p>
+<h2 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h2><p>PicGo下载地址：<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo下载</a></p>
+<p>Windows系统下载<code>exe</code>文件，macOS系统下载<code>dmg</code>文件，Linux下载<code>AppImage</code>文件。</p>
+<p><strong>我这里使用的是2.2.2版本</strong></p>
+<h2 id="github上创建仓库和密钥"><a href="#github上创建仓库和密钥" class="headerlink" title="github上创建仓库和密钥"></a>github上创建仓库和密钥</h2><p><strong>仓库自己创建即可,这里就不做演示了</strong></p>
+<p>然后,我们在github个人设置页面,创建一个访问令牌,在PicGo配置中会用到.</p>
+<p>访问 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a>  点击<code>Generate new token</code>按照下图进行配置.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145426.png" alt=""></p>
+<p>配置完成,点击创建,就会生成一个密钥令牌,将其保存.</p>
+<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145509.jpg" alt=""></p>
+<ul>
+<li>第一个是github的用户名/仓库名.</li>
+<li>第二个是分支名,默认设置为master,主分支.</li>
+<li>第三个是Token,就是刚才生成的令牌.</li>
+<li>后面这两个可以不填,然后点击确定,点击设置为默认图床.</li>
+</ul>
+<p>到了这里,其实已经可以了,我们只需要点击PicGo的上传区直接上传图片即可,上传成功后,直接ctrl+v就可以在文档中使用,同时,可以在github仓库中看到我们上传的图片.看到这里,有的小伙伴就会说了,博主你骗人,你这里也没用到typora啊,别着急,下面只需几个简单的配置,你的typora会变得巨香无比.</p>
+<h2 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h2><p>这里推荐大家使用最新版本,<a href="https://typora.io/" target="_blank" rel="noopener">https://typora.io/</a></p>
+<p>然后打开PicGo设置-&gt;设置Server, 看一下是否开启. 默认应该是开启的,监听的端口不能改变.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145538.jpg" alt=""></p>
+<h3 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h3><p> <strong>版本要求</strong>：<code>Typora 0.9.84及以上</code></p>
+<p>​    不过我使用的时候, <code>Typora 0.9.85</code>没有好使,就更新到了最新版本,还是推荐大家使用最新版本.</p>
+<p>​    打开文件-&gt;偏好设置-&gt;图像  如下图 进行配置.</p>
+<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145604.jpg" alt=""></p>
+<p><strong>设置完成之后,点击验证图片上传的功能. 返回true,即验证成功.</strong></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><strong>三个使用方式.</strong></p>
+<ul>
+<li><p><strong>拖拽</strong>，在文件夹内拖拽图片到Typora编辑界面。</p>
+</li>
+<li><p><strong>插入</strong>，快捷键<code>Ctrl+Shift+I</code>，调出插入图片的功能。</p>
+</li>
+<li><p><strong>复制</strong>，使用截图功能后，直接粘贴到Typora编辑界面内。</p>
+<p><strong>拖拽</strong>和<strong>插入</strong>都是自动将图片上传至图床。但是<strong>复制</strong>需要手动点击<code>上传</code></p>
+</li>
+</ul>
+<p>   <strong>到此,一个香香的typora就配置好了,妈妈再也不用担心我找不到顺手的图床了.</strong></p>
+]]></content>
+      <categories>
+        <category>图床工具</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git那些事</title>
+    <url>/2021/12/17/git%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+    <content><![CDATA[<p>​    在日常开发中,git是我们不可或缺的工具,作为一个优秀的版本控制工具,值得学习的地方还是很多的.趁这次学习git flow的机会,也重新学习一下git基本命令，好记性不如烂笔头,多写多练,才能在实际开发中游刃有余的使用git.</p>
+<a id="more"></a>
+
+<h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><h3 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个 Git 代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为 Git 代码库</span></span><br><span class="line">git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">git mv [file-original] [file-renamed]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">代码提交</span><br><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次 commit 之后的变化，直接到仓库区</span></span><br><span class="line">git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有 diff 信息</span></span><br><span class="line">git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的 commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次 commit 的提交信息</span></span><br><span class="line">git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次 commit，并包括指定文件的新变化</span></span><br><span class="line">git commit --amend   ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向指定 commit</span></span><br><span class="line">git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">git branch --<span class="built_in">set</span>-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个 commit，合并进当前分支</span></span><br><span class="line">git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push origin --delete </span><br><span class="line">git branch -dr</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline  <span class="comment"># 使用不同于默认格式的方式展示提交历史</span></span><br><span class="line">git <span class="built_in">log</span> --online  <span class="comment"># 简洁展示历史</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --all  <span class="comment"># 分支所有呈现</span></span><br><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>  <span class="comment"># 显示 commit 历史，以及每次 commit 发生变更的文件交</span></span><br><span class="line">git <span class="built_in">log</span> -p [file]  <span class="comment"># 显示指定文件相关的每一次 diff</span></span><br><span class="line">git <span class="built_in">log</span> -p -2      <span class="comment"># 展示最近的两次提交</span></span><br><span class="line">git <span class="built_in">log</span> -n4 --online  <span class="comment"># 看最近的历史消息</span></span><br><span class="line">git branch -v  <span class="comment"># 看本地有多少分支</span></span><br><span class="line">git checkout -b dashu 223343232  <span class="comment"># 分支 , 修改分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和上一个 commit 的差异</span></span><br><span class="line">git diff --cached []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新 commit 之间的差异</span></span><br><span class="line">git diff HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示两次提交之间的差异/两个分支的比较</span></span><br><span class="line">git diff [first-branch]...[second-branch]</span><br><span class="line">git diff <span class="built_in">test</span> master <span class="comment"># 本地和本地</span></span><br><span class="line">git diff <span class="built_in">test</span> origin/<span class="built_in">test</span> <span class="comment"># 本地和远程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">git show [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">git fetch [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">git push [remote] --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">git push [remote] --all</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-flow的工作流程"><a href="#git-flow的工作流程" class="headerlink" title="git-flow的工作流程"></a>git-flow的工作流程</h2><h3 id="什么是git-flow"><a href="#什么是git-flow" class="headerlink" title="什么是git-flow?"></a>什么是git-flow?</h3><p>git-flow是一个git工作流,这里借鉴网上的一些说明:</p>
+<p>​    Giflow 是另一种 Git 分支模型，它涉及使用功能分支和多个主分支。它由<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">文森特·德里森</a>( <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">Vincent Driessen) 在 nvie</a>首次出版并广受欢迎。与基于主干的开发相比，Giflow 拥有众多、寿命更长的分支和更大的提交。在这个模型下，开发者创建一个功能分支，并延迟合并到主干分支，直到功能完成。这些长期存在的特性分支需要更多的协作来合并，并且有更高的偏离主干分支的风险。它们还可以引入冲突的更新。</p>
+<p>​    Gitflow可用于有计划的发布周期项目和为<a href="https://www.atlassian.com/devops/what-is-devops/devops-best-practices" target="_blank" rel="noopener">DevOps的最佳实践</a>的 <a href="https://www.atlassian.com/continuous-delivery" target="_blank" rel="noopener">持续交付</a>。除了<a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow" target="_blank" rel="noopener">Feature Branch Workflow</a>所需的内容之外，此工作流不会添加任何新概念或命令 。相反，它为不同的分支分配非常具体的角色，并定义它们应该如何以及何时交互。除了<code>feature</code>分支之外，它还使用单独的分支来准备、维护和记录发布。当然，您还可以利用 Feature Branch Workflow 的所有优势：拉取请求、独立实验和更高效的协作。</p>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>​    Git-flow 是 Git 的包装器。该<code>git flow init</code>命令是默认<code>git init</code> 命令的扩展，除了为创建分支外，不会更改存储库中的任何内容。</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><img src="https://s2.loli.net/2021/12/17/2ayIcekRsSFNihP.png" alt=""></p>
+<p>​    当在项目的根目录执行”<code>git flow init</code>“命令时 当前项目是否已经包括了一个Git仓库并不重要。因为git flow只是一个工作流，不会添加任何新概念和命令。所以,在一个项目中,可以先执行<code>git init</code>，再执行<code>git flow init</code>,当然，这是很没有必要的.</p>
+<h3 id="分支的模式"><a href="#分支的模式" class="headerlink" title="分支的模式"></a>分支的模式</h3><p>git-flow 模式会预设两个主分支在仓库中：</p>
+<p><strong>master</strong> 只能用来包括产品代码. 不能直接在这个分支上工作. 而是在其他指定的，独立的特性分支中进行工作. 不直接提交到master分支上是很多工作流程的一个共同的规则。</p>
+<p><strong>develop</strong> 是你进行任何新的开发的基础分支。当你开始一个新的功能分支时，它将是开发的基础。另外，该分支也应该汇集所有已经完成的功能，并等待被整合到 master分支中。</p>
+<p><img src="https://www.git-tower.com/learn/media/pages/git/ebook/cn/command-line/advanced-topics/git-flow/1637630691-1639653849/01-master-develop.png" alt=""></p>
+<p>​    这两个分支被称为<strong>长期分支</strong>。它们会存活在项目的整个生命周期中。而其他的分支,如针对功能的分支,针对发行的分支,只是临时存在。它们是根据你的需求来创建的,完成任务之后就删除掉.</p>
+<p><img src="https://www.git-tower.com/learn/media/pages/git/ebook/cn/command-line/advanced-topics/git-flow/2144379591-1639653849/02-features-hotfix.png" alt=""></p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="功能开发"><a href="#功能开发" class="headerlink" title="功能开发"></a>功能开发</h4><p>​    对于一个开发人员来说，最平常的工作就是项目功能的开发。所以我们可以使用git-flow这个工作流，它定义了很多对于功能开发的工作流程</p>
+<h5 id="开始新功能"><a href="#开始新功能" class="headerlink" title="开始新功能"></a>开始新功能</h5><p>现在我们开始开发项目的一个新功能<code>&quot;oss-upload&quot;</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow feature start oss-upload</span><br><span class="line">Switched to a new branch <span class="string">'feature/oss-upload'</span></span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- A new branch <span class="string">'feature/oss-upload'</span> was created, based on <span class="string">'develop'</span></span><br><span class="line">- You are now on branch <span class="string">'feature/oss-upload'</span></span><br></pre></td></tr></table></figure>
+
+<p>​    这时，git-flow会创建一个名为”feature/oss-upload”的新分支，并自动切换到该分支,我们直接就可以开始工作了.</p>
+<h5 id="完成一个功能"><a href="#完成一个功能" class="headerlink" title="完成一个功能"></a>完成一个功能</h5><p>经过艰苦的工作,我们的新功能终于开发完成了:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow feature finish oss-upload</span><br><span class="line">Switched to branch <span class="string">'develop'</span></span><br><span class="line">Already up to date.</span><br><span class="line">Deleted branch feature/oss-upload (was 996bb46).</span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- The feature branch <span class="string">'feature/oss-upload'</span> was merged into <span class="string">'develop'</span></span><br><span class="line">- Feature branch <span class="string">'feature/oss-upload'</span> has been locally deleted</span><br><span class="line">- You are now on branch <span class="string">'develop'</span></span><br></pre></td></tr></table></figure>
+
+<p>​    ‘flow feature finish’会把我们添加或修改的新功能合并到’develop’分支中去.并且会删除这个当前已经完成工作的分支’feature/oss-upload’,并自动切换到’develop分支’</p>
+<h4 id="管理releases"><a href="#管理releases" class="headerlink" title="管理releases"></a>管理releases</h4><p>​    Release 管理是版本控制处理中的另外一个非常重要的话题。让我们来看看如何利用 git-flow 创建和发布 release。</p>
+<h5 id="创建release"><a href="#创建release" class="headerlink" title="创建release"></a>创建release</h5><p>​    当我们的 “develop” 分支的代码已经是一个成熟的 release 版本时，这意味着：第一，它包括所有新的功能和必要的修复；第二，它已经被彻底的测试过了。如果上述两点都满足，那就是时候开始生成一个新的 release 了：    </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow release start 0.0.1</span><br><span class="line">Switched to a new branch <span class="string">'release/0.0.1'</span></span><br></pre></td></tr></table></figure>
+
+<p>​    执行完这条命令之后,我们发现release 分支是使用版本号命名的。这个命名方案还有一个很好的附带功能，那就是当我们完成了release 后，git-flow 会适当地自动去标记那些 release 提交。</p>
+<h5 id="完成release"><a href="#完成release" class="headerlink" title="完成release"></a>完成release</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow release finish 0.0.1</span><br><span class="line">Deleted branch release/0.0.1 (was 996bb46).</span><br><span class="line"></span><br><span class="line">Summary of actions:</span><br><span class="line">- Release branch <span class="string">'release/0.0.1'</span> has been merged into <span class="string">'master'</span></span><br><span class="line">- The release was tagged <span class="string">'0.0.1'</span></span><br><span class="line">- Release branch <span class="string">'release/0.0.1'</span> has been locally deleted</span><br><span class="line">- You are now on branch <span class="string">'develop'</span></span><br></pre></td></tr></table></figure>
+
+<p>这个命令会完成如下一系列的操作：</p>
+<ol>
+<li>首先，git-flow 会拉取远程仓库，以确保目前是最新的版本。</li>
+<li>然后，release 的内容会被合并到 “master” 和 “develop” 两个分支中去，这样不仅产品代码为最新的版本，而且新的功能分支也将基于最新代码。</li>
+<li>为便于识别和做历史参考，release 提交会被标记上这个 release 的名字</li>
+<li>清理操作，版本分支会被删除，并且回到 “develop”。</li>
+</ol>
+<h4 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h4><p>​    很多时候，仅仅在几个小时或几天之后，当对 release 版本作做全面测试时，可能就会发现一些bug。<br>在这种情况下，git-flow 提供一个特定的 “hotfix” 工作流程（因为在这里不管使用 “功能” 分支流程，还是 “release” 分支流程都是不恰当的）。</p>
+<h5 id="创建Hotfixes"><a href="#创建Hotfixes" class="headerlink" title="创建Hotfixes"></a>创建Hotfixes</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow hotfix start missing-link</span><br></pre></td></tr></table></figure>
+
+<p>​    这个命令会创建一个名为 “hotfix/missing-link” 的分支。因为这是对产品代码进行修复，所以这个 hotfix 分支是基于 “master” 分支。<br>这也是和 release 分支最明显的区别，release 分支都是基于 “develop” 分支的。因为你不应该在一个还不完全稳定的开发分支上对产品代码进行地修复。</p>
+<p>就像 release 一样，修复这个错误当然也会直接影响到项目的版本号！</p>
+<h5 id="完成Hotfixes"><a href="#完成Hotfixes" class="headerlink" title="完成Hotfixes"></a>完成Hotfixes</h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git flow hotfix finish missing-link</span><br></pre></td></tr></table></figure>
+
+<p>这个过程非常类似于发布一个 release 版本：</p>
+<ul>
+<li>完成的改动会被合并到 “master” 中，同样也会合并到 “develop” 分支中，这样就可以确保这个错误不会再次出现在下一个 release 中。</li>
+<li>这个 hotfix 程序将被标记起来以便于参考。</li>
+<li>这个 hotfix 分支将被删除，然后切换到 “develop” 分支上去。</li>
+</ul>
+<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><p>​    首先，git-flow不会为git扩展新的功能，只是用来完成一些特定的工作流程。其次,定义一个固定的工作流程会使团队合作更加简单容易.最后,我们可以使用feature来开发功能,release来发布版本,最后可以通过hotfix来修改产品代码的bug.感觉理解的不太对,但又有点说不上来,等实际开发中用到应该就可以加深一点理解.</p>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>laravel模型关联</title>
     <url>/2019/11/13/laravel%E6%A8%A1%E5%9E%8B%E5%85%B3%E8%81%94/</url>
     <content><![CDATA[<h1 id="关联模型"><a href="#关联模型" class="headerlink" title="关联模型"></a>关联模型</h1><h2 id="一对一关系"><a href="#一对一关系" class="headerlink" title="一对一关系"></a>一对一关系</h2><h3 id="关联模型的关联方法"><a href="#关联模型的关联方法" class="headerlink" title="关联模型的关联方法"></a>关联模型的关联方法</h3><p>在写关联模型时 要分析出是谁关联谁 谁做主模型,谁做次模型.</p>
@@ -747,6 +648,132 @@
       </tags>
   </entry>
   <entry>
+    <title>js字符串方法</title>
+    <url>/2019/12/15/js%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="JavaScript-字符串方法"><a href="#JavaScript-字符串方法" class="headerlink" title="JavaScript 字符串方法"></a>JavaScript 字符串方法</h1><p>​        最近在准备考1+x证书,刷了一些题,很多题中考到了js字符串的方法,特此总结一下。</p>
+<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p><code>length</code> 属性返回字符串的长度</p>
+<p><img src="https://i.loli.net/2019/12/15/FqIoiwrZCszB2Sg.png" alt="1.png"></p>
+<a id="more"></a>
+
+<h2 id="查找字符串中的字符串"><a href="#查找字符串中的字符串" class="headerlink" title="查找字符串中的字符串"></a>查找字符串中的字符串</h2><p><code>indexOf()</code> 方法返回字符串中指定文本首次出现的索引(位置)</p>
+<p><img src="https://i.loli.net/2019/12/15/uDc9gLrANz7TOBi.png" alt="1.png"></p>
+<p><code>lastIndexOf()</code> 方法返回指定文本在字符串中最后一次出现的索引</p>
+<p><img src="https://i.loli.net/2019/12/15/pzfi7jXbVFuxsKN.png" alt="1.png"></p>
+<p><strong>如果未找到文本,indexOf()和lastIndexOf()都返回-1</strong></p>
+<p><strong>两种方法都可以传入第二个参数,用来指定检索的起始位置</strong></p>
+<p><img src="https://i.loli.net/2019/12/15/M1iecPY6jFNzn8q.png" alt="1.png"></p>
+<p><img src="https://i.loli.net/2019/12/15/O856aqNmjlVKBrL.png" alt="1.png"></p>
+<p><strong>注意: <code>lastIndexOf()</code> 限制了检索位置为10 因此检索不到 返回-1</strong></p>
+<p><strong>像下面这种情况 会从第30个字符开始检索 返回的仍然是从字符起点开始检索的位置  第二个参数只是会限制字符检索的长度 不会从后往前检索</strong></p>
+<p><img src="https://i.loli.net/2019/12/15/2RxjcFp8vNb3tL6.png" alt="1.png"></p>
+<h2 id="检索字符串中的字符串"><a href="#检索字符串中的字符串" class="headerlink" title="检索字符串中的字符串"></a>检索字符串中的字符串</h2><p>search()方法检索特定值的字符串,并返回匹配的位置。听上去和<code>indexOf()</code>方法是相等的,实际上,区别很大</p>
+<p>区别在于:<code>search()</code> 方法无法设置第二个开始位置的参数。</p>
+<p>​                <code>indexOf()</code> 方法无法设置更强大的搜索值（正则表达式）。</p>
+<p><img src="https://i.loli.net/2019/12/15/tnYlapVNQshKW6q.png" alt="1.png"></p>
+<p><strong>如图:指定参数无效 还是从头开始检索</strong></p>
+<h2 id="提取部分字符串"><a href="#提取部分字符串" class="headerlink" title="提取部分字符串"></a>提取部分字符串</h2><p><strong>提取部分字符串有三种方法:</strong></p>
+<ul>
+<li>slice(start,end);</li>
+<li>substring(start,end);</li>
+<li>substr(start,length);</li>
+</ul>
+<h3 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice()方法"></a>slice()方法</h3><p><code>slice()</code>提取字符串的某个部分 并且在新字符串中返回被提取的部分。</p>
+<p>俩个参数:起始索引,终止索引;</p>
+<p><img src="https://i.loli.net/2019/12/15/TPiOglmw8UqoxyM.png" alt="1.png"></p>
+<p><strong>从2开始包括2  到5结束 不包括5</strong></p>
+<p><strong>参数为负数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/jvN5mPYi2Za18FO.png" alt="1.png"></p>
+<p><strong>省略第二个参数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/PaWOjCt2iwlU9gq.png" alt="1.png"></p>
+<p><strong>省略第二个参数 则会拿到剩余的字符</strong></p>
+<p><strong>从结尾计数</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/MHVU6iDIxhaE74f.png" alt="1.png"></p>
+<p>注意:参数为负数 不适用于<strong>ie8</strong>及其更早版本</p>
+<h3 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring()方法"></a>substring()方法</h3><p><code>substring()</code>类似于<code>slice()</code></p>
+<p><strong>区别:</strong><code>substring()</code> 不能接受负的索引</p>
+<p><strong>传入负数索引是无效的 会从起点0开始截取</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/JXjt6iTpgGEVLM5.png" alt="1.png"></p>
+<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
+<h3 id="substr-方法"><a href="#substr-方法" class="headerlink" title="substr()方法"></a>substr()方法</h3><p><code>substr()</code> 也类似于s<code>lice()</code></p>
+<p><strong>区别:</strong>第二个参数 规定被提取部分的长度,第二个参数不能传入负数,因为长度不能为负数</p>
+<p>参数为负,没有打印结果 打印失败</p>
+<p><img src="https://i.loli.net/2019/12/16/3bm1yri84NO6wWQ.png" alt="1.png"></p>
+<p>参数为正 正常截取</p>
+<p><img src="https://i.loli.net/2019/12/16/fXedCJqPYnVItgO.png" alt="1.png"></p>
+<p>首个参数为负 第二个参数长度指定无效  负几 截取到几个字符 这里是负2 因此 截取到2个字符</p>
+<p><img src="https://i.loli.net/2019/12/16/pZ4eFQBVz3lCS1u.png" alt="1.png"></p>
+<p>同<code>slice()</code>一样,如果省略第二个参数,则将截取字符串的剩余部分</p>
+<h2 id="替换字符串内容"><a href="#替换字符串内容" class="headerlink" title="替换字符串内容"></a>替换字符串内容</h2><p><code>replace()</code>方法用另一个值替换在字符串中指定的值</p>
+<p><strong>参数1 为原字符串中的值   参数2为替换的值</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/KgDBEoNQWP2nayV.png" alt="1.png"></p>
+<p><strong>返回的是一个新字符串 不会改变原有字符串</strong>   <strong>默认只替换首个匹配到的字符</strong></p>
+<p><strong>默认情况下</strong> <code>replace()</code>对大小写敏感</p>
+<p><img src="https://i.loli.net/2019/12/16/qhvmAzbojye1wdg.png" alt="1.png"></p>
+<p><strong>使用正则表达式<code>/i</code>(大小写不敏感)  **   **注意:正则表达式不带引号</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/bIykXZmiGdHcLjC.png" alt="1.png"></p>
+<p><strong>替换所有匹配</strong></p>
+<p>使用正则表达式的<code>g</code>(用于全局搜索)</p>
+<p><img src="https://i.loli.net/2019/12/16/wbYmTljq6PWaI5v.png" alt="1.png"></p>
+<h2 id="转为大写和小写"><a href="#转为大写和小写" class="headerlink" title="转为大写和小写"></a>转为大写和小写</h2><p><code>toUpperCase()</code>把字符串转换为大写</p>
+<p><img src="https://i.loli.net/2019/12/16/pTGg5rmSIiydfMu.png" alt="1.png"></p>
+<p><code>toLowerCase()</code>把字符串转换为小写</p>
+<p><img src="https://i.loli.net/2019/12/16/9vJKCjlLfrN6gpq.png" alt="1.png"></p>
+<h2 id="连接两个或多个字符串"><a href="#连接两个或多个字符串" class="headerlink" title="连接两个或多个字符串"></a>连接两个或多个字符串</h2><p><code>concat()</code>可用于代替加运算符</p>
+<p><img src="https://i.loli.net/2019/12/16/ReAq8Vmz5YdZlg3.png" alt="1.png"></p>
+<p><strong>所有的字符串方法都会返回新字符串 不会修改原始字符串.</strong></p>
+<p><strong>字符串是不可变的:字符串不能更改,只能替换</strong></p>
+<h2 id="删除字符串两端的空白符"><a href="#删除字符串两端的空白符" class="headerlink" title="删除字符串两端的空白符"></a>删除字符串两端的空白符</h2><p><code>trim()</code>方法删除字符串两端的空白符</p>
+<p><img src="https://i.loli.net/2019/12/16/IUALYqdPmCaV5lf.png" alt="1.png"></p>
+<p>注意:ie8或更低版本不支持<code>trim()</code>方法 。</p>
+<p><strong>如需支持ie8或更低版本 可以使用<code>replace()</code>  需搭配正则</strong></p>
+<p><img src="https://i.loli.net/2019/12/16/2bSoaMQmPrNGE3t.png" alt="1.png"></p>
+<h2 id="提取字符串字符"><a href="#提取字符串字符" class="headerlink" title="提取字符串字符"></a>提取字符串字符</h2><h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3><p><code>charAt()</code>方法返回字符串中指定下标(位置)的字符串</p>
+<p><img src="https://i.loli.net/2019/12/16/T5tuoEPLiJnpX8c.png" alt="1.png"></p>
+<h3 id="charCodeAt-方法"><a href="#charCodeAt-方法" class="headerlink" title="charCodeAt()方法"></a>charCodeAt()方法</h3><p><code>charCodeAt()</code>方法返回字符串中指定索引的 <code>unicode</code> 编码</p>
+<p><img src="https://i.loli.net/2019/12/16/LSFfhq1oTZPIOnN.png" alt="1.png"></p>
+<h2 id="字符串转换为数组"><a href="#字符串转换为数组" class="headerlink" title="字符串转换为数组"></a>字符串转换为数组</h2><p><code>split()</code>将字符串转换为数组</p>
+<p><img src="https://i.loli.net/2019/12/16/mhp7xLJjGRItX6w.png" alt="1.png"></p>
+<p>省略分隔符  被返回的数组将包含index[0]中的整个字符串</p>
+<p>如分隔符是””,被返回的数组将是间隔单个字符的数组</p>
+<p><img src="https://i.loli.net/2019/12/16/sum2DXzwy6KpHe3.png" alt="1.png"></p>
+<p>​        </p>
+<p>​        <strong>总结:</strong>革命尚未成功 同志仍需努力  细节决定成败</p>
+]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tp5.1结合layui实现多图上传</title>
+    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
+<a id="more"></a>
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
+
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
+<p><strong>放大效果</strong></p>
+<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
+]]></content>
+      <categories>
+        <category>php从入门到放弃</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>laravel生成二维码</title>
     <url>/2019/12/11/laravel%E7%94%9F%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81/</url>
     <content><![CDATA[<h1 id="laravel生成二维码"><a href="#laravel生成二维码" class="headerlink" title="laravel生成二维码"></a>laravel生成二维码</h1><p>前段时间 涉及了laravel 以及接口 有个需求就是实现二维码的引入  网上方法很多 这里记录一下我感觉最方便 最好用的</p>
@@ -773,33 +800,6 @@
 <p><strong>在文件夹下也同样生成了:</strong></p>
 <p><img src="https://i.loli.net/2019/12/11/LyX3Ojf9P8FHoJp.png" alt="1.png"></p>
 <p><strong>现在 就可以拿出手机扫描二维码了 大功告成 ！ ！！</strong></p>
-]]></content>
-      <categories>
-        <category>php从入门到放弃</category>
-      </categories>
-      <tags>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>tp5.1结合layui实现多图上传</title>
-    <url>/2020/07/23/layui%E5%A4%9A%E5%9B%BE%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<p>​            <strong>tp5.1结合layui实现多图上传,点击删除,点击放大功能.所谓多图上传,就是点击上传按钮时,在div中追加图片以及隐藏域,隐藏域用来存放图片路径,用于向后端传递数据.</strong></p>
-<a id="more"></a>
-
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-form-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"layui-form-label"</span>&gt;</span>轮播图<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-input-inline upload"</span> <span class="attr">id</span>=<span class="string">"upload"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"layui-btn"</span> <span class="attr">id</span>=<span class="string">"test2"</span> &gt;</span>多图片上传<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"layui-upload-list"</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">style</span>=<span class="string">"width:1000px;"</span> &gt;</span></span><br><span class="line">            &#123;if condition="!empty($formData['carousel'])"&#125;</span><br><span class="line">            &#123;foreach $formData['carousel'] as $value&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item_img"</span> <span class="attr">style</span>=<span class="string">"display:inline; padding-left:10px;"</span> <span class="attr">title</span>=<span class="string">"点击放大"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;$value&#125;"</span>  <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">class</span>=<span class="string">"img"</span> <span class="attr">style</span>=<span class="string">"padding-top: 10px;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"carousel[]"</span> <span class="attr">value</span>=<span class="string">"&#123;$value&#125;"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"layui-icon del"</span> &gt;</span><span class="symbol">&amp;#x1007;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">            &#123;/foreach&#125;</span><br><span class="line">            &#123;/if&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="多图上传"><a href="#多图上传" class="headerlink" title="多图上传"></a>多图上传</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">layui.use([<span class="string">'upload'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = layui.jquery</span><br><span class="line">        , upload = layui.upload;</span><br><span class="line">    <span class="comment">//多图上传</span></span><br><span class="line">   upload.render(&#123;</span><br><span class="line">            elem: <span class="string">'#test2'</span></span><br><span class="line">            ,<span class="attr">url</span>: <span class="string">"&#123;$yuming&#125;"</span> + <span class="string">'?prefix=fengmian'</span><span class="comment">//改成自己的上传接口</span></span><br><span class="line">            ,<span class="attr">multiple</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">before</span>: <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">                layer.msg(<span class="string">'文件上传中...'</span>, &#123;<span class="attr">time</span>: <span class="number">3000</span>&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (res.code == <span class="number">1</span>) &#123;</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;li class="item_img" style="display:inline; padding-left:10px;" title="点击放大" &gt;&lt;img src="'</span> + res.data.file + <span class="string">'" class="img" width="100" height="100" style="padding-top:10px;" &gt;&lt;input type="hidden" name="carousel[]" value="'</span> + res.data.file + <span class="string">'" /&gt;'</span>);</span><br><span class="line">                    $(<span class="string">'#demo2'</span>).append(<span class="string">'&lt;i class="layui-icon del"&gt;&amp;#x1007;&lt;/i&gt;'</span>);</span><br><span class="line">                    delImg(); <span class="comment">//删除图片</span></span><br><span class="line">                    EnlargeImg();<span class="comment">//放大图片</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//提示信息</span></span><br><span class="line">                    layer.msg(res.msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="点击图片放大"><a href="#点击图片放大" class="headerlink" title="点击图片放大"></a>点击图片放大</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">EnlargeImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//点击图片放大</span></span><br><span class="line">    $(<span class="string">'.img'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgSrc = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</span><br><span class="line">        layer.open(&#123;</span><br><span class="line">            type:<span class="number">1</span></span><br><span class="line">            ,<span class="attr">title</span>:<span class="literal">false</span></span><br><span class="line">            ,<span class="attr">closeBtn</span>:<span class="number">20</span></span><br><span class="line">            ,<span class="attr">shadeClose</span>:<span class="literal">true</span></span><br><span class="line">            ,<span class="attr">maxmin</span>: <span class="literal">true</span></span><br><span class="line">            ,<span class="attr">area</span>: [<span class="string">'1200px'</span>,<span class="string">'600px'</span>]</span><br><span class="line">            ,<span class="attr">content</span>:<span class="string">'&lt;img src=" '</span>+imgSrc+<span class="string">' " height="600" width="1200"&gt;'</span></span><br><span class="line">            <span class="comment">// ,scrollbar:false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">EnlargeImg();</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除图片"><a href="#删除图片" class="headerlink" title="删除图片"></a>删除图片</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delImg</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="comment">//删除图片</span></span><br><span class="line">           $(<span class="string">'.del'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">               $(<span class="keyword">this</span>).prev().remove();</span><br><span class="line">               $(<span class="keyword">this</span>).remove();</span><br><span class="line">               <span class="built_in">console</span>.log($(<span class="keyword">this</span>).prev());</span><br><span class="line">           &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">       delImg();</span><br></pre></td></tr></table></figure>
-
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;request-&gt;isPost()) &#123;</span><br><span class="line">        $data = <span class="keyword">$this</span>-&gt;request-&gt;post();</span><br><span class="line">        $data[<span class="string">'carousel'</span>] = serialize($data[<span class="string">'carousel'</span>]); <span class="comment">//接收传过来的图片数据 进行序列化</span></span><br><span class="line">        $result = <span class="keyword">$this</span>-&gt;validate($data, <span class="string">'SystemVenus'</span>);</span><br><span class="line">        <span class="keyword">if</span>($result !== <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error($result);</span><br><span class="line">        &#125;</span><br><span class="line">        $model = <span class="keyword">new</span> VenusModel();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;save($data)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;success(<span class="string">'添加成功'</span>,<span class="string">'system/venus/index'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;error(<span class="string">'添加失败'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'langlist'</span>, LangModel::where([])-&gt;order(<span class="string">'id asc'</span>)-&gt;select());</span><br><span class="line">    <span class="keyword">$this</span>-&gt;assign(<span class="string">'yuming'</span>, get_domain().<span class="string">'/qiniu.php'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;fetch(<span class="string">'venusform'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="页面效果"><a href="#页面效果" class="headerlink" title="页面效果"></a>页面效果</h2><p><img src="https://i.loli.net/2020/07/23/dXPh3TVSYERzn2i.png" alt="1.png"></p>
-<p><strong>放大效果</strong></p>
-<p><img src="https://i.loli.net/2020/07/23/mQn4Dr7wOxRsJFZ.png" alt="1.png"></p>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1210,62 +1210,40 @@
       </tags>
   </entry>
   <entry>
-    <title>pdo</title>
-    <url>/2019/12/22/pdo/</url>
-    <content><![CDATA[<p>​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个…….</p>
-<h1 id="PDO连接数据库-增删改查"><a href="#PDO连接数据库-增删改查" class="headerlink" title="PDO连接数据库(增删改查)"></a>PDO连接数据库(增删改查)</h1><h2 id="查询多条数据"><a href="#查询多条数据" class="headerlink" title="查询多条数据"></a>查询多条数据</h2><p><code>fethcAll()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png" alt="1.png"></p>
+    <title>php循环</title>
+    <url>/2019/09/24/php%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h1 id="php循环经典练习题"><a href="#php循环经典练习题" class="headerlink" title="php循环经典练习题"></a>php循环经典练习题</h1><p><strong>循环在每个语言里都必不可少,之前学习python,js都接触过,现在学习php又重新接触,为了加深理解,写一篇博客水一下.</strong></p>
+<h2 id="php循环打印图形"><a href="#php循环打印图形" class="headerlink" title="php循环打印图形"></a>php循环打印图形</h2><h3 id="直角三角形"><a href="#直角三角形" class="headerlink" title="直角三角形"></a>直角三角形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//直角三角形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">5</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        内层循环打印</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<p><strong>注意:执行查询操作使用<code>query()</code></strong>    </p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">fetchAll</span><span class="params">(PDO::FETCH_ASSOC)</span></span>    将查询到的结果集转换为关联数组</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/03/30/ML1SkrWNyO4xPmG.png" alt="11.png"></p>
+<h3 id="金字塔"><a href="#金字塔" class="headerlink" title="金字塔"></a>金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        输出空格</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><code>fetchAll()</code> 可以有不同的参数 比如常用的:</p>
-<p><code>FETCH_ASSOC</code>:代表转为关联数组</p>
-<p><code>FETCH_NUM</code>:代表转为索引数组</p>
-<p><code>FETCH_BOTH:</code>代表关联和索引这两者形式都有</p>
-<p><code>FETCH_OBJ</code>:对象的形式</p>
-<h2 id="查询单条数据"><a href="#查询单条数据" class="headerlink" title="查询单条数据"></a>查询单条数据</h2><p><code>fetch()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png" alt="1.png"></p>
-<p><strong>查询数据本质上都是一样的, 查询多条只需要注意sql语句的书写 以及结果集转换数据的写法即可</strong></p>
-<h2 id="查询指定字段"><a href="#查询指定字段" class="headerlink" title="查询指定字段"></a>查询指定字段</h2><p><code>fetchColumn()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png" alt="1.png"></p>
-<p>注意:查询指定条数的指定字段 返回的是一个字符串 使用<code>fetchColumn()</code></p>
-<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p><strong>增删改只需要改变sql语句的内容即可</strong>   <strong>与查询不同的是:增删改要调用exec()方法对sql语句进行处理</strong></p>
-<h3 id="增加一条数据"><a href="#增加一条数据" class="headerlink" title="增加一条数据"></a>增加一条数据</h3><p><img src="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png" alt="1.png"></p>
-<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><p><img src="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png" alt="1.png"></p>
-<h3 id="删除一条数据"><a href="#删除一条数据" class="headerlink" title="删除一条数据"></a>删除一条数据</h3><p><img src="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png" alt="1.png"></p>
-<h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>开启事务: <code>beginTransaction()</code>  </p>
-<p>事务提交: <code>commit()</code></p>
-<p>事务回滚: <code>rollBack()</code></p>
-<p><img src="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png" alt="1.png"></p>
-<p><strong>事务处理的情况下 sql语句要么都执行 要么都不执行</strong></p>
-<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>单例模式：</strong>singleton  是一种类的设计只会最多产生一个对象的设计思想</p>
-<ul>
-<li><p>单例模式的类只能在一次运行中产生一个对象</p>
-</li>
-<li><p>单例模式为了解决如何只产生一个对象,需要使用以下解决方案，简称三私一公</p>
-<p><strong>私有化构造方法:不让在外部产生多个对象</strong></p>
-<p><strong>私有化克隆方法：不允许对象被克隆产生新对象</strong></p>
-<p><strong>私有化静态属性:保存已经产生的对象</strong></p>
-<p><strong>公有化静态方法:运行进入类内部产生对象</strong></p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png" alt="1.png"></p>
-<p><strong>指向了同一个对象 单例模式构造成功</strong></p>
-<p><img src="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png" alt="1.png"></p>
-<p><code>instanceof</code>是类型运算符 判断某个变量是否是某个类的对象实例</p>
-<p><strong>总结:</strong></p>
-<p>单例模式设计的类最多只能得到一个对象</p>
-<p>单例模式只是解决当前类对象的唯一性，要实现其他功能需求，可以在类中增加相应的其他类成员</p>
-<p>单例模式的目的是为了保护资源的唯一性</p>
-<p>单例模式的设计规范就是’三私一公’</p>
-<ul>
-<li>私有化构造方法：禁止在类外部无限实例化对象</li>
-<li>私有化克隆方法：禁止对象无限克隆对象</li>
-<li>私有化静态属性：保存类内部实例化得到的对象</li>
-<li>公有化静态方法：允许外部通过调用类内部方法获取对象</li>
-</ul>
+<p><img src="https://i.loli.net/2020/03/30/9nqZSzCTpfh4emN.png" alt="11.png"></p>
+<h3 id="倒金字塔"><a href="#倒金字塔" class="headerlink" title="倒金字塔"></a>倒金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/VlYfHrUs8wZ9EtK.png" alt="11.png"></p>
+<h3 id="菱形"><a href="#菱形" class="headerlink" title="菱形"></a>菱形</h3><p>正金字塔和倒金字塔连起来就是菱形 </p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//菱形</span></span><br><span class="line"><span class="comment">//正金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/8q75ktajQhUb63P.png" alt="11.png"></p>
+<h3 id="空心菱形"><a href="#空心菱形" class="headerlink" title="空心菱形"></a>空心菱形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//空心菱形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($k==<span class="number">1</span> || $k==<span class="number">2</span>*$i<span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($k==<span class="number">2</span>*$i<span class="number">-1</span> || $k==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/F8lIvMT9USQ3RiZ.png" alt="11.png"></p>
+<h2 id="php循环练习"><a href="#php循环练习" class="headerlink" title="php循环练习"></a>php循环练习</h2><h3 id="求1000以内的水仙花数"><a href="#求1000以内的水仙花数" class="headerlink" title="求1000以内的水仙花数"></a>求1000以内的水仙花数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//求水仙花数</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">100</span>;$i&lt;<span class="number">1000</span>;$i++)&#123;</span><br><span class="line">    $ge=$i%<span class="number">10</span>;</span><br><span class="line">    $shi=floor($i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">    $bai=floor($i/<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">if</span>($ge*$ge*$ge+$shi*$shi*$shi+$bai*$bai*$bai==$i)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&#123;$i&#125;是水仙花数"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/03/30/UFHAvLghWbZJiI5.png" alt="11.png"></p>
+<h3 id="求一到一百之间不含数字4的自然数-并且计算有多少个"><a href="#求一到一百之间不含数字4的自然数-并且计算有多少个" class="headerlink" title="求一到一百之间不含数字4的自然数  并且计算有多少个"></a>求一到一百之间不含数字4的自然数  并且计算有多少个</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    $ge = $i % <span class="number">10</span>;</span><br><span class="line">    $shi = $i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> ($ge == <span class="number">4</span> || $shi == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $sum++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&#123;$sum&#125;个"</span>; <span class="comment">//162</span></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">$num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (strpos($i, <span class="string">'4'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line">        $num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $num; <span class="comment">//162</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="输出一到一百之间所有的质数"><a href="#输出一到一百之间所有的质数" class="headerlink" title="输出一到一百之间所有的质数"></a>输出一到一百之间所有的质数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">2</span>;$i&lt;=<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">2</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i%$j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>($i==$j)&#123;</span><br><span class="line">        <span class="keyword">echo</span> $i.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">9</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"$j*$i="</span>.$i*$j.<span class="string">"&amp;nbsp"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="百鸡问题"><a href="#百鸡问题" class="headerlink" title="百鸡问题"></a>百鸡问题</h3><p><strong>100块钱买一百只鸡 公鸡5块钱一只 母鸡3块钱一只 小鸡一块钱三只  100块钱必须花完  问：公鸡 母鸡 小鸡各多少只</strong></p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">100</span>;$j++)&#123;</span><br><span class="line">        $k=<span class="number">100</span>-$i-$j;</span><br><span class="line">        <span class="keyword">if</span>($i*<span class="number">5</span>+$j*<span class="number">3</span>+$k/<span class="number">3</span>==<span class="number">100</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"公鸡"</span>.$i;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"母鸡"</span>.$j;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"小鸡"</span>.$k;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>学习循环还是很锻炼思维的 尤其是我这种菜比 加油吧 路还长！！！！！！</strong></p>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1470,40 +1448,62 @@
       </tags>
   </entry>
   <entry>
-    <title>php循环</title>
-    <url>/2019/09/24/php%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<h1 id="php循环经典练习题"><a href="#php循环经典练习题" class="headerlink" title="php循环经典练习题"></a>php循环经典练习题</h1><p><strong>循环在每个语言里都必不可少,之前学习python,js都接触过,现在学习php又重新接触,为了加深理解,写一篇博客水一下.</strong></p>
-<h2 id="php循环打印图形"><a href="#php循环打印图形" class="headerlink" title="php循环打印图形"></a>php循环打印图形</h2><h3 id="直角三角形"><a href="#直角三角形" class="headerlink" title="直角三角形"></a>直角三角形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//直角三角形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">5</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        内层循环打印</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <title>pdo</title>
+    <url>/2019/12/22/pdo/</url>
+    <content><![CDATA[<p>​        最近回顾了一下pdo , 还是有必要记录一下的, 毕竟自己学一个忘一个…….</p>
+<h1 id="PDO连接数据库-增删改查"><a href="#PDO连接数据库-增删改查" class="headerlink" title="PDO连接数据库(增删改查)"></a>PDO连接数据库(增删改查)</h1><h2 id="查询多条数据"><a href="#查询多条数据" class="headerlink" title="查询多条数据"></a>查询多条数据</h2><p><code>fethcAll()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/gqn2TPy7BoM4pNO.png" alt="1.png"></p>
 <a id="more"></a>
 
-<p><img src="https://i.loli.net/2020/03/30/ML1SkrWNyO4xPmG.png" alt="11.png"></p>
-<h3 id="金字塔"><a href="#金字塔" class="headerlink" title="金字塔"></a>金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line"><span class="comment">//    外层循环控制换行</span></span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line"><span class="comment">//        输出空格</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意:执行查询操作使用<code>query()</code></strong>    </p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">fetchAll</span><span class="params">(PDO::FETCH_ASSOC)</span></span>    将查询到的结果集转换为关联数组</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://i.loli.net/2020/03/30/9nqZSzCTpfh4emN.png" alt="11.png"></p>
-<h3 id="倒金字塔"><a href="#倒金字塔" class="headerlink" title="倒金字塔"></a>倒金字塔</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/VlYfHrUs8wZ9EtK.png" alt="11.png"></p>
-<h3 id="菱形"><a href="#菱形" class="headerlink" title="菱形"></a>菱形</h3><p>正金字塔和倒金字塔连起来就是菱形 </p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//菱形</span></span><br><span class="line"><span class="comment">//正金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//倒金字塔</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/8q75ktajQhUb63P.png" alt="11.png"></p>
-<h3 id="空心菱形"><a href="#空心菱形" class="headerlink" title="空心菱形"></a>空心菱形</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//空心菱形</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">6</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>($k==<span class="number">1</span> || $k==<span class="number">2</span>*$i<span class="number">-1</span>)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">6</span>;$i&gt;=<span class="number">1</span>;$i--)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">6</span>-$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>($k=<span class="number">1</span>;$k&lt;=<span class="number">2</span>*$i<span class="number">-1</span>;$k++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($k==<span class="number">2</span>*$i<span class="number">-1</span> || $k==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"*"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&amp;nbsp;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/F8lIvMT9USQ3RiZ.png" alt="11.png"></p>
-<h2 id="php循环练习"><a href="#php循环练习" class="headerlink" title="php循环练习"></a>php循环练习</h2><h3 id="求1000以内的水仙花数"><a href="#求1000以内的水仙花数" class="headerlink" title="求1000以内的水仙花数"></a>求1000以内的水仙花数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//求水仙花数</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">100</span>;$i&lt;<span class="number">1000</span>;$i++)&#123;</span><br><span class="line">    $ge=$i%<span class="number">10</span>;</span><br><span class="line">    $shi=floor($i/<span class="number">10</span>)%<span class="number">10</span>;</span><br><span class="line">    $bai=floor($i/<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">if</span>($ge*$ge*$ge+$shi*$shi*$shi+$bai*$bai*$bai==$i)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&#123;$i&#125;是水仙花数"</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2020/03/30/UFHAvLghWbZJiI5.png" alt="11.png"></p>
-<h3 id="求一到一百之间不含数字4的自然数-并且计算有多少个"><a href="#求一到一百之间不含数字4的自然数-并且计算有多少个" class="headerlink" title="求一到一百之间不含数字4的自然数  并且计算有多少个"></a>求一到一百之间不含数字4的自然数  并且计算有多少个</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">$sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    $ge = $i % <span class="number">10</span>;</span><br><span class="line">    $shi = $i / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> ($ge == <span class="number">4</span> || $shi == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $sum++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&#123;$sum&#125;个"</span>; <span class="comment">//162</span></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">$num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">200</span>; $i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (strpos($i, <span class="string">'4'</span>) === <span class="keyword">false</span>) &#123;</span><br><span class="line">        $num++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> $num; <span class="comment">//162</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="输出一到一百之间所有的质数"><a href="#输出一到一百之间所有的质数" class="headerlink" title="输出一到一百之间所有的质数"></a>输出一到一百之间所有的质数</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">2</span>;$i&lt;=<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">2</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>($i%$j==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>($i==$j)&#123;</span><br><span class="line">        <span class="keyword">echo</span> $i.<span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="打印九九乘法表"><a href="#打印九九乘法表" class="headerlink" title="打印九九乘法表"></a>打印九九乘法表</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;=<span class="number">9</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=$i;$j++)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"$j*$i="</span>.$i*$j.<span class="string">"&amp;nbsp"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="百鸡问题"><a href="#百鸡问题" class="headerlink" title="百鸡问题"></a>百鸡问题</h3><p><strong>100块钱买一百只鸡 公鸡5块钱一只 母鸡3块钱一只 小鸡一块钱三只  100块钱必须花完  问：公鸡 母鸡 小鸡各多少只</strong></p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>($i=<span class="number">1</span>;$i&lt;<span class="number">100</span>;$i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>($j=<span class="number">1</span>;$j&lt;=<span class="number">100</span>;$j++)&#123;</span><br><span class="line">        $k=<span class="number">100</span>-$i-$j;</span><br><span class="line">        <span class="keyword">if</span>($i*<span class="number">5</span>+$j*<span class="number">3</span>+$k/<span class="number">3</span>==<span class="number">100</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"公鸡"</span>.$i;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"母鸡"</span>.$j;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"小鸡"</span>.$k;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong>学习循环还是很锻炼思维的 尤其是我这种菜比 加油吧 路还长！！！！！！</strong></p>
+<p><code>fetchAll()</code> 可以有不同的参数 比如常用的:</p>
+<p><code>FETCH_ASSOC</code>:代表转为关联数组</p>
+<p><code>FETCH_NUM</code>:代表转为索引数组</p>
+<p><code>FETCH_BOTH:</code>代表关联和索引这两者形式都有</p>
+<p><code>FETCH_OBJ</code>:对象的形式</p>
+<h2 id="查询单条数据"><a href="#查询单条数据" class="headerlink" title="查询单条数据"></a>查询单条数据</h2><p><code>fetch()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/3HvyxzNoJuO8ieA.png" alt="1.png"></p>
+<p><strong>查询数据本质上都是一样的, 查询多条只需要注意sql语句的书写 以及结果集转换数据的写法即可</strong></p>
+<h2 id="查询指定字段"><a href="#查询指定字段" class="headerlink" title="查询指定字段"></a>查询指定字段</h2><p><code>fetchColumn()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/N9PSyOlVr3WE7CF.png" alt="1.png"></p>
+<p>注意:查询指定条数的指定字段 返回的是一个字符串 使用<code>fetchColumn()</code></p>
+<h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p><strong>增删改只需要改变sql语句的内容即可</strong>   <strong>与查询不同的是:增删改要调用exec()方法对sql语句进行处理</strong></p>
+<h3 id="增加一条数据"><a href="#增加一条数据" class="headerlink" title="增加一条数据"></a>增加一条数据</h3><p><img src="https://i.loli.net/2019/12/22/9LoJMXeImtNq3O1.png" alt="1.png"></p>
+<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><p><img src="https://i.loli.net/2019/12/22/N5oCW7kgHpAqJbu.png" alt="1.png"></p>
+<h3 id="删除一条数据"><a href="#删除一条数据" class="headerlink" title="删除一条数据"></a>删除一条数据</h3><p><img src="https://i.loli.net/2019/12/22/tDoSRuZVziTFpX7.png" alt="1.png"></p>
+<h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><p>开启事务: <code>beginTransaction()</code>  </p>
+<p>事务提交: <code>commit()</code></p>
+<p>事务回滚: <code>rollBack()</code></p>
+<p><img src="https://i.loli.net/2019/12/22/LZ5MFike6nrYCQK.png" alt="1.png"></p>
+<p><strong>事务处理的情况下 sql语句要么都执行 要么都不执行</strong></p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p><strong>单例模式：</strong>singleton  是一种类的设计只会最多产生一个对象的设计思想</p>
+<ul>
+<li><p>单例模式的类只能在一次运行中产生一个对象</p>
+</li>
+<li><p>单例模式为了解决如何只产生一个对象,需要使用以下解决方案，简称三私一公</p>
+<p><strong>私有化构造方法:不让在外部产生多个对象</strong></p>
+<p><strong>私有化克隆方法：不允许对象被克隆产生新对象</strong></p>
+<p><strong>私有化静态属性:保存已经产生的对象</strong></p>
+<p><strong>公有化静态方法:运行进入类内部产生对象</strong></p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/12/22/lgBsKRY1dmLAvNT.png" alt="1.png"></p>
+<p><strong>指向了同一个对象 单例模式构造成功</strong></p>
+<p><img src="https://i.loli.net/2019/12/22/XlIZSG8PYohJcmM.png" alt="1.png"></p>
+<p><code>instanceof</code>是类型运算符 判断某个变量是否是某个类的对象实例</p>
+<p><strong>总结:</strong></p>
+<p>单例模式设计的类最多只能得到一个对象</p>
+<p>单例模式只是解决当前类对象的唯一性，要实现其他功能需求，可以在类中增加相应的其他类成员</p>
+<p>单例模式的目的是为了保护资源的唯一性</p>
+<p>单例模式的设计规范就是’三私一公’</p>
+<ul>
+<li>私有化构造方法：禁止在类外部无限实例化对象</li>
+<li>私有化克隆方法：禁止对象无限克隆对象</li>
+<li>私有化静态属性：保存类内部实例化得到的对象</li>
+<li>公有化静态方法：允许外部通过调用类内部方法获取对象</li>
+</ul>
 ]]></content>
       <categories>
         <category>php从入门到放弃</category>
@@ -1750,6 +1750,103 @@
       </tags>
   </entry>
   <entry>
+    <title>微信小程序</title>
+    <url>/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="微信小程序中this指向"><a href="#微信小程序中this指向" class="headerlink" title="微信小程序中this指向"></a>微信小程序中this指向</h1><p>​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.</p>
+<p><img src="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png" alt="11.png"></p>
+<a id="more"></a>
+
+<p>图片中可以看到 页面加载函数中的this是page的全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png" alt="111.png"></p>
+<p>同样在我自定义的函数中,this也是全局this,这都没有什么问题. 问题出在闭包函数</p>
+<p><img src="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png" alt="111.png"></p>
+<p>可以看到当我使用<code>wx.request({})</code>来请求<code>api</code>接口时,success回调函数中的this是未定义的。这就有问题了,当我们想把接收到的接口数据返回给视图页面时,一般要用<code>this.setData({})</code>进行设置,要解决这个问题很简单,两种方法.</p>
+<h2 id="第一种解决方法"><a href="#第一种解决方法" class="headerlink" title="第一种解决方法"></a>第一种解决方法</h2><p>在请求的外部也就是全局this的作用域下声明一个变量 来接收全局this</p>
+<p><img src="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png" alt="111.png"></p>
+<h2 id="第二种解决方法"><a href="#第二种解决方法" class="headerlink" title="第二种解决方法"></a>第二种解决方法</h2><p>使用<code>es6</code>的箭头函数</p>
+<p>小程序中箭头函数中的this是指的是父作用域的this. 箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
+<p><img src="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png" alt="1111.png"></p>
+<p><img src="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png" alt="111.png"></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>游戏引擎调研</title>
+    <url>/2021/12/24/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E8%B0%83%E7%A0%94/</url>
+    <content><![CDATA[<p>​        最近要开发一个微信小游戏,要用到游戏引擎,本人对这方面不了解,所以对市面上比较流行的游戏引擎做一个调研</p>
+<a id="more"></a>
+
+<h2 id="游戏引擎是什么"><a href="#游戏引擎是什么" class="headerlink" title="游戏引擎是什么?"></a>游戏引擎是什么?</h2><p>​        <strong>游戏引擎</strong>是指一些已编写好的可编辑电脑游戏系统或者一些交互式实时图像应用程序的核心组件。这些系统为<a href="https://zh.wikipedia.org/wiki/遊戲設計師" target="_blank" rel="noopener">游戏设计者</a>提供各种编写游戏所需的各种工具，其目的在于让游戏设计者能容易和快速地做出游戏程序，而不用由零开始。大部分都支持多种操作系统平台，如<a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X" target="_blank" rel="noopener">Mac OS X</a>、<a href="https://zh.wikipedia.org/wiki/Windows" target="_blank" rel="noopener">Windows</a>。大多数游戏引擎包含以下系统：<a href="https://zh.wikipedia.org/wiki/渲染" target="_blank" rel="noopener">渲染</a>引擎（即“<a href="https://zh.wikipedia.org/wiki/渲染器" target="_blank" rel="noopener">渲染器</a>”，含<a href="https://zh.wikipedia.org/wiki/二维图像引擎" target="_blank" rel="noopener">二维图像引擎</a>和<a href="https://zh.wikipedia.org/w/index.php?title=三维图像引擎&action=edit&redlink=1" target="_blank" rel="noopener">三维图像引擎</a>）、<a href="https://zh.wikipedia.org/wiki/物理引擎" target="_blank" rel="noopener">物理引擎</a>、碰撞检测系统、<a href="https://zh.wikipedia.org/wiki/音效" target="_blank" rel="noopener">音效</a>、<a href="https://zh.wikipedia.org/w/index.php?title=脚本引擎&action=edit&redlink=1" target="_blank" rel="noopener">脚本引擎</a>、<a href="https://zh.wikipedia.org/wiki/电脑动画" target="_blank" rel="noopener">电脑动画</a>、<a href="https://zh.wikipedia.org/wiki/人工智能" target="_blank" rel="noopener">人工智能</a>、<a href="https://zh.wikipedia.org/wiki/互聯網" target="_blank" rel="noopener">网络</a>引擎以及场景管理等</p>
+<h2 id="流行引擎盘点"><a href="#流行引擎盘点" class="headerlink" title="流行引擎盘点"></a>流行引擎盘点</h2><h3 id="1-Cocos2d-x"><a href="#1-Cocos2d-x" class="headerlink" title="1.Cocos2d-x"></a>1.Cocos2d-x</h3><p><strong>官方网址</strong>:<a href="https://www.cocos.com/" target="_blank" rel="noopener">https://www.cocos.com/</a></p>
+<p><strong>代表作</strong>: 《捕鱼达人》《欢乐斗地主》《开心消消乐》《保卫萝卜》《梦幻西游》《大话西游》《神武》《问道》《征途》等.</p>
+<p><strong>编程语言</strong>: JavaScript,C++,lua</p>
+<p><strong>概述</strong>: Cocos2d-x 是一套成熟的开源跨平台游戏开发框架。引擎提供了图形渲染、GUI、音频、网络、物理、用户输入等丰富的功能， 被广泛应用于游戏开发及交互式应用的构建。其核心采用 C++ 编写，支持使用 C++、Lua 或 JavaScript 进行开发。</p>
+<h3 id="2-Cocos-creator"><a href="#2-Cocos-creator" class="headerlink" title="2.Cocos creator"></a>2.Cocos creator</h3><p><strong>官方网址</strong>:<a href="https://www.cocos.com/" target="_blank" rel="noopener">https://www.cocos.com/</a></p>
+<p><strong>代表作</strong>:《剑与远征》《保卫萝卜2》《热血传奇》《开心消消乐》</p>
+<p><strong>编程语言</strong>: JavaScript, TypeScript</p>
+<p><strong>概述</strong>: Cocos Creator 是以内容创作为核心，实现了脚本化、组件化和数据驱动的游戏开发工具。 具备了易于上手的内容生产工作流，以及功能强大的开发者工具套件，可用于实现游戏逻辑和高性能游戏效果</p>
+<h3 id="3-laya"><a href="#3-laya" class="headerlink" title="3.laya"></a>3.laya</h3><p>官方网址:<a href="https://www.layabox.com/" target="_blank" rel="noopener">https://www.layabox.com/</a></p>
+<p><img src="https://s2.loli.net/2021/12/24/paOK5bFgRGmNQYc.png" alt=""></p>
+<p><strong>代表作</strong>:《全民枪神边境王者》《大天使之剑H5》《斗罗大陆》《泡面三国》</p>
+<p><strong>编程语言</strong>: ActionScript, TypeScript, JavaScript</p>
+<p><strong>概述</strong>:    LayaAir是基于webGL的开源引擎，性能与3D是引擎的核心竞争力。配套引擎专属的可视化开发工具，引擎与工具同时支持ActionScript3、JavaScript、TypeScript三种开发语言，并且一次开发可以同时发布APP（安卓与iOS）、HTML5、小游戏（微信小游戏、QQ小游戏、百度小游戏、支付宝小游戏、BiliBili小游戏、字节跳动小游戏、小米快游戏、OPPO小游戏、vivo小游戏、华为快游戏、等）。除支持2D\3D的游戏开发外，引擎还可以用于应用软件、广告、营销、教育、线上虚拟展馆、智慧城市、智慧工业等领域。</p>
+<h3 id="4-egret-白鹭引擎"><a href="#4-egret-白鹭引擎" class="headerlink" title="4.egret 白鹭引擎"></a>4.egret 白鹭引擎</h3><p><strong>官方网址</strong>:<a href="https://www.egret.com/" target="_blank" rel="noopener">https://www.egret.com/</a></p>
+<p><strong>代表作</strong>:《全民狙神》 《梦幻西游网页版》 《迷你世界创造版》</p>
+<p><strong>编程语言</strong>: TypeScript</p>
+<p><strong>概述</strong>:    白鹭科技专注技术创新，攻克底层技术制约，为开发者带来一整套游戏研发解决方案，自主研发了白鹭引擎（Egret Engine）、Egret Pro、白鹭加速器（Egret Runtime）、骨骼动画工具(Dragon Bones)、可视化编辑器（EUI Editor）等多款产品，让开发者简单、高效的开发出移动游戏。</p>
+<h3 id="5-unity"><a href="#5-unity" class="headerlink" title="5.unity"></a>5.unity</h3><p><strong>官方网址</strong>:<a href="https://unity.cn/madewithunity" target="_blank" rel="noopener">https://unity.cn/madewithunity</a></p>
+<p><strong>代表作</strong>:《英雄联盟手游》《一人之下》《非常英雄》《王者荣耀》《火影忍者》《原神》《崩坏》</p>
+<p><strong>编程语言</strong>:C#,Lua</p>
+<p><strong>概述</strong>: Unity侧重轻量级的开发，更偏向于移动端，在手游方面是非常强的，大概有70%的手游都是使用Unity开发的；自由度比较高，跨平台是最好的几乎支持所有主流平台，可以充分发挥开发者的想法和思路去做创意类型的游戏；更支持VR、AR相关应用的开发；</p>
+<h3 id="6-UE4"><a href="#6-UE4" class="headerlink" title="6.UE4"></a>6.UE4</h3><p><strong>官方网址</strong>:<a href="https://www.unrealengine.com/zh-CN/" target="_blank" rel="noopener">https://www.unrealengine.com/zh-CN/</a></p>
+<p><strong>代表作</strong>:黑神话悟空,吃鸡,天刀,和平精英</p>
+<p><strong>编程语言</strong>:C++</p>
+<p><strong>概述</strong>：UE4适合重量级开发，更侧重于PC，端游以及高端手游，对于中低端手机兼容性略差；渲染效果一流，用户体验更好；引擎源代码开源；</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    现在市场上,专注于小游戏的公司,使用cocos和laya比较多.对于中小型以上的游戏公司，使用最多的是unity，unity是现在市面上使用最广的游戏引擎，也是使用人员最多的引擎。对于大型的游戏公司，很多都有自己的UE4 项目，大的游戏公司都在探索，是未来的主流.</p>
+<p>​    对于我们这个项目来言,使用cocos或laya都比较适合,首先支持js和ts编程语言,其次,支持发布在各类小游戏平台。</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信小程序登录</title>
+    <url>/2020/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<p><img src="https://i.loli.net/2020/04/06/Wa3jVBRl4gIe7PJ.png" alt="11.png"></p>
+<a id="more"></a>
+
+<h1 id="微信小程序登录流程"><a href="#微信小程序登录流程" class="headerlink" title="微信小程序登录流程"></a>微信小程序登录流程</h1><p>一张图了解微信小程序登录流程</p>
+<p><img src="https://i.loli.net/2020/04/06/1HjJsdD9V6lmoSA.png" alt="11.png"></p>
+<h2 id="微信小程序发送请求-wx-login"><a href="#微信小程序发送请求-wx-login" class="headerlink" title="微信小程序发送请求(wx.login())"></a>微信小程序发送请求(wx.login())</h2><p>通过wx.login()获取临时凭证code 并传回到后台</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">//获取用户对象信息</span></span><br><span class="line">  <span class="keyword">var</span> userInfo = res.detail.userInfo;</span><br><span class="line">  wx.setStorageSync(<span class="string">"userInfo"</span>, userInfo);  <span class="comment">//设置缓存</span></span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    userInfo: userInfo,</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.login(&#123;</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: config.baseUrl + <span class="string">"/token"</span>,  <span class="comment">//发送到后台</span></span><br><span class="line">          data: &#123;</span><br><span class="line">            code: res.code, <span class="comment">//临时凭证code</span></span><br><span class="line">            nickName: userInfo.nickName,  <span class="comment">//用户对象昵称</span></span><br><span class="line">            avatarUrl: userInfo.avatarUrl <span class="comment">//用户对象头像</span></span><br><span class="line">          &#125;,</span><br><span class="line">          method: <span class="string">'POST'</span>,</span><br><span class="line">          dataType: <span class="string">'json'</span>,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> token = res.data.token;</span><br><span class="line">            wx.setStorageSync(<span class="string">'token'</span>, token); <span class="comment">//设置缓存</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="tp5后台处理"><a href="#tp5后台处理" class="headerlink" title="tp5后台处理"></a>tp5后台处理</h2><ul>
+<li>接收到code  通过curl调用小程序接口 发送请求 将code appid secret 发送过去 请求成功 拿到 session_key 和openid</li>
+<li>将openid和用户的名称头像存到数据表中</li>
+<li>生成令牌做为自定义登录态 返回给前台 前台存到缓存中  自定义登录态与openid关联</li>
+<li>微信小程序发起业务请求时从缓存中拿到token令牌 验证是否登录</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">token</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $code=input(<span class="string">'post.code'</span>); <span class="comment">//接收微信小程序发送过来的code</span></span><br><span class="line">        <span class="comment">//初始化curl  通过curl向微信小程序接口服务 发送请求</span></span><br><span class="line">        $ch=curl_init();</span><br><span class="line">        <span class="comment">//设置选项</span></span><br><span class="line">        $appid=<span class="string">"wxad72f080afae7980"</span>;  </span><br><span class="line">        $secret=<span class="string">"ebf7abfded334145e4de09d7ec2c3969"</span>;</span><br><span class="line">        <span class="comment">//登录凭证校验</span></span><br><span class="line">        $url=<span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid=$appid&amp;secret=$secret&amp;js_code=$code&amp;grant_type=authorization_code"</span>; <span class="comment">//需要发送appid secret code</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * curl_init() 和 curl_close() 分别是初始化CURL连接和关闭CURL连接，</span></span><br><span class="line"><span class="comment">         * curl_exec() 执行CURL请求，如果没有错误发生，该函数的返回是对应URL返回的数据,json字符串的格式；如果发生错误，该函数返回 FALSE。需要注意的是，判断输出是否为FALSE用的是全等号，这是为了区分返回空串和出错的情况。</span></span><br><span class="line"><span class="comment">         * CURL函数库里最重要的函数是curl_setopt(),它可以通过设定CURL函数库定义的选项来定制HTTP请求。上述代码片段中使用了三个重要的选项：</span></span><br><span class="line"><span class="comment">         * CURLOPT_URL 指定请求的URL；</span></span><br><span class="line"><span class="comment">         * CURLOPT_RETURNTRANSFER 设置为1表示稍后执行的curl_exec函数的返回是URL的返回字符串，而不是把返回字符串定向到标准输出并返回TRUE；</span></span><br><span class="line"><span class="comment">         * CURLLOPT_HEADER设置为0表示不返回HTTP头部信息。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        curl_setopt($ch,CURLOPT_URL,$url);</span><br><span class="line">        curl_setopt($ch,CURLOPT_RETURNTRANSFER,<span class="number">1</span>);</span><br><span class="line">        curl_setopt($ch,CURLOPT_HEADER,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//设置为不是https也可以访问</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * CURLOPT_SSL_VERIFYHOST</span></span><br><span class="line"><span class="comment">         * 设置为 1 是检查服务器SSL证书中是否存在一个公用名(common name)。译者注：公用名(Common Name)</span></span><br><span class="line"><span class="comment">         * 一般来讲就是填写你将要申请SSL证书的域名 (domain)或子域名(sub domain)。</span></span><br><span class="line"><span class="comment">         * 设置成 2，会检查公用名是否存在，并且是否与提供的主机名匹配。</span></span><br><span class="line"><span class="comment">         * 0 为不检查名称。 在生产环境中，这个值应该是 2（默认值）。</span></span><br><span class="line"><span class="comment">         * 值 1 的支持在 cURL 7.28.1 中被删除了。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行curl获取HTML文档内容</span></span><br><span class="line">        $output=curl_exec($ch);</span><br><span class="line">        <span class="keyword">if</span>($output===<span class="keyword">false</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"CURL Error:"</span>.curl_error($ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//释放curl句柄</span></span><br><span class="line">        curl_close($ch);</span><br><span class="line"><span class="comment">//        return $output;</span></span><br><span class="line">    </span><br><span class="line">        <span class="comment">//将json解码转换为数组</span></span><br><span class="line">        $curl_result=json_decode($output,<span class="keyword">true</span>); <span class="comment">//assoc 值为TRUE时返回数组，FALSE时返回对象；</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断错误信息</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>($curl_result[<span class="string">'errcode'</span>]))&#123;</span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">0</span>,</span><br><span class="line">                <span class="string">'msg'</span>=&gt;<span class="string">' Invalid parameter'</span> <span class="comment">//无效的参数</span></span><br><span class="line">            ],<span class="number">400</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        $model=User::get([<span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>]]); <span class="comment">//请求成功之后拿到openid 进行比对</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>($model)&#123;</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $data=<span class="keyword">array</span>(  <span class="comment">//插入到数据表中</span></span><br><span class="line">                <span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>],</span><br><span class="line">                <span class="string">'nickName'</span>=&gt;input(<span class="string">'post.nickName'</span>),</span><br><span class="line">                <span class="string">'avatarUrl'</span>=&gt;input(<span class="string">'post.avatarUrl'</span>)</span><br><span class="line">            );</span><br><span class="line">            $model=User::create($data);</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//生成令牌</span></span><br><span class="line">        $token=<span class="keyword">$this</span>-&gt;generalToken(<span class="number">32</span>);</span><br><span class="line">        User::where(<span class="string">'id'</span>,$userid)-&gt;update([<span class="string">'token'</span>=&gt;$token]);</span><br><span class="line">        <span class="keyword">return</span>[</span><br><span class="line">            <span class="string">'token'</span>=&gt;$token</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//生成令牌  做为自定义登录态 返回到微信小程序前台  前台存到缓存中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">generalToken</span><span class="params">($length)</span></span>&#123;  </span><br><span class="line">        <span class="comment">//令牌就是生成一系列的随机字符串</span></span><br><span class="line">        $str=<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">        $result=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$length;$i++)&#123;</span><br><span class="line">            $result.=$str[rand(<span class="number">0</span>,<span class="number">61</span>)]; <span class="comment">//rand() 函数返回随机整数。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取当前时间戳</span></span><br><span class="line">        $time=$_SERVER[<span class="string">'REQUEST_TIME'</span>];</span><br><span class="line">        <span class="keyword">return</span> md5($result.$time);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序验证是否登录"><a href="#微信小程序验证是否登录" class="headerlink" title="微信小程序验证是否登录"></a>微信小程序验证是否登录</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="comment">//验证用户登录</span></span><br><span class="line">​    <span class="keyword">var</span> token = wx.getStorageSync(<span class="string">'token'</span>);</span><br><span class="line">​    <span class="keyword">if</span> (!token) &#123;</span><br><span class="line">​      wx.showToast(&#123;</span><br><span class="line">​        title: <span class="string">'请先登录'</span>,</span><br><span class="line">​        icon: <span class="string">'none'</span></span><br><span class="line">​      &#125;)</span><br><span class="line">​      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">​    &#125; <span class="comment">//登录成功发送业务请求</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微信小游戏-飞机大战代码分析</title>
     <url>/2021/12/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F-%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p>​        最近要开发一个微信小游戏,本人在这方面是一窍不通,先找了微信小游戏官方的一个demo,学习一下.</p>
@@ -1853,103 +1950,6 @@
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    整个demo看下来,首先,小游戏就是一个canvas画布.这个游戏,主体就是敌机,子弹和玩家三类 实际上，他们都是一个单独的精灵,在代码中也继承了精灵类,最终才能绘制在canvas上.敌机类不太一样,因为他有一个爆炸效果,所以继承了动画类,做了一个爆炸的帧动画.我们的main游戏主函数,他是主体,它初始化了背景，玩家，游戏信息,音乐等信息,定义了全局的碰撞检测,实现了游戏的帧循环.而databus则是管理全局的状态,包括敌机，子弹，玩家，动画，分数等。对子弹和敌机做了回收操作.</p>
 <p>​    整体调试了几遍代码,在网上也看了相关的分析,算是初步了解了微信小游戏,但对这个demo的理解还是不够深,对一些操作也有点疑问,对微信小游戏感知还是比较模糊.不过，箭在弦上,不得不发了.祝我好运!!!!</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序</title>
-    <url>/2020/03/29/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="微信小程序中this指向"><a href="#微信小程序中this指向" class="headerlink" title="微信小程序中this指向"></a>微信小程序中this指向</h1><p>​        最近在学习微信小程序,踩了一个this指向的坑,记录一下.</p>
-<p><img src="https://i.loli.net/2020/03/29/kl43WqrHaQA5hNi.png" alt="11.png"></p>
-<a id="more"></a>
-
-<p>图片中可以看到 页面加载函数中的this是page的全局this</p>
-<p><img src="https://i.loli.net/2020/03/29/EaIcfwUmeBbx1ij.png" alt="111.png"></p>
-<p>同样在我自定义的函数中,this也是全局this,这都没有什么问题. 问题出在闭包函数</p>
-<p><img src="https://i.loli.net/2020/03/29/yrnOvdTtRXIP3Yg.png" alt="111.png"></p>
-<p>可以看到当我使用<code>wx.request({})</code>来请求<code>api</code>接口时,success回调函数中的this是未定义的。这就有问题了,当我们想把接收到的接口数据返回给视图页面时,一般要用<code>this.setData({})</code>进行设置,要解决这个问题很简单,两种方法.</p>
-<h2 id="第一种解决方法"><a href="#第一种解决方法" class="headerlink" title="第一种解决方法"></a>第一种解决方法</h2><p>在请求的外部也就是全局this的作用域下声明一个变量 来接收全局this</p>
-<p><img src="https://i.loli.net/2020/03/29/ix5ntVzOduDefR3.png" alt="111.png"></p>
-<h2 id="第二种解决方法"><a href="#第二种解决方法" class="headerlink" title="第二种解决方法"></a>第二种解决方法</h2><p>使用<code>es6</code>的箭头函数</p>
-<p>小程序中箭头函数中的this是指的是父作用域的this. 箭头函数根本没有自己的this，它的this是继承外面的，因此内部的this就是外层代码块的this。</p>
-<p><img src="https://i.loli.net/2020/03/29/oyw5127BeLlQAX9.png" alt="1111.png"></p>
-<p><img src="https://i.loli.net/2020/03/29/ehdBtS7cDb9j3Ll.png" alt="111.png"></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>微信小程序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>游戏引擎调研</title>
-    <url>/2021/12/24/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E8%B0%83%E7%A0%94/</url>
-    <content><![CDATA[<p>​        最近要开发一个微信小游戏,要用到游戏引擎,本人对这方面不了解,所以对市面上比较流行的游戏引擎做一个调研</p>
-<a id="more"></a>
-
-<h2 id="游戏引擎是什么"><a href="#游戏引擎是什么" class="headerlink" title="游戏引擎是什么?"></a>游戏引擎是什么?</h2><p>​        <strong>游戏引擎</strong>是指一些已编写好的可编辑电脑游戏系统或者一些交互式实时图像应用程序的核心组件。这些系统为<a href="https://zh.wikipedia.org/wiki/遊戲設計師" target="_blank" rel="noopener">游戏设计者</a>提供各种编写游戏所需的各种工具，其目的在于让游戏设计者能容易和快速地做出游戏程序，而不用由零开始。大部分都支持多种操作系统平台，如<a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener">Linux</a>、<a href="https://zh.wikipedia.org/wiki/Mac_OS_X" target="_blank" rel="noopener">Mac OS X</a>、<a href="https://zh.wikipedia.org/wiki/Windows" target="_blank" rel="noopener">Windows</a>。大多数游戏引擎包含以下系统：<a href="https://zh.wikipedia.org/wiki/渲染" target="_blank" rel="noopener">渲染</a>引擎（即“<a href="https://zh.wikipedia.org/wiki/渲染器" target="_blank" rel="noopener">渲染器</a>”，含<a href="https://zh.wikipedia.org/wiki/二维图像引擎" target="_blank" rel="noopener">二维图像引擎</a>和<a href="https://zh.wikipedia.org/w/index.php?title=三维图像引擎&action=edit&redlink=1" target="_blank" rel="noopener">三维图像引擎</a>）、<a href="https://zh.wikipedia.org/wiki/物理引擎" target="_blank" rel="noopener">物理引擎</a>、碰撞检测系统、<a href="https://zh.wikipedia.org/wiki/音效" target="_blank" rel="noopener">音效</a>、<a href="https://zh.wikipedia.org/w/index.php?title=脚本引擎&action=edit&redlink=1" target="_blank" rel="noopener">脚本引擎</a>、<a href="https://zh.wikipedia.org/wiki/电脑动画" target="_blank" rel="noopener">电脑动画</a>、<a href="https://zh.wikipedia.org/wiki/人工智能" target="_blank" rel="noopener">人工智能</a>、<a href="https://zh.wikipedia.org/wiki/互聯網" target="_blank" rel="noopener">网络</a>引擎以及场景管理等</p>
-<h2 id="流行引擎盘点"><a href="#流行引擎盘点" class="headerlink" title="流行引擎盘点"></a>流行引擎盘点</h2><h3 id="1-Cocos2d-x"><a href="#1-Cocos2d-x" class="headerlink" title="1.Cocos2d-x"></a>1.Cocos2d-x</h3><p><strong>官方网址</strong>:<a href="https://www.cocos.com/" target="_blank" rel="noopener">https://www.cocos.com/</a></p>
-<p><strong>代表作</strong>: 《捕鱼达人》《欢乐斗地主》《开心消消乐》《保卫萝卜》《梦幻西游》《大话西游》《神武》《问道》《征途》等.</p>
-<p><strong>编程语言</strong>: JavaScript,C++,lua</p>
-<p><strong>概述</strong>: Cocos2d-x 是一套成熟的开源跨平台游戏开发框架。引擎提供了图形渲染、GUI、音频、网络、物理、用户输入等丰富的功能， 被广泛应用于游戏开发及交互式应用的构建。其核心采用 C++ 编写，支持使用 C++、Lua 或 JavaScript 进行开发。</p>
-<h3 id="2-Cocos-creator"><a href="#2-Cocos-creator" class="headerlink" title="2.Cocos creator"></a>2.Cocos creator</h3><p><strong>官方网址</strong>:<a href="https://www.cocos.com/" target="_blank" rel="noopener">https://www.cocos.com/</a></p>
-<p><strong>代表作</strong>:《剑与远征》《保卫萝卜2》《热血传奇》《开心消消乐》</p>
-<p><strong>编程语言</strong>: JavaScript, TypeScript</p>
-<p><strong>概述</strong>: Cocos Creator 是以内容创作为核心，实现了脚本化、组件化和数据驱动的游戏开发工具。 具备了易于上手的内容生产工作流，以及功能强大的开发者工具套件，可用于实现游戏逻辑和高性能游戏效果</p>
-<h3 id="3-laya"><a href="#3-laya" class="headerlink" title="3.laya"></a>3.laya</h3><p>官方网址:<a href="https://www.layabox.com/" target="_blank" rel="noopener">https://www.layabox.com/</a></p>
-<p><img src="https://s2.loli.net/2021/12/24/paOK5bFgRGmNQYc.png" alt=""></p>
-<p><strong>代表作</strong>:《全民枪神边境王者》《大天使之剑H5》《斗罗大陆》《泡面三国》</p>
-<p><strong>编程语言</strong>: ActionScript, TypeScript, JavaScript</p>
-<p><strong>概述</strong>:    LayaAir是基于webGL的开源引擎，性能与3D是引擎的核心竞争力。配套引擎专属的可视化开发工具，引擎与工具同时支持ActionScript3、JavaScript、TypeScript三种开发语言，并且一次开发可以同时发布APP（安卓与iOS）、HTML5、小游戏（微信小游戏、QQ小游戏、百度小游戏、支付宝小游戏、BiliBili小游戏、字节跳动小游戏、小米快游戏、OPPO小游戏、vivo小游戏、华为快游戏、等）。除支持2D\3D的游戏开发外，引擎还可以用于应用软件、广告、营销、教育、线上虚拟展馆、智慧城市、智慧工业等领域。</p>
-<h3 id="4-egret-白鹭引擎"><a href="#4-egret-白鹭引擎" class="headerlink" title="4.egret 白鹭引擎"></a>4.egret 白鹭引擎</h3><p><strong>官方网址</strong>:<a href="https://www.egret.com/" target="_blank" rel="noopener">https://www.egret.com/</a></p>
-<p><strong>代表作</strong>:《全民狙神》 《梦幻西游网页版》 《迷你世界创造版》</p>
-<p><strong>编程语言</strong>: TypeScript</p>
-<p><strong>概述</strong>:    白鹭科技专注技术创新，攻克底层技术制约，为开发者带来一整套游戏研发解决方案，自主研发了白鹭引擎（Egret Engine）、Egret Pro、白鹭加速器（Egret Runtime）、骨骼动画工具(Dragon Bones)、可视化编辑器（EUI Editor）等多款产品，让开发者简单、高效的开发出移动游戏。</p>
-<h3 id="5-unity"><a href="#5-unity" class="headerlink" title="5.unity"></a>5.unity</h3><p><strong>官方网址</strong>:<a href="https://unity.cn/madewithunity" target="_blank" rel="noopener">https://unity.cn/madewithunity</a></p>
-<p><strong>代表作</strong>:《英雄联盟手游》《一人之下》《非常英雄》《王者荣耀》《火影忍者》《原神》《崩坏》</p>
-<p><strong>编程语言</strong>:C#,Lua</p>
-<p><strong>概述</strong>: Unity侧重轻量级的开发，更偏向于移动端，在手游方面是非常强的，大概有70%的手游都是使用Unity开发的；自由度比较高，跨平台是最好的几乎支持所有主流平台，可以充分发挥开发者的想法和思路去做创意类型的游戏；更支持VR、AR相关应用的开发；</p>
-<h3 id="6-UE4"><a href="#6-UE4" class="headerlink" title="6.UE4"></a>6.UE4</h3><p><strong>官方网址</strong>:<a href="https://www.unrealengine.com/zh-CN/" target="_blank" rel="noopener">https://www.unrealengine.com/zh-CN/</a></p>
-<p><strong>代表作</strong>:黑神话悟空,吃鸡,天刀,和平精英</p>
-<p><strong>编程语言</strong>:C++</p>
-<p><strong>概述</strong>：UE4适合重量级开发，更侧重于PC，端游以及高端手游，对于中低端手机兼容性略差；渲染效果一流，用户体验更好；引擎源代码开源；</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    现在市场上,专注于小游戏的公司,使用cocos和laya比较多.对于中小型以上的游戏公司，使用最多的是unity，unity是现在市面上使用最广的游戏引擎，也是使用人员最多的引擎。对于大型的游戏公司，很多都有自己的UE4 项目，大的游戏公司都在探索，是未来的主流.</p>
-<p>​    对于我们这个项目来言,使用cocos或laya都比较适合,首先支持js和ts编程语言,其次,支持发布在各类小游戏平台。</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>其他</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信小程序登录</title>
-    <url>/2020/04/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<p><img src="https://i.loli.net/2020/04/06/Wa3jVBRl4gIe7PJ.png" alt="11.png"></p>
-<a id="more"></a>
-
-<h1 id="微信小程序登录流程"><a href="#微信小程序登录流程" class="headerlink" title="微信小程序登录流程"></a>微信小程序登录流程</h1><p>一张图了解微信小程序登录流程</p>
-<p><img src="https://i.loli.net/2020/04/06/1HjJsdD9V6lmoSA.png" alt="11.png"></p>
-<h2 id="微信小程序发送请求-wx-login"><a href="#微信小程序发送请求-wx-login" class="headerlink" title="微信小程序发送请求(wx.login())"></a>微信小程序发送请求(wx.login())</h2><p>通过wx.login()获取临时凭证code 并传回到后台</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getUserInfo: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;  <span class="comment">//获取用户对象信息</span></span><br><span class="line">  <span class="keyword">var</span> userInfo = res.detail.userInfo;</span><br><span class="line">  wx.setStorageSync(<span class="string">"userInfo"</span>, userInfo);  <span class="comment">//设置缓存</span></span><br><span class="line">  <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">    userInfo: userInfo,</span><br><span class="line">  &#125;)</span><br><span class="line">  wx.login(&#123;</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: config.baseUrl + <span class="string">"/token"</span>,  <span class="comment">//发送到后台</span></span><br><span class="line">          data: &#123;</span><br><span class="line">            code: res.code, <span class="comment">//临时凭证code</span></span><br><span class="line">            nickName: userInfo.nickName,  <span class="comment">//用户对象昵称</span></span><br><span class="line">            avatarUrl: userInfo.avatarUrl <span class="comment">//用户对象头像</span></span><br><span class="line">          &#125;,</span><br><span class="line">          method: <span class="string">'POST'</span>,</span><br><span class="line">          dataType: <span class="string">'json'</span>,</span><br><span class="line">          success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> token = res.data.token;</span><br><span class="line">            wx.setStorageSync(<span class="string">'token'</span>, token); <span class="comment">//设置缓存</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<h2 id="tp5后台处理"><a href="#tp5后台处理" class="headerlink" title="tp5后台处理"></a>tp5后台处理</h2><ul>
-<li>接收到code  通过curl调用小程序接口 发送请求 将code appid secret 发送过去 请求成功 拿到 session_key 和openid</li>
-<li>将openid和用户的名称头像存到数据表中</li>
-<li>生成令牌做为自定义登录态 返回给前台 前台存到缓存中  自定义登录态与openid关联</li>
-<li>微信小程序发起业务请求时从缓存中拿到token令牌 验证是否登录</li>
-</ul>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">token</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $code=input(<span class="string">'post.code'</span>); <span class="comment">//接收微信小程序发送过来的code</span></span><br><span class="line">        <span class="comment">//初始化curl  通过curl向微信小程序接口服务 发送请求</span></span><br><span class="line">        $ch=curl_init();</span><br><span class="line">        <span class="comment">//设置选项</span></span><br><span class="line">        $appid=<span class="string">"wxad72f080afae7980"</span>;  </span><br><span class="line">        $secret=<span class="string">"ebf7abfded334145e4de09d7ec2c3969"</span>;</span><br><span class="line">        <span class="comment">//登录凭证校验</span></span><br><span class="line">        $url=<span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid=$appid&amp;secret=$secret&amp;js_code=$code&amp;grant_type=authorization_code"</span>; <span class="comment">//需要发送appid secret code</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * curl_init() 和 curl_close() 分别是初始化CURL连接和关闭CURL连接，</span></span><br><span class="line"><span class="comment">         * curl_exec() 执行CURL请求，如果没有错误发生，该函数的返回是对应URL返回的数据,json字符串的格式；如果发生错误，该函数返回 FALSE。需要注意的是，判断输出是否为FALSE用的是全等号，这是为了区分返回空串和出错的情况。</span></span><br><span class="line"><span class="comment">         * CURL函数库里最重要的函数是curl_setopt(),它可以通过设定CURL函数库定义的选项来定制HTTP请求。上述代码片段中使用了三个重要的选项：</span></span><br><span class="line"><span class="comment">         * CURLOPT_URL 指定请求的URL；</span></span><br><span class="line"><span class="comment">         * CURLOPT_RETURNTRANSFER 设置为1表示稍后执行的curl_exec函数的返回是URL的返回字符串，而不是把返回字符串定向到标准输出并返回TRUE；</span></span><br><span class="line"><span class="comment">         * CURLLOPT_HEADER设置为0表示不返回HTTP头部信息。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        curl_setopt($ch,CURLOPT_URL,$url);</span><br><span class="line">        curl_setopt($ch,CURLOPT_RETURNTRANSFER,<span class="number">1</span>);</span><br><span class="line">        curl_setopt($ch,CURLOPT_HEADER,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//设置为不是https也可以访问</span></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * CURLOPT_SSL_VERIFYHOST</span></span><br><span class="line"><span class="comment">         * 设置为 1 是检查服务器SSL证书中是否存在一个公用名(common name)。译者注：公用名(Common Name)</span></span><br><span class="line"><span class="comment">         * 一般来讲就是填写你将要申请SSL证书的域名 (domain)或子域名(sub domain)。</span></span><br><span class="line"><span class="comment">         * 设置成 2，会检查公用名是否存在，并且是否与提供的主机名匹配。</span></span><br><span class="line"><span class="comment">         * 0 为不检查名称。 在生产环境中，这个值应该是 2（默认值）。</span></span><br><span class="line"><span class="comment">         * 值 1 的支持在 cURL 7.28.1 中被删除了。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYHOST,0);</span></span><br><span class="line"><span class="comment">//        curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,false);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//执行curl获取HTML文档内容</span></span><br><span class="line">        $output=curl_exec($ch);</span><br><span class="line">        <span class="keyword">if</span>($output===<span class="keyword">false</span>)&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"CURL Error:"</span>.curl_error($ch);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//释放curl句柄</span></span><br><span class="line">        curl_close($ch);</span><br><span class="line"><span class="comment">//        return $output;</span></span><br><span class="line">    </span><br><span class="line">        <span class="comment">//将json解码转换为数组</span></span><br><span class="line">        $curl_result=json_decode($output,<span class="keyword">true</span>); <span class="comment">//assoc 值为TRUE时返回数组，FALSE时返回对象；</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断错误信息</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>($curl_result[<span class="string">'errcode'</span>]))&#123;</span><br><span class="line">            <span class="keyword">return</span> json([</span><br><span class="line">                <span class="string">'status'</span>=&gt;<span class="number">0</span>,</span><br><span class="line">                <span class="string">'msg'</span>=&gt;<span class="string">' Invalid parameter'</span> <span class="comment">//无效的参数</span></span><br><span class="line">            ],<span class="number">400</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        $model=User::get([<span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>]]); <span class="comment">//请求成功之后拿到openid 进行比对</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>($model)&#123;</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $data=<span class="keyword">array</span>(  <span class="comment">//插入到数据表中</span></span><br><span class="line">                <span class="string">'openid'</span>=&gt;$curl_result[<span class="string">'openid'</span>],</span><br><span class="line">                <span class="string">'nickName'</span>=&gt;input(<span class="string">'post.nickName'</span>),</span><br><span class="line">                <span class="string">'avatarUrl'</span>=&gt;input(<span class="string">'post.avatarUrl'</span>)</span><br><span class="line">            );</span><br><span class="line">            $model=User::create($data);</span><br><span class="line">            $userid=$model-&gt;id;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//生成令牌</span></span><br><span class="line">        $token=<span class="keyword">$this</span>-&gt;generalToken(<span class="number">32</span>);</span><br><span class="line">        User::where(<span class="string">'id'</span>,$userid)-&gt;update([<span class="string">'token'</span>=&gt;$token]);</span><br><span class="line">        <span class="keyword">return</span>[</span><br><span class="line">            <span class="string">'token'</span>=&gt;$token</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//生成令牌  做为自定义登录态 返回到微信小程序前台  前台存到缓存中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">generalToken</span><span class="params">($length)</span></span>&#123;  </span><br><span class="line">        <span class="comment">//令牌就是生成一系列的随机字符串</span></span><br><span class="line">        $str=<span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">        $result=<span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$length;$i++)&#123;</span><br><span class="line">            $result.=$str[rand(<span class="number">0</span>,<span class="number">61</span>)]; <span class="comment">//rand() 函数返回随机整数。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取当前时间戳</span></span><br><span class="line">        $time=$_SERVER[<span class="string">'REQUEST_TIME'</span>];</span><br><span class="line">        <span class="keyword">return</span> md5($result.$time);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="微信小程序验证是否登录"><a href="#微信小程序验证是否登录" class="headerlink" title="微信小程序验证是否登录"></a>微信小程序验证是否登录</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="comment">//验证用户登录</span></span><br><span class="line">​    <span class="keyword">var</span> token = wx.getStorageSync(<span class="string">'token'</span>);</span><br><span class="line">​    <span class="keyword">if</span> (!token) &#123;</span><br><span class="line">​      wx.showToast(&#123;</span><br><span class="line">​        title: <span class="string">'请先登录'</span>,</span><br><span class="line">​        icon: <span class="string">'none'</span></span><br><span class="line">​      &#125;)</span><br><span class="line">​      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">​    &#125; <span class="comment">//登录成功发送业务请求</span></span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>前端</category>
