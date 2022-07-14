@@ -2027,4 +2027,60 @@
         <tag>其他</tag>
       </tags>
   </entry>
+  <entry>
+    <title>防抖和节流</title>
+    <url>/2022/07/14/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="什么是防抖和节流"><a href="#什么是防抖和节流" class="headerlink" title="什么是防抖和节流"></a>什么是防抖和节流</h1><p><strong>防抖(debounce)</strong></p>
+<p>触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间</p>
+<p><strong>节流(throttle)</strong></p>
+<p>高频事件触发，但在 n 秒内只会执行一次所以节流会稀释函数的执行频率</p>
+<a id="more"></a>
+
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p>防抖，顾名思义，防止抖动，以免把一次事件误认为多次，敲键盘就是一个每天都会接触到的防抖操作。</p>
+<p>想要了解一个概念，必先了解概念所应用的场景。在 JS 这个世界中，有哪些防抖的场景呢</p>
+<ol>
+<li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖</li>
+<li>调整浏览器窗口大小时，resize 次数过于频繁，造成计算过多，此时需要一次到位，就用到了防抖</li>
+<li>文本编辑器实时保存，当无任何更改操作一秒后进行保存</li>
+</ol>
+<p>代码如下，可以看出来<strong>防抖重在清零 <code>clearTimeout(timer)</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">f, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      f(...args);</span><br><span class="line">    &#125;, wait);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h2><p>节流，顾名思义，控制水的流量。控制事件发生的频率，如控制为 1s 发生一次，甚至 1 分钟发生一次。</p>
+<ol>
+<li><code>scroll</code> 事件，每隔一秒计算一次位置信息等</li>
+<li>浏览器播放事件，每个一秒计算一次进度信息等</li>
+<li>input 框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求 (也可做防抖)</li>
+</ol>
+<p>代码如下，可以看出来<strong>节流重在加锁 <code>timer=timeout</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">f, wait</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      f(...args);</span><br><span class="line">      timer = <span class="literal">null</span>;</span><br><span class="line">    &#125;, wait);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>防抖：防止抖动，单位时间内事件触发会被重置，避免事件被误伤触发多次。<strong>代码实现重在清零 <code>clearTimeout</code></strong>。防抖可以比作等电梯，只要有一个人进来，就需要再等一会儿。业务场景有避免登录按钮多次点击的重复提交。</li>
+<li>节流：控制流量，单位时间内事件只能触发一次。<strong>代码实现重在开锁关锁 <code>timer=timeout; timer=null</code></strong>。节流可以比作过红绿灯，每等一个红灯时间就可以过一批。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cocos系列之更改cocos默认启动场景</title>
+    <url>/2022/03/05/cocos%E7%B3%BB%E5%88%97/</url>
+    <content><![CDATA[<p>​    公司最近在开发一个微信小游戏,对战答题之类的,之前也没有接触过微信小游戏,对这块比较陌生。好在,通过这次项目开发,自己也算是对游戏开发入了个门,有了一些了解.项目使用cocos creator 3.4.0进行开发。</p>
+<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>​    我们使用cocos引擎开发,需要打包发布到微信小游戏,然后更换掉cocos默认的启动场景.了解这个需求之后，感觉还是很简单的，随即去官方文档一查，很遗憾没找到方法.那我们就开始分析这个需求,既然是要更换构建打包后的场景,那我们就先看一下,cocos构建打包的文件目录.如下图:</p>
+<p><a href="https://imgtu.com/i/bwogtf" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bwogtf.png" alt="bwogtf.png"></a></p>
+<p>我们重点分析一下 first-screen.js 首个场景的js，看他做了什么，是否可以更改他的一些代码去实现这个功能。</p>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p><a href="https://imgtu.com/i/bwTSBR" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bwTSBR.png" alt="bwTSBR.png"></a></p>
+<p>​    在这个js文件的末尾我们可以看到这个start方法,同时也看到了loadImage这个导入图片的方法,那我们要做的事情就很简单了,替换这张图片,达到我们的目的.在这个文件夹目录中我们也可以看到一张名为splash.png的图片 我们把这张图片替换到，然后看一下效果:</p>
+<p><a href="https://imgtu.com/i/bw79MQ" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bw79MQ.png" alt="bw79MQ.png"></a></p>
+<p>的确起了效果，达到了我们的目的.但是我们发现这个场景加载完成之后，还会有一个插屏的页面,我们的产品需求里是不要这个页面的,那我们就想办法看怎么给他干掉.</p>
+]]></content>
+      <categories>
+        <category>游戏开发</category>
+      </categories>
+      <tags>
+        <tag>小游戏</tag>
+      </tags>
+  </entry>
 </search>
