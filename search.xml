@@ -1937,7 +1937,7 @@
   </entry>
   <entry>
     <title>防抖和节流</title>
-    <url>/2022/07/14/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</url>
+    <url>/2022/03/14/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</url>
     <content><![CDATA[<h1 id="什么是防抖和节流"><a href="#什么是防抖和节流" class="headerlink" title="什么是防抖和节流"></a>什么是防抖和节流</h1><p><strong>防抖(debounce)</strong></p>
 <p>触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间</p>
 <p><strong>节流(throttle)</strong></p>
