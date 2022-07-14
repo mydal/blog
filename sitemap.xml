@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2022/04/22/JavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</loc>
+    
+    <lastmod>2022-07-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</loc>
     
     <lastmod>2022-07-14</lastmod>
@@ -397,13 +406,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/vue/</loc>
-    <lastmod>2022-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
