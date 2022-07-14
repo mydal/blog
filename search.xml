@@ -2083,4 +2083,65 @@
         <tag>react</tag>
       </tags>
   </entry>
+  <entry>
+    <title>JavaScript原型和原型链</title>
+    <url>/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<h1 id="JavaScript原型和原型链"><a href="#JavaScript原型和原型链" class="headerlink" title="JavaScript原型和原型链"></a>JavaScript原型和原型链</h1><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><code>JavaScript</code> 常被描述为一种基于原型的语言——每个对象拥有一个原型对象</p>
+<p>当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾</p>
+<p>准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的<code>prototype</code>属性上，而非实例对象本身</p>
+<a id="more"></a>
+
+<p>下面举个例子：</p>
+<p>函数可以有属性。 每个函数都有一个特殊的属性叫作原型<code>prototype</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log( doSomething.prototype );</span><br></pre></td></tr></table></figure>
+
+<p>控制台输出</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">constructor</span>: ƒ doSomething(),</span><br><span class="line">    __proto__: &#123;</span><br><span class="line">        <span class="keyword">constructor</span>: ƒ Object(),</span><br><span class="line">        hasOwnProperty: ƒ hasOwnProperty(),</span><br><span class="line">        isPrototypeOf: ƒ isPrototypeOf(),</span><br><span class="line">        propertyIsEnumerable: ƒ propertyIsEnumerable(),</span><br><span class="line">        toLocaleString: ƒ toLocaleString(),</span><br><span class="line">        toString: ƒ toString(),</span><br><span class="line">        valueOf: ƒ valueOf()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面这个对象，就是大家常说的原型对象</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法</p>
+<p>在对象实例和它的构造器之间建立一个链接（它是<code>__proto__</code>属性，是从构造函数的<code>prototype</code>属性派生的），之后通过上溯原型链，在构造器中找到这些属性和方法</p>
+<p>下面举个例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第二步 创建实例</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'person'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>根据代码，我们可以得到下图</p>
+<p><img src="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
+<p>下面分析一下：</p>
+<ul>
+<li>构造函数<code>Person</code>存在原型对象<code>Person.prototype</code></li>
+<li>构造函数生成实例对象<code>person</code>，<code>person</code>的<code>__proto__</code>指向构造函数<code>Person</code>原型对象</li>
+<li><code>Person.prototype.__proto__</code> 指向内置对象，因为 <code>Person.prototype</code> 是个对象，默认是由 <code>Object</code>函数作为类创建的，而 <code>Object.prototype</code> 为内置对象</li>
+<li><code>Person.__proto__</code> 指向内置匿名函数 <code>anonymous</code>，因为 Person 是个函数对象，默认由 Function 作为类创建</li>
+<li><code>Function.prototype</code> 和 <code>Function.__proto__</code>同时指向内置匿名函数 <code>anonymous</code>，这样原型链的终点就是 <code>null</code></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下面首先要看几个概念：</p>
+<p><code>__proto__</code>作为不同对象之间的桥梁，用来指向创建它的构造函数的原型对象的</p>
+<p><img src="https://static.vue-js.com/6a742160-725e-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<p>每个对象的<code>__proto__</code>都是指向它的构造函数的原型对象<code>prototype</code>的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person1.__proto__ === Person.prototype</span><br></pre></td></tr></table></figure>
+
+<p>构造函数是一个函数对象，是通过 <code>Function</code>构造器产生的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person.__proto__ === <span class="built_in">Function</span>.prototype</span><br></pre></td></tr></table></figure>
+
+<p>原型对象本身是一个普通对象，而普通对象的构造函数都是<code>Object</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person.prototype.__proto__ === <span class="built_in">Object</span>.prototype</span><br></pre></td></tr></table></figure>
+
+<p>刚刚上面说了，所有的构造器都是函数对象，函数对象都是 <code>Function</code>构造产生的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</span><br></pre></td></tr></table></figure>
+
+<p><code>Object</code>的原型对象也有<code>__proto__</code>属性指向<code>null</code>，<code>null</code>是原型链的顶端</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>下面作出总结：</p>
+<ul>
+<li>一切对象都是继承自<code>Object</code>对象，<code>Object</code> 对象直接继承根源对象<code>null</code></li>
+<li>一切的函数对象（包括 <code>Object</code> 对象），都是继承自 <code>Function</code> 对象</li>
+<li><code>Object</code> 对象直接继承自 <code>Function</code> 对象</li>
+<li><code>Function</code>对象的<code>__proto__</code>会指向自己的原型对象，最终还是继承自<code>Object</code>对象</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
 </search>
