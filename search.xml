@@ -24,25 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cocos系列之更改cocos默认启动场景</title>
-    <url>/2022/03/05/cocos%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<p>​    公司最近在开发一个微信小游戏,对战答题之类的,之前也没有接触过微信小游戏,对这块比较陌生。好在,通过这次项目开发,自己也算是对游戏开发入了个门,有了一些了解.项目使用cocos creator 3.4.0进行开发。</p>
-<h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>​    我们使用cocos引擎开发,需要打包发布到微信小游戏,然后更换掉cocos默认的启动场景.了解这个需求之后，感觉还是很简单的，随即去官方文档一查，很遗憾没找到方法.那我们就开始分析这个需求,既然是要更换构建打包后的场景,那我们就先看一下,cocos构建打包的文件目录.如下图:</p>
-<p><a href="https://imgtu.com/i/bwogtf" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bwogtf.png" alt="bwogtf.png"></a></p>
-<p>我们重点分析一下 first-screen.js 首个场景的js，看他做了什么，是否可以更改他的一些代码去实现这个功能。</p>
-<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><p><a href="https://imgtu.com/i/bwTSBR" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bwTSBR.png" alt="bwTSBR.png"></a></p>
-<p>​    在这个js文件的末尾我们可以看到这个start方法,同时也看到了loadImage这个导入图片的方法,那我们要做的事情就很简单了,替换这张图片,达到我们的目的.在这个文件夹目录中我们也可以看到一张名为splash.png的图片 我们把这张图片替换到，然后看一下效果:</p>
-<p><a href="https://imgtu.com/i/bw79MQ" target="_blank" rel="noopener"><img src="https://s4.ax1x.com/2022/03/05/bw79MQ.png" alt="bw79MQ.png"></a></p>
-<p>的确起了效果，达到了我们的目的.但是我们发现这个场景加载完成之后，还会有一个插屏的页面,我们的产品需求里是不要这个页面的,那我们就想办法看怎么给他干掉.</p>
-]]></content>
-      <categories>
-        <category>游戏开发</category>
-      </categories>
-      <tags>
-        <tag>小游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora+GitHub+PicGo自建免费图床</title>
     <url>/2020/05/10/Typora-GiHub-PicGo%E8%87%AA%E5%BB%BA%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<p><img src="https://gitee.com/a111111111111111111111111111/picture_bed/raw/master/img/20200701145123.jpg" alt=""></p>
