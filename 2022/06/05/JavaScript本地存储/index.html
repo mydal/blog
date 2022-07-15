@@ -23,23 +23,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="JavaScript原型和原型链原型JavaScript 常被描述为一种基于原型的语言——每个对象拥有一个原型对象 当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾 准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototyp">
+  <meta name="description" content="JavaScript本地存储方式javaScript本地缓存的方法主要有以下四种：  cookie sessionStorage localStorage indexedDB  cookieCookie，类型为「小型文本文件」，指某些网站为了辨别用户身份而储存在用户本地终端上的数据。是为了解决 HTTP无状态导致的问题 作为一段一般不超过 4KB 的小型文本数据，它由一个名称（Name）、一个值（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型和原型链">
-<meta property="og:url" content="http://yoursite.com/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/index.html">
+<meta property="og:title" content="JavaScript本地存储">
+<meta property="og:url" content="http://yoursite.com/2022/06/05/JavaScript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="mydal">
-<meta property="og:description" content="JavaScript原型和原型链原型JavaScript 常被描述为一种基于原型的语言——每个对象拥有一个原型对象 当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾 准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的prototyp">
+<meta property="og:description" content="JavaScript本地存储方式javaScript本地缓存的方法主要有以下四种：  cookie sessionStorage localStorage indexedDB  cookieCookie，类型为「小型文本文件」，指某些网站为了辨别用户身份而储存在用户本地终端上的数据。是为了解决 HTTP无状态导致的问题 作为一段一般不超过 4KB 的小型文本数据，它由一个名称（Name）、一个值（">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png">
-<meta property="og:image" content="https://static.vue-js.com/6a742160-725e-11eb-ab90-d9ae814b240d.png">
-<meta property="article:published_time" content="2022-04-14T12:32:53.000Z">
-<meta property="article:modified_time" content="2022-07-14T15:56:36.990Z">
+<meta property="article:published_time" content="2022-06-05T13:50:53.000Z">
+<meta property="article:modified_time" content="2022-07-15T14:04:11.074Z">
 <meta property="article:author" content="mydal">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png">
 
-<link rel="canonical" href="http://yoursite.com/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+<link rel="canonical" href="http://yoursite.com/2022/06/05/JavaScript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/">
 
 
 <script id="page-configurations">
@@ -52,7 +49,7 @@
   };
 </script>
 
-  <title>JavaScript原型和原型链 | mydal</title>
+  <title>JavaScript本地存储 | mydal</title>
   
 
 
@@ -175,7 +172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/06/05/JavaScript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/mydal.jpg">
@@ -188,7 +185,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript原型和原型链
+          JavaScript本地存储
         </h1>
 
         <div class="post-meta">
@@ -198,14 +195,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-04-14 20:32:53" itemprop="dateCreated datePublished" datetime="2022-04-14T20:32:53+08:00">2022-04-14</time>
+              <time title="创建时间：2022-06-05 21:50:53" itemprop="dateCreated datePublished" datetime="2022-06-05T21:50:53+08:00">2022-06-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-14 23:56:36" itemprop="dateModified" datetime="2022-07-14T23:56:36+08:00">2022-07-14</time>
+                <time title="修改时间：2022-07-15 22:04:11" itemprop="dateModified" datetime="2022-07-15T22:04:11+08:00">2022-07-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -223,14 +220,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -242,58 +239,111 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="JavaScript原型和原型链"><a href="#JavaScript原型和原型链" class="headerlink" title="JavaScript原型和原型链"></a>JavaScript原型和原型链</h1><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><code>JavaScript</code> 常被描述为一种基于原型的语言——每个对象拥有一个原型对象</p>
-<p>当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾</p>
-<p>准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的<code>prototype</code>属性上，而非实例对象本身</p>
-<a id="more"></a>
-
-<p>下面举个例子：</p>
-<p>函数可以有属性。 每个函数都有一个特殊的属性叫作原型<code>prototype</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">console</span>.log( doSomething.prototype );</span><br></pre></td></tr></table></figure>
-
-<p>控制台输出</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">constructor</span>: ƒ doSomething(),</span><br><span class="line">    __proto__: &#123;</span><br><span class="line">        <span class="keyword">constructor</span>: ƒ Object(),</span><br><span class="line">        hasOwnProperty: ƒ hasOwnProperty(),</span><br><span class="line">        isPrototypeOf: ƒ isPrototypeOf(),</span><br><span class="line">        propertyIsEnumerable: ƒ propertyIsEnumerable(),</span><br><span class="line">        toLocaleString: ƒ toLocaleString(),</span><br><span class="line">        toString: ƒ toString(),</span><br><span class="line">        valueOf: ƒ valueOf()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上面这个对象，就是大家常说的原型对象</p>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法</p>
-<p>在对象实例和它的构造器之间建立一个链接（它是<code>__proto__</code>属性，是从构造函数的<code>prototype</code>属性派生的），之后通过上溯原型链，在构造器中找到这些属性和方法</p>
-<p>下面举个例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = <span class="number">18</span>;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第二步 创建实例</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'person'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>根据代码，我们可以得到下图</p>
-<p><img src="https://static.vue-js.com/60825aa0-725e-11eb-85f6-6fac77c0c9b3.png" alt=""></p>
-<p>下面分析一下：</p>
+        <h1 id="JavaScript本地存储"><a href="#JavaScript本地存储" class="headerlink" title="JavaScript本地存储"></a>JavaScript本地存储</h1><h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p><code>javaScript</code>本地缓存的方法主要有以下四种：</p>
 <ul>
-<li>构造函数<code>Person</code>存在原型对象<code>Person.prototype</code></li>
-<li>构造函数生成实例对象<code>person</code>，<code>person</code>的<code>__proto__</code>指向构造函数<code>Person</code>原型对象</li>
-<li><code>Person.prototype.__proto__</code> 指向内置对象，因为 <code>Person.prototype</code> 是个对象，默认是由 <code>Object</code>函数作为类创建的，而 <code>Object.prototype</code> 为内置对象</li>
-<li><code>Person.__proto__</code> 指向内置匿名函数 <code>anonymous</code>，因为 Person 是个函数对象，默认由 Function 作为类创建</li>
-<li><code>Function.prototype</code> 和 <code>Function.__proto__</code>同时指向内置匿名函数 <code>anonymous</code>，这样原型链的终点就是 <code>null</code></li>
+<li>cookie</li>
+<li>sessionStorage</li>
+<li>localStorage</li>
+<li>indexedDB</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下面首先要看几个概念：</p>
-<p><code>__proto__</code>作为不同对象之间的桥梁，用来指向创建它的构造函数的原型对象的</p>
-<p><img src="https://static.vue-js.com/6a742160-725e-11eb-ab90-d9ae814b240d.png" alt=""></p>
-<p>每个对象的<code>__proto__</code>都是指向它的构造函数的原型对象<code>prototype</code>的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">person1.__proto__ === Person.prototype</span><br></pre></td></tr></table></figure>
-
-<p>构造函数是一个函数对象，是通过 <code>Function</code>构造器产生的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.__proto__ === <span class="built_in">Function</span>.prototype</span><br></pre></td></tr></table></figure>
-
-<p>原型对象本身是一个普通对象，而普通对象的构造函数都是<code>Object</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.__proto__ === <span class="built_in">Object</span>.prototype</span><br></pre></td></tr></table></figure>
-
-<p>刚刚上面说了，所有的构造器都是函数对象，函数对象都是 <code>Function</code>构造产生的</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</span><br></pre></td></tr></table></figure>
-
-<p><code>Object</code>的原型对象也有<code>__proto__</code>属性指向<code>null</code>，<code>null</code>是原型链的顶端</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
-
-<p>下面作出总结：</p>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p><code>Cookie</code>，类型为「小型文本文件」，指某些网站为了辨别用户身份而储存在用户本地终端上的数据。是为了解决 <code>HTTP</code>无状态导致的问题</p>
+<p>作为一段一般不超过 4KB 的小型文本数据，它由一个名称（Name）、一个值（Value）和其它几个用于控制 <code>cookie</code>有效期、安全性、使用范围的可选属性组成</p>
+<p>但是<code>cookie</code>在每次请求中都会被发送，如果不使用 <code>HTTPS</code>并对其加密，其保存的信息很容易被窃取，导致安全风险。举个例子，在一些使用 <code>cookie</code>保持登录态的网站上，如果 <code>cookie</code>被窃取，他人很容易利用你的 <code>cookie</code>来假扮成你登录网站</p>
+<p>关于<code>cookie</code>常用的属性如下：</p>
 <ul>
-<li>一切对象都是继承自<code>Object</code>对象，<code>Object</code> 对象直接继承根源对象<code>null</code></li>
-<li>一切的函数对象（包括 <code>Object</code> 对象），都是继承自 <code>Function</code> 对象</li>
-<li><code>Object</code> 对象直接继承自 <code>Function</code> 对象</li>
-<li><code>Function</code>对象的<code>__proto__</code>会指向自己的原型对象，最终还是继承自<code>Object</code>对象</li>
+<li>Expires 用于设置 Cookie 的过期时间</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires=Wed, <span class="number">21</span> Oct <span class="number">2015</span> <span class="number">07</span>:<span class="number">28</span>:<span class="number">00</span> GMT</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Max-Age 用于设置在 Cookie 失效之前需要经过的秒数（优先级比<code>Expires</code>高）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Max-Age=<span class="number">604800</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Domain</code>指定了 <code>Cookie</code> 可以送达的主机名</li>
+<li><code>Path</code>指定了一个 <code>URL</code>路径，这个路径必须出现在要请求的资源的路径中才可以发送 <code>Cookie</code> 首部</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Path=<span class="regexp">/docs   # /</span>docs/Web/ 下的资源会带 Cookie 首部</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>标记为 <code>Secure</code>的 <code>Cookie</code>只应通过被<code>HTTPS</code>协议加密过的请求发送给服务端</li>
+</ul>
+<p>通过上述，我们可以看到<code>cookie</code>又开始的作用并不是为了缓存而设计出来，只是借用了<code>cookie</code>的特性实现缓存</p>
+<p>关于<code>cookie</code>的使用如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">'名字=值'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>关于<code>cookie</code>的修改，首先要确定<code>domain</code>和<code>path</code>属性都是相同的才可以，其中有一个不同得时候都会创建出一个新的<code>cookie</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set</span>-Cookie:name=aa; domain=aa.net; path=<span class="regexp">/  # 服务端设置</span></span><br><span class="line">document.cookie =name=bb; domain=aa.net; path=/  # 客户端设置</span><br></pre></td></tr></table></figure>
+
+<p>最后<code>cookie</code>的删除，最常用的方法就是给<code>cookie</code>设置一个过期的事件，这样<code>cookie</code>过期后会被浏览器删除</p>
+<h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><p><code>HTML5</code>新方法，IE8及以上浏览器都兼容</p>
+<p><strong>特点</strong></p>
+<ul>
+<li>生命周期：持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的</li>
+<li>存储的信息在同一域中是共享的</li>
+<li>当本页操作（新增、修改、删除）了<code>localStorage</code>的时候，本页面不会触发<code>storage</code>事件,但是别的页面会触发<code>storage</code>事件。</li>
+<li>大小：5M（跟浏览器厂商有关系）</li>
+<li><code>localStorage</code>本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡</li>
+<li>受同源策略的限制</li>
+</ul>
+<p>下面再看看关于<code>localStorage</code>的使用</p>
+<p>设置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">'username'</span>,<span class="string">'cfangxu'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.getItem(<span class="string">'username'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>获取键名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.key(<span class="number">0</span>) <span class="comment">//获取第一个键名</span></span><br></pre></td></tr></table></figure>
+
+<p>删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeItem(<span class="string">'username'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>一次性清除所有存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.clear()</span><br></pre></td></tr></table></figure>
+
+<p><code>localStorage</code> 也不是完美的，它有两个缺点：</p>
+<ul>
+<li>无法像<code>Cookie</code>一样设置过期时间</li>
+<li>只能存入字符串，无法直接存对象</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">'key'</span>, &#123;<span class="attr">name</span>: <span class="string">'value'</span>&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(localStorage.getItem(<span class="string">'key'</span>)); <span class="comment">// '[object, Object]'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h3><p><code>sessionStorage</code>和 <code>localStorage</code>使用方法基本一致，唯一不同的是生命周期，一旦页面（会话）关闭，<code>sessionStorage</code> 将会删除数据</p>
+<h3 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a>indexedDB</h3><p><code>indexedDB</code>是一种低级API，用于客户端存储大量结构化数据(包括, 文件/ blobs)。该API使用索引来实现对该数据的高性能搜索</p>
+<p>虽然 <code>Web Storage</code>对于存储较少量的数据很有用，但对于存储更大量的结构化数据来说，这种方法不太有用。<code>IndexedDB</code>提供了一个解决方案</p>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li>储存量理论上没有上限</li>
+<li>所有操作都是异步的，相比 <code>LocalStorage</code> 同步操作性能更高，尤其是数据量较大时</li>
+<li>原生支持储存<code>JS</code>的对象</li>
+<li>是个正经的数据库，意味着数据库能干的事它都能干</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>操作非常繁琐</li>
+<li>本身有一定门槛</li>
+</ul>
+<p>关于<code>indexedDB</code>的使用基本使用步骤如下：</p>
+<ul>
+<li>打开数据库并且开始一个事务</li>
+<li>创建一个 <code>object store</code></li>
+<li>构建一个请求来执行一些数据库操作，像增加或提取数据等。</li>
+<li>通过监听正确类型的 <code>DOM</code> 事件以等待操作完成。</li>
+<li>在操作结果上进行一些操作（可以在 <code>request</code>对象中找到）</li>
+</ul>
+<p>关于使用<code>indexdb</code>的使用会比较繁琐，大家可以通过使用<code>Godb.js</code>库进行缓存，最大化的降低操作难度</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>关于<code>cookie</code>、<code>sessionStorage</code>、<code>localStorage</code>三者的区别主要如下：</p>
+<ul>
+<li>存储大小：<code>cookie</code>数据大小不能超过<code>4k</code>，<code>sessionStorage</code>和<code>localStorage</code>虽然也有存储大小的限制，但比<code>cookie</code>大得多，可以达到5M或更大</li>
+<li>有效时间：<code>localStorage</code>存储持久数据，浏览器关闭后数据不丢失除非主动删除数据； <code>sessionStorage</code>数据在当前浏览器窗口关闭后自动删除；<code>cookie</code>设置的<code>cookie</code>过期时间之前一直有效，即使窗口或浏览器关闭</li>
+<li>数据与服务器之间的交互方式，<code>cookie</code>的数据会自动的传递到服务器，服务器端也可以写<code>cookie</code>到客户端； <code>sessionStorage</code>和<code>localStorage</code>不会自动把数据发给服务器，仅在本地保存</li>
+</ul>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>在了解了上述的前端的缓存方式后，我们可以看看针对不对场景的使用选择：</p>
+<ul>
+<li>标记用户与跟踪用户行为的情况，推荐使用<code>cookie</code></li>
+<li>适合长期保存在本地的数据（令牌），推荐使用<code>localStorage</code></li>
+<li>敏感账号一次性登录，推荐使用<code>sessionStorage</code></li>
+<li>存储大量数据的情况、在线文档（富文本编辑器）保存编辑历史的情况，推荐使用<code>indexedDB</code></li>
 </ul>
 
     </div>
@@ -310,7 +360,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" title="JavaScript原型和原型链">http://yoursite.com/2022/04/14/JavaScript原型和原型链/</a>
+    <a href="http://yoursite.com/2022/06/05/JavaScript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/" title="JavaScript本地存储">http://yoursite.com/2022/06/05/JavaScript本地存储/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -331,13 +381,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/14/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" rel="prev" title="防抖和节流">
-      <i class="fa fa-chevron-left"></i> 防抖和节流
+    <a href="/2022/05/15/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="prev" title="flex弹性布局">
+      <i class="fa fa-chevron-left"></i> flex弹性布局
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/22/JavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" rel="next" title="JavaScript事件循环">
-      JavaScript事件循环 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -396,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript原型和原型链"><span class="nav-number">1.</span> <span class="nav-text">JavaScript原型和原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#原型"><span class="nav-number">1.1.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">1.2.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript本地存储"><span class="nav-number">1.</span> <span class="nav-text">JavaScript本地存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">1.1.</span> <span class="nav-text">方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage"><span class="nav-number">1.1.2.</span> <span class="nav-text">localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sessionStorage"><span class="nav-number">1.1.3.</span> <span class="nav-text">sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexedDB"><span class="nav-number">1.1.4.</span> <span class="nav-text">indexedDB</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.1.4.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点："><span class="nav-number">1.1.4.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">1.2.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.3.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
