@@ -3,7 +3,7 @@
   <entry>
     <title>JavaScript事件循环</title>
     <url>/2022/04/22/JavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<h1 id="JavaScript事件循环"><a href="#JavaScript事件循环" class="headerlink" title="JavaScript事件循环"></a>JavaScript事件循环</h1><p><img src="https://static.vue-js.com/50f062d0-7cb8-11eb-ab90-d9ae814b240d.png" alt=""></p>
+    <content><![CDATA[<p><img src="https://static.vue-js.com/50f062d0-7cb8-11eb-ab90-d9ae814b240d.png" alt=""></p>
 <a id="more"></a>
 
 <h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>首先，<code>JavaScript</code>是一门单线程的语言，意味着同一时间内只能做一件事，但是这并不意味着单线程就是阻塞，而实现单线程非阻塞的方法就是事件循环</p>
@@ -121,7 +121,7 @@
   <entry>
     <title>JavaScript原型和原型链</title>
     <url>/2022/04/14/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-    <content><![CDATA[<h1 id="JavaScript原型和原型链"><a href="#JavaScript原型和原型链" class="headerlink" title="JavaScript原型和原型链"></a>JavaScript原型和原型链</h1><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><code>JavaScript</code> 常被描述为一种基于原型的语言——每个对象拥有一个原型对象</p>
+    <content><![CDATA[<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><code>JavaScript</code> 常被描述为一种基于原型的语言——每个对象拥有一个原型对象</p>
 <p>当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾</p>
 <p>准确地说，这些属性和方法定义在Object的构造器函数（constructor functions）之上的<code>prototype</code>属性上，而非实例对象本身</p>
 <a id="more"></a>
@@ -933,7 +933,7 @@
   <entry>
     <title>flex弹性布局</title>
     <url>/2022/05/15/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/</url>
-    <content><![CDATA[<h1 id="flex弹性布局"><a href="#flex弹性布局" class="headerlink" title="flex弹性布局"></a>flex弹性布局</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>Flexible Box</code> 简称 <code>flex</code>，意为”弹性布局”，可以简便、完整、响应式地实现各种页面布局</p>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><code>Flexible Box</code> 简称 <code>flex</code>，意为”弹性布局”，可以简便、完整、响应式地实现各种页面布局</p>
 <p>采用Flex布局的元素，称为<code>flex</code>容器<code>container</code></p>
 <p>它的所有子元素自动成为容器成员，称为<code>flex</code>项目<code>item</code></p>
 <a id="more"></a>
@@ -2310,7 +2310,7 @@
   <entry>
     <title>防抖和节流</title>
     <url>/2022/03/14/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</url>
-    <content><![CDATA[<h1 id="什么是防抖和节流"><a href="#什么是防抖和节流" class="headerlink" title="什么是防抖和节流"></a>什么是防抖和节流</h1><p><strong>防抖(debounce)</strong></p>
+    <content><![CDATA[<p><strong>防抖(debounce)</strong></p>
 <p>触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间</p>
 <p><strong>节流(throttle)</strong></p>
 <p>高频事件触发，但在 n 秒内只会执行一次所以节流会稀释函数的执行频率</p>
@@ -2376,7 +2376,7 @@
   <entry>
     <title>JavaScript本地存储</title>
     <url>/2022/06/05/JavaScript%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8/</url>
-    <content><![CDATA[<h1 id="JavaScript本地存储"><a href="#JavaScript本地存储" class="headerlink" title="JavaScript本地存储"></a>JavaScript本地存储</h1><h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p><code>javaScript</code>本地缓存的方法主要有以下四种：</p>
+    <content><![CDATA[<h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p><code>javaScript</code>本地缓存的方法主要有以下四种：</p>
 <ul>
 <li>cookie</li>
 <li>sessionStorage</li>
@@ -2484,6 +2484,54 @@
 <li>敏感账号一次性登录，推荐使用<code>sessionStorage</code></li>
 <li>存储大量数据的情况、在线文档（富文本编辑器）保存编辑历史的情况，推荐使用<code>indexedDB</code></li>
 </ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript闭包</title>
+    <url>/2022/07/10/JavaScript%E9%97%AD%E5%8C%85/</url>
+    <content><![CDATA[<p><img src="https://static.vue-js.com/c141a030-6a7a-11eb-ab90-d9ae814b240d.png" alt=""></p>
+<a id="more"></a>
+
+<h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）</p>
+<p>也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域</p>
+<p>在 <code>JavaScript</code>中，每当创建一个函数，闭包就会在函数创建的同时被创建出来，作为函数内部与外部连接起来的一座桥梁</p>
+<p>下面给出一个简单的例子</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name = <span class="string">"Mozilla"</span>; <span class="comment">// name 是一个被 init 创建的局部变量</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">displayName</span>(<span class="params"></span>) </span>&#123; <span class="comment">// displayName() 是内部函数，一个闭包</span></span><br><span class="line">        alert(name); <span class="comment">// 使用了父函数中声明的变量</span></span><br><span class="line">    &#125;</span><br><span class="line">    displayName();</span><br><span class="line">&#125;</span><br><span class="line">init();</span><br></pre></td></tr></table></figure>
+
+<p><code>displayName()</code> 没有自己的局部变量。然而，由于闭包的特性，它可以访问到外部函数的变量</p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>任何闭包的使用场景都离不开这两点：</p>
+<ul>
+<li>创建私有变量</li>
+<li>延长变量的生命周期</li>
+</ul>
+<blockquote>
+<p>一般函数的词法环境在函数返回后就被销毁，但是闭包会保存对创建时所在词法环境的引用，即便创建时所在的执行上下文被销毁，但创建时所在词法环境依然存在，以达到延长变量的生命周期的目的</p>
+</blockquote>
+<p>下面举个例子：</p>
+<p>在页面上添加一些可以调整字号的按钮</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeSizer</span>(<span class="params">size</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.body.style.fontSize = size + <span class="string">'px'</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> size12 = makeSizer(<span class="number">12</span>);</span><br><span class="line"><span class="keyword">var</span> size14 = makeSizer(<span class="number">14</span>);</span><br><span class="line"><span class="keyword">var</span> size16 = makeSizer(<span class="number">16</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-12'</span>).onclick = size12;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-14'</span>).onclick = size14;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'size-16'</span>).onclick = size16;</span><br></pre></td></tr></table></figure>
+
+<h3 id="柯里化函数"><a href="#柯里化函数" class="headerlink" title="柯里化函数"></a>柯里化函数</h3><p>柯里化的目的在于避免频繁调用具有相同参数函数的同时，又能够轻松的重用</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假设我们有一个求长方形面积的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">width, height</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> width * height</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果我们碰到的长方形的宽老是10</span></span><br><span class="line"><span class="keyword">const</span> area1 = getArea(<span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="keyword">const</span> area2 = getArea(<span class="number">10</span>, <span class="number">30</span>)</span><br><span class="line"><span class="keyword">const</span> area3 = getArea(<span class="number">10</span>, <span class="number">40</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我们可以使用闭包柯里化这个计算面积的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">width</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">height</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> width * height</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getTenWidthArea = getArea(<span class="number">10</span>)</span><br><span class="line"><span class="comment">// 之后碰到宽度为10的长方形就可以这样计算面积</span></span><br><span class="line"><span class="keyword">const</span> area1 = getTenWidthArea(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 而且如果遇到宽度偶尔变化也可以轻松复用</span></span><br><span class="line"><span class="keyword">const</span> getTwentyWidthArea = getArea(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用闭包模拟私有方法"><a href="#使用闭包模拟私有方法" class="headerlink" title="使用闭包模拟私有方法"></a>使用闭包模拟私有方法</h3><p>下面举个例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> Counter = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> privateCounter = <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">changeBy</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">    privateCounter += val;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    increment: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      changeBy(<span class="number">1</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    decrement: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      changeBy(<span class="number">-1</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    value: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> privateCounter;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Counter1 = makeCounter();</span><br><span class="line"><span class="keyword">var</span> Counter2 = makeCounter();</span><br><span class="line"><span class="built_in">console</span>.log(Counter1.value()); <span class="comment">/* logs 0 */</span></span><br><span class="line">Counter1.increment();</span><br><span class="line">Counter1.increment();</span><br><span class="line"><span class="built_in">console</span>.log(Counter1.value()); <span class="comment">/* logs 2 */</span></span><br><span class="line">Counter1.decrement();</span><br><span class="line"><span class="built_in">console</span>.log(Counter1.value()); <span class="comment">/* logs 1 */</span></span><br><span class="line"><span class="built_in">console</span>.log(Counter2.value()); <span class="comment">/* logs 0 */</span></span><br></pre></td></tr></table></figure>
+
+<p>上述通过使用闭包来定义公共函数，并令其可以访问私有函数和变量，这种方式也叫模块方式</p>
+<p>两个计数器 <code>Counter1</code> 和 <code>Counter2</code> 是维护它们各自的独立性的，每次调用其中一个计数器时，通过改变这个变量的值，会改变这个闭包的词法环境，不会影响另一个闭包中的变量</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响</p>
+<p>例如，在创建新的对象或者类时，方法通常应该关联于对象的原型，而不是定义到对象的构造器中。</p>
+<p>原因在于每个对象的创建，方法都会被重新赋值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params">name, message</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name.toString();</span><br><span class="line">  <span class="keyword">this</span>.message = message.toString();</span><br><span class="line">  <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.getMessage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，我们并没有利用到闭包的好处，因此可以避免使用闭包。修改成如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params">name, message</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name.toString();</span><br><span class="line">  <span class="keyword">this</span>.message = message.toString();</span><br><span class="line">&#125;</span><br><span class="line">MyObject.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line">MyObject.prototype.getMessage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>前端</category>
